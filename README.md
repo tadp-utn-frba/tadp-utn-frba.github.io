@@ -2,8 +2,8 @@
 
 ##Requisitos
 
-Jekyll
-Ruby 2.0+
+* Jekyll
+* Ruby 2.0+
 
 ##Como modificar la página?
 
