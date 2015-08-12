@@ -1,0 +1,52 @@
+---
+layout: page
+description: "Pagina Principal"
+---
+
+<div class=" Intro">
+    <h2 class="bienvenidos">
+        ¡Bienvenidos!
+    </h2>
+
+    <p>Esta es la página del curso de Técnicas Avanzadas de Programación de la Universidad Tecnológica Nacional, Facultad Regional Buenos Aires.</p>
+    <br>
+    <p>Es muy importante leer los temas <a href="/administrativos">administrativos</a> para estar suscripto a la lista de correo.</p>
+    <br>
+    <br>
+    {% if site.posts != empty %}
+    <div class="recent-posts">
+        <h1>Ultimas Entradas</h1>
+        {% for post in site.posts limit: 3 %}
+        {% if forloop.first %}
+        {% assign add_class = 'most-recent' %}
+        {% capture fresh_tag %}
+        &nbsp;<span class="badge"><smaller>FRESH</smaller></span>
+        {% endcapture %}
+        {% endif %}
+        <ul class="homepage-posts {{ add_class }}">
+            <li>
+        <span>
+          <h4>
+              <a href="{{ site.baseurl }}{{ post.url }}">
+                  {{ post.title }}
+              </a>
+              {{ fresh_tag }}
+              <time class="pull-right">
+                  {{ post.date | date_to_string | date: "%b %-d, %Y" }}
+              </time>
+          </h4>
+        </span>
+            </li>
+        </ul>
+        {% assign add_class = '' %}
+        {% assign fresh_tag = '' %}
+        {% endfor %}
+        <ul>
+            <a href="{{ site.baseurl }}/blog">View More...</a>
+        </ul>
+    </div>
+    {% endif %}
+    <br>
+    <div dir="ltr"><div style="text-align:right"><a href="http://www.frba.utn.edu.ar/"><span></span><img alt="UTN-FRBA" src="/img/utn-logo.jpg" style="font-size:13px; margin-left:600px;"><span></span></a></div></div>
+
+</div>
