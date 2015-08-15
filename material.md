@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Material
-permalink: /recursos/
+permalink: /material/
 ---
 
 #Scripts de clase
