@@ -6,7 +6,7 @@ permalink: /material/
 
 #Scripts de clase
 
-* [Clase 1]()
+* [Clase 1 - Intro a la materia y Mixins](https://drive.google.com/open?id=1BagIDjjsrU7J_Qs6wyJan2lIxO9gqHZrb8aO-arxbFA)
 * Clase 2
 * Clase 3
 * Clase 4
