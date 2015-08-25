@@ -7,7 +7,7 @@ permalink: /material/
 #Scripts de clase
 
 * [Clase 1 - Intro a la materia y Mixins](https://drive.google.com/open?id=1BagIDjjsrU7J_Qs6wyJan2lIxO9gqHZrb8aO-arxbFA)
-* Clase 2
+* [Clase 2 - Mixins: Resolución de Conflictos](https://docs.google.com/document/d/19mFtsjb3OE_9r9IejZMCRWrFPsQp6X3y-9RJz5OvHek/pub)
 * Clase 3
 * Clase 4
 * Clase 5
