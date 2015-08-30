@@ -22,6 +22,9 @@ permalink: /material/
 * Clase 14
 * Clase 15
 
+# Trabajos Prácticos
+* [TP1 Metaprogramación - Aspectos](https://docs.google.com/document/d/1eF2wDjBPDy2XH4Wc4V6PzIfVyj2Vz2DCRO99lt-q-GY)
+
 #Guias
 
 ###[Instalación de entorno Ruby + Rubymine y creación de proyectos](/guias)
