@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Notas
+title: Cursada
 description: "Grupos y Notas"
 permalink: /cursada/
 ---
