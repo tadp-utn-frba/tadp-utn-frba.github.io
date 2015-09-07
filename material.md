@@ -27,8 +27,8 @@ permalink: /material/
 
 #Guias
 
-###[Instalación de entorno Ruby + Rubymine y creación de proyectos](/guias)
-###[Guía de Lenguaje de Ruby](https://goo.gl/sRroc0)
+### [Instalación de entorno Ruby + Rubymine y creación de proyectos](/guias)
+### [Guía de Lenguaje de Ruby](https://goo.gl/sRroc0)
 
 #Material Extra y Bibliografía
 
