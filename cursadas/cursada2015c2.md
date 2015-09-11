@@ -1,7 +1,7 @@
 ---
 layout: page
 description: "Cursada 2015 2C"
-permalink: /cursadas/cursada_2015c2
+permalink: /cursadas/cursada_2015c2/
 ---
 
 ## Grupos y Notas
