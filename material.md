@@ -10,7 +10,7 @@ permalink: /material/
 * [Clase 2 - Mixins: Resolución de Conflictos](https://docs.google.com/document/d/19mFtsjb3OE_9r9IejZMCRWrFPsQp6X3y-9RJz5OvHek/pub)
 * [Clase 3 - Metaprogramación](https://docs.google.com/document/d/1NSRc0soYPOuwh2KY8eU_ioG3GIhJFQgc0HLn4GxznV0) 
 * [Clase 4 - Metabuilder (instance_eval y method missing)](https://docs.google.com/document/d/1xWP73pAz_PjVWP3vuSYv2kQfTlYFCzdAH-Yzs6Re0vQ/pub)
-* Clase 5
+* [Clase 5 - Prototype](https://docs.google.com/document/d/1UTn6Qzi_MyVQlxfezJa_6Fg_NuKYGfjTJ8fTvIq8CQQ/pub)
 * Clase 6
 * Clase 7
 * Clase 8
