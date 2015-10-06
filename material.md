@@ -12,7 +12,7 @@ permalink: /material/
 * [Clase 4 - Metabuilder (instance_eval y method missing)](https://docs.google.com/document/d/1xWP73pAz_PjVWP3vuSYv2kQfTlYFCzdAH-Yzs6Re0vQ/pub)
 * [Clase 5 - Prototype](https://docs.google.com/document/d/1UTn6Qzi_MyVQlxfezJa_6Fg_NuKYGfjTJ8fTvIq8CQQ/pub)
 * [Clase 6 - Multimethods](https://goo.gl/KMC39N)
-* Clase 7
+* [Clase 7 - Intro a chequeo estático de tipos en Objetos](https://docs.google.com/document/d/1IK_KPzYW7SgW0GAghJ8Bv5MCIezZXJCIVlbX8JQGSxU/edit?usp=sharing)
 * Clase 8
 * Clase 9
 * Clase 10
