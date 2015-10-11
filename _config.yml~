@@ -1,0 +1,15 @@
+# Site settings
+title: TADP
+header-img: img/home-bg.jpg
+description: "Write your site description here. It will be used as your sites meta description as well!"
+baseurl: ""
+url: "http://uqbar-project.github.io"
+github_username: "uqbar-paco"
+disqus:
+
+# Build settings
+highlighter: pygments
+permalink: pretty
+paginate: 5
+paginate_path: blog/page:num
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]

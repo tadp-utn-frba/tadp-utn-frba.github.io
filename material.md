@@ -8,7 +8,7 @@ permalink: /material/
 
 * [Clase 1 - Intro a la materia y Mixins](https://drive.google.com/open?id=1BagIDjjsrU7J_Qs6wyJan2lIxO9gqHZrb8aO-arxbFA)
 * [Clase 2 - Mixins: Resolución de Conflictos](https://docs.google.com/document/d/19mFtsjb3OE_9r9IejZMCRWrFPsQp6X3y-9RJz5OvHek/pub)
-* [Clase 3 - Metaprogramación](https://docs.google.com/document/d/1NSRc0soYPOuwh2KY8eU_ioG3GIhJFQgc0HLn4GxznV0) 
+* [Clase 3 - Metaprogramación](https://docs.google.com/document/d/1NSRc0soYPOuwh2KY8eU_ioG3GIhJFQgc0HLn4GxznV0)
 * [Clase 4 - Metabuilder (instance_eval y method missing)](https://docs.google.com/document/d/1xWP73pAz_PjVWP3vuSYv2kQfTlYFCzdAH-Yzs6Re0vQ/pub)
 * [Clase 5 - Prototype](https://docs.google.com/document/d/1UTn6Qzi_MyVQlxfezJa_6Fg_NuKYGfjTJ8fTvIq8CQQ/pub)
 * [Clase 6 - Multimethods](https://goo.gl/KMC39N)
@@ -27,10 +27,9 @@ permalink: /material/
 
 #Guias
 
-###[Instalación de entorno Ruby + Rubymine y creación de proyectos](/guias)
-
-###[Guía de Lenguaje de Ruby](https://goo.gl/sRroc0)
-
+* [Instalación de entorno Ruby + Rubymine y creación de proyectos](/guias/ruby)
+* [Guía de Lenguaje de Ruby](https://goo.gl/sRroc0)
+* [Instalación de entorno Scala-IDE + Creación de proyectos con tests](/guias/scala)
 
 #Material Extra y Bibliografía
 
