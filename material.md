@@ -15,7 +15,7 @@ permalink: /material/
 * [Clase 7 - Intro a chequeo estático de tipos en Objetos](https://docs.google.com/document/d/1IK_KPzYW7SgW0GAghJ8Bv5MCIezZXJCIVlbX8JQGSxU/pub)
 * [Clase 8 - Contratos, Binding, Type Arguments, Varianza](https://docs.google.com/document/d/1Rb1ce0XpAzu6oSeBKlmj1wxbJmMIORNway52ZNjhiBo/pub)
 * [Clase 9 - Pattern Matching vs Polimorfismo, Inmutabilidad, Case Classes](https://docs.google.com/document/d/1X4j0P2WchO4Y_omSPWxtuPSAiwM1hAD0jivCZqf8zVY/pub)
-* [Clase 10 - Comportamiento vs Estructura, Mónadas] (https://docs.google.com/document/d/1QHCli5GN3ijDzxfg7h4bAOUqxfzXuCHfm4FEUkUx4WU/pub)
+* [Clase 10 - Comportamiento vs Estructura, Mónadas](https://docs.google.com/document/d/1QHCli5GN3ijDzxfg7h4bAOUqxfzXuCHfm4FEUkUx4WU/pub)
 * Clase 11
 * Clase 12
 * Clase 13
