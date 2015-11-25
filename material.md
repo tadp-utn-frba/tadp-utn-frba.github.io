@@ -16,10 +16,10 @@ permalink: /material/
 * [Clase 8 - Contratos, Binding, Type Arguments, Varianza](https://docs.google.com/document/d/1Rb1ce0XpAzu6oSeBKlmj1wxbJmMIORNway52ZNjhiBo/pub)
 * [Clase 9 - Pattern Matching vs Polimorfismo, Inmutabilidad, Case Classes](https://docs.google.com/document/d/1X4j0P2WchO4Y_omSPWxtuPSAiwM1hAD0jivCZqf8zVY/pub)
 * [Clase 10 - Comportamiento vs Estructura, Mónadas](https://docs.google.com/document/d/1QHCli5GN3ijDzxfg7h4bAOUqxfzXuCHfm4FEUkUx4WU/pub)
-* Clase 11
-* Clase 12
-* Clase 13
-* Clase 14
+* [Clase 11 - Ejercicio de Diseño Objetos Funcional parte 1](https://docs.google.com/document/d/1is7QLgQ573vDwxRAuLA-bZzA-IKVW_UgGsocNQGMRu4/edit?usp=sharing)
+* [Clase 12 - Ejercicio de Diseño Objetos Funcional parte 2](https://docs.google.com/document/d/1is7QLgQ573vDwxRAuLA-bZzA-IKVW_UgGsocNQGMRu4/edit?usp=sharing)
+* [Clase 13 - Implicits + Typeclasses](https://docs.google.com/document/d/1k5pbZdXZs_RNJgMIBH0JyoCcncEFkB3ks7y_JSVTpZY/pub)
+* [Clase 14 - Relfection en Scala](https://docs.google.com/document/d/1s9NhfG0_mD0w0Hp29QWOpd8KtXyGS2bUipAkuSP34tc/pub)
 * Clase 15
 
 # Trabajos Prácticos
