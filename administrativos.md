@@ -11,12 +11,12 @@ El último programa estable de la materia pertenece al plan 2008, podés descarg
 
 Listas de discusión, de subscripción obligatoria para los alumnos
 
-**tadp_cursada@yahoogroups.com**: Grupo de cursada de TADP de este cuatrimestre para temas administrativos. Para suscribirse enviar un mail a tadp_cursada-subscribe@yahoogroups.com
+**tadp-cursada@googlegroups.com**: Grupo de cursada de TADP de este cuatrimestre para temas administrativos. Para suscribirse enviar un mail a tadp_cursada-subscribe@yahoogroups.com
 
 Para suscribirse a la lista de tadp_cursada, hacer click en el link de abajo
 
 <center>
-<a href="http://groups.yahoo.com/group/tadp_cursada/join">
+<a href="https://groups.google.com/forum/?fromgroups#!forum/tadp-cursada">
 <img src="/img/tadp_join_group.jpg" border="0"
   alt="Click here to join tadp_cursada"><br>Sumarse al grupo de tadp_cursada</a>
 </center>
