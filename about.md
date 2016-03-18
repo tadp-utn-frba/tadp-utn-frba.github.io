@@ -4,7 +4,7 @@ title: Quienes Somos
 permalink: /quienessomos/
 ---
 
-##Docentes
+## Docentes
 
 <div id="sites-canvas-main" class="sites-canvas-main">
    <div id="sites-canvas-main-content">
