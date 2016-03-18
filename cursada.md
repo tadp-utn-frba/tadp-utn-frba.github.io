@@ -19,5 +19,4 @@ permalink: /cursada/
 * [Prototype - Ruby](https://drive.google.com/file/d/0BxDAZEJI6t9KUWxac1JxWDZGTTA/view?usp=sharing)
 
 # Trabajos Prácticos
-* [TP1 Metaprogramación - Aspectos](https://docs.google.com/document/d/1eF2wDjBPDy2XH4Wc4V6PzIfVyj2Vz2DCRO99lt-q-GY)
-* [TP2 Objeto/Funcional - Tipado](https://docs.google.com/document/d/13kG47g_tzJnraPX-2GK_Kn6nJCbTiQz7u612Xo2Kxp4/pub)
+
