@@ -9,8 +9,9 @@ permalink: /cursada/
 
 ##Alumnnos
 
-<iframe style="width: 100%; height:650px"
-  src="https://docs.google.com/spreadsheet/pub?key=0Au_dAxVqzqDEdHZRQnJLSXJrZEIydlo3WnpWUnF6MFE&single=true&gid=24&output=html"></iframe>
+<iframe style="width: 130%; height:750px"
+  src="https://docs.google.com/spreadsheet/pub?key=0Au_dAxVqzqDEdHZRQnJLSXJrZEIydlo3WnpWUnF6MFE&single=true&gid=24&output=html">
+</iframe>
 
 #Enunciados
 

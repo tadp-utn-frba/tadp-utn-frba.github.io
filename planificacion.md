@@ -7,8 +7,9 @@ permalink: /planificación/
 
 ## Planificación
 
-<iframe style="width: 100%; height:600px"
-  src="https://docs.google.com/spreadsheets/d/1i53oPODT_3F8lXMZ_i9ib5rDio2GORdXJJsGVXXPT-A/pubhtml?gid=914503915&single=true"></iframe>
+<iframe style="width: 130%; height:650px"
+  src="https://docs.google.com/spreadsheets/d/1i53oPODT_3F8lXMZ_i9ib5rDio2GORdXJJsGVXXPT-A/pubhtml?gid=1990663131&single=true">
+  </iframe>
 
 
 ## Cuando?
