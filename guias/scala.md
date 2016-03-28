@@ -3,7 +3,7 @@ layout: page
 description: Instalación de Scala-IDE y otras guías
 ---
 
-#ENTORNO DE TRABAJO
+# Entorno de Trabajo
 
 Para trabajar en Scala se debe instalar [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (*Scala-IDE for Eclipse* requiere JDK 6, 7 ó 8).
 
@@ -14,7 +14,7 @@ Además, aunque se puede desarrollar sin un IDE (sólo se necesita un compilador
     * Bajar el [Eclipse](http://www.eclipse.org/downloads/)[^1] que más te guste. Recomendamos Eclipse IDE for Java EE Developers.
     * Instalarle el plugin del [Scala IDE for Eclipse](http://scala-ide.org/download/current.html). Asegurarse que coincida la versión del plugin con la versión de Eclipse que hayas instalado. Para hacer esto, hacer click en *Help > Install New Software…* Luego hacer click en el boton *Add*; y en la nueva ventana escribir un nombre para identificarlo, y pegar el link que aparece en el sitio que se hizo referencia al principio de este punto. Hacer click en *Ok*. Seleccionar **todos** los ítems de *Scala IDE for Eclipse* y también *Scala Worksheet*, que se encuentra en *Scala IDE plugins (incubation)*. Poner siguiente, y luego aceptar los términos y condiciones (que siempre se leen ¬¬)
 
-##VERSIONES
+## Versiones
 
 Al día 17 de Agosto del 2015, las versiones de los entornos de trabajo son:
 
@@ -29,7 +29,7 @@ Al día 17 de Agosto del 2015, las versiones de los entornos de trabajo son:
     * Scala 2.11.7
     * Scala Worksheet 0.3.0
 
-#CREACIÓN DE PROYECTO CON TESTS
+# Creación de proyectos con tests
 
 Para crear un proyecto ir al menú *File > New > Scala Project*. Si no aparece la opción, seleccionar *Other...* y buscar ahí la opción *Scala Project*.
 
@@ -45,9 +45,9 @@ Para los tests tener en cuenta los siguientes imports:
 * import org.junit.Test: Para utilizar el tag @Test para indicar los tests, y que JUnit los reconozca y pueda correrlos.
 * import org.junit.Assert._: Para utilizar métodos como assertEquals, assertTrue, etc. Que se utilizan para determinar si el test fue exitoso o no.
 
-#EJEMPLO DE PROYECTO CON TESTS
+# Ejemplo de proyecto con tests
 
-####src.domain.Persona
+#### src.domain.Persona
 {% highlight scala %}
 package domain
 
@@ -58,7 +58,7 @@ class Persona (var edad) {
 }
 {% endhighlight %}
 
-####test.domain.Persona_Test
+#### test.domain.Persona_Test
 {% highlight scala %}
 package domain
 
@@ -81,10 +81,10 @@ class Persona_Test {
   }
 }{% endhighlight %}
 
-#CORRER TESTS
+# Correr Tests
 
 Para correr los tests, hacer click derecho en el paquete, archivo .scala o test particular, ir a la opción *Run As* y luego hacer click en *Scala JUnit Test*.
 
-####NOTAS AL PIE
+#### Notas al pie
 
 [^1]: Fijate de elegir uno que se adapte al sistema operativo de tu PC y que sea de 32 o 64 bits según corresponda (esta es la única herramienta dependiente de la plataforma, las demás deberían servir tanto para diferentes sistemas operativos como para diferentes arquitecturas de procesador).
