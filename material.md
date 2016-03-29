@@ -35,7 +35,7 @@ permalink: /material/
 
 ## Mixins y Traits
 
-- [Mixin-based Inheritance](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.128.8192&rep=rep1&type=pdf)- Bracha, Cook
+- [Mixin-based Inheritance](http://www.bracha.org/oopsla90.pdf)- Bracha, Cook
 - [Traits: Composable Units of Behaviour](http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf) - Nathanael Schärli, Stéphane Ducasse, Oscar Nierstrasz, and Andrew P. Black
 - [Stateful Traits](http://scg.unibe.ch/archive/papers/Berg07aStatefulTraits.pdf) - Alexandre Bergel, Stephane Ducasse, Oscar Nierstrasz, Roel Wuyts
 
