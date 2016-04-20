@@ -14,4 +14,5 @@ permalink: /cursada/
 </iframe>
 
 # Trabajos Prácticos
+(TP Grupal de Metaprogramación: Pattern Matching)[https://docs.google.com/document/d/1PTUz1gFQ5L20SCteoBOIk9uOAPM_pWfyuJonsCAUsSQ/edit?usp=sharing]
 
