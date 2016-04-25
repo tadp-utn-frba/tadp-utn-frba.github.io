@@ -4,7 +4,7 @@ title: Quienes Somos
 permalink: /quienessomos/
 ---
 
-##Docentes
+## Docentes
 
 <style>
     .team_member {

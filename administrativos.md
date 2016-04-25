@@ -4,19 +4,20 @@ title: Temas Administrativos
 permalink: /administrativos/
 ---
 
-##El programa
+## El programa
+
 Estamos modificando el programa para adaptarlo mejor a la realidad de nuestra facultad y de los nuevos conceptos que surgen en la ciencia/industria. Por eso el mejor lugar para conocer los temas abarcados por la materia es la planificación.
 El último programa estable de la materia pertenece al plan 2008, podés descargarlo desde [acá](/contenidos).
 
 
 Listas de discusión, de subscripción obligatoria para los alumnos
 
-**tadp_cursada@yahoogroups.com**: Grupo de cursada de TADP de este cuatrimestre para temas administrativos. Para suscribirse enviar un mail a tadp_cursada-subscribe@yahoogroups.com
+**tadp-cursada@googlegroups.com**: Grupo de cursada de TADP de este cuatrimestre para temas administrativos. Para suscribirse ir a  http://groups.google.com/group/tadp-cursada/
 
 Para suscribirse a la lista de tadp_cursada, hacer click en el link de abajo
 
 <center>
-<a href="http://groups.yahoo.com/group/tadp_cursada/join">
+<a href="http://groups.google.com/group/tadp-cursada/">
 <img src="/img/tadp_join_group.jpg" border="0"
   alt="Click here to join tadp_cursada"><br>Sumarse al grupo de tadp_cursada</a>
 </center>
