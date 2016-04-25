@@ -305,5 +305,37 @@ permalink: /quienessomos/
     </div>
     
     <div style="clear:both"></div>
+    
+        <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Erwin Debusschere</h2>
+                <span><a href="mailto:erwincdl@gmail.com">erwincdl@gmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+    
+    <div style="clear:both"></div>
+    
+        <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Fernando J. J. Petryszyn</h2>
+                <span><a href="mailto:fer.jjp@gmail.com">fer.jjp@gmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+    
+    <div style="clear:both"></div>
 
 </div>
