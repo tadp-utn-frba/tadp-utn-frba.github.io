@@ -23,7 +23,7 @@ permalink: /material/
 * Clase 15
 
 # Trabajos Prácticos
-* [TP1 Metaprogramación - Aspectos](https://docs.google.com/document/d/1eF2wDjBPDy2XH4Wc4V6PzIfVyj2Vz2DCRO99lt-q-GY)
+* [TP-1 Grupal de Metaprogramación: Pattern Matching](https://docs.google.com/document/d/1PTUz1gFQ5L20SCteoBOIk9uOAPM_pWfyuJonsCAUsSQ/edit?usp=sharing)
 
 # Guias
 
