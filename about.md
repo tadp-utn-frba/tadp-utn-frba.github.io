@@ -186,7 +186,7 @@ permalink: /quienessomos/
         <div class="right">
             <div class="description">
                 <h2>Ivan Luetich</h2>
-                <span><a href="mailto:iluetich@gmail.com">iluetich@gmail.com</a></span>
+                <span><a href="mailto:ivan.luetich93@gmail.com">ivan.luetich93@gmail.com</a></span>
             </div>
         </div>
 
