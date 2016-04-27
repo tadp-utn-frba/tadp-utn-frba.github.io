@@ -6,9 +6,9 @@ permalink: /material/
 
 # Scripts de clase
 
-* [Clase 1 - Intro a la materia y Mixins](https://docs.google.com/document/d/1BagIDjjsrU7J_Qs6wyJan2lIxO9gqHZrb8aO-arxbFA/pub)
-* [Clase 2 - Mixins: Resolución de Conflictos](https://docs.google.com/document/d/19mFtsjb3OE_9r9IejZMCRWrFPsQp6X3y-9RJz5OvHek/pub)
-* [Clase 3 - Metaprogramación](https://docs.google.com/document/d/1NSRc0soYPOuwh2KY8eU_ioG3GIhJFQgc0HLn4GxznV0/pub)
+* [Clase 1 - Intro a la materia y Mixins](/scripts/clase_1/)
+* [Clase 2 - Mixins: Resolución de Conflictos](/scripts/clase_2/)
+* [Clase 3 - Metaprogramación](/scripts/clase_3/)
 * [Clase 4 - Metabuilder (instance_eval y method missing)](https://docs.google.com/document/d/1xWP73pAz_PjVWP3vuSYv2kQfTlYFCzdAH-Yzs6Re0vQ/pub)
 * [Clase 5 - Prototype](https://docs.google.com/document/d/1UTn6Qzi_MyVQlxfezJa_6Fg_NuKYGfjTJ8fTvIq8CQQ/pub)
 * [Clase 6 - Multimethods](https://goo.gl/KMC39N)
