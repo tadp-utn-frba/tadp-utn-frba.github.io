@@ -130,7 +130,7 @@ permalink: /quienessomos/
 
     <div style="clear:both"></div>
     
-   <div class='team_member'>
+    <div class='team_member'>
       <div class="left">
           <img src="/img/UserImage.png"
                class="img-circle team_face">
@@ -142,11 +142,11 @@ permalink: /quienessomos/
           </div>
       </div>
    
-   </div>
+    </div>
    
-   <div style="clear:both"></div>
+    <div style="clear:both"></div>
    
-   <div class='team_member'>
+    <div class='team_member'>
       <div class="left">
           <img src="/img/UserImage.png"
                class="img-circle team_face">
@@ -158,11 +158,11 @@ permalink: /quienessomos/
           </div>
       </div>
    
-   </div>
+    </div>
    
-   <div style="clear:both"></div>
+    <div style="clear:both"></div>
    
-   <div class='team_member'>
+    <div class='team_member'>
       <div class="left">
           <img src="/img/UserImage.png"
                class="img-circle team_face">
@@ -174,9 +174,9 @@ permalink: /quienessomos/
           </div>
       </div>
    
-   </div>
+    </div>
       
-   <div style="clear:both"></div>
+    <div style="clear:both"></div>
 
     <div class='team_member'>
         <div class="left">
@@ -186,7 +186,71 @@ permalink: /quienessomos/
         <div class="right">
             <div class="description">
                 <h2>Ivan Luetich</h2>
-                <span><a href="mailto:iluetich@gmail.com">iluetich@gmail.com</a></span>
+                <span><a href="mailto:ivan.luetich93@gmail.com">ivan.luetich93@gmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="clear:both"></div>
+    
+    <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Leandro Spir</h2>
+                <span><a href="mailto:leandrospir@gmail.com">leandrospir@gmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="clear:both"></div>
+    
+    <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Bianca Petracca</h2>
+                <span><a href="mailto:biancapetracca@gmail.com">biancapetracca@gmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+    
+    <div style="clear:both"></div>
+    
+    <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Matias Martino</h2>
+                <span><a href="mailto:matiasfmartino@gmail.com">matiasfmartino@gmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="clear:both"></div>
+    
+    <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Martin Loguancio (Lowy)</h2>
+                <span><a href="mailto:martin.loguancio@gmail.com">martin.loguancio@gmail.com</a></span>
             </div>
         </div>
 
@@ -194,6 +258,84 @@ permalink: /quienessomos/
 
     <div style="clear:both"></div>
 
+    <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Juan Manuel Fernandes dos Santos</h2>
+                <span><a href="mailto:juanmanuel9794@hotmail.com">juanmanuel9794@hotmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+    
+    <div style="clear:both"></div>
+    
+    <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Agustín Hodes</h2>
+                <span><a href="mailto:hodesagustin@gmail.com">hodesagustin@gmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+    
+    <div style="clear:both"></div>
    
+    <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Patricio Contreras (Pato)</h2>
+                <span><a href="mailto:pato94_06@hotmail.com">pato94_06@hotmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+    
+    <div style="clear:both"></div>
+    
+        <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Erwin Debusschere</h2>
+                <span><a href="mailto:erwincdl@gmail.com">erwincdl@gmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+    
+    <div style="clear:both"></div>
+    
+        <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Fernando J. J. Petryszyn</h2>
+                <span><a href="mailto:fer.jjp@gmail.com">fer.jjp@gmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+    
+    <div style="clear:both"></div>
 
 </div>
