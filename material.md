@@ -45,10 +45,12 @@ permalink: /material/
 - [RubyMonk](https://rubymonk.com/)
 
 ## Scala:
-- Martin Odersky - "Progamming in Scala" - Libro del creador de Scala
-- http://paco.uqbar-project.org/te/scala - Página compartida por materias de varias universidades donde se da una introducción al lenguaje, y varios links interesantes para profundizar.
+- [Martin Odersky - "Progamming in Scala"](http://www.artima.com/pins1ed/) - Libro del creador de Scala
+- [http://paco.uqbar-project.org/te/scala](http://paco.uqbar-project.org/te/scala) - Página compartida por materias de varias universidades donde se da una introducción al lenguaje, y varios links interesantes para profundizar.
 - Paul Chiusano and Rúnar Bjarnason - [Functional Programming in Scala](http://www.manning.com/bjarnason/)
 - [Scala Cheatsheet](http://docs.scala-lang.org/cheatsheets/) - Referencia rápida a la sintaxis de Scala
+- [The Neophyte's Guide to Scala](http://danielwestheide.com/scala/neophytes.html) - Guia de scala para neófitos
+- [Scala Exercies - 47 Degrees](http://scala-exercises.47deg.com/) - Ejercicios para practicar con scala
 
 ## SBT:
 - [http://www.scala-sbt.org/0.13/tutorial/index.html](http://www.scala-sbt.org/0.13/tutorial/index.html) - Tutorial oficial de SBT
