@@ -33,13 +33,13 @@ permalink: /material/
 
 # Material Extra y Bibliografía
 
-## Mixins y Traits
+## Mixins y Traits:
 
 - [Mixin-based Inheritance](http://www.bracha.org/oopsla90.pdf)- Bracha, Cook
 - [Traits: Composable Units of Behaviour](http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf) - Nathanael Schärli, Stéphane Ducasse, Oscar Nierstrasz, and Andrew P. Black
 - [Stateful Traits](http://scg.unibe.ch/archive/papers/Berg07aStatefulTraits.pdf) - Alexandre Bergel, Stephane Ducasse, Oscar Nierstrasz, Roel Wuyts
 
-## Ruby
+## Ruby:
  
 - Paolo Perrota - [Metaprogramming Ruby: Program Like the Ruby Pros](https://pragprog.com/book/ppmetr/metaprogramming-ruby)
 - [RubyMonk](https://rubymonk.com/)
@@ -51,6 +51,9 @@ permalink: /material/
 - [Scala Cheatsheet](http://docs.scala-lang.org/cheatsheets/) - Referencia rápida a la sintaxis de Scala
 - [The Neophyte's Guide to Scala](http://danielwestheide.com/scala/neophytes.html) - Guia de scala para neófitos
 - [Scala Exercies - 47 Degrees](http://scala-exercises.47deg.com/) - Ejercicios para practicar con scala
+
+## Mónadas:
+- [Dan Piponi - "You Could Have Invented Monads!"](http://blog.sigfpe.com/2006/08/you-could-have-invented-monads-and.html) - Mónadas en Haskell
 
 ## SBT:
 - [http://www.scala-sbt.org/0.13/tutorial/index.html](http://www.scala-sbt.org/0.13/tutorial/index.html) - Tutorial oficial de SBT
