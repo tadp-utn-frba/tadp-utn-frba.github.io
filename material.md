@@ -11,7 +11,7 @@ permalink: /material/
 * [Clase 3 - Metaprogramación](/scripts/clase_3/)
 * [Clase 4 - Metabuilder (instance_eval y method missing)](https://docs.google.com/document/d/1xWP73pAz_PjVWP3vuSYv2kQfTlYFCzdAH-Yzs6Re0vQ/pub)
 * [Clase 5 - Prototype](https://docs.google.com/document/d/1UTn6Qzi_MyVQlxfezJa_6Fg_NuKYGfjTJ8fTvIq8CQQ/pub)
-* [Clase 6 - Multimethods](https://goo.gl/KMC39N)
+* [Clase 6 - Multimethods](https://docs.google.com/document/d/15WovovWUZ5NB1noiuHG7nvK3YTjY3Gcs8K7QQnLDaMY/pub)
 * [Clase 7 - Intro a chequeo estático de tipos en Objetos](https://docs.google.com/document/d/1IK_KPzYW7SgW0GAghJ8Bv5MCIezZXJCIVlbX8JQGSxU/pub)
 * [Clase 8 - Contratos, Binding, Type Arguments, Varianza](https://docs.google.com/document/d/1Rb1ce0XpAzu6oSeBKlmj1wxbJmMIORNway52ZNjhiBo/pub)
 * [Clase 9 - Pattern Matching vs Polimorfismo, Inmutabilidad, Case Classes](https://docs.google.com/document/d/1X4j0P2WchO4Y_omSPWxtuPSAiwM1hAD0jivCZqf8zVY/pub)
