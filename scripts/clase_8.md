@@ -180,6 +180,7 @@ En el caso de Set[T], el tipo no acepta nada que no sea el T exacto declarado. E
 ---------------
 
 Veamos un ejemplo de algo parecido:
+
 ~~~scala
 var f : Vaca => Vaca
 
@@ -197,13 +198,13 @@ f(new Vaca).ordeñate
 Cuales de las funciones definidas podrían guardarse en f ?
 
 ~~~scala
-f = g	// Ok. Recibo una vaca y devuelvo una vaca. No problem.
-f = h	// No! Si h devuelve un animal no puedo garantizar que entienda muji!
-f = i	// Esto vale. La VacaLoca es una vaca y la puedo usar tal.
-f = j	// No! j espera una VacaLoca, no puedo decir que espera sólo una vaca.
-      // Si le paso una vaca a f y adentro le manda reite() se rompería!
-f = k	// Si! k sólo pide que su parámetro sea un Animal y le habla como tal.
-      // Entonces puedo pasarle una Vaca, que es un Animal.
+f = g  // Ok. Recibo una vaca y devuelvo una vaca. No problem.
+f = h  // No! Si h devuelve un animal no puedo garantizar que entienda muji!
+f = i  // Esto vale. La VacaLoca es una vaca y la puedo usar tal.
+f = j  // No! j espera una VacaLoca, no puedo decir que espera sólo una vaca.
+       // Si le paso una vaca a f y adentro le manda reite() se rompería!
+f = k  // Si! k sólo pide que su parámetro sea un Animal y le habla como tal.
+       // Entonces puedo pasarle una Vaca, que es un Animal.
 ~~~
 
 En el caso de las funciones, el parámetro de tipo asociado al retorno varía en el mismo sentido que la jerarquía (o sea, admite casos más ESPECIFICOS del tipo que tiene declarado en el parámetro). A esto le decimos ser **Covariante**.
