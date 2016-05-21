@@ -13,7 +13,7 @@ permalink: /material/
 * [Clase 5 - Prototype](https://docs.google.com/document/d/1UTn6Qzi_MyVQlxfezJa_6Fg_NuKYGfjTJ8fTvIq8CQQ/pub)
 * [Clase 6 - Multimethods](https://docs.google.com/document/d/15WovovWUZ5NB1noiuHG7nvK3YTjY3Gcs8K7QQnLDaMY/pub)
 * [Clase 7 - Intro a chequeo estático de tipos en Objetos](https://docs.google.com/document/d/1IK_KPzYW7SgW0GAghJ8Bv5MCIezZXJCIVlbX8JQGSxU/pub)
-* [Clase 8 - Contratos, Binding, Type Arguments, Varianza](https://docs.google.com/document/d/1Rb1ce0XpAzu6oSeBKlmj1wxbJmMIORNway52ZNjhiBo/pub)
+* [Clase 8 - Contratos, Binding, Type Arguments, Varianza](/scripts/clase_8/)
 * [Clase 9 - Pattern Matching vs Polimorfismo, Inmutabilidad, Case Classes](https://docs.google.com/document/d/1X4j0P2WchO4Y_omSPWxtuPSAiwM1hAD0jivCZqf8zVY/pub)
 * [Clase 10 - Comportamiento vs Estructura, Mónadas](https://docs.google.com/document/d/1QHCli5GN3ijDzxfg7h4bAOUqxfzXuCHfm4FEUkUx4WU/pub)
 * [Clase 11 - Ejercicio de Diseño Objetos Funcional parte 1](https://docs.google.com/document/d/1is7QLgQ573vDwxRAuLA-bZzA-IKVW_UgGsocNQGMRu4/edit?usp=sharing)
