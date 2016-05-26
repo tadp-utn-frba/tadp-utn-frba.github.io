@@ -30,6 +30,7 @@ permalink: /material/
 * [Instalación de entorno Ruby + Rubymine y creación de proyectos](/guias/ruby)
 * [Guía de Lenguaje de Ruby](https://goo.gl/sRroc0)
 * [Instalación de entorno Scala-IDE + Creación de proyectos con tests](/guias/scala)
+* [Guía de Lenguaje de Scala](https://goo.gl/98S7xR)
 
 # Material Extra y Bibliografía
 
