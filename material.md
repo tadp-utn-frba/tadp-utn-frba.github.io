@@ -11,15 +11,15 @@ permalink: /material/
 * [Clase 3 - Metaprogramación](/scripts/clase_3/)
 * [Clase 4 - Metabuilder (instance_eval y method missing)](https://docs.google.com/document/d/1xWP73pAz_PjVWP3vuSYv2kQfTlYFCzdAH-Yzs6Re0vQ/pub)
 * [Clase 5 - Prototype](https://docs.google.com/document/d/1UTn6Qzi_MyVQlxfezJa_6Fg_NuKYGfjTJ8fTvIq8CQQ/pub)
-* [Clase 6 - Multimethods](https://goo.gl/KMC39N)
+* [Clase 6 - Multimethods](https://docs.google.com/document/d/15WovovWUZ5NB1noiuHG7nvK3YTjY3Gcs8K7QQnLDaMY/pub)
 * [Clase 7 - Intro a chequeo estático de tipos en Objetos](https://docs.google.com/document/d/1IK_KPzYW7SgW0GAghJ8Bv5MCIezZXJCIVlbX8JQGSxU/pub)
-* [Clase 8 - Contratos, Binding, Type Arguments, Varianza](https://docs.google.com/document/d/1Rb1ce0XpAzu6oSeBKlmj1wxbJmMIORNway52ZNjhiBo/pub)
+* [Clase 8 - Contratos, Binding, Type Arguments, Varianza](/scripts/clase_8/)
 * [Clase 9 - Pattern Matching vs Polimorfismo, Inmutabilidad, Case Classes](https://docs.google.com/document/d/1X4j0P2WchO4Y_omSPWxtuPSAiwM1hAD0jivCZqf8zVY/pub)
 * [Clase 10 - Comportamiento vs Estructura, Mónadas](https://docs.google.com/document/d/1QHCli5GN3ijDzxfg7h4bAOUqxfzXuCHfm4FEUkUx4WU/pub)
 * [Clase 11 - Ejercicio de Diseño Objetos Funcional parte 1](https://docs.google.com/document/d/1is7QLgQ573vDwxRAuLA-bZzA-IKVW_UgGsocNQGMRu4/edit?usp=sharing)
 * [Clase 12 - Ejercicio de Diseño Objetos Funcional parte 2](https://docs.google.com/document/d/1is7QLgQ573vDwxRAuLA-bZzA-IKVW_UgGsocNQGMRu4/edit?usp=sharing)
 * [Clase 13 - Implicits + Typeclasses](https://docs.google.com/document/d/1k5pbZdXZs_RNJgMIBH0JyoCcncEFkB3ks7y_JSVTpZY/pub)
-* [Clase 14 - Relfection en Scala](https://docs.google.com/document/d/1s9NhfG0_mD0w0Hp29QWOpd8KtXyGS2bUipAkuSP34tc/pub)
+* [Clase 14 - Reflection en Scala](https://docs.google.com/document/d/1s9NhfG0_mD0w0Hp29QWOpd8KtXyGS2bUipAkuSP34tc/pub)
 * Clase 15
 
 # Trabajos Prácticos
@@ -30,25 +30,31 @@ permalink: /material/
 * [Instalación de entorno Ruby + Rubymine y creación de proyectos](/guias/ruby)
 * [Guía de Lenguaje de Ruby](https://goo.gl/sRroc0)
 * [Instalación de entorno Scala-IDE + Creación de proyectos con tests](/guias/scala)
+* [Guía de Lenguaje de Scala](https://goo.gl/98S7xR)
 
 # Material Extra y Bibliografía
 
-## Mixins y Traits
+## Mixins y Traits:
 
 - [Mixin-based Inheritance](http://www.bracha.org/oopsla90.pdf)- Bracha, Cook
 - [Traits: Composable Units of Behaviour](http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf) - Nathanael Schärli, Stéphane Ducasse, Oscar Nierstrasz, and Andrew P. Black
 - [Stateful Traits](http://scg.unibe.ch/archive/papers/Berg07aStatefulTraits.pdf) - Alexandre Bergel, Stephane Ducasse, Oscar Nierstrasz, Roel Wuyts
 
-## Ruby
+## Ruby:
  
 - Paolo Perrota - [Metaprogramming Ruby: Program Like the Ruby Pros](https://pragprog.com/book/ppmetr/metaprogramming-ruby)
 - [RubyMonk](https://rubymonk.com/)
 
 ## Scala:
-- Martin Odersky - "Progamming in Scala" - Libro del creador de Scala
-- http://paco.uqbar-project.org/te/scala - Página compartida por materias de varias universidades donde se da una introducción al lenguaje, y varios links interesantes para profundizar.
+- [Martin Odersky - "Progamming in Scala"](http://www.artima.com/pins1ed/) - Libro del creador de Scala
+- [http://paco.uqbar-project.org/te/scala](http://paco.uqbar-project.org/te/scala) - Página compartida por materias de varias universidades donde se da una introducción al lenguaje, y varios links interesantes para profundizar.
 - Paul Chiusano and Rúnar Bjarnason - [Functional Programming in Scala](http://www.manning.com/bjarnason/)
 - [Scala Cheatsheet](http://docs.scala-lang.org/cheatsheets/) - Referencia rápida a la sintaxis de Scala
+- [The Neophyte's Guide to Scala](http://danielwestheide.com/scala/neophytes.html) - Guia de scala para neófitos
+- [Scala Exercies - 47 Degrees](http://scala-exercises.47deg.com/) - Ejercicios para practicar con scala
+
+## Mónadas:
+- [Dan Piponi - "You Could Have Invented Monads!"](http://blog.sigfpe.com/2006/08/you-could-have-invented-monads-and.html) - Mónadas en Haskell
 
 ## SBT:
 - [http://www.scala-sbt.org/0.13/tutorial/index.html](http://www.scala-sbt.org/0.13/tutorial/index.html) - Tutorial oficial de SBT

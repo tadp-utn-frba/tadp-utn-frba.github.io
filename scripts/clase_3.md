@@ -1,6 +1,6 @@
 ---
 layout: page
-description: Script Clase 3 TADP 2C2016
+description: Script Clase 3 TADP 1C2016
 ---
 
 # METAPROGRAMACION
