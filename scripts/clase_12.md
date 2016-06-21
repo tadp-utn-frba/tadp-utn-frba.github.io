@@ -1,3 +1,8 @@
+---
+layout: page
+description: Script Clase 12 TADP 1C2016
+---
+
 # Objetos + Funcional
 Vamos a construir una solucion funcional de un dominio y luego vamos a ir introduciendo y combinando conceptos de OOP.
 
