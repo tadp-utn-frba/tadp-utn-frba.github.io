@@ -40,7 +40,8 @@ Entonces, una *Case Class* es simplemente *una clase cualquiera* al que el compi
 Sólo con este poquito las diferencias que se producen en el cógido son enormes. Acá hay dos
 implementaciones de la misma(\*) clase, una usando *case classes* y una sin ellas.
 
-###Con Case Classes
+### Con Case Classes
+
 ```scala
 // Properties de sólo lectura
 // Copy
@@ -54,7 +55,8 @@ case class Materia(nombre: String, ciclo: Int)(criterioDeAprobación: Alumno => 
 }
 ```
 
-###Sin Case Classes
+### Sin Case Classes
+
 ```scala
 class Materia {
 	// Properties de sólo lectura
