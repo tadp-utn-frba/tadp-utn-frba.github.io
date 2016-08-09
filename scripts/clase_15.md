@@ -500,6 +500,7 @@ def persistirConSQL[T : PersistibleConSQL](obj: T) { ??? } // Acá se ve más cl
 ``` 
 
 Uh... Pero ahora ya no está el parámetro "persistible"! Cómo consigo la instancia? Scala provee una función llamada *implicitly* para estas situaciones:
+
 ```scala
 def persistirConSQL[T: PersistibleConSQL](obj: T) = {
 	val persistible - implicitly[PersistibleConSQL[T]]
@@ -717,11 +718,11 @@ Noten que no podemos pasarle a la macro el parámetro extra que el StringContext
 en base al contexto. 
  
 ## Referencias
-- http://docs.scala-lang.org/tutorials/tour/case-classes.html
-- http://docs.scala-lang.org/overviews/core/string-interpolation.html
-- http://docs.scala-lang.org/overviews/core/implicit-classes.html
-- http://docs.scala-lang.org/tutorials/tour/implicit-conversions
-- http://docs.scala-lang.org/tutorials/tour/implicit-parameters.html
-- http://docs.scala-lang.org/tutorials/FAQ/finding-implicits.html
-- http://docs.scala-lang.org/overviews/macros/overview.html
-- http://docs.scala-lang.org/overviews/macros/quasiquotes.html
+- [http://docs.scala-lang.org/tutorials/tour/case-classes.html](http://docs.scala-lang.org/tutorials/tour/case-classes.html)
+- [http://docs.scala-lang.org/overviews/core/string-interpolation.html](http://docs.scala-lang.org/overviews/core/string-interpolation.html)
+- [http://docs.scala-lang.org/overviews/core/implicit-classes.html](http://docs.scala-lang.org/overviews/core/implicit-classes.html)
+- [http://docs.scala-lang.org/tutorials/tour/implicit-conversions](http://docs.scala-lang.org/tutorials/tour/implicit-conversions)
+- [http://docs.scala-lang.org/tutorials/tour/implicit-parameters.html](http://docs.scala-lang.org/tutorials/tour/implicit-parameters.html)
+- [http://docs.scala-lang.org/tutorials/FAQ/finding-implicits.html](http://docs.scala-lang.org/tutorials/FAQ/finding-implicits.html)
+- [http://docs.scala-lang.org/overviews/macros/overview.html](http://docs.scala-lang.org/overviews/macros/overview.html)
+- [http://docs.scala-lang.org/overviews/macros/quasiquotes.html](http://docs.scala-lang.org/overviews/macros/quasiquotes.html)
