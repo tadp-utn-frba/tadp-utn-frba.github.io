@@ -1,8 +1,8 @@
-+---
-+layout: page
-+description: Script Clase 15 TADP 1C2016
-+---
-+
+---
+layout: page
+description: Script Clase 15 TADP 1C2016
+---
+
 
 # El compilador y usted
 
