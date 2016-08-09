@@ -20,7 +20,7 @@ permalink: /material/
 * [Clase 12 - Objetos + Funcional](/scripts/clase_12/)
 * [Clase 13 - Implicits + Typeclasses](https://docs.google.com/document/d/1k5pbZdXZs_RNJgMIBH0JyoCcncEFkB3ks7y_JSVTpZY/pub)
 * [Clase 14 - Reflection en Scala](https://docs.google.com/document/d/1s9NhfG0_mD0w0Hp29QWOpd8KtXyGS2bUipAkuSP34tc/pub)
-* Clase 15
+* [Clase 15 - Macros en Scala](/scripts/clase_15/)
 
 # Trabajos Prácticos
 * [TP-1 Grupal de Metaprogramación: Pattern Matching](https://docs.google.com/document/d/1PTUz1gFQ5L20SCteoBOIk9uOAPM_pWfyuJonsCAUsSQ/edit?usp=sharing)
