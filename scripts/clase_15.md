@@ -1,3 +1,9 @@
++---
++layout: page
++description: Script Clase 15 TADP 1C2016
++---
++
+
 # El compilador y usted
 
 Uno de los features más interesantes que ofrece un lenguaje es la capacidad de extenderlo. En mayor o menor
