@@ -23,8 +23,8 @@ permalink: /material/
 * [Clase 15 - Macros en Scala](/scripts/clase_15/)
 
 # Trabajos Prácticos
-* [TP-1 Grupal de Metaprogramación: Pattern Matching](https://docs.google.com/document/d/1PTUz1gFQ5L20SCteoBOIk9uOAPM_pWfyuJonsCAUsSQ/edit?usp=sharing)
-* [TP-2 Grupal de Objeto-Funcional: TAdeQuest](https://docs.google.com/document/d/1eKBYTUgI7W3YH97ZXMrNz6IUijBY1emXscYPLuea22Y)
+* [TP-1 Grupal de Metaprogramación] To be determined.
+* [TP-2 Grupal de Objeto-Funcional] To be determined.
 
 # Guias
 
