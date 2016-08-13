@@ -7,10 +7,14 @@ permalink: /quienessomos/
 ## Docentes
 
 <style>
+    .team {
+        margin-bottom: 180px;
+    }
+
     .team_member {
         width: 100%;
         margin-top: 50px;
-        margin-bottom: 50px;
+        margin-bottom: 80px;
     }
 
     .team_member .left {
