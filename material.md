@@ -10,17 +10,16 @@ permalink: /material/
 * [Clase 2 - Mixins: Resolución de Conflictos](/scripts/clase_2/)
 * [Clase 3 - Metaprogramación](/scripts/clase_3/)
 * [Clase 4 - Metabuilder (instance_eval y method missing)](/scripts/clase_4/)
-* [Clase 5 - Prototype](https://docs.google.com/document/d/1UTn6Qzi_MyVQlxfezJa_6Fg_NuKYGfjTJ8fTvIq8CQQ/pub)
-* [Clase 6 - Multimethods](https://docs.google.com/document/d/15WovovWUZ5NB1noiuHG7nvK3YTjY3Gcs8K7QQnLDaMY/pub)
+* [Clase 5 - Prototype](/scripts/clase_5/)
+* [Clase 6 - Multimethods](/scripts/clase_6/)
 * [Clase 7 - Intro a chequeo estático de tipos en Objetos](/scripts/clase_7/)
 * [Clase 8 - Contratos, Binding, Type Arguments, Varianza](/scripts/clase_8/)
 * [Clase 9 - Pattern Matching vs Polimorfismo, Inmutabilidad, Case Classes](/scripts/clase_9/)
 * [Clase 10 - Comportamiento vs Estructura, Mónadas](/scripts/clase_10/)
-* [Clase 11 - Ejercicio de Diseño Objetos Funcional](https://docs.google.com/document/d/1is7QLgQ573vDwxRAuLA-bZzA-IKVW_UgGsocNQGMRu4/edit?usp=sharing)
+* [Clase 11 - Ejercicio de Diseño Objetos Funcional](/scripts/clase_11/)
 * [Clase 12 - Objetos + Funcional](/scripts/clase_12/)
-* [Clase 13 - Implicits + Typeclasses](https://docs.google.com/document/d/1k5pbZdXZs_RNJgMIBH0JyoCcncEFkB3ks7y_JSVTpZY/pub)
-* [Clase 14 - Reflection en Scala](https://docs.google.com/document/d/1s9NhfG0_mD0w0Hp29QWOpd8KtXyGS2bUipAkuSP34tc/pub)
-* [Clase 15 - Macros en Scala](/scripts/clase_15/)
+* [Clase 13 - Reflection en Scala](https://docs.google.com/document/d/1s9NhfG0_mD0w0Hp29QWOpd8KtXyGS2bUipAkuSP34tc/pub)
+* [Clase 14 - Macros en Scala](/scripts/clase_14/)
 
 # Trabajos Prácticos
 * [TP-1 Grupal de Metaprogramación] To be determined.
