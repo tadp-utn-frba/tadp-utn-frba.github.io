@@ -16,7 +16,7 @@ database:
 dependencies:
   override:
    - gem install rake
-   - bundle install
+   - bundle install --jobs=4
  
 test:
   override:
