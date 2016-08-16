@@ -4,7 +4,6 @@ require "tmpdir"
 require "bundler/setup"
 require "jekyll"
 
-
 # Change your GitHub reponame
 GITHUB_REPONAME = "tadp-utn-frba/tadp-utn-frba.github.io"
 
