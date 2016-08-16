@@ -14,7 +14,7 @@ database:
     - echo "Skipping DB section."
     
 dependencies:
-  pre:
+  override:
    - bundle install
  
 test:
