@@ -4,6 +4,11 @@ machine:
   ruby:
     version: 2.3.1
     
+general:
+  branches:
+    ignore:
+    - master
+    
 checkout:
   pre:
   - git config --global user.email "tadp.bot@gmail.com"
