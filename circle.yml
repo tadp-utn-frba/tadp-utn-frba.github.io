@@ -19,7 +19,7 @@ dependencies:
    - bundle install
  
 test:
-  post:
+  override:
    - bundle exec jekyll build
-   - rake generate
-   - bundle exec htmlproofer ./_site
+   - rake publish
+  # - bundle exec htmlproofer ./_site
