@@ -1,0 +1,20 @@
+machine:
+  timezone:
+    America/Argentina/Buenos_Aires
+  ruby:
+    version: 2.3.1
+    
+checkout:
+  pre:
+  - git config --global user.email "tadp.bot@gmail.com"
+  - git config --global user.name "GrispinoCI"
+ 
+    
+database:
+  override:
+    - echo "Skipping DB section."
+ 
+ test:
+  post:
+   - bundle exec jekyll build
+   - bundle exec htmlproofer ./_site
