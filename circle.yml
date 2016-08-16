@@ -4,6 +4,11 @@ machine:
   ruby:
     version: 2.3.1
     
+general:
+  branches:
+    ignore:
+    - master
+    
 checkout:
   pre:
   - git config --global user.email "tadp.bot@gmail.com"
@@ -15,9 +20,11 @@ database:
     
 dependencies:
   override:
-   - bundle install
+   - gem install rake
+   - bundle install --jobs=10 --retry=3
  
 test:
-  post:
+  override:
    - bundle exec jekyll build
-   - bundle exec htmlproofer ./_site
+   - rake publish
+  # - bundle exec htmlproofer ./_site

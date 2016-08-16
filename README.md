@@ -1,5 +1,7 @@
 #Pagina "Oficial" de TADP UTN FRBA
 
+[![CircleCI](https://circleci.com/gh/tadp-utn-frba/tadp-utn-frba.github.io.svg?style=svg)](https://circleci.com/gh/tadp-utn-frba/tadp-utn-frba.github.io)
+
 ##Requisitos
 
 * Jekyll
