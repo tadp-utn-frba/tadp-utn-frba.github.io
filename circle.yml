@@ -8,11 +8,14 @@ checkout:
   pre:
   - git config --global user.email "tadp.bot@gmail.com"
   - git config --global user.name "GrispinoCI"
- 
-    
+
 database:
   override:
     - echo "Skipping DB section."
+    
+dependencies:
+  pre:
+   - bundle install
  
 test:
   post:
