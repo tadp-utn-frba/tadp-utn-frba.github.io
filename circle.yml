@@ -14,7 +14,7 @@ database:
   override:
     - echo "Skipping DB section."
  
- test:
+test:
   post:
    - bundle exec jekyll build
    - bundle exec htmlproofer ./_site
