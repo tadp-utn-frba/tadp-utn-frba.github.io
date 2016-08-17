@@ -4,9 +4,10 @@ require "tmpdir"
 require "bundler/setup"
 require "jekyll"
 
+require 'html-proofer'
+
 # Change your GitHub reponame
 GITHUB_REPONAME = "tadp-utn-frba/tadp-utn-frba.github.io"
-
 
 desc "Generate blog files"
 task :generate do
@@ -16,6 +17,10 @@ task :generate do
   })).process
 end
 
+desc "Check the generated page with html proofer"
+task :test do
+  HTMLProofer.check_directory("./_site", {:external_only => true}).run
+end
 
 desc "Generate and publish blog to gh-pages"
 task :publish => [:generate] do
