@@ -19,7 +19,16 @@ end
 
 desc "Check the generated page with html proofer"
 task :test do
-  HTMLProofer.check_directory("./_site", {:external_only => true}).run
+  begin
+    HTMLProofer.check_directory("./_site", {:external_only => true,
+                                            :parallel => { :in_processes => 3},
+                                            :url_ignore => [/rubymonk.com/]}).run
+  rescue => e
+    puts "Task #{task_name} failed"
+    puts "#{e.class}: #{e.message}"
+  end
+  puts "Finished running all tests"
+
 end
 
 desc "Generate and publish blog to gh-pages"
