@@ -9,8 +9,6 @@ disqus:
 
 # Build settings
 markdown: kramdown
-kramdown:
-  syntax_highlighter: rouge
 highlighter: rouge
 permalink: pretty
 paginate: 5
