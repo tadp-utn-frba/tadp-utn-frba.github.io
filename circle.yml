@@ -26,5 +26,9 @@ dependencies:
 test:
   override:
    - bundle exec jekyll build
-   - rake publish
-  # - bundle exec htmlproofer ./_site
+  
+deployment:
+  publish:
+    branch: source
+    commands:
+      - rake publish
