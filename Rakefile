@@ -13,7 +13,8 @@ task :generate do
   Jekyll::Site.new(Jekyll.configuration({
     "source"      => ".",
     "destination" => "_site",
-    'highlighter'   => 'rouge'
+    'highlighter'   => 'rouge',
+    'markdown'      => 'kramdown',
   })).process
 end
 
