@@ -12,7 +12,8 @@ desc "Generate blog files"
 task :generate do
   Jekyll::Site.new(Jekyll.configuration({
     "source"      => ".",
-    "destination" => "_site"
+    "destination" => "_site",
+    'highlighter'   => 'rouge'
   })).process
 end
 
