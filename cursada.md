@@ -14,5 +14,5 @@ permalink: /cursada/
 </iframe>
 
 # Trabajos Prácticos
-- [TP Grupal de Metaprogramación: Pattern Matching](https://docs.google.com/document/d/1PTUz1gFQ5L20SCteoBOIk9uOAPM_pWfyuJonsCAUsSQ/edit?usp=sharing)
-- [TP Grupal de Funcional: TAdeQuest](https://docs.google.com/document/d/1eKBYTUgI7W3YH97ZXMrNz6IUijBY1emXscYPLuea22Y/edit?usp=sharing)
+- [TP Grupal de Metaprogramación: TADsPpec](https://docs.google.com/document/d/1WrVDh6wCzBG2GrlapJSnrSn6J4TpcF_E6iOQJ7Ppr6U/pub)
+- [TP Grupal de Funcional: TBA]()
