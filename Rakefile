@@ -22,7 +22,7 @@ task :test do
   begin
     HTMLProofer.check_directory("./_site", {:external_only => true,
                                             :parallel => { :in_processes => 3},
-                                            :url_ignore => [/rubymonk.com/]}).run
+                                            :url_ignore => [/rubymonk.com/, /tadp-utn-frba.github.io/]}).run
   rescue => e
     puts "Task #{task_name} failed"
     puts "#{e.class}: #{e.message}"
