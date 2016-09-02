@@ -18,7 +18,7 @@ permalink: /material/
 * [Clase 10 - Comportamiento vs Estructura, Mónadas](/scripts/clase_10/)
 * [Clase 11 - Ejercicio de Diseño Objetos Funcional](/scripts/clase_11/)
 * [Clase 12 - Objetos + Funcional](/scripts/clase_12/)
-* [Clase 13 - Reflection en Scala](https://docs.google.com/document/d/1s9NhfG0_mD0w0Hp29QWOpd8KtXyGS2bUipAkuSP34tc/pub)
+* [Clase 13 - Reflection en Scala](/scripts/clase_13/)
 * [Clase 14 - Macros en Scala](/scripts/clase_14/)
 
 # Trabajos Prácticos
