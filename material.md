@@ -22,7 +22,7 @@ permalink: /material/
 * [Clase 14 - Macros en Scala](/scripts/clase_14/)
 
 # Trabajos Prácticos
-* [TP-1 Grupal de Metaprogramación] To be determined.
+* [TP-1 Grupal de Metaprogramación] (https://docs.google.com/document/d/1WrVDh6wCzBG2GrlapJSnrSn6J4TpcF_E6iOQJ7Ppr6U/pub)
 * [TP-2 Grupal de Objeto-Funcional] To be determined.
 
 # Guias
