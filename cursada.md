@@ -15,4 +15,4 @@ permalink: /cursada/
 
 # Trabajos Prácticos
 - [TP Grupal de Metaprogramación: TADsPpec](https://docs.google.com/document/d/1WrVDh6wCzBG2GrlapJSnrSn6J4TpcF_E6iOQJ7Ppr6U/pub)
-- [TP Grupal de Funcional: Pokemon](https://docs.google.com/document/d/14BSzClwmlxvAhQWt2JzByQGZHC5QHpnsOr3Pzggg_7M/pub)
+- [TP Grupal de Funcional: Dragon Ball](https://docs.google.com/document/d/1lHviZiSElbpv3emRM--i5LuPkDUz-7YNdmS-Biv_s0s/pub)
