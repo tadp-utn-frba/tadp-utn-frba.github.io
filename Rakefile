@@ -1,9 +1,5 @@
-require 'rubygems'
 require 'tmpdir'
-
-require 'bundler/setup'
 require 'jekyll'
-
 require 'html-proofer'
 
 # Change your GitHub reponame
@@ -15,22 +11,25 @@ task :generate do
 end
 
 desc 'Check the generated page with html proofer'
-task :test do
+task test: :generate do
   begin
     proofer = HTMLProofer.check_directory('./_site',
                                           external_only: true,
                                           parallel: { in_processes: 3 },
-                                          url_ignore: [/rubymonk.com/, /tadp-utn-frba.github.io/])
+                                          url_ignore: [/rubymonk.com/, /tadp-utn-frba.github.io/],
+                                          typhoeus: {
+                                            :ssl_verifypeer => false,
+                                            :ssl_verifyhost => 0 })
     proofer.run
   rescue => e
-    puts "Task #{task_name} failed"
+    puts 'Task :test failed'
     puts "#{e.class}: #{e.message}"
   end
   puts 'Finished running all tests'
 end
 
 desc 'Generate and publish blog to gh-pages'
-task publish: [:generate] do
+task publish: :generate do
   Dir.mktmpdir do |tmp|
     cp_r '_site/.', tmp
 
@@ -47,3 +46,5 @@ task publish: [:generate] do
     Dir.chdir pwd
   end
 end
+
+task default: :generate
