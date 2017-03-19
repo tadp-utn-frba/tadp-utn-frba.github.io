@@ -22,13 +22,4 @@ Para suscribirse a la lista de tadp_cursada, hacer click en el link de abajo
   alt="Click here to join tadp_cursada"><br>Sumarse al grupo de tadp_cursada</a>
 </center>
 
-
-**TecnicasAvanzadasDeProgramacion@yahoogroups.com**: Es la lista técnica de personas que fueron cursando TADP, y donde se comparte conocimiento que no necesariamente es de esta cursada (puede ser del trabajo, de investigaciones personales, etc.)
-
-<center>
-<a href="http://groups.yahoo.com/group/TecnicasAvanzadasDeProgramacion/join">
-<img src="/img/tadp_grupo_2.jpg" border="0" width="200px"
-  alt="Click here to join TecnicasAvanzadasDeProgramacion"><br>Sumarse al grupo de TecnicasAvanzadasDeProgramacion</a>
-</center>
-
 Es imprescindible que los alumnos estén anotados al primer grupo ya que por allí se harán todos los comunicados de índole académica que sean necesarios.

@@ -54,20 +54,6 @@ permalink: /quienessomos/
 
 
 <div class='team'>
-    <div class='team_member'>
-        <div class="left">
-            <img src="/img/UserImage.png"
-                 class="img-circle team_face">
-        </div>
-        <div class="right">
-            <div class="description">
-                <h2>Demian Alonso</h2>
-                <span><a href="mailto:demianalonso@gmail.com">demianalonso@gmail.com</a></span>
-            </div>
-        </div>
-
-    </div>
-
     <div style="clear:both"></div>
 
     <div class='team_member'>
@@ -211,22 +197,6 @@ permalink: /quienessomos/
         </div>
 
     </div>
-
-    <div style="clear:both"></div>
-    
-    <div class='team_member'>
-        <div class="left">
-            <img src="/img/UserImage.png"
-                 class="img-circle team_face">
-        </div>
-        <div class="right">
-            <div class="description">
-                <h2>Bianca Petracca</h2>
-                <span><a href="mailto:biancapetracca@gmail.com">biancapetracca@gmail.com</a></span>
-            </div>
-        </div>
-
-    </div>
     
     <div style="clear:both"></div>
     
@@ -271,22 +241,6 @@ permalink: /quienessomos/
             <div class="description">
                 <h2>Juan Manuel Fernandes dos Santos</h2>
                 <span><a href="mailto:juanmanuel9794@hotmail.com">juanmanuel9794@hotmail.com</a></span>
-            </div>
-        </div>
-
-    </div>
-    
-    <div style="clear:both"></div>
-    
-    <div class='team_member'>
-        <div class="left">
-            <img src="/img/UserImage.png"
-                 class="img-circle team_face">
-        </div>
-        <div class="right">
-            <div class="description">
-                <h2>Agustín Hodes</h2>
-                <span><a href="mailto:hodesagustin@gmail.com">hodesagustin@gmail.com</a></span>
             </div>
         </div>
 
