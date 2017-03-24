@@ -30,4 +30,4 @@ deployment:
   publish:
     branch: source
     commands:
-      - bundle rake publish
+      - bundle exec rake publish
