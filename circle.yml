@@ -20,16 +20,14 @@ database:
     
 dependencies:
   override:
-   - gem install rake
    - bundle install --jobs=10 --retry=3
  
 test:
   override:
-   - bundle exec jekyll build
-   - rake test
+   - bundle exec rake test
   
 deployment:
   publish:
     branch: source
     commands:
-      - rake publish
+      - bundle rake publish
