@@ -10,11 +10,13 @@ Estamos modificando el programa para adaptarlo mejor a la realidad de nuestra fa
 El último programa estable de la materia pertenece al plan 2008, podés descargarlo desde [acá](/contenidos).
 
 
-Listas de discusión, de subscripción obligatoria para los alumnos
+## Lista de mails
 
-**tadp-cursada@googlegroups.com**: Grupo de cursada de TADP de este cuatrimestre para temas administrativos. Para suscribirse ir a  http://groups.google.com/group/tadp-cursada/
+Canal de comunicación de subscripción obligatoria para los alumnos.
 
-Para suscribirse a la lista de tadp_cursada, hacer click en el link de abajo
+**tadp-cursada@googlegroups.com**: Grupo de cursada de TADP de este cuatrimestre para temas administrativos.
+
+Para suscribirse a la lista hacer click en el link de abajo:
 
 <center>
 <a href="http://groups.google.com/group/tadp-cursada/">
