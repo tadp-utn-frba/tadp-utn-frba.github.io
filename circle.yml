@@ -24,7 +24,6 @@ dependencies:
  
 test:
   override:
-   - bundle exec jekyll build
    - bundle exec rake test
   
 deployment:
