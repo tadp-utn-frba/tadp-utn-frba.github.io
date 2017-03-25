@@ -1,13 +1,13 @@
-#Pagina "Oficial" de TADP UTN FRBA
+# Pagina "Oficial" de TADP UTN FRBA
 
 [![CircleCI](https://circleci.com/gh/tadp-utn-frba/tadp-utn-frba.github.io.svg?style=svg)](https://circleci.com/gh/tadp-utn-frba/tadp-utn-frba.github.io)
 
-##Requisitos
+## Requisitos
 
 * Jekyll
 * Ruby 2.0+
 
-##Como modificar la página?
+## Como modificar la página?
 
 Para poder modificar la página localmente se puede hacer mediante jekyll. Para instalar Jekyll referirse a este [link](http://jekyllrb.com/docs/installation/)
 
@@ -26,11 +26,11 @@ Para este caso se necesita crear una entrada dentro de la carpeta _posts, una ve
 se puede usar notació markdown o html. La página actualmente tiene la infraestructura para formatear los posts y existe una sección
 dedicada a estas entradas de blog, en /blog.
 
-##Ya modifique algo de la página, solo pusheo?
+## Ya modifique algo de la página, solo pusheo?
 
 No, lo mejor sería que se maneje todas las modificaciones de la página mediante Pull Requests, a menos que sea algo
 realmente chico y no muy relevante
 
-##No me animo o no tengo ganas de modificar la página pero quiero proponer un cambio. Qué Hago?
+## No me animo o no tengo ganas de modificar la página pero quiero proponer un cambio. Qué Hago?
 
 Se puede abrir un nuevo issue y de ahi alguien lo tome para hacer los cambios que se propongan.
