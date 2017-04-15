@@ -9,7 +9,7 @@ permalink: /material/
 * [Clase 1 - Intro a la materia y Mixins](/scripts/clase_1/)
 * [Clase 2 - Mixins: Resolución de Conflictos](/scripts/clase_2/)
 * [Clase 3 - Metaprogramación](/scripts/clase_3/)
-* [Clase 4 - Metabuilder (instance_eval y method missing)](/scripts/clase_4/)
+* [Clase 4 - instance_eval y method missing](/scripts/clase_4/)
 * [Clase 5 - Prototype](/scripts/clase_5/)
 * [Clase 6 - Multimethods](/scripts/clase_6/)
 * [Clase 7 - Intro a chequeo estático de tipos en Objetos](/scripts/clase_7/)
