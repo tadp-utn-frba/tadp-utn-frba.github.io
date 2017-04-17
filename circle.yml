@@ -12,7 +12,7 @@ general:
 checkout:
   pre:
   - git config --global user.email "tadp.bot@gmail.com"
-  - git config --global user.name "GrispinoCI"
+  - git config --global user.name "GreypineCI"
 
 database:
   override:
