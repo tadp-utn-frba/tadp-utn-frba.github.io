@@ -23,7 +23,7 @@ permalink: /material/
 
 # Trabajos Prácticos
 * [TP Grupal de Metaprogramación: Inmutabilidad](https://docs.google.com/document/d/10DDFnkpSp6Rq8VPCV-nQo2ggl1KVJRyBB3n3-16ZukE/pub)
-* [TP-2 Grupal de Objeto-Funcional] To be determined.
+* [TP-2 Grupal de Objeto-Funcional](https://docs.google.com/document/d/1x_1vhrX2rD_U4WcTiSlAqzRHJITMEwVAVFh46J1nv_I/pub)
 
 # Guias
 
