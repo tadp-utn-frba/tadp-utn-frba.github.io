@@ -246,6 +246,8 @@ permalink: /quienessomos/
 
     </div>
     
+    <div style="clear:both"></div>
+    
     <div class='team_member'>
         <div class="left">
             <img src="/img/UserImage.png"
