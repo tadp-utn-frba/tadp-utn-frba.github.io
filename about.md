@@ -207,8 +207,8 @@ permalink: /quienessomos/
         </div>
         <div class="right">
             <div class="description">
-                <h2>Matias Martino</h2>
-                <span><a href="mailto:matiasfmartino@gmail.com">matiasfmartino@gmail.com</a></span>
+                <h2>Micaela Martino</h2>
+                <span><a href="mailto:micaelafmartino@gmail.com">micaelafmartino@gmail.com</a></span>
             </div>
         </div>
 
