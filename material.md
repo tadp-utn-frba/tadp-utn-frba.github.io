@@ -22,7 +22,7 @@ permalink: /material/
 * [Clase 14 - Macros en Scala](/scripts/clase_14/)
 
 # Trabajos Prácticos
-... Próximamente ...
+* [TP Metaprogramación 1C2018: Traits](https://docs.google.com/document/d/1CNkZc_o6VTCeURbpdmDlSZQ1-7lwfpKPTrNcKVyJEcE/edit?usp=sharing)
 
 # Guias
 
