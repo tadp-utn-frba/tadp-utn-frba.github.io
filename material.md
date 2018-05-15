@@ -22,8 +22,7 @@ permalink: /material/
 * [Clase 14 - Macros en Scala](/scripts/clase_14/)
 
 # Trabajos Prácticos
-* [TP Grupal de Metaprogramación: ORM](https://docs.google.com/document/d/1vcO9zEx9IXBpozApFpZ2tBKyhY4K4jqjjP5g0fqEU84/edit?usp=sharing)
-* [TP-2 Grupal de Objeto-Funcional: TADeQuest](https://docs.google.com/document/d/1wpxR2ZcuEjowz7FbwwISGTcCfbyrbVDrZsjZlo4YeC0/edit?usp=sharing)
+* [TP Metaprogramación 1C2018: Traits](https://docs.google.com/document/d/1CNkZc_o6VTCeURbpdmDlSZQ1-7lwfpKPTrNcKVyJEcE/edit?usp=sharing)
 
 # Guias
 

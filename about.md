@@ -207,8 +207,8 @@ permalink: /quienessomos/
         </div>
         <div class="right">
             <div class="description">
-                <h2>Matias Martino</h2>
-                <span><a href="mailto:matiasfmartino@gmail.com">matiasfmartino@gmail.com</a></span>
+                <h2>Micaela Martino</h2>
+                <span><a href="mailto:micaelafmartino@gmail.com">micaelafmartino@gmail.com</a></span>
             </div>
         </div>
 
@@ -240,7 +240,23 @@ permalink: /quienessomos/
         <div class="right">
             <div class="description">
                 <h2>Juan Manuel Fernandes dos Santos</h2>
-                <span><a href="mailto:juanmanuel9794@hotmail.com">juanmanuel9794@hotmail.com</a></span>
+                <span><a href="mailto:juan9794@gmail.com">juan9794@gmail.com</a></span>
+            </div>
+        </div>
+
+    </div>
+    
+    <div style="clear:both"></div>
+    
+    <div class='team_member'>
+        <div class="left">
+            <img src="/img/UserImage.png"
+                 class="img-circle team_face">
+        </div>
+        <div class="right">
+            <div class="description">
+                <h2>Juan Martín Ríos</h2>
+                <span><a href="mailto:juanchirios.jmr@gmail.com">juanchirios.jmr@gmail.com</a></span>
             </div>
         </div>
 
