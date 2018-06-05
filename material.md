@@ -23,6 +23,7 @@ permalink: /material/
 
 # Trabajos Prácticos
 * [TP Metaprogramación 1C2018: Traits](https://docs.google.com/document/d/1CNkZc_o6VTCeURbpdmDlSZQ1-7lwfpKPTrNcKVyJEcE/edit?usp=sharing)
+* [TP Objetos-Funcional 1C2018: Juegos de Azar](https://docs.google.com/document/d/13w7-xy-zkb1gh_ZjEvzLGk7na5geO0dXbKdZbjR61Vs/edit?usp=sharing)
 
 # Guias
 
