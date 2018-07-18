@@ -20,6 +20,7 @@ permalink: /material/
 * [Clase 12 - Objetos + Funcional](/scripts/clase_12/)
 * [Clase 13 - Reflection en Scala](/scripts/clase_13/)
 * [Clase 14 - Macros en Scala](/scripts/clase_14/)
+* [Clase 15 - Otros](/scripts/clase_15/)
 
 # Trabajos Prácticos
 * [TP Metaprogramación 1C2018: Traits](https://docs.google.com/document/d/1CNkZc_o6VTCeURbpdmDlSZQ1-7lwfpKPTrNcKVyJEcE/edit?usp=sharing)
