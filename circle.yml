@@ -14,14 +14,14 @@ jobs:
       - run: git config --global user.name "GreypineCI"
       - checkout
       - run:
-        - name: Install dependencies
-        - command: bundle install --jobs=10 --retry=3
+        name: Install dependencies
+        command: bundle install --jobs=10 --retry=3
       - run:
-        - name: Run the tests for backend
-        - command: bundle exec rake test
+        name: Run the tests for backend
+        command: bundle exec rake test
       - run:
-        - name: Publishing
-        - command: bundle exec rake publish
+        name: Publishing
+        command: bundle exec rake publish
 
 workflows:
   version: 2
