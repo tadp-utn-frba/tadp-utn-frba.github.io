@@ -23,8 +23,8 @@ permalink: /material/
 * [Clase 15 - Otros](/scripts/clase_15/)
 
 # Trabajos Prácticos
-* [TP Metaprogramación 1C2018: Traits](https://docs.google.com/document/d/1CNkZc_o6VTCeURbpdmDlSZQ1-7lwfpKPTrNcKVyJEcE/edit?usp=sharing)
-* [TP Objetos-Funcional 1C2018: Juegos de Azar](https://docs.google.com/document/d/13w7-xy-zkb1gh_ZjEvzLGk7na5geO0dXbKdZbjR61Vs/edit?usp=sharing)
+* [TP Metaprogramación 2C2018: Pattern Matching](https://docs.google.com/document/d/1m3zeckPkGbraB5UOK0FTyAM4U0eNK-60nVAmvMUtWHs/edit?usp=sharing)
+* TP Objetos-Funcional 2C2018: TBA
 
 # Guias
 
