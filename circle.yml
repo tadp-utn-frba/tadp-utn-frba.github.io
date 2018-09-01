@@ -1,4 +1,4 @@
-version: 2
+version: 2git
 jobs:
   build:
     docker:
@@ -7,6 +7,8 @@ jobs:
       TZ: "/usr/share/zoneinfo/America/Argentina/Buenos_Aires"
     paralelism: 2
     branch:
+      ignore:
+        - master
       only:
         - source
     steps:
