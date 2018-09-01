@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4.3
+      - image: circleci/ruby:2.5.0
     environment:
       TZ: "/usr/share/zoneinfo/America/Argentina/Buenos_Aires"
     paralelism: 2
@@ -10,6 +10,9 @@ jobs:
       only:
         - source
     steps:
+      - add_ssh_keys:
+          fingerprints:
+          - "2b:d1:13:72:6c:a2:d1:4c:30:a5:a7:e5:b4:52:ee:75"
       - run: git config --global user.email "tadp.bot@gmail.com"
       - run: git config --global user.name "GreypineCI"
       - checkout
@@ -18,7 +21,7 @@ jobs:
           command: |
             sudo apt-get update
             sudo apt-get install build-essential patch
-            sudo apt-get install ruby-dev zlib1g-dev liblzma-dev
+            sudo apt-get install ruby-dev zlib1g-dev liblzma-dev libgmp-dev cmake
       - run:
           name: Install dependencies
           command: bundle install --jobs=10 --retry=3
