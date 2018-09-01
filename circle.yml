@@ -1,33 +1,33 @@
-machine:
-  timezone:
-    America/Argentina/Buenos_Aires
-  ruby:
-    version: 2.3.4
-    
-general:
-  branches:
-    ignore:
-    - master
-    
-checkout:
-  pre:
-  - git config --global user.email "tadp.bot@gmail.com"
-  - git config --global user.name "GreypineCI"
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.4.2
+      environment:
+        TZ: "/usr/share/zoneinfo/America/Argentina/Buenos_Aires"
+    paralelism: 2
+    branch:
+      only:
+        - source
+    steps:
+      - run: git config --global user.email "tadp.bot@gmail.com"
+      - run: git config --global user.name "GreypineCI"
+      - checkout
+      - run:
+        - name: Install dependencies
+        - command: bundle install --jobs=10 --retry=3
+      - run:
+        - name: Run the tests for backend
+        - command: bundle exec rake test
+      - run:
+        - name: Publishing
+        - command: bundle exec rake publish
 
-database:
-  override:
-    - echo "Skipping DB section."
-    
-dependencies:
-  override:
-   - bundle install --jobs=10 --retry=3
- 
-test:
-  override:
-   - bundle exec rake test
-  
-deployment:
-  publish:
-    branch: source
-    commands:
-      - bundle exec rake publish
+workflows:
+  version: 2
+  build_and_publish:
+    jobs:
+    - build
+      filters:
+        branches:
+          only: source
