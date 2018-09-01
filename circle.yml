@@ -3,8 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.4.2
-      environment:
-        TZ: "/usr/share/zoneinfo/America/Argentina/Buenos_Aires"
+    environment:
+      TZ: "/usr/share/zoneinfo/America/Argentina/Buenos_Aires"
     paralelism: 2
     branch:
       only:
@@ -28,6 +28,3 @@ workflows:
   build_and_publish:
     jobs:
     - build
-      filters:
-        branches:
-          only: source
