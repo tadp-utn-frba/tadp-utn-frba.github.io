@@ -24,7 +24,7 @@ permalink: /material/
 
 # Trabajos Prácticos
 * [TP Metaprogramación 2C2018: Pattern Matching](https://docs.google.com/document/d/1m3zeckPkGbraB5UOK0FTyAM4U0eNK-60nVAmvMUtWHs/edit?usp=sharing)
-* TP Objetos-Funcional 2C2018: TBA
+* [TP Objetos-Funcional 2C2018: Dragon Ball](https://docs.google.com/document/d/16jsXaptV2k-BBdySu0xZVDZyvSqmsa4ex6Qrh8VXLPk/edit#)
 
 # Guias
 
