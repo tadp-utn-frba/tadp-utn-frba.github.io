@@ -53,6 +53,7 @@ permalink: /material/
 - [Scala Cheatsheet](http://docs.scala-lang.org/cheatsheets/) - Referencia rápida a la sintaxis de Scala
 - [The Neophyte's Guide to Scala](http://danielwestheide.com/scala/neophytes.html) - Guia de scala para neófitos
 - [Scala Exercies - 47 Degrees](http://scala-exercises.47deg.com/) - Ejercicios para practicar con scala
+- [Anatomy of functional programming](http://geekocephale.com/blog/2018/10/08/fp) - Definiciones de programación funcional usando Scala
 
 ## Mónadas:
 - [Dan Piponi - "You Could Have Invented Monads!"](http://blog.sigfpe.com/2006/08/you-could-have-invented-monads-and.html) - Mónadas en Haskell
