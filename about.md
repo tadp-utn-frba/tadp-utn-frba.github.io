@@ -261,6 +261,22 @@ permalink: /quienessomos/
         </div>
 
     </div>
+
+    <div style="clear:both"></div>
+
+    <div class='team_member'>
+      <div class="left">
+          <img src="http://gravatar.com/avatar/632c1672c8c2d83e601c3bb130b1f12b.jpg?size=100"
+               class="img-circle team_face">
+      </div>
+      <div class="right">
+          <div class="description">
+              <h2>Facundo Javier Gelatti</h2>
+              <span><a href="mailto:javiergelatti@gmail.com">javiergelatti@gmail.com</a></span>
+          </div>
+      </div>
+
+    </div>
     
     <div style="clear:both"></div>
     
