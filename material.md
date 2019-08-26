@@ -38,8 +38,8 @@ permalink: /material/
 ## Mixins y Traits:
 
 - [Mixin-based Inheritance](http://www.bracha.org/oopsla90.pdf)- Bracha, Cook
-- [Traits: Composable Units of Behaviour](http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf) - Nathanael Schärli, Stéphane Ducasse, Oscar Nierstrasz, and Andrew P. Black
-- [Stateful Traits](http://scg.unibe.ch/archive/papers/Berg07aStatefulTraits.pdf) - Alexandre Bergel, Stephane Ducasse, Oscar Nierstrasz, Roel Wuyts
+- [Traits: Composable Units of Behaviour](https://drive.google.com/file/d/1QrGnURh8SlDFL8-sEdU_T0Biw0LNtyHZ/view?usp=sharing) - Nathanael Schärli, Stéphane Ducasse, Oscar Nierstrasz, and Andrew P. Black
+- [Stateful Traits](https://drive.google.com/file/d/1r-XJJU_7etQT8B_sTR9r2H5qWnvf-4Y2/view?usp=sharing) - Alexandre Bergel, Stephane Ducasse, Oscar Nierstrasz, Roel Wuyts
 
 ## Ruby:
  
