@@ -23,8 +23,8 @@ permalink: /material/
 * [Clase 15 - Otros](/scripts/clase_15/)
 
 # Trabajos Prácticos
-* [TP Metaprogramación 1C2019: Contratos](https://docs.google.com/document/d/1adyh4gHsiI815RbPdloYfZDFhBwZMQC1PNQiJNri8JE/edit?usp=sharing)
-* [TP Objetos-Funcional 1C2019: Parsers](https://docs.google.com/document/d/1TOblM1E5MtVB-tBrp6f5zVvufnK4Lcr2f71-jGkTAEA)
+* [TP Metaprogramación 2C2019: ORM](https://docs.google.com/document/d/1vcO9zEx9IXBpozApFpZ2tBKyhY4K4jqjjP5g0fqEU84/edit#)
+* TP Objetos-Funcional 2C2019: Próximamente
 
 # Guias
 
