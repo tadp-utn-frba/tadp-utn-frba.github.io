@@ -342,6 +342,22 @@ permalink: /quienessomos/
    
     </div>
     
+   <div style="clear:both"></div>
+
+   <div class='team_member'>
+      <div class="left">
+          <img src="https://en.gravatar.com/userimage/172523253/dd6bc9e3ab552e13a08b1aa1e20e1dee.jpg?size=200"
+               class="img-circle team_face">
+      </div>
+      <div class="right">
+          <div class="description">
+              <h2>Erik Gervas</h2>
+              <span><a href="mailto:erikgervas@gmail.com">erikgervas@gmail.com</a></span>
+          </div>
+      </div>
+   
+    </div>
+    
     <div style="clear:both"></div>
 
 </div>
