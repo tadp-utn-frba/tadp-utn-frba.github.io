@@ -5,6 +5,7 @@ jobs:
       - image: circleci/ruby:2.6.5
     environment:
       TZ: "/usr/share/zoneinfo/America/Argentina/Buenos_Aires"
+      BUNDLER_VERSION: 2.0.1
     paralelism: 2
     steps:
       - add_ssh_keys:
