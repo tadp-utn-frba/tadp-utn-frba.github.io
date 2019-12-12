@@ -2,10 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.5
+      - image: circleci/ruby:2.6.0
     environment:
       TZ: "/usr/share/zoneinfo/America/Argentina/Buenos_Aires"
-      BUNDLER_VERSION: 2.0.1
     paralelism: 2
     steps:
       - add_ssh_keys:
@@ -20,6 +19,12 @@ jobs:
             sudo apt-get update
             sudo apt-get install build-essential patch
             sudo apt-get install ruby-dev zlib1g-dev liblzma-dev libgmp-dev cmake
+      - run:
+          name: Configure Bundler
+          command: |
+            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
+            source $BASH_ENV
+            gem install bundler
       - run:
           name: Install dependencies
           command: bundle install --jobs=10 --retry=3
