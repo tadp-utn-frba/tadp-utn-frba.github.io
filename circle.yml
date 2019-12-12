@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.5.0
+      - image: circleci/ruby:2.6.5
     environment:
       TZ: "/usr/share/zoneinfo/America/Argentina/Buenos_Aires"
     paralelism: 2
