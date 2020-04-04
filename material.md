@@ -4,6 +4,10 @@ title: Material
 permalink: /material/
 ---
 
+# YouTube
+
+[Canal de YouTube](https://www.youtube.com/channel/UCsYCiCVGp0SM8GsY7mP21Mw) con material audiovisual, creado para la cursada virtual del 1C 2020.
+
 # Scripts de clase
 
 * [Clase 1 - Intro a la materia y Mixins](/scripts/clase_1/)
