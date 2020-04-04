@@ -21,7 +21,13 @@ Para suscribirse a la lista hacer click en el link de abajo:
 <center>
 <a href="http://groups.google.com/group/tadp-cursada/">
 <img src="/img/tadp_join_group.jpg" border="0"
-  alt="Click here to join tadp_cursada"><br>Sumarse al grupo de tadp_cursada</a>
+  alt="Click here to join tadp_cursada"><br>Sumarse al grupo de tadp-cursada</a>
 </center>
 
-Es imprescindible que los alumnos estén anotados al primer grupo ya que por allí se harán todos los comunicados de índole académica que sean necesarios.
+Es imprescindible que los alumnos estén anotados al grupo ya que por allí se harán todos los comunicados de índole académica que sean necesarios.
+
+## Discord
+
+Medio de comunicación adicional, para acompañar la cursada de la materia, permitiendo chatear con docentes y compañeros.
+
+Para ingresar, primero aceptá [esta invitación](https://discord.gg/ppHKfn9). Luego podrás entrar con tu usuario desde la página de [Discord](https://discordapp.com/) o bajándote la aplicación.
