@@ -24,7 +24,9 @@ permalink: /material/
 * [Clase 12 - Objetos + Funcional](/scripts/clase_12/)
 * [Clase 13 - Reflection en Scala](/scripts/clase_13/)
 * [Clase 14 - Macros en Scala](/scripts/clase_14/)
-* [Clase 15 - Otros](/scripts/clase_15/)
+* [Clase 15 - Funcional en otros lenguajes](/scripts/clase_15/)
+
+En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos los scripts y el código correspondiente a cada clase en branches independientes.
 
 # Trabajos Prácticos
 * [TP Metaprogramación 2C2019: ORM](https://docs.google.com/document/d/1vcO9zEx9IXBpozApFpZ2tBKyhY4K4jqjjP5g0fqEU84/edit#)
