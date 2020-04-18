@@ -223,8 +223,8 @@ permalink: /quienessomos/
         </div>
         <div class="right">
             <div class="description">
-                <h2>Juan Martín Ríos</h2>
-                <span><a href="mailto:juanchirios.jmr@gmail.com">juanchirios.jmr@gmail.com</a></span>
+                <h2>Juan Ignacio Cuiule</h2>
+                <span><a href="mailto:juanchicuiu@gmail.com">juanchicuiu@gmail.com</a></span>
             </div>
         </div>
 
