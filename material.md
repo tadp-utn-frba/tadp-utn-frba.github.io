@@ -29,8 +29,8 @@ permalink: /material/
 En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos los scripts y el código correspondiente a cada clase en branches independientes.
 
 # Trabajos Prácticos
-* [TP Metaprogramación 2C2019: ORM](https://docs.google.com/document/d/1vcO9zEx9IXBpozApFpZ2tBKyhY4K4jqjjP5g0fqEU84/edit#)
-* [TP Objetos-Funcional 2C2019: TADPQuest](https://docs.google.com/document/d/1Br8Zp_3_II08_07Tzik5Oyu07Rvd9jWOn5qMEs-38Es/edit?usp=sharing)
+* [TP Metaprogramación 1C2020: Traits](https://docs.google.com/document/d/10KY6NBmBpXqkCf8VVhUtUhv0ntOkG8ZM5vwUA7IVwlY/edit?usp=sharing)
+* [TP Objetos-Funcional 1C2020: Próximamente](#)
 
 # Guias
 
