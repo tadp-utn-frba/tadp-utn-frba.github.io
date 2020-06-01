@@ -30,7 +30,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 # Trabajos Prácticos
 * [TP Metaprogramación 1C2020: Traits](https://docs.google.com/document/d/10KY6NBmBpXqkCf8VVhUtUhv0ntOkG8ZM5vwUA7IVwlY/edit?usp=sharing)
-* [TP Objetos-Funcional 1C2020: Próximamente](#)
+* [TP Objetos-Funcional 1C2020: Festival de invierno](https://docs.google.com/document/d/1FG-7GKpxO24TSQafQQtNW5dygV2vroKaFWXi-Kt0wto/edit?usp=sharing)
 
 # Guias
 
