@@ -46,6 +46,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 - [Mixin-based Inheritance](http://www.bracha.org/oopsla90.pdf)- Bracha, Cook
 - [Traits: Composable Units of Behaviour](https://drive.google.com/file/d/1QrGnURh8SlDFL8-sEdU_T0Biw0LNtyHZ/view?usp=sharing) - Nathanael Schärli, Stéphane Ducasse, Oscar Nierstrasz, and Andrew P. Black
 - [Stateful Traits](https://drive.google.com/file/d/1r-XJJU_7etQT8B_sTR9r2H5qWnvf-4Y2/view?usp=sharing) - Alexandre Bergel, Stephane Ducasse, Oscar Nierstrasz, Roel Wuyts
+- [The programming language Jigsaw: mixins, modularity and multiple inheritance](http://www.bracha.org/jigsaw.pdf) - Gilad Bracha. Primeros 3 capítulos.
 
 ## Ruby:
  
