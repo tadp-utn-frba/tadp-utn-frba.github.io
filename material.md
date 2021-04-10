@@ -54,6 +54,8 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 - [RubyMonk](https://rubymonk.com/)
 - [Guías de Mumuki](https://mumuki.io/tadp-utn/chapters/452-metaprogramacion)
 
+> Para poder acceder por primera vez a las guías de Mumuki, necesitás registrarte a través de [este link](https://mumuki.io/tadp-utn/join/hhDolA).
+
 ## Scala:
 - [Martin Odersky - "Progamming in Scala"](http://www.artima.com/pins1ed/) - Libro del creador de Scala
 - [http://paco.uqbar-project.org/te/scala](http://paco.uqbar-project.org/te/scala) - Página compartida por materias de varias universidades donde se da una introducción al lenguaje, y varios links interesantes para profundizar.
