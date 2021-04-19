@@ -35,7 +35,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 # Guias
 
 * [Instalación de entorno Ruby + Rubymine y creación de proyectos](/guias/ruby)
-* [Guía de Lenguaje de Ruby](https://goo.gl/sRroc0)
+* [Guía de Lenguaje de Ruby](https://docs.google.com/document/d/e/2PACX-1vRW83z8ozrGdFfYAcOLehNGH-gWqfE_xVlHqh_o_LEZqI-ZzQbG1WnoWusohDQVLG5fomXjJczR3U58/pub)
 * [Instalación de entorno Scala-IDE + Creación de proyectos con tests](/guias/scala)
 * [Guía de Lenguaje de Scala](https://goo.gl/98S7xR)
 
@@ -53,8 +53,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 - Paolo Perrota - [Metaprogramming Ruby: Program Like the Ruby Pros](https://pragprog.com/book/ppmetr/metaprogramming-ruby)
 - [RubyMonk](https://rubymonk.com/)
 - [Guías de Mumuki](https://mumuki.io/tadp-utn/chapters/452-metaprogramacion)
-
-> Para poder acceder por primera vez a las guías de Mumuki, necesitás registrarte a través de [este link](https://mumuki.io/tadp-utn/join/hhDolA).
+  - Para poder acceder por primera vez a las guías de Mumuki, necesitás registrarte a través de [este link](https://mumuki.io/tadp-utn/join/hhDolA).
 
 ## Scala:
 - [Martin Odersky - "Progamming in Scala"](http://www.artima.com/pins1ed/) - Libro del creador de Scala
