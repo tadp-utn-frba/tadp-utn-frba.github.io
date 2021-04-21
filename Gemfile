@@ -6,3 +6,4 @@ gem 'jekyll'
 gem 'rake'
 gem 'rouge'
 gem 'nokogiri', '>= 1.10.7'
+gem "kramdown", ">= 2.3.1"
