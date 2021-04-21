@@ -90,7 +90,7 @@ permalink: /quienessomos/
 
     <div class='team_member'>
         <div class="left">
-            <img src="https://lh3.googleusercontent.com/--Ihegwo2biU/VE3SP4IeDLI/AAAAAAAAAcA/wNPP0AfryEA/s200/_MG_2426.jpg"
+            <img src="/img/UserImage.png"
                  class="img-circle team_face">
         </div>
         <div class="right">
