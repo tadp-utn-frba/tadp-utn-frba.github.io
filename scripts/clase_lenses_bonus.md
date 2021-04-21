@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: script
 description: Script Clase Bonus TADP 1C2020
 ---
 

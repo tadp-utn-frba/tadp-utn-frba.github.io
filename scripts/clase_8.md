@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: script
 description: Script Clase 8 TADP 1C2016
 ---
 
