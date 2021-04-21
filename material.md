@@ -50,7 +50,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 ## Ruby:
  
-- Paolo Perrota - [Metaprogramming Ruby: Program Like the Ruby Pros](https://pragprog.com/book/ppmetr/metaprogramming-ruby)
+- Paolo Perrota - [Metaprogramming Ruby: Program Like the Ruby Pros](https://pragprog.com/titles/ppmetr2/metaprogramming-ruby-2/)
 - [RubyMonk](https://rubymonk.com/)
 - [Guías de Mumuki](https://mumuki.io/tadp-utn/chapters/452-metaprogramacion)
   - Para poder acceder por primera vez a las guías de Mumuki, necesitás registrarte a través de [este link](https://mumuki.io/tadp-utn/join/hhDolA).
