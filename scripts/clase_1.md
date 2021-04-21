@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: script
 description: Script Clase 1 - Aspectos Administrativos / Modulos
 ---
 
