@@ -29,8 +29,8 @@ permalink: /material/
 En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos los scripts y el código correspondiente a cada clase en branches independientes.
 
 # Trabajos Prácticos
-* [TP Metaprogramación 2C2020: Contratos](https://docs.google.com/document/d/12Qs9vp58ANwuz8Dsz8uHspK1Be4rmqA22dB3pZGF2Mg/edit?usp=sharing)
-* [TP Objetos-Funcional 2C2020: Parser Combinators](https://docs.google.com/document/d/1CbOMiDfrpcSx8DQKafa3wkczKfWR0FoCcOG2BLeDAXs/edit?usp=sharing)
+* [TP Metaprogramación 1C2021: ORM](https://docs.google.com/document/d/1XfKQkbPm1kwg6caY9ZJbHpEV8nguM7tEkESzCglDxNc/edit?usp=sharing)
+* TP Objetos-Funcional 1C2021: Próximamente
 
 # Guias
 
