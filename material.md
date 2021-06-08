@@ -30,7 +30,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 # Trabajos Prácticos
 * [TP Metaprogramación 1C2021: ORM](https://docs.google.com/document/d/1XfKQkbPm1kwg6caY9ZJbHpEV8nguM7tEkESzCglDxNc/edit?usp=sharing)
-* TP Objetos-Funcional 1C2021: Próximamente
+* [TP Objetos-Funcional 1C2021: Juegos de Azar](https://docs.google.com/document/d/1-pDyPjbzMNuZr4hux6kWVN6txvSlxgxawfqUe72x4Bg/edit?usp=sharing)
 
 # Guias
 
