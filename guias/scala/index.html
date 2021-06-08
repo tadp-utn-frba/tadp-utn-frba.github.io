@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/guias/scala/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Instalación de Scala-IDE y otras guías</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="entorno-de-trabajo">Entorno de Trabajo</h1>
+
+<p>Para trabajar en Scala se debe instalar <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Development Kit (JDK)</a> (<em>Scala-IDE for Eclipse</em> requiere JDK 6, 7 ó 8).</p>
+
+<p>Además, aunque se puede desarrollar sin un IDE (sólo se necesita un compilador), vamos a explicar como preparar un entorno de desarrollo. Se puede realizar de cualquiera de las siguientes 2 maneras:</p>
+
+<ol>
+  <li>Bajar e instalar <a href="http://scala-ide.org/download/sdk.html">Scala IDE for Eclipse SDK</a><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>. <em>Scala IDE for Eclipse</em> es Eclipse con los plugins de Scala ya instalados.</li>
+  <li>Bajar Eclipse e instalar el plugin:
+    <ul>
+      <li>Bajar el <a href="http://www.eclipse.org/downloads/">Eclipse</a><sup id="fnref:1:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> que más te guste. Recomendamos Eclipse IDE for Java EE Developers.</li>
+      <li>Instalarle el plugin del <a href="http://scala-ide.org/download/current.html">Scala IDE for Eclipse</a>. Asegurarse que coincida la versión del plugin con la versión de Eclipse que hayas instalado. Para hacer esto, hacer click en <em>Help &gt; Install New Software…</em> Luego hacer click en el boton <em>Add</em>; y en la nueva ventana escribir un nombre para identificarlo, y pegar el link que aparece en el sitio que se hizo referencia al principio de este punto. Hacer click en <em>Ok</em>. Seleccionar <strong>todos</strong> los ítems de <em>Scala IDE for Eclipse</em> y también <em>Scala Worksheet</em>, que se encuentra en <em>Scala IDE plugins (incubation)</em>. Poner siguiente, y luego aceptar los términos y condiciones (que siempre se leen ¬¬)</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="versiones">Versiones</h2>
+
+<p>Al día 17 de Agosto del 2015, las versiones de los entornos de trabajo son:</p>
+
+<ol>
+  <li>Scala IDE for Eclipse SDK 4.1.1:
+    <ul>
+      <li>Eclipse 4.4.2 (Luna)</li>
+      <li>Scala IDE 4.1.1</li>
+      <li>Scala 2.11.7</li>
+      <li>Scala Worksheet 0.3.0</li>
+    </ul>
+  </li>
+  <li>Eclipse IDE for Java EE Developers:
+    <ul>
+      <li>Eclipse 4.5.0 (Mars)</li>
+      <li>Scala IDE 4.1.1</li>
+      <li>Scala 2.11.7</li>
+      <li>Scala Worksheet 0.3.0</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="creación-de-proyectos-con-tests">Creación de proyectos con tests</h1>
+
+<p>Para crear un proyecto ir al menú <em>File &gt; New &gt; Scala Project</em>. Si no aparece la opción, seleccionar <em>Other…</em> y buscar ahí la opción <em>Scala Project</em>.</p>
+
+<p>En la primer pantalla de <em>New Scala Project</em> ingresar el nombre del proyecto, seleccionar el JRE a utilizar y luego seleccionar <em>Next &gt;</em>.</p>
+
+<p>En la segunda pantalla se puede agregar las carpetas para acomodar el proyecto (para separar carpetas de src y test); en la pestaña Libraries, hacer click en el botón <em>Add Library…</em> y ahí seleccionar <strong>JUnit</strong>, clickear el botón <em>Next &gt;</em> y en esta nueva pantalla, en <em>JUnit library version</em>, seleccionar <strong>JUnit 4</strong> y hacer click en <em>Finish</em>. De nuevo en la pantalla de <em>New Scala Project</em> hacer click en <em>Finish</em> para finalizar la creación del proyecto.</p>
+
+<p>Con el proyecto creado, crear un <em>Package</em> en las carpetas <em>src</em> y <em>test</em> (utilizar el mismo nombre del package en ambos). En el paquete ubicado en src crear una <em>Scala Class</em> con la clase de dominio. Y en el paquete ubicado en test crear otra <em>Scala Class</em> para la creación de los tests.</p>
+
+<p>Para los tests tener en cuenta los siguientes imports:</p>
+
+<ul>
+  <li>import org.junit.Before: Para poder utilizar el tag @Before y definir código que se debe ejecutar previo a cada test.</li>
+  <li>import org.junit.Test: Para utilizar el tag @Test para indicar los tests, y que JUnit los reconozca y pueda correrlos.</li>
+  <li>import org.junit.Assert._: Para utilizar métodos como assertEquals, assertTrue, etc. Que se utilizan para determinar si el test fue exitoso o no.</li>
+</ul>
+
+<h1 id="ejemplo-de-proyecto-con-tests">Ejemplo de proyecto con tests</h1>
+
+<h4 id="srcdomainpersona">src.domain.Persona</h4>
+
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">package</span> <span class="nn">domain</span>
+
+<span class="k">class</span> <span class="nc">Persona</span> <span class="o">(</span><span class="k">var</span> <span class="n">edad</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">cumpliAnio</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="n">edad</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h4 id="testdomainpersona_test">test.domain.Persona_Test</h4>
+
+<figure class="highlight"><pre><code class="language-scala" data-lang="scala"><span class="k">package</span> <span class="nn">domain</span>
+
+<span class="k">import</span> <span class="nn">org.junit.Before</span>
+<span class="k">import</span> <span class="nn">org.junit.Test</span>
+<span class="k">import</span> <span class="nn">org.junit.Assert._</span>
+
+<span class="k">class</span> <span class="nc">Persona_Test</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">persona</span><span class="k">:</span><span class="kt">Persona</span> <span class="o">=</span> <span class="kc">null</span>
+
+  <span class="nd">@Before</span>
+  <span class="k">def</span> <span class="nf">setup</span><span class="o">()</span> <span class="k">=</span> <span class="o">{</span>
+     <span class="n">persona</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Persona</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Test</span>
+  <span class="k">def</span> <span class="nf">cumpliAnio_test</span><span class="o">()</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="nv">persona</span><span class="o">.</span><span class="py">cumpliAnio</span><span class="o">()</span>
+    <span class="nf">assertEquals</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="nv">persona</span><span class="o">.</span><span class="py">edad</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h1 id="correr-tests">Correr Tests</h1>
+
+<p>Para correr los tests, hacer click derecho en el paquete, archivo .scala o test particular, ir a la opción <em>Run As</em> y luego hacer click en <em>Scala JUnit Test</em>.</p>
+
+<h4 id="notas-al-pie">Notas al pie</h4>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Fijate de elegir uno que se adapte al sistema operativo de tu PC y que sea de 32 o 64 bits según corresponda (esta es la única herramienta dependiente de la plataforma, las demás deberían servir tanto para diferentes sistemas operativos como para diferentes arquitecturas de procesador). <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2021</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>
