@@ -14,16 +14,16 @@ Para poder modificar la página localmente se puede hacer mediante jekyll. Para 
 Una vez instalado jekyll se puede levantar una instancia local desde el directorio raiz ejecutando la siguiente línea.
 
 ```
-jekyll serve
+bundle exec jekyll serve
 ```
 
 De ahi se puede modificar el proyecto con cualquier editor o IDE de preferencia. jekyll tiene un watcher que ante el menor cambio en un
-archivo se actualice estos cambios en la página que se esta sirviendo. En caso de modificar algo del _config.yml directamente habŕa que
+archivo se actualice estos cambios en la página que se esta sirviendo. En caso de modificar algo del _config.yml directamente habrá que
 volver a levantar la instancia de nuevo.
 
 Esta página tiene un blog, por lo que se puede agregar posts en caso de que se desee comunicar algo o publicar algo en la página.
 Para este caso se necesita crear una entrada dentro de la carpeta _posts, una vez definido un archivo markdown (.md), simplemente
-se puede usar notació markdown o html. La página actualmente tiene la infraestructura para formatear los posts y existe una sección
+se puede usar notación markdown o html. La página actualmente tiene la infraestructura para formatear los posts y existe una sección
 dedicada a estas entradas de blog, en /blog.
 
 ## Ya modifique algo de la página, solo pusheo?
