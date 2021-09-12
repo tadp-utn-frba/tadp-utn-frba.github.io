@@ -29,7 +29,7 @@ permalink: /material/
 En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos los scripts y el código correspondiente a cada clase en branches independientes.
 
 # Trabajos Prácticos
-* [TP Metaprogramación 2C2021: TBA]()
+* [TP Metaprogramación 2C2021: Aspectos](https://docs.google.com/document/d/1HGyGBi8Geehl9NG9KVVvwEjgtFM0hNDA01YK_CBX5IM/edit?usp=sharing)
 * [TP Objetos-Funcional 2C2021: TBA]()
 
 # Guias
