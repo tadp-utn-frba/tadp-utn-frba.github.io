@@ -30,7 +30,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 # Trabajos Prácticos
 * [TP Metaprogramación 2C2021: Aspectos](https://docs.google.com/document/d/1HGyGBi8Geehl9NG9KVVvwEjgtFM0hNDA01YK_CBX5IM/edit?usp=sharing)
-* [TP Objetos-Funcional 2C2021: TBA]()
+* [TP Objetos-Funcional 2C2021: Calabozos](https://docs.google.com/document/d/1Dy0E-viaIdRN2lXaqXIkQG9WnBHvH3t4Z4O6f56c280/edit?usp=sharing)
 
 # Guias
 
