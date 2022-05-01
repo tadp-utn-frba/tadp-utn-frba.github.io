@@ -69,6 +69,3 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 ## SBT:
 - [http://www.scala-sbt.org/0.13/tutorial/index.html](http://www.scala-sbt.org/0.13/tutorial/index.html) - Tutorial oficial de SBT
-
-## GIT:
-- [https://try.github.io/levels/1/challenges/1](https://try.github.io/levels/1/challenges/1) - Un tutorial muy original, con feedback y todo
