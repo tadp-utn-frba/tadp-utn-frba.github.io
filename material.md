@@ -29,8 +29,8 @@ permalink: /material/
 En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos los scripts y el código correspondiente a cada clase en branches independientes.
 
 # Trabajos Prácticos
-* [TP Metaprogramación 1C2022: Contratos](https://docs.google.com/document/d/1duBiudtih7MmMJvAAez7BIT_mi76ymnLv579rxEduog/edit?usp=sharing)
-* [TP Objetos-Funcional 1C2022: TADQuest](https://docs.google.com/document/d/e/2PACX-1vR1OVdL3jrm8h3oyCDRKrKWPmFuWgijmMDFN-eid4A7wWDDDwqWvtzQXkBLnuHknXMOwBlD2wW6VB14/pub)
+* [TP Metaprogramación 2C2022: Próximamente](#)
+* [TP Objetos-Funcional 2C2022: Próximamente](#)
 
 # Guias
 
