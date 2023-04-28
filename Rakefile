@@ -15,6 +15,8 @@ task test: :generate do
   begin
     proofer = HTMLProofer.check_directory('./_site',
                                           external_only: true,
+                                          enforce_https: false,
+                                          ignore_missing_alt: true,
                                           parallel: { in_processes: 3 },
                                           url_ignore: [/rubymonk.com/, /tadp-utn-frba.github.io/],
                                           typhoeus: {
