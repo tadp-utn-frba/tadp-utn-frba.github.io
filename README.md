@@ -5,7 +5,7 @@
 ## Requisitos
 
 * Jekyll
-* Ruby 2.6.0+
+* Ruby 3+
 
 ## Como modificar la página?
 
