@@ -5,5 +5,6 @@ gem 'html-proofer'
 gem 'jekyll'
 gem 'rake'
 gem 'rouge'
-gem 'nokogiri', '>= 1.10.7'
+gem 'webrick'
+gem 'nokogiri', '>= 1.14.3'
 gem "kramdown", ">= 2.3.1"
