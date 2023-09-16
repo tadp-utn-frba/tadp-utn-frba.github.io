@@ -29,8 +29,8 @@ permalink: /material/
 En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos los scripts y el código correspondiente a cada clase en branches independientes.
 
 # Trabajos Prácticos
-* [TP Metaprogramación 2023 1C: ORM](https://docs.google.com/document/d/e/2PACX-1vR7AeUTC7LDqogWuKe2PDyXrnOecYNJ9x1Pf6xw9XhELwQnFh0O_7Qj3m9HQuAEbJfnh38RXnokTnIq/pub)
-* [TP Objetos-Funcional 2023 1C: Parsers](https://docs.google.com/document/d/1hpB7cRWsrKtufl5nqYJuSJonI3BYdfrxuYY2S1SmOdg/edit?usp=sharing)
+* [TP Metaprogramación 2023 2C: TadPrinter](https://docs.google.com/document/d/1sglncnasWl0mxh3QioSg8K21bA7iLJ-VLyhlbD5rWRQ/edit)
+* [TP Objetos-Funcional 2023 2C: TBD](#)
 
 # Guias
 
