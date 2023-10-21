@@ -30,7 +30,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 # Trabajos Prácticos
 * [TP Metaprogramación 2023 2C: TadPrinter](https://docs.google.com/document/d/1sglncnasWl0mxh3QioSg8K21bA7iLJ-VLyhlbD5rWRQ/edit)
-* [TP Objetos-Funcional 2023 2C: TBD](https://docs.google.com/document/d/e/2PACX-1vTmyc_-cR9N0P8fNoWfvWv5ehMZfbd7H4qk7ykTHRCGbwCWfyV5FNBFeYY98S5mtwBkGiNVnZUlZvAj/pub)
+* [TP Objetos-Funcional 2023 2C: Festival de Invierno](https://docs.google.com/document/d/e/2PACX-1vTmyc_-cR9N0P8fNoWfvWv5ehMZfbd7H4qk7ykTHRCGbwCWfyV5FNBFeYY98S5mtwBkGiNVnZUlZvAj/pub)
 
 # Guias
 
