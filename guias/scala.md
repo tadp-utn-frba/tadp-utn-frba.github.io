@@ -5,15 +5,15 @@ description: Instalación de IDE y otras guías
 # Intellij
 ## Instalación
 
-1. Asegurate de tener instalada la JDK de Java 8 (o superior)
-   - En la línea de comandos corré `javac -version` y asegurate de ver `javac 1.8.___` (o superior).
-   - Si no tenés la versión 1.8 o superior, instalá la [JDK](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
+1. Asegurate de tener instalada la JDK de Java 17 (o superior)
+   - En la línea de comandos corré `javac -version` y asegurate de ver `javac 17.x.x` (o superior).
+   - Si no tenés la versión 17 o superior, instalá la [JDK](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html).
 2. Luego, descargá e instalá [Intellij community edition](https://www.jetbrains.com/idea/download/)
 3. Luego de iniciar Intellij, podés descargar e instalar el plugin de Scala:
    - File -> Settings -> Plugins -> buscar scala -> Install
    
       ![Plugins](/img/intellij_scala_plugin.png)
-4. Reiniciar el ide para que se apliquen los cambios
+4. Reiniciar el IDE para que se apliquen los cambios
 
 Más detalles y opciones en la página de [scala](https://docs.scala-lang.org/getting-started/intellij-track/getting-started-with-scala-in-intellij.html).
 
