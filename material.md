@@ -30,7 +30,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 # Trabajos Prácticos
 * [TP Metaprogramación 2024 1C: Contratos](https://docs.google.com/document/d/1dddWiuD1pw8f_spuBEG2vKALkh2S8nrb4NAUmZ31jow/edit?usp=sharing)
-* [TP Objetos-Funcional 2024 1C: TBA]()
+* TP Objetos-Funcional 2024 1C: TBA
 
 # Guias
 
