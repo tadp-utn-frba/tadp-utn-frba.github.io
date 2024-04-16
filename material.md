@@ -57,7 +57,6 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 ## Scala:
 - [Martin Odersky - "Progamming in Scala"](http://www.artima.com/pins1ed/) - Libro del creador de Scala
-- [http://paco.uqbar-project.org/te/scala](http://paco.uqbar-project.org/te/scala) - Página compartida por materias de varias universidades donde se da una introducción al lenguaje, y varios links interesantes para profundizar.
 - Paul Chiusano and Rúnar Bjarnason - [Functional Programming in Scala](http://www.manning.com/bjarnason/)
 - [Scala Cheatsheet](http://docs.scala-lang.org/cheatsheets/) - Referencia rápida a la sintaxis de Scala
 - [The Neophyte's Guide to Scala](http://danielwestheide.com/scala/neophytes.html) - Guia de scala para neófitos
