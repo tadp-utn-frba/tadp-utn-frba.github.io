@@ -30,7 +30,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 # Trabajos Prácticos
 * [TP Metaprogramación 2024 2C: TADsPec](https://docs.google.com/document/d/1-ph4ETb20CxWG3V-jXf2Iwufx0psFiK4aRTIBdqc6Gc/edit?usp=drivesdk)
-* [TP Objetos-Funcional 2024 2C: Próximamente](#)
+* [TP Objetos-Funcional 2024 2C: Próximamente](https://docs.google.com/document/d/11X2vk3FbRaArhWiy_FqtcEnJQHBGHOx1l_tkqeMxSAU/edit?usp=drivesdk)
 
 # Guias
 
