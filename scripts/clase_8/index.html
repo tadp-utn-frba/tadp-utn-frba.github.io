@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_8/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase 8 TADP 1C2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="type-arguments-y-varianza">
+        
+        
+          <a href="#type-arguments-y-varianza"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Type Arguments y Varianza
+        
+        
+      </h1>
+    
+      <h2 id="introducción">
+        
+        
+          <a href="#introducción"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Introducción
+        
+        
+      </h2>
+    
+<p>Arrancamos con un repaso básico de tipos.</p>
+
+<p><img src="https://raw.githubusercontent.com/tadp-utn-frba/tadp-utn-frba.github.io/source/scripts/granja.png" alt="" /></p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">animal</span><span class="k">:</span> <span class="kt">Animal</span> <span class="o">=</span> <span class="o">???</span>
+<span class="k">var</span> <span class="n">vaca</span><span class="k">:</span> <span class="kt">Vaca</span> <span class="o">=</span> <span class="o">???</span>
+
+<span class="nv">animal</span><span class="o">.</span><span class="py">come</span>
+<span class="nv">vaca</span><span class="o">.</span><span class="py">ordeñate</span>
+</code></pre></div></div>
+
+<p>Tengo eso. Con que se puede inicializar?</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">animal</span><span class="k">:</span> <span class="kt">Animal</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Vaca</span> <span class="c1">// Ok! Una vaca es un animal</span>
+<span class="k">var</span> <span class="n">vaca</span><span class="k">:</span> <span class="kt">Vaca</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Animal</span>   <span class="c1">// No! Un animal no es necesariamente una vaca</span>
+
+<span class="nv">animal</span><span class="o">.</span><span class="py">come</span>
+<span class="nv">vaca</span><span class="o">.</span><span class="py">ordeñate</span>
+</code></pre></div></div>
+      <h2 id="type-arguments">
+        
+        
+          <a href="#type-arguments"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Type Arguments
+        
+        
+      </h2>
+    
+
+<p>Hasta acá el tipado cierra. Llevemoslo un paso más mostrando colecciones. Armemos un conjunto de animales y tratemos de filtrar los que están gordos.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">miColeccion</span><span class="k">:</span> <span class="kt">Set</span> <span class="o">=</span> <span class="nc">Set</span><span class="o">(</span><span class="k">new</span> <span class="nc">Vaca</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Caballo</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Granero</span><span class="o">)</span>
+
+<span class="nv">miColeccion</span><span class="o">.</span><span class="py">filter</span><span class="o">{</span><span class="n">unElemento</span> <span class="k">=&gt;</span>
+  <span class="nv">unElemento</span><span class="o">.</span><span class="py">estaGordo</span> <span class="c1">// Cómo sé si los elementos entienden esto?</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Vemos que en este ejemplo no alcanza con decir que algo es una colección: Me va a importar también el tipo de las cosas que contiene.</p>
+
+<p>De hecho, si recordamos el tipo de filter en Haskell era:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">filter</span><span class="o">::</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">-&gt;</span><span class="p">(</span><span class="n">a</span><span class="o">-&gt;</span><span class="kt">Bool</span><span class="p">)</span><span class="o">-&gt;</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Es la misma operación la que me pide saber que tipo de elementos tiene. De acá se deduce que cualquier tipo podría requerir de un “subtipado”, dependiendo de los mensajes que queremos que entienda.</p>
+
+<p>Scala me deja definir tipos que llevan parámetros (otros tipos) para poder contemplar estos escenarios.</p>
+
+<p>Agregando esto, mi código quedaría:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">animales</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Animal</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">(</span><span class="k">new</span> <span class="nc">Vaca</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Oveja</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Granero</span><span class="o">)</span> <span class="c1">// no me deja pasar granero porque no es un animal</span>
+
+<span class="nv">animales</span><span class="o">.</span><span class="py">filter</span><span class="o">{</span> <span class="n">unElemento</span> <span class="k">=&gt;</span>
+    <span class="nv">unElemento</span><span class="o">.</span><span class="py">estaGordo</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>El típo del mensaje filter va a ser muy parecido al de Haskell:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">#</span><span class="kt">Set</span><span class="p">[</span><span class="kt">A</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="n">filter</span><span class="p">(</span><span class="n">criterio</span><span class="o">:</span> <span class="kt">A</span><span class="o">=&gt;</span><span class="kt">Bool</span><span class="p">)</span><span class="o">:</span><span class="kt">Set</span><span class="p">[</span><span class="kt">A</span><span class="p">]</span>
+</code></pre></div></div>
+      <h2 id="ejercicio---parte-1">
+        
+        
+          <a href="#ejercicio---parte-1"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Ejercicio - Parte 1
+        
+        
+      </h2>
+    
+<p>Tomemos el modelo presentado y pensemos cómo hacer para agregar:</p>
+
+<ul>
+  <li><strong>Corral</strong>: Un corral es un lugar donde se acomodan varios animales de la misma especie.</li>
+  <li><strong>Pastores</strong>: Un pastor puede, al recibir la orden, llevar a pastar a un conjunto de animales.</li>
+  <li><strong>Lecheros</strong>: Los lecheros, cuando se les pide, ordeñan a todas las vacas de un corral.</li>
+</ul>
+
+<p>Si programamos todo bien, el siguiente programa debería andar:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">corralito</span> <span class="k">=</span> <span class="o">???</span>
+<span class="k">val</span> <span class="nv">lechero</span> <span class="k">=</span> <span class="o">???</span>
+<span class="k">val</span> <span class="nv">pastor</span> <span class="k">=</span> <span class="o">???</span>
+
+<span class="nv">pastor</span><span class="o">.</span><span class="py">pastorear</span><span class="o">(</span><span class="nv">corralito</span><span class="o">.</span><span class="py">animales</span><span class="o">)</span>
+<span class="nv">lechero</span><span class="o">.</span><span class="py">ordeñar</span><span class="o">(</span><span class="n">corralito</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Una primer implementación posible podría ser la siguiente:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Lechero</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">ordeñar</span><span class="o">(</span><span class="n">corral</span><span class="k">:</span> <span class="kt">Corral</span><span class="o">)</span> <span class="k">=</span> <span class="nv">corral</span><span class="o">.</span><span class="py">animales</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">ordeñate</span><span class="o">)</span>
+<span class="o">}</span>
+	
+<span class="k">class</span> <span class="nc">Pastor</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">pastorear</span><span class="o">(</span><span class="n">animales</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Animal</span><span class="o">])</span> <span class="k">=</span> <span class="nv">animales</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">come</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Corral</span><span class="o">(</span><span class="k">val</span> <span class="nv">animales</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Animal</span><span class="o">])</span>
+
+<span class="k">val</span> <span class="nv">corralito</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Corral</span><span class="o">(</span><span class="nc">Set</span><span class="o">(</span><span class="k">new</span> <span class="nc">Vaca</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Vaca</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Vaca</span><span class="o">))</span>
+<span class="k">val</span> <span class="nv">lechero</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Lechero</span>
+<span class="k">val</span> <span class="nv">pastor</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Pastor</span>
+
+<span class="nv">pastor</span><span class="o">.</span><span class="py">pastorear</span><span class="o">(</span><span class="nv">corralito</span><span class="o">.</span><span class="py">animales</span><span class="o">)</span> <span class="c1">// Todo en orden!</span>
+<span class="nv">lechero</span><span class="o">.</span><span class="py">ordeñar</span><span class="o">(</span><span class="n">corralito</span><span class="o">)</span>           <span class="c1">// Nop. Animal no entiende ordeñate</span>
+</code></pre></div></div>
+
+<p>Ufa… El pastor funciona, pero el lechero tiene un problema de tipos. Nada le asegura que los animales que hay en el corral sean vacas, así que no se anima a ordeñar. ¿Cómo se puede hacer para que esto tipe?</p>
+
+<p>Después de laburarlo un poco y meterle type arguments podemos llegar a algo así:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Lechero</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">ordeñar</span><span class="o">(</span><span class="n">corral</span><span class="k">:</span> <span class="kt">Corral</span><span class="o">[</span><span class="kt">Vaca</span><span class="o">])</span> <span class="k">=</span> <span class="nv">corral</span><span class="o">.</span><span class="py">animales</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">ordeñate</span><span class="o">)</span>
+<span class="o">}</span>
+	
+<span class="k">class</span> <span class="nc">Pastor</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">pastorear</span><span class="o">(</span><span class="n">animales</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Animal</span><span class="o">])</span> <span class="k">=</span> <span class="nv">animales</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">come</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Corral</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="k">val</span> <span class="nv">animales</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span>
+
+<span class="k">val</span> <span class="nv">corralito</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Corral</span><span class="o">(</span><span class="nc">Set</span><span class="o">(</span><span class="k">new</span> <span class="nc">Vaca</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Vaca</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Vaca</span><span class="o">))</span>
+<span class="k">val</span> <span class="nv">lechero</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Lechero</span>
+<span class="k">val</span> <span class="nv">pastor</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Pastor</span>
+
+<span class="nv">pastor</span><span class="o">.</span><span class="py">pastorear</span><span class="o">(</span><span class="nv">corralito</span><span class="o">.</span><span class="py">animales</span><span class="o">)</span> <span class="c1">// Ups… Esto se rompio??? PORQUÉ???</span>
+<span class="nv">lechero</span><span class="o">.</span><span class="py">ordeñar</span><span class="o">(</span><span class="n">corralito</span><span class="o">)</span>           <span class="c1">// Ahora sí! Esto anda!</span>
+</code></pre></div></div>
+
+<p>Ok, el type argument en el Corral permite que el lechero sepa qué bicho está ordeñando! Incluso podemos hacer que el corral SOLO acepte animales haciendo:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Corral</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Animal</span><span class="o">](</span><span class="k">val</span> <span class="nv">animales</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span>
+</code></pre></div></div>
+
+<p>Pero porqué ya no anda el pastor? Cómo que un Set de vacas no es un Set de animales???</p>
+      <h2 id="varianza">
+        
+        
+          <a href="#varianza"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Varianza
+        
+        
+      </h2>
+    
+<p>Para entender el problema, simplifiquemos la situación y pensemos en los tipos…</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">vacas</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Vaca</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+<span class="k">var</span> <span class="n">animales</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Animal</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+
+<span class="nv">animales</span><span class="o">.</span><span class="py">foreach</span><span class="o">{</span> <span class="n">animal</span> <span class="k">=&gt;</span> <span class="nv">animal</span><span class="o">.</span><span class="py">come</span> <span class="o">}</span>
+<span class="nv">vacas</span><span class="o">.</span><span class="py">foreach</span><span class="o">{</span> <span class="n">vaca</span> <span class="k">=&gt;</span> <span class="nv">vaca</span><span class="o">.</span><span class="py">ordeñate</span> <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Entonces, vale inicializarlo con esto?</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">vacas</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Vaca</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="o">[</span><span class="kt">Vaca</span><span class="o">]()</span>
+<span class="k">var</span> <span class="n">animales</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Animal</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="o">[</span><span class="kt">Vaca</span><span class="o">]()</span>
+
+<span class="nv">animales</span><span class="o">.</span><span class="py">foreach</span><span class="o">{</span> <span class="n">animal</span> <span class="k">=&gt;</span> <span class="nv">animal</span><span class="o">.</span><span class="py">come</span> <span class="o">}</span>
+<span class="nv">vacas</span><span class="o">.</span><span class="py">foreach</span><span class="o">{</span> <span class="n">vaca</span> <span class="k">=&gt;</span> <span class="nv">vaca</span><span class="o">.</span><span class="py">ordeñate</span> <span class="o">}</span>
+</code></pre></div></div>
+
+<p>En principio podría parecer que sí, pero vamos a ver que no es tan simple…</p>
+
+<p>Qué pasa si cambio el código de esta forma:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">vacas</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Vaca</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Set</span><span class="o">[</span><span class="kt">Vaca</span><span class="o">]()</span>
+<span class="k">var</span> <span class="n">animales</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Animal</span><span class="o">]</span> <span class="k">=</span> <span class="n">vacas</span>
+
+<span class="nv">animales</span><span class="o">.</span><span class="py">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">Caballo</span><span class="o">)</span> <span class="c1">// Opa! Un caballo es un animal, así que esto vale</span>
+<span class="nv">vacas</span><span class="o">.</span><span class="py">foreach</span><span class="o">{</span> <span class="n">vaca</span> <span class="k">=&gt;</span> <span class="nv">vaca</span><span class="o">.</span><span class="py">ordeñate</span> <span class="o">}</span> <span class="c1">//Eh… No.</span>
+</code></pre></div></div>
+
+<p>Entonces la respuesta es NO. Un Set[Vaca] no es un Set[Animales].</p>
+
+<p>La forma en la que varía el subtipado de un tipo compuesto en relación a sus parámetros de tipo se denomina <strong>Varianza</strong>.</p>
+
+<p>En el caso de Set[T], el tipo no acepta nada que no sea el T exacto declarado. Esta situación se denomina <strong>Invarianza</strong>.</p><hr />
+
+<p>Veamos un ejemplo de algo parecido:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">f</span> <span class="k">:</span> <span class="kt">Vaca</span> <span class="o">=&gt;</span> <span class="nc">Vaca</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="o">(</span><span class="n">vaca</span><span class="k">:</span> <span class="kt">Vaca</span><span class="o">)</span><span class="k">:</span> <span class="kt">Vaca</span> <span class="o">=</span> <span class="err">…</span> <span class="c1">// Recibe una Vaca y devuelve una Vaca</span>
+<span class="k">def</span> <span class="nf">h</span><span class="o">(</span><span class="n">vaca</span><span class="k">:</span> <span class="kt">Vaca</span><span class="o">)</span><span class="k">:</span> <span class="kt">Animal</span> <span class="o">=</span> <span class="err">…</span> <span class="c1">// Devuelve un Animal</span>
+<span class="k">def</span> <span class="nf">i</span><span class="o">(</span><span class="n">vaca</span><span class="k">:</span> <span class="kt">Vaca</span><span class="o">)</span><span class="k">:</span> <span class="kt">VacaLoca</span> <span class="o">=</span> <span class="err">…</span> <span class="c1">// Devuelve una VacaLoca</span>
+<span class="k">def</span> <span class="nf">j</span><span class="o">(</span><span class="n">vacaLoca</span><span class="k">:</span> <span class="kt">VacaLoca</span><span class="o">)</span><span class="k">:</span> <span class="kt">Vaca</span> <span class="o">=</span> <span class="err">…</span> <span class="c1">// Recibe una VacaLoca</span>
+<span class="k">def</span> <span class="nf">k</span><span class="o">(</span><span class="n">animal</span><span class="k">:</span> <span class="kt">Animal</span><span class="o">)</span><span class="k">:</span> <span class="kt">Vaca</span> <span class="o">=</span> <span class="err">…</span> <span class="c1">// Recibe un Animal</span>
+
+<span class="n">f</span> <span class="k">=</span> <span class="o">???</span>
+
+<span class="nf">f</span><span class="o">(</span><span class="k">new</span> <span class="nc">Vaca</span><span class="o">).</span><span class="py">ordeñate</span>
+</code></pre></div></div>
+
+<p>Cuales de las funciones definidas podrían guardarse en f ?</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="k">=</span> <span class="n">g</span>  <span class="c1">// Ok. Recibo una vaca y devuelvo una vaca. No problem.</span>
+<span class="n">f</span> <span class="k">=</span> <span class="n">h</span>  <span class="c1">// No! Si h devuelve un animal no puedo garantizar que entienda muji!</span>
+<span class="n">f</span> <span class="k">=</span> <span class="n">i</span>  <span class="c1">// Esto vale. La VacaLoca es una vaca y la puedo usar tal.</span>
+<span class="n">f</span> <span class="k">=</span> <span class="n">j</span>  <span class="c1">// No! j espera una VacaLoca, no puedo decir que espera sólo una vaca.</span>
+       <span class="c1">// Si le paso una vaca a f y adentro le manda reite() se rompería!</span>
+<span class="n">f</span> <span class="k">=</span> <span class="n">k</span>  <span class="c1">// Si! k sólo pide que su parámetro sea un Animal y le habla como tal.</span>
+       <span class="c1">// Entonces puedo pasarle una Vaca, que es un Animal.</span>
+</code></pre></div></div>
+
+<p>En el caso de las funciones, el parámetro de tipo asociado al retorno varía en el mismo sentido que la jerarquía (o sea, admite casos más ESPECIFICOS del tipo que tiene declarado en el parámetro). A esto le decimos ser <strong>Covariante</strong>.</p>
+
+<p>Por otro lado, los tipos de sus parámetros varían en el sentido opuesto (admite casos más GENÉRICOS). Son <strong>Contravariante</strong>.</p>
+
+<p>En Scala eso se hace con una anotación en el tipo:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Function1</span><span class="o">[</span><span class="kt">-P</span>,<span class="kt">+R</span><span class="o">]{</span> <span class="c1">// Clase de las funciones de un parámetro.</span>
+                        <span class="c1">// El - adelante de P indica que es CONTRAVARIANTE.</span>
+                        <span class="c1">// El + adelante de R indica que es COVARIANTE.</span>
+<span class="err">…</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>También se puede decir que un parámetro sea covariante o contravariante a partir de cierto punto de la jerarquía de tipos.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span><span class="o">[</span><span class="kt">+T</span> <span class="k">&lt;:</span> <span class="kt">Vaca</span>, <span class="kt">-R</span> <span class="k">&gt;:</span> <span class="kt">Animal</span><span class="o">]</span> <span class="o">{</span>
+    <span class="c1">// T es COVARIANTE para los subtipos de Vaca.</span>
+    <span class="c1">// Puedo pasarle una Vaca o una Vaca loca, pero no un Animal.</span>
+    <span class="c1">// R es CONTRAVARIANTE para los supertipos de Animal.</span>
+    <span class="c1">// Puedo pasarle, por ejemplo, un Object.</span>
+<span class="err">…</span>
+<span class="o">}</span>
+</code></pre></div></div>
+      <h3 id="ejemplo-de-contravarianza">
+        
+        
+          <a href="#ejemplo-de-contravarianza"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Ejemplo de contravarianza
+        
+        
+      </h3>
+    
+<p>Creemos una clase abstracta Printer que define un método print que imprime por la consola un objeto del tipo T:</p>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">abstract</span> <span class="k">class</span> <span class="nc">Printer</span><span class="o">[</span><span class="kt">-T</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">print</span><span class="o">(</span><span class="n">t</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+<span class="o">}</span>
+
+<span class="c1">// Sabe imprimir animales</span>
+<span class="k">class</span> <span class="nc">AnimalPrinter</span> <span class="k">extends</span> <span class="nc">Printer</span><span class="o">[</span><span class="kt">Animal</span><span class="o">]</span> <span class="o">{</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="nf">print</span><span class="o">(</span><span class="n">t</span><span class="k">:</span> <span class="kt">Animal</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+      <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Este animal pesa: ${t.peso}"</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Sabe imprimir vacas locas</span>
+<span class="k">class</span> <span class="nc">VacaLocaPrinter</span> <span class="k">extends</span> <span class="nc">Printer</span><span class="o">[</span><span class="kt">VacaLoca</span><span class="o">]</span> <span class="o">{</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="nf">print</span><span class="o">(</span><span class="n">t</span><span class="k">:</span> <span class="kt">VacaLoca</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+      <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Una vaca loca se ríe así: ${t.reite}"</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Veamos ejemplos de uso</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="n">printer</span><span class="k">:</span> <span class="kt">Printer</span><span class="o">[</span><span class="kt">VacaLoca</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">VacaLocaPrinter</span>
+<span class="nv">printer</span><span class="o">.</span><span class="py">print</span><span class="o">(</span><span class="k">new</span> <span class="nc">VacaLoca</span><span class="o">)</span> <span class="c1">// imprime: "Una vaca loca se ríe así: Muajajajjaajja"</span>
+</code></pre></div></div>
+
+<p>Y como Printer es contravariante con respecto a su parámetro de tipo T, podemos guardar un objeto de tipo Printer[Animal] en una variable de tipo Printer[VacaLoca]</p>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">printer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AnimalPrinter</span>
+<span class="nv">printer</span><span class="o">.</span><span class="py">print</span><span class="o">(</span><span class="k">new</span> <span class="nc">VacaLoca</span><span class="o">)</span> <span class="c1">// imprime: "Este animal pesa: 100"</span>
+</code></pre></div></div>
+<p>Esto es correcto porque print de AnimalPrinter espera un parámetro de tipo Animal (puede imprimir cualquier animal), y la variable printer solo acepta VacaLoca, que entiende todos los mensajes de Animal.</p><hr />
+      <h2 id="ejercicio---parte-2">
+        
+        
+          <a href="#ejercicio---parte-2"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Ejercicio - Parte 2
+        
+        
+      </h2>
+    
+<p>Volvamos a pensar el problema que teníamos con las herramientas nuevas que aprendimos.</p>
+
+<p>El problema del pastor era que él sabía trabajar con una colección de Animales, pero el corral tenía una colección de Vacas. Ahora entendemos el hay un problema con la varianza.</p>
+
+<p>Sin embargo, para la mayoría de los casos pareciera que una colección de vacas podría ser tratada como una colección de animales… Sería copado que las colecciones fueran COVARIANTES, no? Así el pastor podría trabajar sin problemas con las vacas del corral.</p>
+
+<p>Por supuesto, como señalamos antes, el problema de las colecciones pasa por los mensajes que trata de exponer. Si fuera covariante corremos el riesgo de que alguien agregue un objeto que rompa su contrato. Uhm… Y si trabajaramos con colecciones que no pueden romperse? Bueno, entonces no habría problemas. Pero cómo creo una colección que no se pueda romper? Lo que hay que hacer es renunciar a todos los mensajes problemáticos!</p>
+
+<p>Resulta que si le quito los métodos que reciben por parámetro el tipo paramétrico, la colección podría definirse como covariante. (En realidad es más complejo que eso y depende de en DONDE se está referenciando al tipo paramétrico, pero bleh… Si quieren el detalle lean.)</p>
+
+<p>La clase List es una colección que está implementada para ser <strong>Covariante</strong>. Eso significa que <strong>List[Vaca] ES List[Animal]</strong>.</p>
+
+<p>List no tiene add(), hay que usarla como las listas de Haskell, construyendo otra. De hecho, no tiene ningún efecto de lado: Es <strong>Inmutable</strong>.</p>
+
+<p>Entonces el código podría quedar así:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Lechero</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">ordeñar</span><span class="o">(</span><span class="n">corral</span><span class="k">:</span> <span class="kt">Corral</span><span class="o">[</span><span class="kt">Vaca</span><span class="o">])</span> <span class="k">=</span> <span class="nv">corral</span><span class="o">.</span><span class="py">animales</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">ordeñate</span><span class="o">)</span>
+<span class="o">}</span>
+	
+<span class="k">class</span> <span class="nc">Pastor</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">pastorear</span><span class="o">(</span><span class="n">animales</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Animal</span><span class="o">])</span> <span class="k">=</span> <span class="nv">animales</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">come</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Corral</span><span class="o">[</span><span class="kt">T</span> <span class="k">&lt;:</span> <span class="kt">Animal</span><span class="o">](</span><span class="k">val</span> <span class="nv">animales</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span>
+
+<span class="k">val</span> <span class="nv">corralito</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Corral</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="k">new</span> <span class="nc">Vaca</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Vaca</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Vaca</span><span class="o">))</span>
+<span class="k">val</span> <span class="nv">lechero</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Lechero</span>
+<span class="k">val</span> <span class="nv">pastor</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Pastor</span>
+
+<span class="nv">pastor</span><span class="o">.</span><span class="py">pastorear</span><span class="o">(</span><span class="nv">corralito</span><span class="o">.</span><span class="py">animales</span><span class="o">)</span> <span class="c1">// Ahora sí! Esto anda!</span>
+<span class="nv">lechero</span><span class="o">.</span><span class="py">ordeñar</span><span class="o">(</span><span class="n">corralito</span><span class="o">)</span>           <span class="c1">// Esto también! Yupi!</span>
+</code></pre></div></div>
+
+<p>Ojo! Que la lista sea inmutable no significa que el corral tenga que serlo. De hecho, alcanzaría con cambiar el val por un var.</p>
+
+<p>Elegir en donde tener efecto colateral y en donde no es una decisión de diseño REEEE importante.</p>
+      <h3 id="covarianza">
+        
+        
+          <a href="#covarianza"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Covarianza
+        
+        
+      </h3>
+    
+<p>Aprovechando las nuevas herramientas, podemos definir que los corrales de vacas sean subclases de los corrales de animales, usando covarianza:</p>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Corral</span><span class="o">[</span><span class="kt">+T</span> <span class="k">&lt;:</span> <span class="kt">Animal</span><span class="o">](</span><span class="k">val</span> <span class="nv">animales</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span>
+
+<span class="c1">// Ahora podemos hacer esto:</span>
+<span class="k">val</span> <span class="nv">corralDeVacas</span><span class="k">:</span> <span class="kt">Corral</span><span class="o">[</span><span class="kt">Vaca</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Corral</span><span class="o">(</span><span class="k">new</span> <span class="nc">Vaca</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Vaca</span><span class="o">,</span> <span class="k">new</span> <span class="nc">VacaLoca</span><span class="o">)</span>
+<span class="k">var</span> <span class="n">corralDeAnimales</span><span class="k">:</span> <span class="kt">Corral</span><span class="o">[</span><span class="kt">Animal</span><span class="o">]</span> <span class="k">=</span> <span class="n">corralDeVacas</span> <span class="c1">// Ahora es válido</span>
+</code></pre></div></div>
+
+<p>La covarianza no viene gratis, una de las grandes limitantes es que no podemos definir un método que reciba T, porque T es covariante y el parámetro de una función es una posición contravariante:</p>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Corral</span><span class="o">[</span><span class="kt">+T</span> <span class="k">&lt;:</span> <span class="kt">Animal</span><span class="o">](</span><span class="k">val</span> <span class="nv">animales</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">contiene</span><span class="o">(</span><span class="n">t</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="o">???</span> <span class="c1">// covariant type T occurs in contravariant position in type T of value t</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Lo que podemos hacer para mitigar esto es usar lower bounds:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Corral</span><span class="o">[</span><span class="kt">+T</span> <span class="k">&lt;:</span> <span class="kt">Animal</span><span class="o">](</span><span class="k">val</span> <span class="nv">animales</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="o">{</span>
+  <span class="c1">// [T1 &gt;: T] significa "T1 tiene que ser una superclase de T"</span>
+  <span class="k">def</span> <span class="nf">contiene</span><span class="o">[</span><span class="kt">T1</span> <span class="k">&gt;:</span> <span class="kt">T</span><span class="o">](</span><span class="n">t</span><span class="k">:</span> <span class="kt">T1</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="o">???</span> <span class="c1">// covariant type T occurs in contravariant position in type T of value t</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Esto nos permite evitar en tiempo de compilación que se pueda llamar con cualquier objeto (que es imposible que sea contenido por el corral):</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">corralDeVacas</span><span class="o">.</span><span class="py">contiene</span><span class="o">[</span><span class="kt">Int</span><span class="o">](</span><span class="mi">123</span><span class="o">)</span> <span class="c1">// type arguments [Int] do not conform to class Corral's type parameter bounds [+T &lt;: granja.Animal]</span>
+
+<span class="c1">// La desventaja es que también se puede</span>
+<span class="nv">corralDeVacas</span><span class="o">.</span><span class="py">contiene</span><span class="o">[</span><span class="kt">AnyRef</span><span class="o">](</span><span class="s">"Vaca"</span><span class="o">)</span> <span class="c1">// Funciona porque AnyRef es una superclase de Vaca</span>
+</code></pre></div></div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>

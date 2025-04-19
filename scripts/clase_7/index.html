@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_7/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase 7 TADP 1C2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h2 id="introducción-a-chequeo-estático-de-tipos">
+        
+        
+          <a href="#introducción-a-chequeo-estático-de-tipos"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Introducción a chequeo estático de tipos
+        
+        
+      </h2>
+    
+      <h5 id="primero-vamos-a-comparar-con-lo-que-hacíamos-anteriormente-en-ruby">
+        
+        
+          <a href="#primero-vamos-a-comparar-con-lo-que-hacíamos-anteriormente-en-ruby"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Primero vamos a comparar con lo que hacíamos anteriormente en Ruby
+        
+        
+      </h5>
+    
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Persona</span>
+  <span class="ss">:attr_accessor</span> <span class="ss">:name</span>
+  
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Saludador</span>
+  <span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="s2">"asd"</span> <span class="o">+</span> <span class="n">a</span><span class="p">.</span><span class="nf">nombre</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Saludador</span><span class="p">.</span><span class="nf">new</span><span class="p">().</span><span class="nf">saludar</span><span class="p">(</span><span class="no">Persona</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"asd"</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Esto rompe en ejecución cuando intento mandar este mensaje, porque persona no entiende :nombre, sino que entiende :name.</p>
+
+<p>Tendríamos que agregar algún tipo de validación para que esto no pase, o sea, un sistema de tipos.</p>
+
+<p>Además, para poder ser usado con saludador, lo que le pasamos al método saludar tiene que ser una Persona
+o alguien que entienda :nombre.</p>
+
+<p>Cuando hablamos de tipos, hablamos de <strong>un conjunto de elementos o valores</strong> asociado a <strong>un conjunto de operaciones</strong>.</p>
+
+<p>Si el saludador no puede interactuar con las operaciones que yo espero que interactúe, entonces tenemos un <strong>error de tipos</strong>.</p>
+
+<p>En objetos, el tipo de uno de ellos (valores) está definido por el conjunto de métodos que entiende. Si hay dos elementos que entienden
+un mismo mensaje, entonces comparten un tipo, pero no quiere decir que sean del mismo.</p>
+      <h4 id="tipado">
+        
+        
+          <a href="#tipado"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Tipado
+        
+        
+      </h4>
+    
+
+<ul>
+  <li>Operacional: aplica a todo lo que uno hace, sea computacional o no. Trato de llevar a cabo una operacion sobre un 
+elemento.</li>
+  <li>Representacional: solo aplica a lo computacional, llevar un tipo a un formato computable. Significa asumir una representación que no es correcta para ese tipo.</li>
+  <li>Estructural: Ej, si haskell permitiera hacer algo como: f [] = …   f 1 = …</li>
+</ul>
+
+<p>No pasa por qué tecnología tengo para extender el tipo o no, ni tampoco por si va a saltar cuando lo ejecute o antes, porque eso es parte del chequeo.</p>
+      <h4 id="chequeo">
+        
+        
+          <a href="#chequeo"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Chequeo
+        
+        
+      </h4>
+    
+
+<ul>
+  <li>Dinámico: Lo hace cuando yo le mando el mensaje al objeto. Ej: Ruby.</li>
+  <li>Estático: Decide si un programa es válido o no, analiza estáticamente el programa antes de que lo ejecutemos.
+Esto permite detectar más errores que en el chequeo dinámico, por ejemplo, con el problema que tuvimos al principio
+de la clase, donde persona no entiende :nombre. En este caso, no vamos a poder llegar a la instancia en la que ejecutemos
+y rompa. El análisis es sobre la <strong>declaración</strong>. Ej: Haskell.</li>
+</ul>
+      <h6 id="ahora-en-scala">
+        
+        
+          <a href="#ahora-en-scala"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Ahora, en Scala:
+        
+        
+      </h6>
+    
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">Saludador</span> <span class="k">extends</span> <span class="nc">App</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="k">class</span> <span class="nc">Persona</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+  
+  <span class="k">class</span> <span class="nc">Saludador</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="nf">saludar</span><span class="o">(</span><span class="n">alguien</span><span class="k">:</span> <span class="kt">Persona</span><span class="o">)</span> <span class="k">=</span>
+      <span class="s">"hola"</span> <span class="o">+</span> <span class="nv">alguien</span><span class="o">.</span><span class="py">nombre</span>
+  <span class="o">}</span>
+  
+  <span class="k">new</span> <span class="nc">Saludador</span><span class="o">().</span><span class="py">saludar</span><span class="o">(</span><span class="k">new</span> <span class="nc">Persona</span><span class="o">(</span><span class="s">"asdds"</span><span class="o">))</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Además, si la firma de saludar fuese diferente y recibiera algo de tipo Any, por más de que en todo el código nunca se
+llame al metodo saludar con algo que no entienda el método nombre, rompe igual porque en el chequeo estático se fija
+en el código, y cualquier cosa que le pase no entiende nombre.</p>
+
+<p>!! Puedo tener polimorfismo sólo entre dos cosas que yo establecí <strong>explícitamente</strong> que comparten un tipo !!</p>
+      <h3 id="notación">
+        
+        
+          <a href="#notación"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Notación
+        
+        
+      </h3>
+    
+<ul>
+  <li>Explícita: Se escribe el tipo. Puede existir un mecanismo de inferencia de tipos que facilite el trabajo de escribir los tipos explícitamente.
+La inferencia sale de la notación explícita y el tipado estático y permite implicitar algo que de otra forma tendrías que haber explicitado. 
+Haskell tiene tipado explícito <strong>inferido</strong>. Scala tiene inferencia, pero no puede inferir todo.</li>
+  <li>Implícita</li>
+</ul>
+      <h4 id="conformación">
+        
+        
+          <a href="#conformación"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Conformación
+        
+        
+      </h4>
+    
+<ul>
+  <li>Estructural (duck-typing, pattern matching): Un tipo se referencia por su forma. Ej: <code class="language-plaintext highlighter-rouge">f (_,_,a) = a</code></li>
+  <li>Nominal: Un tipo se referencia por su nombre. Ej: String, Int</li>
+</ul>
+      <h3 id="errores">
+        
+        
+          <a href="#errores"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Errores
+        
+        
+      </h3>
+    
+<ul>
+  <li>Errores de tipo: siempre está en el programa, esté en ejecución o no, no importa cómo hago el chequeo.</li>
+  <li>Errores detectados</li>
+</ul>
+
+<p><strong>equivalente a</strong></p>
+
+<ul>
+  <li>Programas que puedo hacer con un tipado estático: Un chequeo estático de tipos me permite detectar los programas válidos en compilación. El compilador es el que determina si funciona o no.</li>
+  <li>Programas que puedo hacer sólo con tipado dinámico</li>
+</ul>
+      <h6 id="errores-que-creemos-que-deberían-ser-de-tipo-pero-en-teoría-no-lo-son">
+        
+        
+          <a href="#errores-que-creemos-que-deberían-ser-de-tipo-pero-en-teoría-no-lo-son"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Errores que creemos que deberían ser de tipo pero en teoría no lo son
+        
+        
+      </h6>
+    
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">x</span> <span class="k">=</span> <span class="mi">5</span>
+<span class="k">val</span> <span class="nv">y</span> <span class="k">=</span> <span class="mi">0</span>
+
+<span class="n">x</span><span class="o">/</span><span class="n">y</span> <span class="c1">// Los numeros entienden la división, por eso no sería un error de tipos en realidad</span>
+
+<span class="k">val</span> <span class="nv">list</span> <span class="k">=</span> <span class="nc">List</span><span class="o">()</span>
+<span class="nv">list</span><span class="o">.</span><span class="py">head</span> <span class="c1">// Las listas también entienden head, el problema es que está vacía</span>
+</code></pre></div></div>
+
+<p>Acá aparece la <strong>operación parcial</strong>, que encapsula a un error de tipos, cuando puramente no lo son.</p>
+      <h2 id="desarrollo-del-ejercicio">
+        
+        
+          <a href="#desarrollo-del-ejercicio"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Desarrollo del ejercicio
+        
+        
+      </h2>
+    
+
+<p>Si a un parámetro le pongo val o var, lo expone como si fuera público.
+Puedo recrear un constructor haciendo algo del estilo class A(variableA = valor) pero en realidad no es un constructor en sí mismo.</p>
+
+<p>Necesitamos que un parámetro esté expuesto, si tenemos que accederlo después, por ejemplo</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Guerrero</span><span class="o">(</span><span class="n">potencialOfensivo</span> <span class="k">=</span> <span class="mi">10</span><span class="o">)</span>
+
+<span class="k">def</span> <span class="nf">atacarA</span> <span class="o">(</span><span class="n">unGuerrero</span> <span class="k">:</span> <span class="kt">Guerrero</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+ <span class="o">..</span> <span class="o">....</span> <span class="nv">unGuerrero</span><span class="o">.</span><span class="py">potencialOfensivo</span> <span class="c1">// si no estaba expuesto en la clase, no podía hacerlo.</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>En este caso, era trivial poner ese <strong>=</strong>, de lo contrario me va a devolver <strong>Unit</strong> (void).</p>
+
+<p>No es necesario poner las llaves si tengo una sola expresión adentro.</p>
+
+<p>En cambio, si yo quiero hacer algo del estilo</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">atila</span><span class="o">.</span><span class="py">atacarA</span><span class="o">(</span><span class="n">unaMuralla</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>No funciona, aunque podría ser perfectamente válido, porque entiende los mismos mensajes. Pero yo explicité el tipo de unGuerrero, y debe ser Guerrero.</p>
+
+<p>En cambio, si en vez de definir el tipo de forma <strong>nominal</strong> como lo teníamos, y lo hacemos <strong>estructural</strong>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="kt">Atacable</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">potencialDefensivo</span> <span class="k">:</span> <span class="kt">Int</span>  <span class="c1">// metodo abstracto</span>
+  <span class="k">def</span> <span class="nf">perderEnergia</span><span class="o">(</span><span class="n">a</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="k">:</span> <span class="kt">Unit</span> <span class="c1">// metodo abstracto</span>
+  <span class="o">}</span>
+  
+<span class="k">def</span> <span class="nf">atacarA</span><span class="o">(</span><span class="n">unAtacable</span> <span class="k">:</span> <span class="kt">Atacable</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="o">....</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Lo que hicimos en este caso, fue decir que atacarA recibe a cualquier cosa que entienda esos dos métodos con esa firma.
+Ahora, puede aceptar tanto Muralla como Guerrero.</p>
+
+<p>Cambiemos la forma de hacer esto:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">abstract</span> <span class="k">class</span> <span class="nc">Defensor</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">potencialDefensivo</span> <span class="k">:</span> <span class="kt">Int</span>  <span class="c1">// metodo abstracto</span>
+  <span class="k">def</span> <span class="nf">perderEnergia</span><span class="o">(</span><span class="n">a</span><span class="k">:</span><span class="kt">Int</span><span class="o">)</span> <span class="k">:</span> <span class="kt">Unit</span> <span class="c1">// metodo abstracto</span>
+  <span class="k">var</span> <span class="n">energia</span> <span class="k">=</span> <span class="mi">100</span>
+  <span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Muralla</span><span class="o">(</span><span class="n">altura</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Defensor</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">potencialDefensivo</span> <span class="k">=</span> <span class="n">altura</span>  <span class="o">*</span> <span class="mi">10</span>
+  <span class="c1">// val energia = 1000 no puedo hacer esto porque me falta un **override**</span>
+  <span class="c1">// override val energia = 1000 tampoco, porque energia tiene solo un getter y no un setter,</span>
+  <span class="c1">//y en la clase abstracta tenia un var, que tiene getter y setter.</span>
+  <span class="c1">// var energia = 1000 tampoco, porque estaría pisando la variable energia con otra variable energia.</span>
+  <span class="n">energia</span> <span class="k">=</span> <span class="mi">1000</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Al extender una clase, tengo que pasarle tambien los parametros a la clase de la cual está extendiendo.
+La linearización va de derecha a izquierda, teniendo menos prioridad la superclase siempre porque esa clase podria tener superclases, muchos mixins.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">extends</span> <span class="nc">Klass</span> <span class="k">with</span> <span class="nc">Mixin1</span> <span class="k">with</span> <span class="nc">Mixin2</span> <span class="k">with</span> <span class="nc">Mixin3</span>
+</code></pre></div></div>
+
+<p>En este caso, tiene más prioridad el Mixin3 y menor prioridad su superclase Klass.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">leerDeLaBase</span><span class="o">(</span><span class="n">q</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Any</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="c1">//....</span>
+  <span class="k">new</span> <span class="nc">Guerrero</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">13</span><span class="o">)</span>
+  
+  <span class="o">}</span>
+  <span class="c1">// no podemos hacer  val atila = leerDeLaBase("asdasd"), sino:</span>
+  <span class="k">val</span> <span class="nv">atila</span> <span class="k">=</span> <span class="nf">leerDeLaBase</span><span class="o">(</span><span class="s">"asdasd"</span><span class="o">).</span><span class="py">asInstanceOf</span><span class="o">[</span><span class="kt">Guerrero</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>Aunque lo que estamos devolviendo sabemos que es un Guerrero, como no le explicitamos que era uno, sino que era un Any
+esto no compila. Hay que castearlo. Ahora puedo tratar al guerrero como tal. En cambio, si:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">leerDeLaBase</span><span class="o">(</span><span class="n">q</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Any</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="c1">//....</span>
+  <span class="k">new</span> <span class="nc">Guerrero</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">13</span><span class="o">)</span>
+  <span class="s">"asdasd"</span>
+  <span class="o">}</span>
+  <span class="c1">// lo de abajo rompe</span>
+  <span class="k">val</span> <span class="nv">atila</span> <span class="k">=</span> <span class="nf">leerDeLaBase</span><span class="o">(</span><span class="s">"asdasd"</span><span class="o">).</span><span class="py">asInstanceOf</span><span class="o">[</span><span class="kt">Guerrero</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>Y está bien que rompa. Porque no hay ningún lugar en el cual compartan un tipo o se pueda convertir un String a un Guerrero.</p>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>

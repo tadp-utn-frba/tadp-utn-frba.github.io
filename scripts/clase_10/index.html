@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_10/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase 10 TADP 1C2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="tadp---2015-c2---clase-10---comportamiento-vs-estructura-orden-superior-monadas-y-monoides">
+        
+        
+          <a href="#tadp---2015-c2---clase-10---comportamiento-vs-estructura-orden-superior-monadas-y-monoides"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> TADP - 2015 C2 - Clase 10 - Comportamiento vs Estructura (Orden Superior), Monadas y Monoides
+        
+        
+      </h1>
+    
+      <h2 id="orden-superior">
+        
+        
+          <a href="#orden-superior"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Orden Superior
+        
+        
+      </h2>
+    
+
+<p>Recordamos las Listas de Haskell, cómo estaban definidas, cómo podíamos trabajarlas por recursividad y que, de ser posible, resultaba mucho más práctico utilizar <strong>Operaciones de Orden Superior</strong>, que encapsulaban la idea de una operación y permitían que pensemos nuestros programas de forma más <strong>declarativa</strong>, con un nivel de <strong>abstracción</strong> más cercano al problema que teníamos que resolver.</p>
+
+<p>Recordamos algunas operaciones como <em>filter</em>, <em>map</em>, <em>flatMap</em> y <em>fold</em>, qué tipo tenían, cómo se usaban y cuál es la intuición de las abstracciones que encapsulan. El objetivo es entender que estas operaciones pueden ser pensadas de forma independiente a los detalles de implementación de la lista; para eso tratamos de olvidarnos de las listas y pensar las operaciones en terminos de “cajas”:</p>
+
+<ul>
+  <li>
+    <p>filter: dada una caja[A] y una función A =&gt; Bool, abre la caja, el contenido que pasa la función criterio lo pone en una nueva caja[A].</p>
+  </li>
+  <li>
+    <p>map: dada una caja[A] y una función A =&gt; B, abre la caja, transforma el contenido usando la función y retorna el resultado en una nueva caja[B].</p>
+  </li>
+  <li>
+    <p>flatmap: dada una caja[A] y una función A =&gt; <strong>caja[B]</strong>, abre la caja, transforma el contenido usando la función, <strong>abre estas nuevas cajas</strong> y retorna su contenido en una única caja[B].</p>
+  </li>
+  <li>
+    <p>El fold: dada una caja[A], y algún mecanismo que me permita convertirla en un valor B, aplica dicho mecanismo para abrir la caja.</p>
+  </li>
+</ul>
+
+<p>El fold va a ser un caso particular, dado que es la única de estas operaciones que <strong>no retorna una nueva caja</strong>. Todas las otras reciben y devuelven cajas, con lo que pueden componerse libremente, pero el fold abre la caja y rompe la cadena.</p>
+
+<p>Señalamos también que, al usar estas operaciones, en ningún momento nos interesa si la caja realmente tiene o no contenido. Podemos pensar nuestro programa secuenciando operaciones y sólo preocuparnos por el caso de que no haya contenido cuando necesitamos abrir la caja. Por ejemplo, para el siguiente código:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">caja</span><span class="o">.</span><span class="py">filter</span><span class="o">(</span><span class="n">f</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="n">g</span><span class="o">).</span><span class="py">filter</span><span class="o">(</span><span class="n">h</span><span class="o">).</span><span class="py">flatMap</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="py">filter</span><span class="o">(</span><span class="n">j</span><span class="o">).</span><span class="py">size</span> <span class="o">&gt;</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p>No tiene ninguna importancia si el resultado de alguno de los filter (o la caja inicial) es una caja sin contenido, porque <strong>nunca necesitamos acceder al contenido</strong>.</p>
+
+<p>Ahora que ya tenemos la intuición sobre estas operaciones en término de contenedores, introducimos dos nuevos tipos de contenedores muy comunes que también pueden trabajarse con estas operaciones: Option, que modela la posibilidad de tener o no algo, y Try, que representa la posibilidad de obtener un valor o fallar en el intento. Pueden parecer similares, pero sus estructuras y finalidades son distintas.</p>
+
+<p>Vemos entonces que el Option es un gran sustituto del null (y además es type-safe!) y el Try es excelente para reemplazar el manejo de excepciones con valores de retorno. También vemos que con el Try podemos desentendernos de cuando ocurre un error hasta que podamos manejarlo (similar a lo que pasaba con manejo de excepciones).</p>
+
+<p>De las 4 operaciones de orden superior que vimos, la única que varía un poco entre List, Option y Try es el fold, justamente porque cada caja debe abrirse pensando en cada una de sus posibles formas: Distintas cajas se abren distinto.</p>
+
+<p>La parte mágica de todo esto está en notar que es posible aprender a trabajar en un nivel de abstracción por encima de los datos. Podemos desentendernos de la forma de la caja estamos usando y simplemente pensar en termino de combinar filtrados, mapeos y otras operaciones. (Así como antes decíamos “quiero mapear, no me importa si la lista está vacía o tiene elementos”, ahora podemos decir “quiero mapear, no me importa ni siquiera si es una lista” :p ).</p>
+      <h2 id="monadas-y-monoides">
+        
+        
+          <a href="#monadas-y-monoides"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Monadas y Monoides
+        
+        
+      </h2>
+    
+
+<p>Podemos, de forma más bien laxa, llamar a estas cajas <strong>Monadas</strong> (o <strong>Monoide</strong> para el caso del Try), nombre que Scala toma del paradigma funcional y para el cual hace una implementación un tanto diferente a la de Haskell. No vamos a meternos a explicar en detalle qué es una Monoide o que propiedades tiene que cumplir para considerarse una Monada. Basta con entender que, así como la composición de funciones es un mecanismo para secuenciar operaciones, las Mónadas son un mecanismo para secuenciar tranformaciones de datos. Si quieren profundizar sobre el tema pueden encontrar un par de buenos artículos <a href="https://wiki.haskell.org/Monad">acá</a> y <a href="https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534">acá</a>.</p>
+      <h2 id="for-comprehension">
+        
+        
+          <a href="#for-comprehension"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> For Comprehension
+        
+        
+      </h2>
+    
+
+<p>Como la anidación de operaciones de orden superior como flatmap, map y filter es muy común y enseguida se puede volver engorroso, hay una sintaxis más amigable que el compilador reescribe por atrás a operaciones monádicas. En Scala, esta sintaxis se llama <strong>for-comprehension</strong> y está inspirada en la <em>do-comprehension</em> de Haskell.</p>
+
+<p>En precompilación se transforman las for-comprehensions en una combinación de maps, flatmaps, filters y/o foreachs. Esta sintaxis nos permite abstraernos de la cajita a la par de las operaciones que se utilizan por detrás, y termina resultando muy intuitivo.</p>
+
+<p>Por ejemplo, una sentencia compleja como la siguiente:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">caja</span><span class="o">.</span><span class="py">flatMap</span> <span class="o">{</span> <span class="n">e1</span> <span class="k">=&gt;</span>
+  <span class="nf">tx1</span><span class="o">(</span><span class="n">e1</span><span class="o">).</span><span class="py">flatMap</span> <span class="o">{</span> <span class="n">e2</span> <span class="k">=&gt;</span>
+    <span class="nf">tx2</span><span class="o">(</span><span class="n">e2</span><span class="o">).</span><span class="py">filter</span> <span class="o">{</span> <span class="n">e3</span> <span class="k">=&gt;</span>
+      <span class="nf">crit</span><span class="o">(</span><span class="n">e3</span><span class="o">)</span>
+    <span class="o">}.</span><span class="py">map</span> <span class="o">{</span> <span class="n">e4</span> <span class="k">=&gt;</span>
+      <span class="nf">tx3</span><span class="o">(</span><span class="n">e4</span><span class="o">)</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Puede escribirse así:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="o">{</span>
+  <span class="n">e1</span> <span class="k">&lt;-</span> <span class="n">caja</span>
+  <span class="n">e2</span> <span class="k">&lt;-</span> <span class="nf">tx1</span><span class="o">(</span><span class="n">e1</span><span class="o">)</span>
+  <span class="n">e3</span> <span class="k">&lt;-</span> <span class="nf">tx2</span><span class="o">(</span><span class="n">e2</span><span class="o">)</span>
+  <span class="k">if</span> <span class="nf">crit</span><span class="o">(</span><span class="n">e3</span><span class="o">)</span>
+<span class="o">}</span> <span class="k">yield</span> <span class="nf">tx3</span><span class="o">(</span><span class="n">e3</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>El compilador va a tomar la expresión del segundo bloque de código y a convertirla en lo que se ve en el primero.</p>
+      <h2 id="bajando-a-tierra">
+        
+        
+          <a href="#bajando-a-tierra"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Bajando a Tierra
+        
+        
+      </h2>
+    
+
+<p>Por último, en el siguiente ejemplo vamos a tratar de aprovechar estas nuevas ideas para mejorar la ejecución en nuestro Micro; primero convirtiendo los resultados de ejecución en Monoides y luego descartandolos en favor de utilizar un Try.</p>
+
+<p><a href="https://github.com/tadp-utn-frba/tadp-clases/tree/scala-microprocesador-tuneado/funcional-monadas">repo funcional-monadas</a></p>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>
