@@ -30,7 +30,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 # Trabajos Prácticos
 * [TP Metaprogramación 2025 1C: Contratos](https://docs.google.com/document/d/1cl299pxGZg8zovJ--eX6MfS32WwIOe6UDt7UkgdNgdE/edit)
-* [TP Objetos-Funcional 2025 1C: Próximamente](#)
+* [TP Objetos-Funcional 2025 1C: Festival de Invierno](https://docs.google.com/document/d/1cCwcKdFGS3rZMLXnuIUOnO10TFffDiVn7HDm-5Ww7C8/edit)
 
 # Guias
 
