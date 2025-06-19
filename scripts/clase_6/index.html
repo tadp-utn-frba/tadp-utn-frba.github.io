@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_6/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase 6 TADP 1C2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="clase-6-ejercicio-integrador-n-2">
+        
+        
+          <a href="#clase-6-ejercicio-integrador-n-2"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Clase 6: Ejercicio Integrador N° 2
+        
+        
+      </h1>
+    
+
+<p>En esta clase veremos otro ejercicio integrador con el mismo fin que la clase pasada. Para ello realizaremos el ejercicio de Multimethods.</p>
+      <h2 id="que-es-multimethod">
+        
+        
+          <a href="#que-es-multimethod"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Que es multimethod?
+        
+        
+      </h2>
+    
+
+<p>Es un sistema que permite que una serie de métodos sean polimórficos en al menos uno o más de sus argumentos. Esta idea se puede ver en CLOS (Common Lisp Object System) y algunos lenguajes como Dylan. CLOS extiende a Common Lisp para agregar un sistema de objectos <a href="http://c2.com/cgi/wiki?TheArtOfTheMetaObjectProtocol">http://c2.com/cgi/wiki?TheArtOfTheMetaObjectProtocol</a> extendiendo el lenguaje y para dar soporte a objetos.</p>
+      <h2 id="una-explicación-simple-de-multimethods">
+        
+        
+          <a href="#una-explicación-simple-de-multimethods"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Una explicación simple de Multimethods
+        
+        
+      </h2>
+    
+
+<p>En Ruby como en Python, ambos tienen sistemas de single dispatch, en el que la firma es esencialmente el nombre del método, sin importar en temas como la aridad, por lo que dos métodos como</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">saraza</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="err">…</span><span class="p">.</span>
+<span class="nf">end</span>
+</code></pre></div></div>
+
+<p>y</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">saraza</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="err">…</span><span class="p">.</span>
+<span class="nf">end</span>
+</code></pre></div></div>
+
+<p>no serán dos métodos sino que dependiendo de cómo estén declarados en el caso de Ruby, la segunda declaración pisa a la primera, en el caso de Python, en general sucede lo mismo en un intérprete o directamente nos lanzará un error en el código. Más allá de eso, nosotros queremos que saraza(a) y saraza(a, b) puedan coexistir y el método a ejecutar dependa de cuáles sean los parámetros recibidos. Por lo que deberemos chequear esto en tiempo de ejecución y dirigir el flujo al método con la firma adecuada. Esto se relaciona un poco con el concepto de polimorfismo del receptor, por ej. si tenemos algo como:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">.</span><span class="nf">saraza</span><span class="p">(</span><span class="n">unParam</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>a ejecutará un método u otro dependiendo de la clase a la que pertenece, queremos abrir la puerta a que también se decida en base al tipo de unParam. Vamos a hablar más sobre firmas de métodos y la búsqueda de la definición para un mensaje a partir de la misma en la segunda parte de la materia, cuando trabajemos con un lenguaje con tipado estático. De momento quédense con la idea de que lo que queremos implementar va a resolver qué definición usar en tiempo de ejecución, a partir del tipo de todos los objetos involucrados en el envío del mensaje, no sólo el receptor.</p>
+      <h2 id="en-donde-entra-la-metaprogramación">
+        
+        
+          <a href="#en-donde-entra-la-metaprogramación"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> En donde entra la metaprogramación?
+        
+        
+      </h2>
+    
+
+<p>En este caso extenderemos a Ruby agregándole multimethods, de esta manera estamos un poco más del lado de intercession que es la capacidad de extender el lenguaje en el que estamos para agregarle más features interesantes (o locos?). Además como otros ejercicios usaremos reflection y self modification para llegar a resolver este problema.</p>
+
+<p>Sobre el ejercicio</p>
+
+<p>El enunciado del ejercicio esta <a href="https://www.google.com/url?q=http://drive.google.com/open?id%3D1_yCtJQdQbhaeWny5ByMJKNJKpCmEdTELoTEoCZG4_4Q&amp;sa=D&amp;ust=1471097603702000&amp;usg=AFQjCNHbRgVqvmyQL0fi9u3_cIJPY15dXQ">acá</a></p>
+
+<p>El código al que llegamos al final de la clase esta en este <a href="https://github.com/tadp-utn-frba/tadp-clases/tree/ruby-multimethods">repo</a></p>
+
+<p>En el primer punto implementamos algo del estilo</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">helloBlock</span> <span class="o">=</span> <span class="no">PartialBlock</span><span class="p">.</span><span class="nf">new</span><span class="p">([</span><span class="no">String</span><span class="p">])</span> <span class="k">do</span> <span class="o">|</span><span class="n">who</span><span class="o">|</span>
+  <span class="s2">"Hello </span><span class="si">#{</span><span class="n">who</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+
+<span class="n">helloBlock</span><span class="p">.</span><span class="nf">matches</span><span class="p">(</span><span class="s2">"a"</span><span class="p">)</span> <span class="c1">#true</span>
+<span class="n">helloBlock</span><span class="p">.</span><span class="nf">matches</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#false</span>
+<span class="n">helloBlock</span><span class="p">.</span><span class="nf">matches</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">)</span> <span class="c1">#false</span>
+</code></pre></div></div>
+
+<p>Acá lo que hicimos fue algo bastante simple que es crear la abstracción del PartialBlock que contenga los tipos de los parámetros esperados y el bloque que se espera poder ejecutar, y después le definimos el método matches devolviendo true o false dependiendo de si los tipos esperados coinciden con los de los argumentos que le pasamos al método. Este método debía definirse con varargs para poder recibir múltiples argumentos como se indicaba en el ejemplo de uso.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PartialBlock</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:block</span><span class="p">,</span> <span class="ss">:types</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span> <span class="n">types</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">types</span> <span class="o">=</span> <span class="n">types</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">block</span> <span class="o">=</span> <span class="n">block</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">matches</span><span class="p">(</span><span class="o">*</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">unless</span> <span class="n">values</span><span class="p">.</span><span class="nf">length</span> <span class="o">==</span> <span class="n">types</span><span class="p">.</span><span class="nf">length</span>
+      <span class="k">return</span> <span class="kp">false</span>
+    <span class="k">end</span>
+
+    <span class="k">return</span> <span class="kp">true</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Además para poder evaluarlos como se pide a continuación usando call le agregamos:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PartialBlock</span>
+
+  <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="no">ArgumentError</span> <span class="k">unless</span> <span class="nb">self</span><span class="p">.</span><span class="nf">matches</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">block</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<ol>
+  <li>El segundo punto es el de poder crear multimethods de la mano de partial_def, que debemos poder utilizarlo en el contexto de una clase, de modo que luego las instancias de esa clase puedan responder al mensaje correspondiente.</li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span>
+  <span class="n">partial_def</span> <span class="ss">:concat</span><span class="p">,</span> <span class="p">[</span><span class="no">String</span><span class="p">,</span> <span class="no">String</span><span class="p">]</span> <span class="k">do</span> <span class="o">|</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="o">|</span>
+    <span class="n">s1</span> <span class="o">+</span> <span class="n">s2</span>
+  <span class="k">end</span>
+
+  <span class="n">partial_def</span> <span class="ss">:concat</span><span class="p">,</span> <span class="p">[</span><span class="no">String</span><span class="p">,</span> <span class="no">Integer</span><span class="p">]</span> <span class="k">do</span> <span class="o">|</span><span class="n">s1</span><span class="p">,</span><span class="n">n</span><span class="o">|</span>
+    <span class="n">s1</span> <span class="o">*</span> <span class="n">n</span>
+  <span class="k">end</span>
+
+  <span class="n">partial_def</span> <span class="ss">:concat</span><span class="p">,</span> <span class="p">[</span><span class="no">Array</span><span class="p">]</span> <span class="k">do</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span>
+    <span class="n">a</span><span class="p">.</span><span class="nf">join</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">A</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">' world'</span><span class="p">)</span> <span class="c1"># devuelve 'helloworld'</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># devuelve 'hellohellohello'</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">' world'</span><span class="p">,</span> <span class="s1">'!'</span><span class="p">])</span> <span class="c1"># devuelve 'hello world!'</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="s1">'world'</span><span class="p">,</span> <span class="s1">'!'</span><span class="p">)</span> <span class="c1"># Lanza una excepción!</span>
+</code></pre></div></div>
+
+<p>Ahora debemos definir el comportamiento del partial_def, abriendo una clase del metamodelo, pero cual? Podría pensarse de hacerlo sobre Object, al hacerlo sobre esta clase funcionaría para cualquier clase, pero a su vez le estaría dando este comportamiento también a cualquier objeto, lo cual no tendría sentido, sólo lo querríamos para las clases. Una opción válida sería Class aunque si queremos usar partial_def en un módulo no podremos, por lo que la otra opción es hacerlo sobre Module y permitirle tanto a clases como a módulos el de poder utilizar partial_def.</p>
+
+<p>Otra cosa que tuvimos que decidir fue cómo íbamos a representar a los multimethods y cómo almacenar la información de cada definición que se haga usando partial_def. Una primer idea fue tener un atributo que guardara un diccionario donde el selector del mensaje a definir fuera la clave y se le asociara una lista con los partial blocks. Otra alternativa, por la que decidimos ir, era reificar la idea de Multimethod, de esa forma el atributo que terminamos llamando @actual_multimethods tendría directamente una lista de instancias de Multimethod (una por cada selector) de modo que se pudiera delegar también a estos objetos en vez de mantener toda la lógica en Module.</p>
+
+<p>Para poder mandarle el mensaje definido usando partial_def a las instancias de la clase también surgieron ideas distintas. Una de ellas era definir un método en la clase/módulo que recibió partial_def que se llame igual que el símbolo recibido por parámetro de modo que triggeree la búsqueda de la implementación correspondiente en base a los parámetros que reciba, la otra era redefinir method_missing de modo que obtenga el multimethod con el símbolo correspondiente al mensaje no entendido y luego triggeree esa misma búsqueda en base a los parámetros recibidos.</p>
+
+<p>Fuimos por la primer alternativa porque no hay una verdadera necesidad de caer en el method_missing, después de todo ya sabemos de antemano cuál es el mensaje que tiene que poder entender, y en general vamos a optar por no usar method_missing en esos casos ya que es más complejo (tenemos que asegurarnos de mantener consistente la interfaz de reflection también, cosa que si definimos el método usando define_method se da solo).</p>
+
+<p>Además definimos la lógica necesaria para poder responder a los mensajes multimethod y multimethods:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">A</span><span class="p">.</span><span class="nf">multimethods</span><span class="p">()</span> <span class="c1">#[:concat]</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">multimethod</span><span class="p">(</span><span class="ss">:concat</span><span class="p">)</span> <span class="c1">#Representación del multimethod</span>
+</code></pre></div></div>
+
+<p>… cuya implementación, al modelar al multimethod como un objeto, es trivial. Finalmente llegamos al siguiente código:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Module</span>
+
+  <span class="k">def</span> <span class="nf">partial_def</span><span class="p">(</span><span class="n">sym</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="n">partial_block</span> <span class="o">=</span> <span class="no">PartialBlock</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">types</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="n">multimethod</span> <span class="o">=</span> <span class="n">get_multimethod</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span>
+    <span class="n">multimethod</span><span class="p">.</span><span class="nf">definitions</span> <span class="o">&lt;&lt;</span> <span class="n">partial_block</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="ss">:define_method</span><span class="p">,</span> <span class="n">sym</span><span class="p">)</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="o">|</span>
+      <span class="n">multimethod</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">actual_multimethods</span>
+    <span class="vi">@actual_multimethods</span> <span class="o">||=</span> <span class="p">[]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">multimethod</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">actual_multimethods</span><span class="p">.</span><span class="nf">find</span> <span class="p">{</span> <span class="o">|</span><span class="n">mm</span><span class="o">|</span> <span class="n">mm</span><span class="p">.</span><span class="nf">selector</span><span class="p">.</span><span class="nf">eql?</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span> <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">multimethods</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">actual_multimethods</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">mm</span><span class="o">|</span> <span class="n">mm</span><span class="p">.</span><span class="nf">selector</span> <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">has_multimethod?</span><span class="p">(</span><span class="n">multimethod</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">actual_multimethods</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="n">multimethod</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">get_multimethod</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span>
+    <span class="n">multimethod</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">multimethod</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span> <span class="o">||</span> <span class="no">MultiMethod</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span>
+    <span class="n">actual_multimethods</span> <span class="o">&lt;&lt;</span> <span class="n">multimethod</span> <span class="k">unless</span> <span class="n">has_multimethod?</span><span class="p">(</span><span class="n">multimethod</span><span class="p">)</span>
+    <span class="n">multimethod</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">MultiMethod</span>
+
+  <span class="nb">attr_accessor</span> <span class="ss">:selector</span><span class="p">,</span> <span class="ss">:definitions</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">selector</span> <span class="o">=</span> <span class="n">sym</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">definitions</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">definition</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">definitions</span>
+                     <span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">definition</span><span class="o">|</span> <span class="n">definition</span><span class="p">.</span><span class="nf">matches</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="p">}</span>
+                     <span class="p">.</span><span class="nf">min_by</span> <span class="p">{</span> <span class="o">|</span><span class="n">definition</span><span class="o">|</span> <span class="n">definition</span><span class="p">.</span><span class="nf">distance_to</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="p">}</span>
+    <span class="n">definition</span> <span class="p">?</span> <span class="n">definition</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="p">:</span> <span class="k">raise</span><span class="p">(</span><span class="no">NoMethodError</span><span class="p">)</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">PartialBlock</span>
+  <span class="k">def</span> <span class="nf">distance_to</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">args</span><span class="p">.</span><span class="nf">zip</span><span class="p">(</span><span class="n">types</span><span class="p">).</span><span class="nf">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">tuple</span><span class="p">,</span> <span class="n">index</span><span class="o">|</span>
+      <span class="k">case</span> <span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">when</span> <span class="no">Array</span> <span class="k">then</span>
+          <span class="mi">1</span> <span class="c1">#because classroom-related reasons</span>
+        <span class="k">else</span>
+          <span class="n">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">class</span><span class="p">.</span><span class="nf">ancestors</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">index</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Cabe destacar que esa solución de partial_def fue posible gracias a que el bloque conoce el contexto en el cual fue creado, por eso no es necesario buscar el multimethod en la lista.</p>
+
+<p>A su vez, se pide extender la interfaz de reflection con métodos que indiquen si un objeto responde a un determinado mensaje con cierta firma:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">A</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:concat</span><span class="p">)</span> <span class="c1"># true, define el método como multimethod</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:to_s</span><span class="p">)</span> <span class="c1"># true, define el método normalmente</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:concat</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="p">[</span><span class="no">String</span><span class="p">,</span><span class="no">String</span><span class="p">])</span> <span class="c1"># true, los tipos coinciden</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:concat</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="p">[</span><span class="no">Integer</span><span class="p">,</span><span class="no">A</span><span class="p">])</span> <span class="c1"># true, matchea con [Object, Object]</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:to_s</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="p">[</span><span class="no">String</span><span class="p">])</span> <span class="c1"># false, no es un multimethod</span>
+<span class="no">A</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:concat</span><span class="p">,</span> <span class="kp">false</span><span class="p">,</span> <span class="p">[</span><span class="no">String</span><span class="p">,</span><span class="no">String</span><span class="p">,</span><span class="no">String</span><span class="p">])</span> <span class="c1"># false, los tipos no coinciden</span>
+</code></pre></div></div>
+
+<p>Entonces también debemos redefinir el respond_to?. Hay que tener siempre cuidado con este tipo de extensiones ya que debemos estar atentos de no modificar el comportamiento para aquellos métodos que no fueron definidos por medio de un partial_def. Las opciones propuestas fueron:
+Definir respond_to? usando partial_def, de modo que que la definición original de respond_to? (la cual deberíamos asegurarnos de no perder mediante un alias o pidiendo el unbound method y guardándolo en una variable para poder invocarlo más adelante) se use si matchea con los tipos [Symbol] o [Symbol, Object], y una tercer definición para [Symbol, Object, Array] que haga lo que nosotros queremos.
+Redefinir respond_to? como un método normal con un if, de modo que si nos pasan el tercer parámetro, se use la definición para multimethods y sino la original.</p>
+
+<p>Tratamos de ir por la primera porque era más divertida, pero lamentablemente no funcionó por un loop infinito (respond_to? se usa en el core del method lookup, no fue por un error de la solución en sí, simplemente justo con en respond_to? no se puede, se las dejamos comentada de todos modos). Luego fuimos por la otra alternativa:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Object</span>
+
+  <span class="k">def</span> <span class="nf">respond_to?</span><span class="p">(</span><span class="n">sym</span><span class="p">,</span> <span class="n">include_private</span> <span class="o">=</span> <span class="kp">false</span><span class="p">,</span> <span class="n">signature</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+    <span class="n">signature</span><span class="p">.</span><span class="nf">nil?</span> <span class="p">?</span> <span class="k">super</span><span class="p">(</span><span class="n">sym</span><span class="p">,</span> <span class="n">include_private</span><span class="p">)</span> <span class="p">:</span> <span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">actual_multimethods</span>
+               <span class="p">.</span><span class="nf">any?</span> <span class="p">{</span> <span class="o">|</span><span class="n">mm</span><span class="o">|</span> <span class="n">mm</span><span class="p">.</span><span class="nf">matches?</span><span class="p">(</span><span class="n">sym</span><span class="p">,</span> <span class="n">signature</span><span class="p">)</span> <span class="p">}</span>
+  <span class="k">end</span>
+
+<span class="cm">=begin
+  partial_def :respond_to?, [Symbol] do |sym|
+    self.old_respond_to?(sym)
+  end
+  partial_def :respond_to?, [Symbol, Object] do |sym, bool|
+    self.old_respond_to?(sym, bool)
+  end
+  partial_def :respond_to?, [Symbol, Object, Array] do |sym, bool, types|
+    false unless self.class.multimethods.include?(sym)
+    multimethod = self.class.multimethod(sym)
+    multimethod.matches_signature?(types)
+  end
+=end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Para saber si existe alguna definición para el multimethod cuya firma matchee con la lista de tipos recibida refactorizamos un poco PartialBlock para evitar la repetición de lógica.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Multimethod</span>
+
+  <span class="k">def</span> <span class="nf">matches?</span><span class="p">(</span><span class="n">sym</span><span class="p">,</span> <span class="n">types</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">selector</span><span class="p">.</span><span class="nf">eql?</span><span class="p">(</span><span class="n">sym</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">self</span><span class="p">.</span><span class="nf">definitions</span>
+                             <span class="p">.</span><span class="nf">any?</span> <span class="p">{</span> <span class="o">|</span><span class="n">definition</span><span class="o">|</span><span class="n">definition</span><span class="p">.</span><span class="nf">matches_signature?</span><span class="p">(</span><span class="n">types</span><span class="p">)}</span>
+  <span class="k">end</span>
+  
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">PartialBlock</span>
+  <span class="k">def</span> <span class="nf">matches</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">arg_types</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">arg</span><span class="o">|</span> <span class="n">arg</span><span class="p">.</span><span class="nf">class</span> <span class="p">}</span>
+    <span class="n">matches_signature?</span><span class="p">(</span><span class="n">arg_types</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">matches_signature?</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kp">false</span> <span class="k">unless</span> <span class="n">signature</span><span class="p">.</span><span class="nf">size</span><span class="p">.</span><span class="nf">eql?</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="nf">types</span><span class="p">.</span><span class="nf">size</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">types</span><span class="p">.</span><span class="nf">zip</span><span class="p">(</span><span class="n">signature</span><span class="p">).</span><span class="nf">all?</span> <span class="k">do</span> <span class="o">|</span><span class="n">my_type</span><span class="p">,</span> <span class="n">sign_type</span><span class="o">|</span> <span class="n">sign_type</span> <span class="o">&lt;=</span> <span class="n">my_type</span> <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Algo que quedó en el tintero para poder ir al siguiente punto es la aclaración de que se pueda usar self dentro de la definición de un método declarado mediante partial_def. Con el código actual eso no funcionará como querríamos, si te animás, c</p>
+
+<ol>
+  <li>Hay muchos más puntos en el enunciado de TP grupal original, pero por cuestiones de tiempo los dejamos afuera para resolver que pueda usarse duck typing (que fue el TP individual que se tomó), que es básicamente que pueda conocerse la usabilidad de un objeto de acuerdo a sus comportamientos en vez de su tipo estrictamente. Es decir que trato a dos objetos de distintas clases polimórficamente si entienden el mismo subconjunto de mensajes aún si son cosas totalmente diferentes como el siguiente ejemplo:</li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Duck</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="nb">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Quaaaaaack!"</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">feathers</span><span class="p">(</span><span class="nb">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"The duck has white and gray feathers."</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">quack</span><span class="p">(</span><span class="nb">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"The person imitates a duck."</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">feathers</span><span class="p">(</span><span class="nb">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"The person takes a feather from the ground and shows it."</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="nb">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"John Smith"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">in_the_forest</span><span class="p">(</span><span class="n">duck</span><span class="p">):</span>
+    <span class="n">duck</span><span class="p">.</span><span class="nf">quack</span><span class="p">()</span>
+    <span class="n">duck</span><span class="p">.</span><span class="nf">feathers</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">game</span><span class="p">():</span>
+    <span class="n">donald</span> <span class="o">=</span> <span class="no">Duck</span><span class="p">()</span>
+    <span class="n">john</span> <span class="o">=</span> <span class="no">Person</span><span class="p">()</span>
+    <span class="n">in_the_forest</span><span class="p">(</span><span class="n">donald</span><span class="p">)</span>
+    <span class="n">in_the_forest</span><span class="p">(</span><span class="n">john</span><span class="p">)</span>
+
+<span class="n">game</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Ahora volviendo al ejercicio, vamos a definir duck typing de la siguiente manera</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">B</span>
+    <span class="n">partial_def</span> <span class="ss">:concat</span><span class="p">,</span> <span class="p">[</span><span class="no">String</span><span class="p">,</span> <span class="p">[</span><span class="ss">:m</span><span class="p">,</span> <span class="ss">:n</span><span class="p">],</span> <span class="no">Integer</span><span class="p">]</span> <span class="k">do</span> <span class="o">|</span><span class="n">o1</span><span class="p">,</span> <span class="n">o2</span><span class="p">,</span> <span class="n">o3</span><span class="o">|</span>
+    <span class="s1">'Objetos Concatenados'</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Si el argumento que debería ser un tipo es un array de símbolos, representando el nombre de los selectores que debería entender, entonces se debe aplicar duck typing. Para implementar este agregado entonces debemos extender el matches del partial block de la siguiente manera.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PartialBlock</span>
+  <span class="k">def</span> <span class="nf">matches_signature?</span><span class="p">(</span><span class="n">signature</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kp">false</span> <span class="k">unless</span> <span class="n">signature</span><span class="p">.</span><span class="nf">size</span><span class="p">.</span><span class="nf">eql?</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="nf">types</span><span class="p">.</span><span class="nf">size</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">types</span><span class="p">.</span><span class="nf">zip</span><span class="p">(</span><span class="n">signature</span><span class="p">).</span><span class="nf">all?</span> <span class="k">do</span> <span class="o">|</span><span class="n">my_type</span><span class="p">,</span> <span class="n">sign_type</span><span class="o">|</span>
+      <span class="k">case</span> <span class="n">my_type</span>
+        <span class="k">when</span> <span class="no">Array</span> <span class="k">then</span>
+          <span class="n">my_type</span><span class="p">.</span><span class="nf">all?</span> <span class="p">{</span> <span class="o">|</span><span class="nb">method</span><span class="o">|</span> <span class="n">sign_type</span><span class="p">.</span><span class="nf">instance_methods</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="nb">method</span><span class="p">)</span> <span class="p">}</span>
+        <span class="k">else</span>
+          <span class="n">sign_type</span> <span class="o">&lt;=</span> <span class="n">my_type</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>A esta altura debería volverse más evidente que el refactor que hicimos en el punto anterior para no repetir lógica era muy importante. Si no lo hacíamos antes, lo íbamos a tener que hacer ahora.</p>
+
+<p>Algunas alternativas que no hubieran estado buenas para resolver este ejercicio:
+Definir todo en términos de duck typing obteniendo todos los mensajes que definen las clases correspondientes. Eso rompería la funcionalidad porque el tipo en base a los mensajes que entiene puede abarcar objetos que no están en la jerarquía que se pedía inicialmente.
+Resolver el if/switch con polimorfismo abriendo Array y Module. Esto es algo muy particular de nuestro framework, y ensuciar más la interfaz de Array y Module para evitar ese if no es una buena idea.</p>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>

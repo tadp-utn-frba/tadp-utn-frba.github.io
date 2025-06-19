@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/guias/scala/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Instalación de IDE y otras guías</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="intellij">Intellij</h1>
+<h2 id="instalación">Instalación</h2>
+
+<ol>
+  <li>Asegurate de tener instalada la JDK de Java 8 (o superior)
+    <ul>
+      <li>En la línea de comandos corré <code class="language-plaintext highlighter-rouge">javac -version</code> y asegurate de ver <code class="language-plaintext highlighter-rouge">javac 1.8.___</code> (o superior).</li>
+      <li>Si no tenés la versión 1.8 o superior, instalá la <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">JDK</a>.</li>
+    </ul>
+  </li>
+  <li>Luego, descargá e instalá <a href="https://www.jetbrains.com/idea/download/">Intellij community edition</a></li>
+  <li>Luego de iniciar Intellij, podés descargar e instalar el plugin de Scala:
+    <ul>
+      <li>
+        <p>File -&gt; Settings -&gt; Plugins -&gt; buscar scala -&gt; Install</p>
+
+        <p><img src="/img/intellij_scala_plugin.png" alt="Plugins" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>Reiniciar el ide para que se apliquen los cambios</li>
+</ol>
+
+<p>Más detalles y opciones en la página de <a href="https://docs.scala-lang.org/getting-started/intellij-track/getting-started-with-scala-in-intellij.html">scala</a>.</p>
+
+<h2 id="importar-el-proyecto-sbt">Importar el proyecto sbt</h2>
+<ol>
+  <li>Clonar el proyecto de github correspondiente a tu grupo</li>
+  <li>
+    <p>En intellij: File -&gt; Open -&gt; doble click en <code class="language-plaintext highlighter-rouge">build.sbt</code></p>
+
+    <p><img src="/img/open_project.png" alt="Open project" /></p>
+  </li>
+  <li>
+    <p>Click en <code class="language-plaintext highlighter-rouge">Open as Project</code></p>
+
+    <p><img src="/img/open_as_project.png" alt="Open as project" /></p>
+  </li>
+</ol>
+
+<p>Para crear un proyecto desde cero, referirse a la página de scala (<a href="https://docs.scala-lang.org/getting-started/intellij-track/building-a-scala-project-with-intellij-and-sbt.html">con sbt</a> y <a href="https://docs.scala-lang.org/getting-started/intellij-track/getting-started-with-scala-in-intellij.html">sin sbt</a>).</p>
+
+<h2 id="escribiendo-código-scala">Escribiendo código scala</h2>
+<ol>
+  <li>En el panel <code class="language-plaintext highlighter-rouge">Project</code> ubicado a la izquierda, expandí <code class="language-plaintext highlighter-rouge">{tu proyecto}</code> -&gt; <code class="language-plaintext highlighter-rouge">src</code> -&gt; <code class="language-plaintext highlighter-rouge">main</code> -&gt; <code class="language-plaintext highlighter-rouge">scala</code> -&gt; click derecho -&gt; <code class="language-plaintext highlighter-rouge">New</code> -&gt; <code class="language-plaintext highlighter-rouge">Package</code></li>
+  <li>Nombrar el package <code class="language-plaintext highlighter-rouge">domain</code></li>
+  <li>
+    <p>Click derecho sobre <code class="language-plaintext highlighter-rouge">domain</code> -&gt; <code class="language-plaintext highlighter-rouge">New</code> -&gt; <code class="language-plaintext highlighter-rouge">Scala class</code> -&gt; nombrarla <code class="language-plaintext highlighter-rouge">Persona</code></p>
+
+    <p><img src="/img/create_person_class.png" alt="Open as project" /></p>
+  </li>
+  <li>Cambiar el código a lo siguiente:</li>
+</ol>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="nn">domain</span>
+
+<span class="k">class</span> <span class="nc">Persona</span> <span class="o">(</span><span class="k">var</span> <span class="n">edad</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">cumpliAnio</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="n">edad</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="tests-con-scalatest">Tests con ScalaTest</h3>
+<ol>
+  <li>Agregar (o verificar que exista) la dependencia de ScalaTest en <code class="language-plaintext highlighter-rouge">build.sbt</code>
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">libraryDependencies</span> <span class="o">++=</span> <span class="nc">Seq</span><span class="o">(</span>
+   <span class="s">"org.scalatest"</span> <span class="o">%%</span> <span class="s">"scalatest"</span> <span class="o">%</span> <span class="s">"3.2.9"</span> <span class="o">%</span> <span class="s">"test"</span>
+ <span class="o">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Si recibís la notificación “build.sbt was changed”, seleccionar <code class="language-plaintext highlighter-rouge">auto-import</code>.</li>
+  <li>Estas dos acciones van a producir que sbt descargue la biblioteca ScalaTest.</li>
+  <li>Esperá que la sincronización de sbt termine; de otra manera, intellij no va a reconocer el código de ScalaTest y el proyecto no va a compilar.</li>
+  <li>En el panel <code class="language-plaintext highlighter-rouge">Project</code> ubicado a la izquierda, expandí <code class="language-plaintext highlighter-rouge">{tu proyecto}</code> -&gt; <code class="language-plaintext highlighter-rouge">src</code> -&gt; <code class="language-plaintext highlighter-rouge">test</code> -&gt; <code class="language-plaintext highlighter-rouge">scala</code> -&gt; click derecho -&gt; <code class="language-plaintext highlighter-rouge">New</code> -&gt; <code class="language-plaintext highlighter-rouge">Package</code></li>
+  <li>Nombrar el package <code class="language-plaintext highlighter-rouge">domain</code></li>
+  <li>Click derecho sobre <code class="language-plaintext highlighter-rouge">domain</code> -&gt; <code class="language-plaintext highlighter-rouge">New</code> -&gt; <code class="language-plaintext highlighter-rouge">Scala class</code> -&gt; nombrarla <code class="language-plaintext highlighter-rouge">PersonaTest</code></li>
+  <li>Reemplazar el código por
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">package</span> <span class="nn">domain</span>
+    
+ <span class="k">import</span> <span class="nn">org.scalatest.freespec.AnyFreeSpec</span>
+    
+ <span class="k">class</span> <span class="nc">PersonaTest</span> <span class="k">extends</span> <span class="nc">AnyFreeSpec</span> <span class="o">{</span>
+   <span class="s">"cuando una persona cumple años la edad debería ser 2"</span> <span class="n">in</span> <span class="o">{</span>
+     <span class="k">val</span> <span class="nv">persona</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Persona</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+     <span class="nv">persona</span><span class="o">.</span><span class="py">cumpliAnio</span>
+     <span class="nf">assert</span><span class="o">(</span><span class="nv">persona</span><span class="o">.</span><span class="py">edad</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span>
+   <span class="o">}</span>
+ <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>En el código, click derecho en <code class="language-plaintext highlighter-rouge">PersonaTest</code> y seleccionar <code class="language-plaintext highlighter-rouge">Run 'PersonaTest'</code>. Podés verificar el resultado de los test en el panel de abajo:</p>
+
+    <p><img src="/img/scala_test_results.png" alt="Open as project" /></p>
+  </li>
+</ol>
+
+<p>Más detalles <a href="https://docs.scala-lang.org/getting-started/intellij-track/testing-scala-in-intellij-with-scalatest.html">acá</a>.</p>
+
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>

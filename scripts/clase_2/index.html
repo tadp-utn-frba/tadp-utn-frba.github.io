@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_2/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase 2 TADP</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h2 id="traits-vs-mixins">
+        
+        
+          <a href="#traits-vs-mixins"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> <strong>Traits vs Mixins</strong>
+        
+        
+      </h2>
+    
+<p>Flattening: 
+    - Se define qué traits se van a agregar y cómo en un momento determinado. Luego de eso, para el que usa la clase todo funciona como si el comportamiento traido de los traits fuese propio de la clase.
+Linearización:
+    - Se agregan lugares donde buscar para el method lookup. Hay un orden definido en el cual se recorren todos esos lugares por lo que no es ambiguo la implementación del método que se va a usar.
+Resolución de conflictos:
+    - Automática: hay una manera predeterminada que sabe como resolver el conflicto. Por ej si incluis dos mixines en ruby, el segundo va a tener más precedencia que el primero. 
+    - Manual: cuando hay conflictos, el programador explícitamente tiene que decidir como se resuelve.</p>
+      <h1 id="continuación-ejercicio-age-of-empires">
+        
+        
+          <a href="#continuación-ejercicio-age-of-empires"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Continuación ejercicio age of empires
+        
+        
+      </h1>
+    
+<p>Sobre el ejercicio de la clase anterior agregamos la posibilidad de que los atacantes y defensores puedan “descansar” y los siguientes requerimientos.</p>
+
+<p>El descanso de la guerra</p>
+
+<p>Todas las unidades pueden descansar. Cuando un atacante descansa, tiene el efecto de duplicar su potencial ofensivo en su próximo ataque.
+Cuando un defensor descansa, suma siempre 10 de energía.</p>
+
+<p>Banzai!</p>
+
+<p>La característica del kamikaze es que se comporta como un atacante y un defensor, y su potencial ofensivo es 250, pero luego de atacar, su energía queda en 0.
+Como la unidad va a morir luego de atacar, puede descansar como atacante, pero no debe descansar como defensor.</p>
+
+<p>Atacando de la mano</p>
+
+<p>Queremos que los guerreros formen parte de un pelotón. Cuando un guerrero es atacado, el pelotón puede tomar alguna acción. Ciertos pelotones se retiran cuando alguna de sus unidades es lastimada. Otros pelotones hacen que sus unidades descansen cuando alguno de sus integrantes es lastimado. Solo hará descansar aquellos guerreros que no están descansados. Un guerrero está descansado cuando su energía es mayor a 40.</p>
+      <h2 id="implementación">
+        
+        
+          <a href="#implementación"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> <strong>Implementación</strong>
+        
+        
+      </h2>
+    
+
+<p>Arranquemos por el Defensor, cuando un defensor descansa, suma 10 de energía.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Defensor</span>
+
+    <span class="k">def</span> <span class="nf">descansar</span>
+        <span class="nb">self</span><span class="p">.</span><span class="nf">energia</span> <span class="o">+=</span> <span class="mi">10</span>
+    <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Por otro lado, cuando le decimos “descansar” al atacante, este ataca con el doble de energía en su próxima pelea.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Atacante</span>
+
+  <span class="k">def</span> <span class="nf">atacar</span><span class="p">(</span><span class="n">un_defensor</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">self</span><span class="p">.</span><span class="nf">potencial_ofensivo</span> <span class="o">&gt;</span> <span class="n">un_defensor</span><span class="p">.</span><span class="nf">potencial_defensivo</span>
+      <span class="n">danio</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">potencial_ofensivo</span> <span class="o">-</span> <span class="n">un_defensor</span><span class="p">.</span><span class="nf">potencial_defensivo</span>
+      <span class="n">un_defensor</span><span class="p">.</span><span class="nf">sufri_danio</span><span class="p">(</span><span class="n">danio</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">descansado</span> <span class="o">=</span> <span class="kp">false</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">potencial_ofensivo</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">descansado</span> <span class="p">?</span> <span class="vi">@potencial_ofensivo</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">:</span> <span class="vi">@potencial_ofensivo</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">descansar</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">descansado</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Hasta acá todo muy bien, pero ahora, surge el problema de que Guerrero, como usa el mixin Atacante, y el mixin Defensor, estaría trayendo dos métodos iguales, por lo que surge un conflicto. Entonces la pregunta es, ¿cómo se va a comportar el guerrero si le mandamos el mensaje descansar?</p>
+
+<p>No se va a romper, porque los conflictos de mixins se resuelven automáticamente por medio de la linearización. En el caso de ruby, la segunda definición va a pisar la primera, entonces por cómo definimos Guerrero, al incluir último el Defensor, la definición del mixin Defensor se va a ejecutar y no la de Atacante.</p>
+
+<p>Pero para los Guerreros vamos a querer que descanse como atacante y luego como defensor (o sea de ambas formas).</p>
+
+<p>Para lograr esto, hay diferentes soluciones:</p>
+      <h4 id="hacer-un-decorator-con-los-mixines-en-los-que-cada-mixin-llama-a-super-y-tienen-un-mixin-padre-con-el-caso-base-que-en-este-ejemplo-simplemente-no-hace-nada">
+        
+        
+          <a href="#hacer-un-decorator-con-los-mixines-en-los-que-cada-mixin-llama-a-super-y-tienen-un-mixin-padre-con-el-caso-base-que-en-este-ejemplo-simplemente-no-hace-nada"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Hacer un ‘decorator’ con los mixines, en los que cada mixin llama a super y tienen un mixin padre con el caso base, que en este ejemplo simplemente no hace nada.
+        
+        
+      </h4>
+    
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Atacante</span>
+  <span class="kp">include</span> <span class="no">Unidad</span>
+  
+  <span class="k">def</span> <span class="nf">descansar</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">descansado</span> <span class="o">=</span> <span class="kp">true</span>
+    <span class="k">super</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+ 
+<span class="k">module</span> <span class="nn">Defensor</span>
+  <span class="kp">include</span> <span class="no">Unidad</span>
+  
+  <span class="k">def</span> <span class="nf">descansar</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">energia</span> <span class="o">+=</span> <span class="mi">10</span>
+    <span class="k">super</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+ 
+<span class="k">module</span> <span class="nn">Unidad</span>
+  <span class="k">def</span> <span class="nf">descansar</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+ 
+<span class="k">class</span> <span class="nc">Guerrero</span>
+  <span class="kp">include</span> <span class="no">Atacante</span>
+  <span class="kp">include</span> <span class="no">Defensor</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>En este caso, si Guerrero incluye tanto Atacante como Defensor, el method lookup seguiría el siguiente camino resultado de la linearización:</p>
+
+<p>Guerrero ~&gt; Defensor ~&gt; Atacante ~&gt; Unidad ~&gt; Object</p>
+
+<p>Entonces, Defensor y Atacante van a hacer lo suyo y luego van a delegar la responsabilidad de seguir descansando al siguiente de la lista. El objetivo de Unidad es terminar la cadena, si no estuviera ahí eventualmente se llegaría a un NoMethodError porque un Object no conoce el mensaje descansar.</p>
+      <h4 id="crear-alias-methods-que-nos-provee-ruby">
+        
+        
+          <a href="#crear-alias-methods-que-nos-provee-ruby"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Crear alias methods que nos provee ruby:
+        
+        
+      </h4>
+    
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Guerrero</span>
+  <span class="kp">include</span> <span class="no">Atacante</span>
+  
+  <span class="kp">alias_method</span> <span class="ss">:descansar_atacante</span><span class="p">,</span> <span class="ss">:descansar</span>
+  
+  <span class="kp">include</span> <span class="no">Defensor</span>
+  
+  <span class="kp">alias_method</span> <span class="ss">:descansar_defensor</span><span class="p">,</span> <span class="ss">:descansar</span>
+
+  <span class="k">def</span> <span class="nf">descansar</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">descansar_atacante</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">descansar_defensor</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Nótese que no solucionamos el conflicto sólo con definir los alias, lo que vamos a tener son tres métodos: :descansar_atacante, :descansar_defensor y :descansar (cuya implementación va a coincidir con la de Defensor).</p>
+
+<p>Es necesario sobreescribir el método :descansar para lograr el comportamiento que queríamos.</p>
+      <h2 id="kamikaze">
+        
+        
+          <a href="#kamikaze"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> <strong>Kamikaze</strong>
+        
+        
+      </h2>
+    
+<p>Ahora queremos agregar los Kamikaze, que son Atacantes y Defensores, pero descansan solo como Atacante porque van a morir de todas maneras:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Kamikaze</span>
+  <span class="kp">include</span> <span class="no">Defensor</span>
+  <span class="kp">include</span> <span class="no">Atacante</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">energia</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">potencial_defensivo</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="err"> </span>    
+    <span class="nb">self</span><span class="p">.</span><span class="nf">potencial_ofensivo</span> <span class="o">=</span> <span class="mi">250</span><span class="err"> </span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">energia</span> <span class="o">=</span> <span class="n">energia</span><span class="err"> </span>    
+    <span class="nb">self</span><span class="p">.</span><span class="nf">potencial_defensivo</span> <span class="o">=</span> <span class="n">potencial_defensivo</span><span class="err"> </span>  
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">atacar</span><span class="p">(</span><span class="n">un_defensor</span><span class="p">)</span>
+    <span class="k">super</span><span class="p">(</span><span class="n">un_defensor</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">energia</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">end</span>
+  
+<span class="k">end</span>
+</code></pre></div></div>
+      <h2 id="pelotones">
+        
+        
+          <a href="#pelotones"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> <strong>Pelotones</strong>
+        
+        
+      </h2>
+    
+<p>A continuación vamos a agregar los Pelotones, que tienen un conjunto de Guerreros que lo integran. Queremos que entiendan descansar y que hagan descansar a todos los integrantes que estén cansados. Un integrante está cansado cuando su energía es menor o igual a 40. ¿Queremos que el Peloton sea un Defensor o un Atacante? ¿Qué aportan estos Mixins en cuanto a compartición de código? ¿Sería una buena idea desde el punto de vista de la naturaleza?</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Guerrero</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:peloton</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Peloton</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:guerreros</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">integrantes</span><span class="p">)</span>
+     <span class="nb">self</span><span class="p">.</span><span class="nf">integrantes</span> <span class="o">=</span> <span class="n">integrantes</span>
+     <span class="nb">self</span><span class="p">.</span><span class="nf">integrantes</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">integrante</span><span class="o">|</span><span class="n">integrante</span><span class="p">.</span><span class="nf">peloton</span> <span class="o">=</span> <span class="nb">self</span><span class="p">}</span><span class="err"> </span>
+  <span class="k">end</span><span class="p">.</span>
+
+  <span class="nf">def</span> <span class="n">descansar</span><span class="err"> </span>    
+    <span class="n">cansados</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">integrantes</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">integrante</span><span class="o">|</span><span class="err"> </span>
+      <span class="n">integrante</span><span class="p">.</span><span class="nf">cansado</span><span class="err"> </span>    
+    <span class="p">}</span><span class="err"> </span>    
+    <span class="n">cansados</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">integrante</span><span class="o">|</span><span class="err"> </span>
+      <span class="n">integrante</span><span class="p">.</span><span class="nf">descansar</span><span class="err"> </span>
+    <span class="p">}</span><span class="err"> </span> 
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Cabe destacar que los bloques (tanto si los escribimos con llaves como con do y end) <strong>no son objetos</strong> y sólo se puede pasar un bloque como último parámetro del método.</p>
+
+<p>Como necesitamos que los guerreros puedan avisarle a su pelotón que sufrieron daño para que el pelotón decida cómo reaccionar, tenemos que redefinir cómo reciben daño los Guerreros.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Guerrero</span>
+
+  <span class="k">def</span> <span class="nf">sufri_danio</span><span class="p">(</span><span class="n">danio</span><span class="p">)</span>
+    <span class="k">super</span><span class="p">(</span><span class="n">danio</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">lastimado</span> <span class="k">if</span> <span class="n">cansado</span><span class="err"> </span>
+  <span class="k">end</span>
+  
+  <span class="k">def</span> <span class="nf">cansado</span><span class="err"> </span>    
+    <span class="nb">self</span><span class="p">.</span><span class="nf">energia</span> <span class="o">&lt;=</span> <span class="mi">40</span>
+  <span class="k">end</span><span class="err"> </span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Ahora, lo que vamos a hacer es modelar las estrategias que sigue el Pelotón, donde cada estrategia es una clase distinta (ver patrón Strategy):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Peloton</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:integrantes</span><span class="p">,</span> <span class="ss">:retirado</span><span class="p">,</span> <span class="ss">:estrategia</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">integrantes</span><span class="p">,</span> <span class="n">estrategia</span><span class="p">)</span><span class="err"> </span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">integrantes</span> <span class="o">=</span> <span class="n">integrantes</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">estrategia</span> <span class="o">=</span> <span class="n">estrategia</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">integrantes</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">integrante</span><span class="o">|</span><span class="err"> </span>
+      <span class="n">integrante</span><span class="p">.</span><span class="nf">peloton</span> <span class="o">=</span> <span class="nb">self</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">lastimado</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">estrategia</span><span class="p">.</span><span class="nf">lastimado</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">retirate</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">retirado</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Descansador</span>
+  <span class="k">def</span> <span class="nf">lastimado</span><span class="p">(</span><span class="n">peloton</span><span class="p">)</span>
+    <span class="n">peloton</span><span class="p">.</span><span class="nf">descansar</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Cobarde</span>
+  <span class="k">def</span> <span class="nf">lastimado</span><span class="p">(</span><span class="n">peloton</span><span class="p">)</span>
+   <span class="n">peloton</span><span class="p">.</span><span class="nf">retirate</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>El problema que tenemos aca es que cada vez que se quiera crear un nuevo tipo de estrategia, debe crearse una nueva clase. Esto en principio no es muy problemático, pero es algo que puede ser molesto si hay muchos tipos de estrategias para cuando se lastima el pelotón, tendría un montón de clases para que definan sólo un método.</p>
+
+<p>Una alternativa para este problema sería que el Pelotón conozca un bloque de código en vez de una instancia de Descansador o Cobarde. Si bien los bloques de Ruby no son objetos, y necesitaríamos que lo sean para que el pelotón lo conozca y lo pueda ejecutar cuando sea necesario mandándole un mensaje, lo que podemos usar son procs o lambdas, que <strong>sí son objetos</strong>. Para evitar confusiones a los procs y lambdas vamos a decirles closures, después podemos ver en qué se diferencian pero no hace al ejemplo.</p>
+
+<p>La parte simpática de tener una clase por cada estrategia era la facilidad de creación de un ejército descansador por ejemplo, ya que si tenemos que inicializarlo con el closure adecuado podría llevarnos a repetir lógica. Por eso definimos métodos de clase que devuelven el Peloton creado y configurado con el código de la acción a tomar.</p>
+
+<p>Para definir estos métodos de clase vamos a esperar que nos pasen bloques y en el método convertirlo en un closure que pueda ser referenciado por el pelotón y usado más adelante con el mensaje call.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Peloton</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:integrantes</span><span class="p">,</span> <span class="ss">:retirado</span><span class="p">,</span> <span class="ss">:estrategia</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">cobarde</span><span class="p">(</span><span class="n">integrantes</span><span class="p">)</span><span class="err"> </span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">integrantes</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">peloton</span><span class="o">|</span><span class="err"> </span>
+      <span class="n">peloton</span><span class="p">.</span><span class="nf">retirate</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">descansador</span><span class="p">(</span><span class="n">integrantes</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span> <span class="n">integrantes</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">peloton</span><span class="o">|</span> 
+      <span class="n">peloton</span><span class="p">.</span><span class="nf">descansar</span> 
+    <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">integrantes</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">estrategia</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">integrantes</span> <span class="o">=</span> <span class="n">integrantes</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">estrategia</span> <span class="o">=</span> <span class="n">estrategia</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">integrantes</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">integrante</span><span class="o">|</span><span class="err"> </span>
+      <span class="n">integrante</span><span class="p">.</span><span class="nf">peloton</span> <span class="o">=</span> <span class="nb">self</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">lastimado</span><span class="p">(</span><span class="n">defensor</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">estrategia</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Retomando el tema de las diferencias entre procs y lambdas, los procs no checkean la cantidad de argumentos que reciben mientras que las lambdas sí. Por otro lado también hay una diferencia con el uso de return dentro de una lambda o de un proc, ya que en return en la lambda sólo finaliza la ejecución de ella misma sin afectar al contexto en el cual se encuentra, mientras que el proc hace que se retorne del método que lo contiene.</p>
+
+<p>Tanto procs como lambdas son instancias de la clase Proc.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lam</span> <span class="o">=</span> <span class="nb">lambda</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="nb">puts</span> <span class="n">x</span> <span class="p">}</span>    <span class="c1"># creates a lambda that takes 1 argument</span>
+<span class="n">lam</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                    <span class="c1"># prints out 2</span>
+<span class="n">lam</span><span class="p">.</span><span class="nf">call</span>                       <span class="c1"># ArgumentError: wrong number of arguments (0 for 1)</span>
+<span class="n">lam</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>                <span class="c1"># ArgumentError: wrong number of arguments (3 for 1)</span>
+
+<span class="nb">proc</span> <span class="o">=</span> <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="nb">puts</span> <span class="n">x</span> <span class="p">}</span> <span class="c1"># creates a proc that takes 1 argument</span>
+<span class="nb">proc</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                   <span class="c1"># prints out 2</span>
+<span class="nb">proc</span><span class="p">.</span><span class="nf">call</span>                      <span class="c1"># returns nil</span>
+<span class="nb">proc</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>               <span class="c1"># prints out 1 and forgets about the extra arguments</span>
+<span class="o">---------------------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">lambda_test</span>
+  <span class="n">lam</span> <span class="o">=</span> <span class="nb">lambda</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+  <span class="n">lam</span><span class="p">.</span><span class="nf">call</span>
+  <span class="nb">puts</span> <span class="s2">"Hello world"</span>
+<span class="k">end</span>
+
+<span class="n">lambda_test</span>                 <span class="c1"># calling lambda_test prints 'Hello World'</span>
+
+
+<span class="k">def</span> <span class="nf">proc_test</span>
+  <span class="nb">proc</span> <span class="o">=</span> <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+  <span class="nb">proc</span><span class="p">.</span><span class="nf">call</span>
+  <span class="nb">puts</span> <span class="s2">"Hello world"</span>
+<span class="k">end</span>
+
+<span class="n">proc_test</span>                 <span class="c1"># calling proc_test prints nothing</span>
+<span class="o">------------------------------</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">p</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}</span>
+<span class="nb">p</span><span class="p">.</span><span class="nf">call</span> <span class="c1"># 6</span>
+<span class="nb">p</span><span class="p">.</span><span class="nf">call</span> <span class="c1"># 7</span>
+
+<span class="n">a</span>   <span class="c1"># 7</span>
+</code></pre></div></div>
+      <h2 id="anexo">
+        
+        
+          <a href="#anexo"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> <strong>Anexo</strong>
+        
+        
+      </h2>
+    
+      <h3 id="mixins">
+        
+        
+          <a href="#mixins"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> <strong>MIXINS</strong>
+        
+        
+      </h3>
+    
+
+<p>Si lo que queremos es incluir comportamiento de n modules, pero no nos importa utilizar un método que comparten (en este caso descansar), podemos incluir a los modules de cualquier forma, y no va a influir en lo que hagamos después. Por el contrario, si lo que queremos es utilizar algun método que aparece en más de un module, tenemos que resolver los conflictos que se presenten.</p>
+      <h3 id="mixins-resolución-de-conflictos">
+        
+        
+          <a href="#mixins-resolución-de-conflictos"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> <strong>MIXINS: Resolución de conflictos</strong>
+        
+        
+      </h3>
+    
+
+<p>En este ejemplo, vemos que un Atacante no descansa de la misma forma que un Defensor, por lo cual podemos tomar varios caminos</p>
+
+<ol>
+  <li>Si lo que queremos es incluir comportamiento de ambos, pero ademas nos interesa que descanse como uno o como el otro, entonces el que nos interesa es el que deberia estar incluido mas abajo, porque al ser su superclase más inmediata es del primero que toma el método cuando no lo encuentra en Guerrero. Esto conlleva a un grave problema de todas formas, ya que si ambos (aunque no es muy común) tuviesen n cantidad de métodos que se llaman igual pero por algun motivo hacen cosas diferentes, ya no seríamos libres de elegir cuál toma prioridad por sobre el otro.</li>
+  <li><strong>Alias methods</strong>: Nos sirven para poder renombrar estos métodos compartidos con otro nombre y así poder utilizarlos, tanto si queremos separar su comportamiento como si queremos juntarlos. En el ejemplo, vemos que les cambia el nombre a ambos metodos para justamente poder usar a los dos. Ahora sí, una vez que ya tengo estos métodos separados puedo entonces si quiero definir un nuevo método descansar, que ejecute a ambos.</li>
+  <li>Tambien habíamos visto en clase una alternativa usando <strong>super</strong>, ya que cuando incluimos a un module por debajo del otro quedan como si fuesen superclases una de la otra (recordar que si hago ancestors de la clase que incluye a los modules, aparecen los modules y sus ancestors tambien), y entonces el module que se encuentre mas arriba va a ser la superclase mas lejana. 
+En el caso de descansar, podríamos haber definido solo el alias method para Atacante, y que cuando definimos el nuevo descansar ejecute super y luego a descansar_atacante.</li>
+</ol>
+
+<p>Hay que notar que si nosotros hubiésemos incluido más modules, podríamos hacer super (si todos tienen descansar en común) del último que incluimos, porque es la superclase inmediata, y del resto, definir alias methods.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">38</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="no">Guerrero</span><span class="p">.</span><span class="nf">ancestors</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="no">Guerrero</span><span class="p">,</span> <span class="no">Defensor</span><span class="p">,</span> <span class="no">Atacante</span><span class="p">,</span> <span class="no">Object</span><span class="p">,</span> <span class="no">PP</span><span class="o">::</span><span class="no">ObjectMixin</span><span class="p">,</span> <span class="no">Kernel</span><span class="p">,</span> <span class="no">BasicObject</span><span class="p">]</span>
+<span class="c1">### Aca vemos que su primer Superclase es Defensor.</span>
+
+
+<span class="k">class</span> <span class="nc">Guerrero</span>
+    <span class="kp">include</span> <span class="no">Atacante</span>
+    <span class="kp">alias_method</span> <span class="ss">:descansar_atacante</span><span class="p">,</span> <span class="ss">:descansar</span>
+    <span class="kp">include</span> <span class="no">Defensor</span>
+    <span class="k">def</span> <span class="nf">descansar</span>
+         <span class="nb">self</span><span class="p">.</span><span class="nf">descansar_atacante</span>  <span class="k">super</span>
+    <span class="k">end</span>  
+<span class="k">end</span>  
+
+<span class="p">[</span><span class="mi">39</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">un_guerrero</span> <span class="o">=</span> <span class="no">Guerrero</span><span class="p">.</span><span class="nf">new</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;Guerrero2:0x0000000258f668&gt;</span>
+<span class="p">[</span><span class="mi">40</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">un_guerrero</span><span class="p">.</span><span class="nf">descansar</span>
+<span class="n">soy</span> <span class="n">atacante</span>
+<span class="n">soy</span> <span class="n">defensor</span>
+</code></pre></div></div>
+      <h3 id="lazy-initialization">
+        
+        
+          <a href="#lazy-initialization"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> <strong>Lazy Initialization</strong>
+        
+        
+      </h3>
+    
+
+<p>Podemos usar <code class="language-plaintext highlighter-rouge">||=</code> para inicializar una variable, pero hay que tomar algunas consideraciones con eso. Hay que tener en cuenta que Ruby tiene algunos valores que considera que son false o que son true. Por ejemplo, a nil lo considera false, y otros valores como numeros, letras, etc, los considera true.
+Supongamos que quiero inicializar<code class="language-plaintext highlighter-rouge">@a</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">inicializar</span>
+ <span class="vi">@a</span> <span class="o">||=</span> <span class="vi">@b</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">### a. Si @variable es true o se considera true, toma el valor de  @a, sin importar el valor de @b</span>
+<span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+<span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@b</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+<span class="p">[</span><span class="mi">17</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@a</span> <span class="o">||=</span> <span class="vi">@b</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+<span class="p">[</span><span class="mi">18</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@b</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="o">=&gt;</span> <span class="mi">4</span>
+<span class="p">[</span><span class="mi">19</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@a</span> <span class="o">||=</span> <span class="vi">@b</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+
+<span class="c1">### b. Si @a es false o se considera false, toma el valor de @b</span>
+
+ <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@a</span> <span class="o">=</span> <span class="kp">nil</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+<span class="c1">## Aca vemos que al hacer || devuelve el que considera true, o sea @b</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@a</span> <span class="o">||</span> <span class="vi">@b</span>    
+<span class="o">=&gt;</span> <span class="mi">3</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@a</span>   <span class="c1">## @a sigue siendo nil</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@a</span> <span class="o">||=</span> <span class="vi">@b</span>    <span class="c1">##Lazy initialization</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@a</span>
+<span class="o">=&gt;</span> <span class="mi">3</span>
+
+<span class="c1">### c. Si ambos son false o se consideran false, siempre toma el segundo valor.</span>
+
+<span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@a</span> <span class="o">=</span> <span class="kp">nil</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@b</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+<span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@a</span> <span class="o">||=</span> <span class="vi">@b</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+</code></pre></div></div>
+      <h3 id="sobre-bloques-como-objetos">
+        
+        
+          <a href="#sobre-bloques-como-objetos"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> <strong>Sobre bloques como objetos</strong>
+        
+        
+      </h3>
+    
+
+<p>Ademas de todo lo visto de bloques, puede ser muy útil guardar un bloque como un objeto (un proc) y ya vimos que lo único que hay que hacer es agregar la palabra proc antes del mismo. Esto permite que podamos guardarlo en una variable y que le podamos hacer:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="vi">@a_block</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="o">...</span><span class="n">args</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Ahora, suponiendo que queremos revertir esto y convertir el objeto que era un bloque, en un bloque de nuevo, lo único que tenemos que hacer es agregar un <code class="language-plaintext highlighter-rouge">&amp;</code>, por ejemplo: <code class="language-plaintext highlighter-rouge">&amp;@a_block</code>, ya no es un objeto, sino un bloque, pero hay que entender que lo podemos hacer mientras un metodo lo vaya a recibir como argumento. 
+Un método puede recibir solo un bloque, pero varios argumentos. Por ejemplo:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="k">def</span> <span class="nf">un_metodo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a_block</span><span class="p">)</span>
+<span class="c1">### Para poder mandarle un bloque hay que agregar &amp;</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">*</span>   <span class="n">a_block</span><span class="p">.</span><span class="nf">call</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">*</span> <span class="k">end</span>  
+<span class="o">=&gt;</span> <span class="ss">:un_metodo</span>
+</code></pre></div></div>
+
+<p>Es un método que va a recibir dos argumentos y un bloque. Si yo tuviese un proc <code class="language-plaintext highlighter-rouge">@a_proc</code>, para pasárselo efectivamente debería hacer <code class="language-plaintext highlighter-rouge">&amp;@a_proc</code>.
+Probamos lo que pasa:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="vi">@a_proc</span> <span class="o">=</span> <span class="nb">proc</span> <span class="k">do</span> <span class="s2">"hello!"</span> <span class="k">end</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;Proc:0x0000000205c600@(pry):101&gt;</span>
+
+<span class="c1">### Miren lo que pasa si al metodo le paso un proc:</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">un_metodo</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="vi">@a_proc</span>
+<span class="no">ArgumentError</span><span class="p">:</span> <span class="n">wrong</span> <span class="n">number</span> <span class="n">of</span> <span class="n">arguments</span> <span class="p">(</span><span class="n">given</span> <span class="mi">3</span><span class="p">,</span> <span class="n">expected</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">from</span> <span class="p">(</span><span class="n">pry</span><span class="p">):</span><span class="mi">79</span><span class="ss">:in</span> <span class="sb">`un_metodo'
+</span></code></pre></div></div>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">### En cambio, si le paso un bloque:</span>
+
+<span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">un_metodo</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">&amp;</span><span class="vi">@a_proc</span>
+<span class="n">hello!</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+
+<span class="c1">### o también</span>
+
+<span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">un_metodo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="k">do</span> <span class="nb">puts</span> <span class="s2">"hello!"</span> <span class="k">end</span>
+<span class="n">hello!</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+</code></pre></div></div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>

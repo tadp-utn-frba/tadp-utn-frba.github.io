@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_13/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase 13 TADP 1C2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="intro">
+        
+        
+          <a href="#intro"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Intro
+        
+        
+      </h1>
+    
+
+<p>Para poder entender cómo trabaja el framework de reflection en Scala, primero hay que entender su metamodelo y cómo se representa en runtime. Scala no tiene un lenguaje de representación intermedia propio, sino que se compila a bytecode de Java para ejecutarse sobre la JVM (Java Virtual Machine). Eso significa que un programa Scala se traduce a un programa Java que debe funcionar utilizando sólo las representaciones internas pensadas para Java; por lo tanto durante la ejecución de un programa, las abstracciones propias del metamodelo de Scala <strong>no existen</strong>.</p>
+
+<p>Pero el metamodelo de Scala no incluye al de Java? Y… Más o menos. Por ejemplo, tanto Scala como Java tienen clases, pero las de Java no pueden ser linearizadas con mixins, ni recibir parámetros de clase, lo cual las vuelve construcciones similares, pero no idénticas. Por otro lado Java tiene construcciones como las Interfaces que no son soportadas por Scala.</p>
+
+<p>Entonces cómo puede funcionar? Lo que pasa es que Scala se las ingenia para modelar sus propias abstracciones usando las provistas por Java.</p>
+
+<p>Siendo que Scala puede ejecutar nativamente código Java y que en runtime el programa en Scala es un programa Java, existen varias cosas que podemos realizar utilizando <a href="https://docs.oracle.com/javase/tutorial/reflect/">el framework de reflection de Java</a>, sin embargo, la gran mayoría de las cosas van a requerir usar <a href="http://docs.scala-lang.org/overviews/reflection/overview.html">el framework de reflection de Scala</a>, que provee una interfaz basada en <a href="https://en.wikipedia.org/wiki/Mirror_(programming)">mirrors</a> que se adecúa al metamodelo propio de Scala y no requiere saber nada de cómo trabaja el compilador.</p>
+      <h1 id="3-niveles-de-abstracción">
+        
+        
+          <a href="#3-niveles-de-abstracción"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> 3 Niveles de Abstracción
+        
+        
+      </h1>
+    
+
+<p>Podemos entender entonces que todo programa Scala trabaja en alguna medida con (al menos) 3 metamodelos: El provisto por Scala, el de Java y la representación en la JVM, los cuales soportan diferentes abstracciones:</p>
+
+<p><img src="https://raw.githubusercontent.com/tadp-utn-frba/tadp-clases/scala-reflection/images/NivelesDeAbstraccion.png" alt="NivelesDeAbstraccion" /></p>
+
+<p><em>Jerarquía Básica de Tipos en Scala</em>
+<img src="https://raw.githubusercontent.com/tadp-utn-frba/tadp-clases/scala-reflection/images/JerarquiaDeTipos.png" alt="JerarquiaDeTipos" /></p>
+      <h1 id="reflection-en-java">
+        
+        
+          <a href="#reflection-en-java"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Reflection en Java
+        
+        
+      </h1>
+    
+
+<p><img src="https://raw.githubusercontent.com/tadp-utn-frba/tadp-clases/scala-reflection/images/ArquitecturaJVM.gif" alt="ArquitecturaJVM" />
+Arquitectura básica de la jvm</p>
+      <h2 id="classloaders-y-linkers">
+        
+        
+          <a href="#classloaders-y-linkers"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> ClassLoaders y Linkers
+        
+        
+      </h2>
+    
+<p>La JVM carga dinámicamente, linkea e inicializa clases e interfaces. La carga de clases es el proceso de encontrar la representación binaria de una clase o de una interfaz con un nombre y la creación dicha representación. Linkeo es el proceso de tomar una clase o interfaz y combinarlo en el estado de la JVM en tiempo de ejecución para que pueda ser ejecutado. La inicialización de una clase o interfaz consiste en ejecutar la inicialización de la clase o interfaz mediante el método <clinit>. Este método es un método especial que provee el compilador y como no es un nombre válido en el lenguaje Java, no puede ser definido por el usuario directamente en un programa Java.</clinit></p>
+      <h2 id="pool-de-constantes-en-tiempo-de-ejecución">
+        
+        
+          <a href="#pool-de-constantes-en-tiempo-de-ejecución"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Pool de constantes en tiempo de ejecución
+        
+        
+      </h2>
+    
+<p>La JVM inicia creando una clase inicial, utilizando el bootstrap class loader, veremos este paso en detalle después. La JVM luego linkea la clase inicial, la inicializa e invoca el método de la clase pública main. La invocación de este método permite la ejecución del programa. La ejecución de las instrucciones de la JVM que constituye el método principal puede causar el linkeo y la creación de clases e interfaces adicionales, así como su ejecución.</p>
+
+<p>La JVM mantiene un pool de constantes por tipo, esto es una estructura creada en tiempo de ejecución que sirve para diferentes funcionalidades, similares a la tabla de símbolos de un lenguaje de programación.</p>
+
+<p>Todas las representaciones binarias de clases o interfaces poseen una tabla de pool de constantes que se usa para construir el pool de constantes de tiempo de ejecución en el momento de creación de esa clase. Todas las referencias en este último pool son inicialmente simbólicas. Las referencias simbólicas en el pool de constantes de tiempo de ejecución son derivados de la representación de la tabla de constantes de la clases o interfaces de la siguiente manera.</p>
+
+<p>Una referencia simbólica a una clase o interfaz es derivado de la estructura CONSTANT_Class_info en la representación binaria de una clase o interfaz.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CONSTANT_Class_info</span> <span class="o">{</span>
+    <span class="n">u1</span> <span class="n">tag</span><span class="o">;</span>
+    <span class="n">u2</span> <span class="n">name_index</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>El name_index, siempre describe el tipo de estructura al que se está referenciando, incluso si la clase es formada de acuerdo a un array, que son objetos, la descripción en el name_index varía de acuerdo a estas estructuras más complejas también.</p>
+
+<p>Dicha referencia tiene un nombre de la clase o interfaz en la forma retornado por el método Class.getName que es, de acuerdo al tipo:</p>
+<ul>
+  <li>Para una clase o interfaz del tipo que no sea array, el nombre es el nombre binario de la clase o interfaz.</li>
+  <li>Para una clase del tipo array de n dimensiones, el nombre comienza con n ocurrencia de la letra ASCII “[” continuado con la representación del tipo de elemento.</li>
+</ul>
+
+<p>Por ej.</p>
+
+<p>int[][] -&gt; [[I (Si es un tipo primitivo, sólo se lo describe bajo su nombre)</p>
+
+<p>Thread[] -&gt; [Ljava/lang/Thread; (Si es un objeto del tipo de dato referido, se le debe agregar un caracter L seguido del nombre del binario).</p>
+
+<p>Referencias a un campo de una clase o interfaz es derivado de otra estructura, CONSTANT_Fieldref_info, en la representación binaria de una clase o interfaz. Tal referencia provee el nombre y descriptor de un campo, así como la referencia simbólica de clase o interfaz en la que se puede encontrar el campo.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CONSTANT_Fieldref_info</span> <span class="o">{</span>
+    <span class="n">u1</span> <span class="n">tag</span><span class="o">;</span>
+    <span class="n">u2</span> <span class="n">class_index</span><span class="o">;</span>
+    <span class="n">u2</span> <span class="n">name_and_type_index</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Referencias a un método de una clase es derivado de la estructura CONSTANT_Methodref_info, en la representación binaria. Esta referencia posee el nombre y descriptor de los métodos así como las referencias simbólicas a la clase en la que se encuentra el método.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CONSTANT_Methodref_info</span> <span class="o">{</span>
+    <span class="n">u1</span> <span class="n">tag</span><span class="o">;</span>
+    <span class="n">u2</span> <span class="n">class_index</span><span class="o">;</span>
+    <span class="n">u2</span> <span class="n">name_and_type_index</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Referencias a invocaciones en lugares puntuales de la clase o interfaz en formato binario, son derivados de la estructura CONSTANT_InvokeDynamic_info. Dicha estructura nos da la siguiente información</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CONSTANT_InterfaceMethodref_info</span> <span class="o">{</span>
+    <span class="n">u1</span> <span class="n">tag</span><span class="o">;</span>
+    <span class="n">u2</span> <span class="n">class_index</span><span class="o">;</span>
+    <span class="n">u2</span> <span class="n">name_and_type_index</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Una referencia simbólica al handler de un método, que servirá como método inicial para la instrucción de invokedynamic.</li>
+  <li>Una secuencia de referencias simbólicas, string literas, y valores de constantes de tiempo de ejecución que servirán como argumentos estáticos a un método inicial.</li>
+  <li>Un nombre de método y un descriptor de método</li>
+  <li>Adicionalmente, ciertos valores de tiempo de ejecución que no son referencias simbólicas son derivados de elementos encontrados en la tabla constant_pool</li>
+  <li>Un string literal es una referencia a una instancia de la clase String, que es derivado de una estructura, del tipo CONSTANT_String_info. Esta estructura brinda la secuencia de caracteres en Unicode, que constituyen los string literals.</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CONSTANT_String_info</span> <span class="o">{</span>
+    <span class="n">u1</span> <span class="n">tag</span><span class="o">;</span>
+    <span class="n">u2</span> <span class="n">string_index</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>El lenguaje de programación Java requiere que los string literals idénticos, que poseen la misma secuencia de caracteres, deban referirse a la misma instancia de la clase String. Adicionalmente, en el método String.intern se llama a cualquier string, el resultado es una referencia a la misma instancia de la misma clase que hubiese retornado si el string aparecía como un literal, entonces la siguiente expresión es verdadera:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span><span class="s">"a"</span> <span class="o">+</span> <span class="s">"b"</span> <span class="o">+</span> <span class="s">"c"</span><span class="o">).</span><span class="na">intern</span><span class="o">()</span> <span class="o">==</span> <span class="s">"abc"</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Valores de constantes en tiempo de ejecución son derivados de las estructuras CONSTANT_Integer_info, CONSTANT_Float_info, CONSTANT_Long_info, or CONSTANT_Double_info. La estructura CONSTANT_Float_info representa valores de formato de acuerdo a IEEE 754 y CONSTANT_Double_info a los doubles del mismo estándar.</li>
+  <li>Las estructuras remanentes en la tabla de constant_pool, de la representación binaria de la clase/interfaz, las estructuras CONSTANT_NameAndType_info and CONSTANT_Utf8_info structures, son usadas solamente de manera indirecta cuando se derivan referencias simbólicas a clases, interfaces, métodos, campos, tipos de métodos y cuándo se derivan string literals y se hacen invocaciones dinámicas.</li>
+</ul>
+
+<p>Sobre un ejemplo sencillo de esto, podemos mencionar que si tenemos una expresión sencilla del tipo
+<img src="https://raw.githubusercontent.com/tadp-utn-frba/tadp-clases/scala-reflection/images/InicializacionJVM.png" alt="InicializacionJVM" />
+*Inicialización de la JVM</p>
+
+<p>Veremos que podemos proveer a la jvm de la clase inicial en la línea de comando.</p>
+
+<p>por ej. si tenemos nuestro Programa de HolaMundo de la siguiente manera</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaMundo</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span> <span class="n">argv</span><span class="o">[])</span> <span class="o">{</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hola Mundo!"</span><span class="o">);</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>y lo ejecutamos mediante la opción de -verbose:class, podremos decirle explícitamente a java cual es la clase inicial que se cargará</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">java</span> <span class="o">-</span><span class="nl">verbose:</span><span class="kd">class</span> <span class="nc">HolaMundo</span>
+</code></pre></div></div>
+
+<p>Veremos que hay otras maneras de inicializar el comienzo de la ejecución mediante Loaders, que pueden ser definidos por el usuarios y utilizados en la línea de comandos.</p>
+      <h2 id="creación-y-carga-de-binarios">
+        
+        
+          <a href="#creación-y-carga-de-binarios"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Creación y Carga de binarios
+        
+        
+      </h2>
+    
+<p>La creación de una clase C con el nombre N consiste en la construcción en el área de métodos de la representación interna de C. La creación es activada y ejecutada por otra clase o interfaz D, que referencia a C en el pool de constantes de tiempo de ejecución. La creación también se puede disparar por D en métodos de invocación dinámicos, o sea, que D referencia a C por medio de reflection.</p>
+
+<p>Si C no es una clase del tipo array, entonces es creado cargando la representación de C utilizando el class loader. Las clases que heredan de clases de Array no tienen una representación binaria externa, son creados por la JVM, más que por un classloader.</p>
+
+<p>Hay dos clases de classloaders, los que son suministrados por la JVM, y los que define el usuario. Cada classloader definido por el usuario es una instancia de una subclase de la clase ClassLoader.</p>
+
+<p>Hay dos clases de classloaders, los que son suministrados por la JVM, y los que define el usuario. Cada classloader definido por el usuario es una instancia de una subclase de la clase ClassLoader. Las aplicaciones que utilizan esta extensión de classloaders definidos por el usuario, se hacen con el objetivo de extender la manera en la que la JVM dinámicamente carga y crea las clases. Los classloaders creados por el usuario pueden ser utilizados para crear clases que se originan en otros lugares en la máquina local que no están definidos o que deben ser descargados a través de una red, generados al vuelo, o extraídos de algún comprimido o archivo encriptado.</p>
+
+<p>Podemos mencionar un ejemplo de un classloader que baja de internet clases e interfaces:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.net.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyNetwordLoader</span> <span class="o">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="nc">String</span> <span class="n">argv</span><span class="o">[])</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+
+      <span class="nc">URLClassLoader</span> <span class="n">loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">URLClassLoader</span><span class="o">(</span><span class="k">new</span> <span class="no">URL</span><span class="o">[]</span> <span class="o">{</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"http://www.pepito.com/classes/"</span><span class="o">)</span> <span class="o">});</span>
+    
+      <span class="c1">// Load class from class loader. argv[0] is the name of the class to be loaded</span>
+      <span class="nc">Class</span> <span class="n">c</span> <span class="o">=</span> <span class="n">loader</span><span class="o">.</span><span class="na">loadClass</span> <span class="o">(</span><span class="n">argv</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+
+      <span class="c1">// Create an instance of the class just loaded</span>
+      <span class="nc">Object</span> <span class="n">o</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Entonces volviendo a nuestro ejemplo de un classloader con la clase C, un classloader L puede crear a C definiendo directamente o delegando su creación a otro classloader. Si lo hace L directamente, decimos que L define a C. Cuando una classloader delega la creación a otro classloader, el segundo que inicia la carga no es necesariamente el mismo loader que completa la carga y define la clase. Si L crea a C, definiéndolo directamente o delegando, diremos que L inicializa la carga de C.</p>
+
+<p>En tiempo de ejecución, una clase o interfaz es determinada no por su nombre solamente, sino por una tupla, compuesta por su nombre binario y el classloader que lo define. Entonces tal clase pertenece a un paquete de tiempo de ejecución. Este paquete de tiempo de ejecución de una clase es determinado por el nombre del paquete, definiendo el classloader de la clase o interfaz.</p>
+
+<p>La JVM usa uno de tres procedimientos para crear la clase C denotado por N:</p>
+<ul>
+  <li>si N define una clase o interfaz que no es un array, uno de dos métodos siguientes es usados para crear a C</li>
+  <li>Si D fue definido por el classloader de la jvm, entonces este inicia con la carga de C</li>
+  <li>si D fue definido por un classloaders definido por un usuario, entonces este inicia la carga de C</li>
+  <li>De otra manera N denota una clase del tipo array o derivado de este. Una clase del tipo array es creado directamente por la JVM. Sin embargo el classloader que definió a D es usado en el proceso para crear la clase array C.</li>
+</ul>
+
+<p>Si un error ocurre durante la carga de la clase, entonces una instancia de una subclase de LinkageError, debe ser lanzado en ese punto del programa. Si la JVM trata de cargar la clase C durante la parte de la verificación o resolución, y el classloader que es usado lanza una excepción ClassNotFoundException, entonces la JVM debe lanzar una instancia de la excepción de clase NoClassDefFoundError que hace referencia a la instancia de ClassNotFoundException.</p>
+
+<p>Un classloader con un buen comportamiento, en contexto de que no fallará en cuanto a errores de tipo o a que no lanzará excepciones por el comportamiento que posee, posee las siguientes tres propiedades:</p>
+
+<ul>
+  <li>Dado un mismo nombre, un classloader debería siempre devolver el mismo objeto de esa clase asociada.</li>
+  <li>Si un classloader L1 delega la carga de una clase C a otro loader L2, entonces cualquier tipo T que ocurre como la superclase o superinterface directa de C, o como el tipo de campo en C, o como el tipo del parámetro formal de un método o constructor en C, o como un tipo de retorno de un método en C, L1 y L2 deberían retornar el mismo objeto de clase.</li>
+  <li>Se un classloader definido por el usuario, busca la representación binaria de clases/interfaces, o carga un grupo de clases relacionadas entre si, entonces debe reflejar los errores de carga solo en los puntos del programa donde se pudieron haber producido sin búsqueda o carga de grupo de clases.</li>
+</ul>
+
+<p>A veces representaremos una clase o interfaz utilizando la notación &lt;N, Ld&gt;, donde N es el nombre de la clase o interfaz y Ld el loader que carga a N. También representaremos una clase o interfaz utilizando la notación NLi, donde N es el nombre de la clase/interfaz, y Li, el classloader que lo inicializa.</p>
+      <h2 id="utilizando-el-classloader-de-la-jvm">
+        
+        
+          <a href="#utilizando-el-classloader-de-la-jvm"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Utilizando el Classloader de la JVM
+        
+        
+      </h2>
+    
+
+<p>Los siguientes pasos son usados para cargar y crear una clase C que no hereda de array y cuyo nombre lo llamaremos N utilizando el classloader de la JVM.</p>
+
+<p>Primero, la JVM determina si el classloader por default, ya ha sido registrado como el inicializador de la clase/interfaz denotado por N. Si es así la clase o interfaz es C y no se necesita realizar creación alguna.</p>
+
+<p>De otra manera, la JVM pasa el argumento N y llama al método de carga del classloader por defecto para buscar la representación de C en la plataforma, en el directorio del proyecto o el alguna dependencia definida. Típicamente, una clase o una interfaz estarán representadas utilizando un archivo en un sistema de archivos jerárquico, en el nombre de la clase o interfaz será codificado en la ruta del archivo.  No hay garantía que una representación encontrada es la representación de C. Esta fase de carga debe detectar el siguiente error</p>
+
+<p>Si no hay representación de C alguna en el sistema, se debe lanzar la excepción del tipo ClassNotFoundException.</p>
+      <h2 id="utilizando-un-classloader-definido-por-el-usuario">
+        
+        
+          <a href="#utilizando-un-classloader-definido-por-el-usuario"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Utilizando un Classloader definido por el usuario
+        
+        
+      </h2>
+    
+
+<p>Los pasos para cargar y crear una clase/interfaz C que no extiende de una clase del tipo array denotado N usando un classloader L definido por el usuario</p>
+
+<p>Primero, la JVM, determina si L ha sido ya registrado como el loader que inicializa a la clase C, es decir N. Si es así la clase es C y no se necesita realizar creación alguna.</p>
+
+<p>De otra manera la JVM, invoca loadClass(N) en L. El valor retornado por la invocación es la clase/interfaz C creada ya. La JVM entonces registra que L es el loader que inicializo a C.</p>
+
+<p>En más detalle:</p>
+
+<p>Cuando el método loadClass que está definido en L es invocado con el nombre N de una clase C, L debe realizar alguna de las dos operaciones para cargar C:</p>
+
+<ul>
+  <li>L puede crear un array de bytes representando C como los bytes en una estructura ClassFile, entonces debe invocar el método defineClass de la clase ClassLoader. Invocando defineClass hace que JVM para derivar una clase o interfaz de nombre N utilizando L del array de bytes.</li>
+  <li>El classloader L puede delegar la carga de C en otro classloader como lo mencionamos anteriormente, L2. Esto se realiza solamente pasando el argumento N directamente o indirectamente a una invocación de L2. El resultado de esta invocación es C.</li>
+</ul>
+
+<p>En cualquiera de los dos casos si L no puede cargar a C por medio de su nombre N, debe lanzar una excepción del tipo ClassNotFoundException.</p>
+      <h2 id="creando-clases-del-tipo-array-o-subclases-de-este-tipo">
+        
+        
+          <a href="#creando-clases-del-tipo-array-o-subclases-de-este-tipo"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Creando clases del tipo Array o subclases de este tipo
+        
+        
+      </h2>
+    
+
+<p>Para crear una clase del tipo array o que herede de array, llamado C, utilizando un nombre N, mediante un loader L, se realizarán los siguientes pasos.
+Si L ya ha sido registrado como la clase que define a C, entonces no necesita realizarse creación alguna y se usa este loader. De otra manera:</p>
+
+<p>Si el tipo del componente es una referencia, se realiza una búsqueda recursiva utilizando el class loader L, para crear el componente de tipo de C</p>
+
+<p>La JVM crea una nueva clase, indicando el tipo de componente y la cantidad de dimensiones.</p>
+
+<p>Si el tipo del componente una referencia, se lo marca como que ha sido definido por el classloader del tipo del componente.</p>
+
+<p>Entonces L se lo registra que define a la clase C.</p>
+
+<p>Si no se definió un tipo de accesibilidad en especial a la clase (public, protected, private), se lo setea por default como public.</p>
+      <h2 id="linkeo">
+        
+        
+          <a href="#linkeo"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Linkeo
+        
+        
+      </h2>
+    
+
+<p>La JVM permite que se pueda disponer del código para la ejecución a través de la carga, linkeo e inicialización. La carga como vimos es el proceso de traer una forma binaria para una clase a la JVM. Linkeo es el proceso de incorporar el tipo de dato binario en el estado de ejecución de la JVM. Dicho proceso está dividido en tres subpasos: verificación, preparación y resolución. La verificación permite que el tipo este propiamente formado y pueda ser ejecutado por la JVM. Preparación involucra la alocación de memoria necesario por el tipo, como memoria para cualquier variable de la clase. Resolución es el proceso de transformar referencias simbólicas en el pool de constantes en referencias directas. Estas implementaciones pueden demorar el proceso de resolución cada vez que una referencia simbólica es utilizado en el programa. Luego de la verificación, preparación, y opcionalmente la resolución se completaron, el tipo está listo para inicialización. Durante esta etapa las variables de clase se les da sus propios valores iniciales.</p>
+
+<p><img src="https://raw.githubusercontent.com/tadp-utn-frba/tadp-clases/scala-reflection/images/Link.gif" alt="Link" /></p>
+
+<p>Si bien la JVM, es flexible en cuando se realizan los procesos de carga, y linkeo, cuando se trata de la fase final de inicialización, es estricto. Todas las implementaciones deben inicializar cada clase en su primer uso activo. Cualquiera de estas acciones permiten que se inicialice dicho proceso:</p>
+
+<p>Una nueva instancia de una clase es creado( en bytecodes o implícitamente, mediante reflection, clonado o deserialización).</p>
+
+<ul>
+  <li>La invocación de un método estático declarado por una clase.</li>
+  <li>El uso o asignación de un campo estático declarado por una clase, excepto para campos estáticos que son finales e inicializados por una expresión constante en tiempo de ejecución.</li>
+  <li>La invocación de ciertos métodos reflectivos en la API de Java, como los métodos en la clase Class on clases en el paquete java.lang.reflect.</li>
+  <li>La designación de una clase como la inicial, cuando una JVM inicializa.</li>
+  <li>Todos los usos de otro tipo son pasivos, que no se disparan la inicialización del tipo.</li>
+</ul>
+
+<p>Como se mencionó previamente, la inicialización de una clase requiere previa inicialización de sus superclases. Aplicado recursivamente, esta regla significa que todas las superclases de una clase deben ser inicializadas antes de la inicialización de esta clase. No es lo mismo con las interfaces, porque una subinterface o clase que implementa una interfaces. Entonces la inicialización de una clase requiere la inicialización previa de sus superclases pero no de sus superinterfaces.</p>
+
+<p>Entonces un tipo como debe ser inicializado ante su primer uso activo, el mismo cuando deba ser inicializado si no fue linkeado deberá pasar por este proceso antes, y si no fue cargado, se ejecuta este paso. Entonces el proceso por el que pasa un tipo es solamente disparado por la inicialización y no por la carga.</p>
+      <h2 id="proceso-de-linkeo">
+        
+        
+          <a href="#proceso-de-linkeo"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Proceso de Linkeo
+        
+        
+      </h2>
+    
+
+<p>Como ya se describió previamente la carga de un tipo, sea una clase o una interfaz, se debe luego pasar por la fase de linkeo que se separa en tres partes, a continuación se describirán las fases del linkeo.</p>
+      <h2 id="verificación">
+        
+        
+          <a href="#verificación"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Verificación
+        
+        
+      </h2>
+    
+
+<p>El primer paso del linkeo implica la verificación, que es asegurar que el tipo cumple con las semánticas del lenguaje y no viola la integridad de la jvm. Este paso es otro en el que es flexible, solo debe ser ejecutado cuando se necesita y los diseñadores pueden decidir cuando y como verificar los tipos. La JVM lista todas las excepciones que deberían lanzar este proceso y en qué circunstancias hacerlo. Si bien la JVM indica cuales son las razones y en qué contexto deberían lanzarse los errores, no indica formalmente o estrictamente como llevar a cabo como y en qué orden debería hacerse la detección de errores.</p>
+
+<p>Muchos de estos chequeos son probablemente realizados en ciertos tiempos de acuerdo a la implementación de la jvm. Por ejemplo, durante la fase de carga, la jvm debe parsear el stream del binario que representa el tipo de la clase/interfaz y construir las estructuras a partir del pool de constantes. En este punto solo se realizan algunos chequeos mínimos, que pueden involucrar que solo no se rompa la jvm cuando se parsea el binario y que se está esperando el formato indicado. Incluso aunque algunos de estos pasos se realizan previo a la fase de linkeo, aún siguen formando parte de este paso, y en caso de obtener algún error debería lanzarse en ese momento y sin embargo estos controles se  agrupan dentro de una categoría llamada verificación. Otro chequeo realizado posteriormente es que todas las clases menos Object tengan una superclase, esto se puede hacer en la fase de carga, para asegurar que todas las superclases también se carguen.</p>
+
+<p>Otro chequeo, que en general se hace después de la verificación oficial es la de chequear referencias simbólicas. Como se lo mencionó antes, esto involucra que se tengan que buscar referencias a clases, interfaces, variables y métodos a referencias simbólicas en el constant pool, y reemplazar las referencias simbólicas por referencias directas. Además en este tiempo también se hace el chequeo de permisos de los objetos que se están resolviendo de su referencia simbólica a la referencia concreta.</p>
+
+<p>Entonces que se chequea en la fase propiamente dicha de verificación? Todo lo que no se mencionó hasta ahora, algunos ejemplos incluyen:</p>
+
+<p>Chequear que la clase finales no se subclaseen
+Chequear que los métodos finales no se sobrescriben
+Asegurarse que no haya declaraciones de métodos incorrectos (colisión de nombres de métodos con la misma firma, tipos de parámetro, chequeo del tipo de retorno). También se verifica que la clases y todos sus superclases tengan aún su código binario compatible con la jvm y que puedan comunicarse entre sí.</p>
+
+<p>Chequear que las entradas del constant pool sean consistentes unos con otros, de acuerdo a los tipos y sus valores asociados, que estén bien formados y tipados. También se hace el chequeo del bytecode si es válido. En este caso no hay nada estricto en cuanto a cómo se deben chequear, se puede hacer todo el chequeo del bytecode previa ejecución o a medida que se van ejecutando las instrucciones.</p>
+      <h2 id="cargando-constraints">
+        
+        
+          <a href="#cargando-constraints"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Cargando Constraints
+        
+        
+      </h2>
+    
+<p>Asegurar el tipado seguro de referencias en la presencia de class loaders es importante. Es posible que cuando dos clases distintas de class loaders cargan una clase o interfaz llamada N, el nombre N pueda denotar una clase diferente uno del otro loader.</p>
+
+<p>Cuando una clase o interfaz C = &lt;N1, L1&gt; crea una referencia simbólica a un campo o método de otra clase o interfaz D = &lt;N2, L2&gt;, la referencia simbólica incluye un descriptor especificando el tipo de campo, o el retorno y los tipos de los argumentos. Es esencial que cualquier tipo de nombre N mencionado en un campo, variable o descriptor de método, denotan la misma clase cuando se carga con L1 y/o L2.</p>
+
+<p>Para asegurar esto, la JVM impone la carga de constrains de la forma NL1 = NL2, durante la fase de preparación y linkeo. Para asegurar estos constraints, la JVM, en ciertos tiempo, registrará que un loader en particular es el inicializador de una clase, después de registrar una clase, la JVM debe validar que no se esté violando la integridad de qué otro loader sea el inicializador de esa misma clase. Si sucede esto se lanza una excepción del tipo LinkageError, y la operación de registración falla. De esa manera cuando se carga un constraint, la JVM también chequea que dicho constraint no se haya ya definido, sino se lanza la misma excepción. Estos son los dos momentos en los que se realiza dicho chequeo.</p>
+
+<p>Por ej.</p>
+
+<p>Existe un loader en L en el que L fue registrado que es el inicializador de la clase C con nombre N, por otro lado existe un loader L2 que ha sido registrado como el inicializador de la clase C2, con nombre N. La equivalencia por transitividad dice que NL = NL2 pero C != C2.</p>
+      <h2 id="preparación">
+        
+        
+          <a href="#preparación"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Preparación
+        
+        
+      </h2>
+    
+<p>Después de que la JVM cargó la clase y realizó las verificaciones de su correspondiente fase, entonces pasa a la fase preparación, en esta fase, la JVM aloca memoria para las variables de la clase y los setea a los valores iniciales declarados. Las variables de clase no son inicializados hasta la fase de inicialización. La alocación de memoria se hace de acuerdo al tipo de dato declarado, en la siguiente tabla:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Tipo</strong></th>
+      <th style="text-align: center"><strong>Valor inicial</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">int</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">long</td>
+      <td style="text-align: center">0L</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">short</td>
+      <td style="text-align: center">(short) 0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">char</td>
+      <td style="text-align: center">‘\u0000’</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">byte</td>
+      <td style="text-align: center">(byte) 0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">boolean</td>
+      <td style="text-align: center">false</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">reference</td>
+      <td style="text-align: center">null</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">float</td>
+      <td style="text-align: center">0.0f</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">double</td>
+      <td style="text-align: center">0.0d</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Aunque el booleano aparece en esta tabla, en realidad, la JVM tiene muy poco soporte para booleanos, y estos se traducen a tipo int, que es 0 para false y 1 para true….. Entonces en el caso de los booleanos, estos se traducen a ints y se inicializan a menos que explícitamente se ponga en True a 0.</p>
+      <h2 id="resolución">
+        
+        
+          <a href="#resolución"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Resolución
+        
+        
+      </h2>
+    
+
+<p>La fase final del linkeo es la resolución y es el proceso de localizar las clases, interfaces, variables y métodos referidos de manera simbólica del tipo de constant pool, y el reemplazo de estas referencias por referencias directas. Esta fase es opcional, a menos que cada referencia simbólica es primero usada por el programa.</p>
+
+<p>Para más información sobre las etapas de esta fase referirse a <a href="https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-5.html"></a>  y <a href="https://www.artima.com/insidejvm/ed2/lifetype.html"></a></p>
+
+<p>Fase de inicialización
+Si bien esta fase no forma parte del linkeo ya, solo mencionaremos brevemente que sucede, en esta etapa.</p>
+
+<p>El paso final para que una clase/interfaz esté listo para ejecución es la inicialización, el proceso en el que se setean los valores iniciales finales. En este caso más puntualmente se setean los valores iniciales de las variables de clase, estos valores se designan de acuerdo al tipo de la variable. En esta fase también se precalculan los valores declarados como estáticos. por ej.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Ejemplo1</span> <span class="o">{</span>
+
+    <span class="c1">// "= 3 * (int) (Math.random() * 5.0)" is the class variable</span>
+    <span class="c1">// initializer</span>
+    <span class="n">static</span> <span class="n">int</span> <span class="n">size</span> <span class="k">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="o">(</span><span class="n">int</span><span class="o">)</span> <span class="o">(</span><span class="nv">Math</span><span class="o">.</span><span class="py">random</span><span class="o">()</span> <span class="o">*</span> <span class="mf">5.0</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>así como las declaraciones dentro de un bloque static</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Example1b</span> <span class="o">{</span>
+
+    <span class="n">static</span> <span class="n">int</span> <span class="n">size</span><span class="o">;</span>
+
+    <span class="c1">// This is the static initializer</span>
+    <span class="n">static</span> <span class="o">{</span>
+
+        <span class="n">size</span> <span class="k">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="o">(</span><span class="n">int</span><span class="o">)</span> <span class="o">(</span><span class="nv">Math</span><span class="o">.</span><span class="py">random</span><span class="o">()</span> <span class="o">*</span> <span class="mf">5.0</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Todas las variables de clase y estáticas iniciales de un tipo son colectados por el compilador Java y puestos en un método especial. Para las clases es el método de inicialización de clase y para interfaces el método de inicialización de interface. En las clases e interfaces este método es llamado “” (si en serio). Métodos regulares de una aplicación Java no pueden invocar este método, solo puede hacerse mediante la JVM.</p>
+
+<p>Esta fase de inicialización consiste en dos pasos.</p>
+
+<p>Inicializar la superclase directa de una clase, si no fue inicializado ya, ejecutar el método de inicialización, si se definió o necesita definirse y ejecutarse. Cuando se inicializa la superclase directa, estos dos pasos deben realizarse también. En el caso de las interfaces no se necesita inicializar su superinterfaz, solo consiste en una fase, que es la de ejecutar el método de inicialización de la interface, si necesita hacerse esto. También la jvm debe asegurarse de que el proceso este correspondientemente sincronizados, por ejemplo, si múltiples threads necesita inicializar una clase, solo uno podrá realizar esto, mientras que el resto espera. Cuando uno termina, este debe notificar del cambio al resto de los threads.</p>
+      <h2 id="classes">
+        
+        
+          <a href="#classes"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Classes
+        
+        
+      </h2>
+    
+<p>La construcción principal alrededor de la cual gira Java (y, en consecuencia la JVM) es la Clase. A diferencia de otros lenguajes más dinámicos, las de Java son construcciones puramente <em>estáticas</em>, lo que hace que sea muy difícil alterarlas durante la ejecución; sin embargo, si lo que buscamos es realizar alguna tarea de <em>introspection</em>, Java provee los medios para obtener una descripción en runtime de las clases que permite realizar todo tipo de consultas.</p>
+
+<p>Ojo! No hay que confundir a las clases (instancias de <strong>Class[T]</strong>) con las construcciones que usamos para acceder a los métodos estáticos: <em>Class[T] != T</em></p>
+
+<p>Para obtener una de estas representaciones de un tipo de Java, Scala ofrece la siguiente interfaz:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// obtener la clase a partir de su identificador</span>
+<span class="n">classOf</span><span class="o">[</span><span class="kt">MiClase</span><span class="o">]</span> <span class="c1">//en Java sería MiClase.class</span>
+
+<span class="c1">//obtener la clase a partir de una instancia</span>
+<span class="nv">instancia</span><span class="o">.</span><span class="py">getClass</span>
+</code></pre></div></div>
+
+<p>Una vez adquirida una de estas representaciones de un tipo podemos usar <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html">su interfaz</a> para realizar todo tipo de consultas:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">trait</span> <span class="nc">T</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">f</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">}</span>
+<span class="k">class</span> <span class="nc">C</span> <span class="k">extends</span> <span class="n">T</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">m</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">x</span>
+  <span class="k">var</span> <span class="n">f</span> <span class="k">=</span> <span class="mi">5</span>
+<span class="o">}</span>
+
+<span class="n">classOf</span><span class="o">[</span><span class="kt">Any</span><span class="o">]</span> <span class="c1">// returns Class[java.lang.Object]</span>
+<span class="k">val</span> <span class="nv">classC</span> <span class="k">=</span> <span class="n">classOf</span><span class="o">[</span><span class="kt">C</span><span class="o">]</span>
+<span class="k">val</span> <span class="nv">c</span> <span class="k">=</span> <span class="k">new</span> <span class="n">C</span>
+
+<span class="nv">classC</span><span class="o">.</span><span class="py">getName</span> <span class="c1">// returns "C" : String</span>
+<span class="nv">classC</span><span class="o">.</span><span class="py">getSuperclass</span> <span class="c1">// returns java.lang.Object : Class[_]</span>
+<span class="nv">classC</span><span class="o">.</span><span class="py">getInterfaces</span> <span class="c1">// returns Array(T) : Array[Class[_]]</span>
+<span class="nv">classC</span><span class="o">.</span><span class="py">isEnum</span> <span class="c1">// returns false</span>
+<span class="nv">classC</span><span class="o">.</span><span class="py">isAnnotationPresent</span><span class="o">(</span><span class="n">classOf</span><span class="o">[</span><span class="kt">SomeAnnotation</span><span class="o">])</span> <span class="c1">// returns false</span>
+
+<span class="nv">classC</span><span class="o">.</span><span class="py">getDeclaredFields</span> <span class="c1">// returns Array(C.f) : Array[Field]</span>
+<span class="nv">classC</span><span class="o">.</span><span class="py">getFields</span> <span class="c1">// returns Array() ~&gt; fields públicos (con heredados)</span>
+<span class="k">val</span> <span class="nv">fieldF</span> <span class="k">=</span> <span class="nv">classC</span><span class="o">.</span><span class="py">getDeclaredField</span><span class="o">(</span><span class="s">"f"</span><span class="o">)</span>
+<span class="nv">fieldF</span><span class="o">.</span><span class="py">getType</span> <span class="c1">// returns int : Class[_]</span>
+<span class="nv">fieldF</span><span class="o">.</span><span class="py">getAnnotations</span> <span class="c1">// returns Array() : Array[Annotation]	fieldF.get(c) // Excepción! El campo es privado =&gt; no es accesible</span>
+<span class="nv">fieldF</span><span class="o">.</span><span class="py">setAccessible</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+<span class="nv">fieldF</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="c1">// returns 5</span>
+<span class="nv">fieldF</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="mi">8</span><span class="o">)</span>
+<span class="nv">fieldF</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="c1">// returns 8</span>
+
+<span class="nv">classC</span><span class="o">.</span><span class="py">getDeclaredMethods</span> <span class="c1">// returns Array(C.f_$eq(int), C.f(), C.m(int)) : Array[Method]</span>
+<span class="k">val</span> <span class="nv">methodM</span> <span class="k">=</span> <span class="nv">classC</span><span class="o">.</span><span class="py">getMethod</span><span class="o">(</span><span class="s">"m"</span><span class="o">,</span> <span class="n">classOf</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span>
+<span class="nv">methodM</span><span class="o">.</span><span class="py">getName</span> <span class="c1">// returns "m" : String</span>
+<span class="nv">methodM</span><span class="o">.</span><span class="py">getParameters</span> <span class="c1">// returns Array(int arg0) : Array[Parameter]</span>
+<span class="nv">methodM</span><span class="o">.</span><span class="py">getParameterTypes</span> <span class="c1">// returns Array(int) : Array[Class[_]]</span>
+<span class="nv">methodM</span><span class="o">.</span><span class="py">getReturnType</span> <span class="c1">// returns int : Class[_]</span>
+<span class="nv">methodM</span><span class="o">.</span><span class="py">getTypeParameters</span> <span class="c1">// returns Array():Array[TypeVariable[Method]]</span>
+<span class="nv">methodM</span><span class="o">.</span><span class="py">isVarArgs</span> <span class="c1">// returns false</span>
+<span class="nv">methodM</span><span class="o">.</span><span class="py">invoke</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Integer</span><span class="o">(</span><span class="mi">3</span><span class="o">))</span> <span class="c1">// returns 3 : Object</span>
+
+<span class="nv">classC</span><span class="o">.</span><span class="py">getDeclaredConstructors</span> <span class="c1">// returns Array(C())</span>
+<span class="k">val</span> <span class="nv">constructorC</span> <span class="k">=</span> <span class="nv">classC</span><span class="o">.</span><span class="py">getConstructor</span><span class="o">()</span>
+<span class="nv">constructorC</span><span class="o">.</span><span class="py">newInstance</span><span class="o">()</span> <span class="c1">// returns a new C</span>
+</code></pre></div></div>
+      <h1 id="reflection-en-scala">
+        
+        
+          <a href="#reflection-en-scala"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Reflection en Scala
+        
+        
+      </h1>
+    
+      <h2 id="universes">
+        
+        
+          <a href="#universes"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Universes
+        
+        
+      </h2>
+    
+<p>Los universos son el punto de entrada al framework de reflection. Existen dos tipos principales de universo, de <em>runtime</em> y de <em>compilación</em>, los cuales sirven para acceder a la estructura de tipos existente en tiempo de ejecución y en tiempo de compilación, respectivamente.</p>
+
+<p>Para analizar el programa en ejecución, obtener atributos y métodos y ejecutar de forma dinámica necesitamos importar el universo de runtime, lo cual puede hacerse de la siguiente forma:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scala.reflect.runtime.</span><span class="o">{</span><span class="n">universe</span> <span class="k">=&gt;</span> <span class="n">ru</span><span class="o">}</span>
+</code></pre></div></div>
+
+<p><a href="https://www.scala-lang.org/api/2.12.6/scala-reflect/scala/reflect/api/Universe.html">La API oficial de Universe</a> provee información detallada de cómo utilizar los universos.</p>
+      <h2 id="types">
+        
+        
+          <a href="#types"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Types
+        
+        
+      </h2>
+    
+<p>Los tipos encapsulan la información referente a muchos aspectos de clases y traits. Esto incluye un listado completo de sus miembros (métodos, campos, alias de tipo, definiciones anidadas, etc.) y la posibilidad de compararse entre ellos.</p>
+
+<p>Para obtener un tipo puedo ejecutar el siguiente código:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scala.reflect.runtime.universe._</span>
+
+<span class="k">class</span> <span class="nc">A</span>
+
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="c1">//returns the Type A</span>
+
+<span class="n">weakTypeOf</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">]]</span> <span class="c1">// for types with type arguments this is how you should do it</span>
+</code></pre></div></div>
+
+<p>Los usos más comunes para un tipo son compararlo con otros tipos o realizar chequeos en cuanto a sus miembros definidos.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scala.reflect.runtime.universe._</span>
+
+<span class="k">class</span> <span class="nc">A</span><span class="o">{</span>
+  <span class="k">def</span> <span class="nf">m</span> <span class="k">=</span> <span class="mi">5</span>
+ <span class="k">val</span> <span class="nv">f</span> <span class="k">=</span> <span class="mi">3</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">B</span> <span class="k">extends</span> <span class="n">A</span>
+<span class="k">type</span> <span class="kt">A2</span> <span class="o">=</span> <span class="n">A</span>
+
+<span class="c1">// Igualdad</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">=:=</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="c1">// true ~&gt; A es el mismo tipo que A</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">=:=</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="c1">// false ~&gt; A no es el mismo tipo que B</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">==</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">A2</span><span class="o">]</span> <span class="c1">// false ~&gt; == no chequea alias</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">=:=</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">A2</span><span class="o">]</span> <span class="c1">// true ~&gt; =:= se da cuenta que son el mismo tipo</span>
+
+<span class="c1">// Subtipado</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">&lt;:&lt;</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="c1">// true ~&gt; A es subtipo de A</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="o">&lt;:&lt;</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="c1">// true ~&gt; B es subtipo de A</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">&lt;:&lt;</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="c1">// false ~&gt; A no es subtipo de B</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="o">&lt;:&lt;</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span> <span class="c1">// false ~&gt; Int no es realmente subtipo de Long</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="n">weak_&lt;:&lt;</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">Long</span><span class="o">]</span> <span class="c1">// true ~&gt; pero Sí hace algo parecido</span>
+<span class="n">weakTypeOf</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">B</span><span class="o">]]</span> <span class="o">&lt;:&lt;</span> <span class="n">weakTypeOf</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="c1">// true</span>
+<span class="n">weakTypeOf</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">&lt;:&lt;</span> <span class="n">weakTypeOf</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">B</span><span class="o">]]</span> <span class="c1">// false</span>
+
+<span class="c1">// Declaraciones</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">].</span><span class="py">declarations</span> <span class="c1">// returns SynchronizedOps(constructor A, method m, value f, value f)</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">].</span><span class="py">takesTypeArgs</span> <span class="c1">// returns false</span>
+<span class="n">typeOf</span><span class="o">[</span><span class="kt">A</span><span class="o">].</span><span class="py">typeParams</span> <span class="c1">// returns List()</span>
+</code></pre></div></div>
+
+<p><a href="https://www.scala-lang.org/api/2.12.6/scala-reflect/scala/reflect/api/Types.html">La API oficial de Types</a> provee información detallada de cómo utilizar los types.</p>
+      <h2 id="typetags">
+        
+        
+          <a href="#typetags"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> TypeTags
+        
+        
+      </h2>
+    
+<p>Como ya se mencionó antes, los tipos de Scala se borran al ser compilados para ejecutar en la JVM. Esto significa que, si inspeccionamos en runtime una instancia, no tenemos acceso a toda la información disponible previo a la compilación. Un ejemplo de esto son los <em>Tipos Paramétricos</em> que son eliminados al compilar.</p>
+
+<p>Esto puede a veces producir comportamiento inesperado:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">detectorDeEnteros</span><span class="o">(</span><span class="n">list</span> <span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Any</span><span class="o">])</span> <span class="k">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=&gt;</span> <span class="kc">true</span> <span class="c1">// WARNING! El [Int] no existe en runtime. Sólo List</span>
+  <span class="k">case</span> <span class="n">other</span> <span class="k">=&gt;</span> <span class="kc">false</span>
+<span class="o">}</span>
+	
+<span class="nf">detectorDeEnteros</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="s">"no"</span><span class="o">,</span> <span class="s">"somos"</span><span class="o">,</span> <span class="s">"enteros"</span><span class="o">))</span> <span class="c1">// returns true</span>
+</code></pre></div></div>
+
+<p>Los <em>TypeTags</em> son, a grandes razgos, objetos que pueden ser usados para preservar durante la ejecución toda la información de un tipo disponible al momento de compilar. Estas estructuras son generadas siempre por el compilador, y pueden obtenerse de varias formas:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scala.reflect.runtime.universe._</span>
+
+<span class="c1">// Usando el método typeTag</span>
+<span class="k">val</span> <span class="nv">tt1</span> <span class="k">=</span> <span class="n">typeTag</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">]]</span>
+
+<span class="c1">// Usando un parámetro implicito. Si el compilador no encuentra un valor en contexto, lo genera.</span>
+<span class="k">def</span> <span class="nf">obtenerTypeTag</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="k">implicit</span> <span class="n">tt</span><span class="k">:</span> <span class="kt">TypeTag</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">=</span> <span class="n">tt</span>
+<span class="k">val</span> <span class="nv">tt2</span> <span class="k">=</span> <span class="n">obtenerTypeTag</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">]]</span>
+
+<span class="c1">// Usando un Context Bound en un Type Parameter</span>
+<span class="k">def</span> <span class="nf">obtenerTypeTagDeOtraForma</span><span class="o">[</span><span class="kt">T:</span> <span class="kt">TypeTag</span><span class="o">]</span> <span class="k">=</span> <span class="n">implicitly</span><span class="o">[</span><span class="kt">TypeTag</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span>
+</code></pre></div></div>
+
+<p>Teniendo esto en cuenta, el código anterior podría reescribirse así:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scala.reflect.runtime.universe._</span>
+
+<span class="k">def</span> <span class="nf">detectorDeEnteros</span><span class="o">[</span><span class="kt">T:</span> <span class="kt">TypeTag</span><span class="o">](</span><span class="n">list</span> <span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">=</span>
+  <span class="n">typeTag</span><span class="o">[</span><span class="kt">T</span><span class="o">].</span><span class="py">tpe</span> <span class="o">=:=</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span>
+
+<span class="nf">detectorDeEnteros</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="s">"no"</span><span class="o">,</span> <span class="s">"somos"</span><span class="o">,</span> <span class="s">"enteros"</span><span class="o">))</span> <span class="c1">// returns false</span>
+</code></pre></div></div>
+
+<p>Los TypeTags pueden ser usados en conjunto con el extractor TypeRef para analizar un tipo:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scala.reflect.runtime.universe._</span>
+
+<span class="k">def</span> <span class="nf">explotar</span><span class="o">[</span><span class="kt">T:</span> <span class="kt">TypeTag</span><span class="o">]</span> <span class="k">=</span> <span class="n">typeTag</span><span class="o">[</span><span class="kt">T</span><span class="o">].</span><span class="py">tpe</span> <span class="k">match</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="nc">TypeRef</span><span class="o">(</span><span class="n">typePrefix</span><span class="o">,</span> <span class="n">symbol</span><span class="o">,</span> <span class="n">typeArguments</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">typePrefix</span><span class="o">,</span> <span class="n">symbol</span><span class="o">,</span> <span class="n">typeArguments</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="nf">val</span> <span class="o">(</span><span class="n">typePrefix</span><span class="o">,</span> <span class="n">symbol</span><span class="o">,</span> <span class="n">typeArguments</span><span class="o">)</span> <span class="k">=</span> <span class="n">explotar</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">]]</span>
+
+<span class="n">typePrefix</span> <span class="c1">// package object scala : Symbol</span>
+<span class="n">symbol</span> <span class="c1">// type List : Symbol</span>
+<span class="n">typeArguments</span> <span class="c1">// List(Int) : List[Type]</span>
+</code></pre></div></div>
+
+<p><a href="https://www.scala-lang.org/api/2.12.6/scala-reflect/scala/reflect/api/TypeTags.html">La API oficial de TypeTags</a> provee información detallada de cómo utilizar los types.</p>
+      <h2 id="symbols">
+        
+        
+          <a href="#symbols"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Symbols
+        
+        
+      </h2>
+    
+<p>Los <em>símbolos</em> vinculan nombres a los elementos del metamodelo. Todas las cosas a las que se les puede dar un nombre en Scala tienen un símbolo asociado.</p>
+
+<p>Los <em>símbolos</em> contienen también toda la información asociada a las entidades y una amplia interfaz para consultarla, lo cual los convierte (junto con los <em>Types</em>) en la abstracción central para realizar <em>introspection</em>.</p>
+
+<p>Los <em>símbolos</em> se organizan en una jerarquía que refleja la estructura básica de las entidades a las que están asociados (por ejemplo, el símbolo que representa un parámetro de un método es hijo del símbolo asociado a dicho método el cual, a su vez, es hijo del símbolo del trait, clase u objeto que lo define, etc.). Distintos tipos de símbolo existen para reflejar las distintas entidades, con sus distintas interfaces de consulta.</p>
+
+<p>Algunos métodos de la API exponen un tipo de retorno más genérico que el que uno busca. Por ejemplo, si busco las declaraciones de una clase puedo obtener una lista con muchos tipos de símbolo (<em>MethodSímbol</em>, <em>ModuleSímbol</em>, etc). pero la lista va a ser de tipo List[<strong>TermSymbol</strong>]. Para estos casos existen varios métodos de conversión *as<Abstracción>* para convertir un símbolo a su versión más específica.</Abstracción></p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scala.reflect.runtime.universe._</span>
+
+<span class="k">class</span> <span class="nc">C</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">test</span><span class="o">[</span><span class="kt">U</span><span class="o">](</span><span class="n">x</span><span class="k">:</span> <span class="kt">T</span><span class="o">)(</span><span class="n">y</span><span class="k">:</span> <span class="kt">U</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">???</span> <span class="o">}</span>
+
+<span class="c1">// member retorna una instancia de Symbol</span>
+<span class="k">val</span> <span class="nv">testMember</span><span class="k">:</span> <span class="kt">Symbol</span> <span class="o">=</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">C</span><span class="o">[</span><span class="kt">Int</span><span class="o">]].</span><span class="py">member</span><span class="o">(</span><span class="nc">TermName</span><span class="o">(</span><span class="s">"test"</span><span class="o">))</span>
+
+<span class="c1">// como sabemos que es un método, podemos obtener un MethodSymbol que tiene una interfaz más rica</span>
+<span class="k">val</span> <span class="nv">testMethod</span><span class="k">:</span> <span class="kt">MethodSymbol</span> <span class="o">=</span> <span class="nv">testMember</span><span class="o">.</span><span class="py">asMethod</span>
+</code></pre></div></div>
+      <h3 id="typesymbols">
+        
+        
+          <a href="#typesymbols"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> TypeSymbols
+        
+        
+      </h3>
+    
+<p>Representan un tipo, class o trait, así como también tipos paramétricos. Proveen más que nada información sobre la varianza.</p>
+      <h3 id="classsymbols">
+        
+        
+          <a href="#classsymbols"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> ClassSymbols
+        
+        
+      </h3>
+    
+<p>Son un caso particular de <em>TypeSymbol</em>. Proveen toda la información contenida en la declaración de una clase o trait.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scala.reflect.runtime.universe._</span>
+ 
+<span class="k">object</span> <span class="nc">C</span>
+<span class="k">class</span> <span class="nc">C</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
+  <span class="err">…</span>
+<span class="o">}</span>
+
+<span class="k">val</span> <span class="nv">classSymbol</span><span class="k">:</span> <span class="kt">ClassSymbol</span> <span class="o">=</span> <span class="o">???</span> <span class="c1">// Más adelante vemos cómo conseguirlo</span>
+
+<span class="nv">classSymbol</span><span class="o">.</span><span class="py">isCaseClass</span> <span class="c1">// returns false</span>
+<span class="nv">classSymbol</span><span class="o">.</span><span class="py">isModule</span>  <span class="c1">// returns false</span>
+<span class="nv">classSymbol</span><span class="o">.</span><span class="py">isTrait</span>  <span class="c1">// returns false</span>
+<span class="nv">classSymbol</span><span class="o">.</span><span class="py">companion</span> <span class="c1">// returns object C : Symbol</span>
+<span class="nv">classSymbol</span><span class="o">.</span><span class="py">isPublic</span> <span class="c1">// returns true</span>
+<span class="nv">classSymbol</span><span class="o">.</span><span class="py">typeParams</span> <span class="c1">// returns List(type T)</span>
+<span class="nv">classSymbol</span><span class="o">.</span><span class="py">toType</span> <span class="c1">// returns the Type</span>
+<span class="nv">classSymbol</span><span class="o">.</span><span class="py">name</span> <span class="c1">// returns C : TypeName</span>
+<span class="nv">classSymbol</span><span class="o">.</span><span class="py">primaryConstructor</span> <span class="c1">// returns constructor C : Symbol</span>
+</code></pre></div></div>
+      <h3 id="termsymbols">
+        
+        
+          <a href="#termsymbols"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> TermSymbols
+        
+        
+      </h3>
+    
+<p>Representan las declaraciones de val, var, def u object, así como también packages y value parameters</p>
+      <h3 id="methodsymbols">
+        
+        
+          <a href="#methodsymbols"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> MethodSymbols
+        
+        
+      </h3>
+    
+<p>Casos particulares de <em>TermSymbol</em>. Representan las declaraciones de def.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scala.reflect.runtime.universe._</span>
+ 
+<span class="k">class</span> <span class="nc">C</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">m</span><span class="o">[</span><span class="kt">U</span><span class="k">&gt;:</span><span class="kt">T</span><span class="o">](</span><span class="n">x</span><span class="k">:</span> <span class="kt">T</span><span class="o">)(</span><span class="n">y</span><span class="k">:</span> <span class="kt">U</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">???</span>
+<span class="o">}</span>
+
+<span class="k">val</span> <span class="nv">methodSymbol</span> <span class="k">=</span> <span class="n">typeOf</span><span class="o">[</span><span class="kt">C</span><span class="o">[</span><span class="kt">Int</span><span class="o">]].</span><span class="py">decl</span><span class="o">(</span><span class="s">"m"</span><span class="k">:</span> <span class="kt">TermName</span><span class="o">).</span><span class="py">asMethod</span>
+
+<span class="nv">methodSymbol</span><span class="o">.</span><span class="py">typeSignatureIn</span><span class="o">(</span><span class="n">typeOf</span><span class="o">[</span><span class="kt">C</span><span class="o">[</span><span class="kt">Int</span><span class="o">]])</span> <span class="c1">// returns Type [U &gt;: Int](x: Int)(y: U)Int</span>
+<span class="nv">methodSymbol</span><span class="o">.</span><span class="py">typeSignatureIn</span><span class="o">(</span><span class="n">typeOf</span><span class="o">[</span><span class="kt">C</span><span class="o">[</span><span class="kt">String</span><span class="o">]])</span> <span class="c1">// returns Type [U &gt;: String](x: Int)(y: U)Int</span>
+<span class="nv">methodSymbol</span><span class="o">.</span><span class="py">name</span> <span class="c1">// return m: methodSymbol.NameType</span>
+<span class="nv">methodSymbol</span><span class="o">.</span><span class="py">owner</span> <span class="c1">// returns C: ClassSymbol</span>
+<span class="nv">methodSymbol</span><span class="o">.</span><span class="py">isMethod</span> <span class="c1">// returns true</span>
+<span class="nv">methodSymbol</span><span class="o">.</span><span class="py">isConstructor</span> <span class="c1">// returns false</span>
+<span class="nv">methodSymbol</span><span class="o">.</span><span class="py">isPublic</span> <span class="c1">//returns true</span>
+<span class="nv">methodSymbol</span><span class="o">.</span><span class="py">paramLists</span> <span class="c1">// returns List(List(value x), List(value y)) : List[List[Symbol]]</span>
+</code></pre></div></div>
+      <h3 id="modulesymbols">
+        
+        
+          <a href="#modulesymbols"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> ModuleSymbols
+        
+        
+      </h3>
+    
+<p>Representan las declaraciones de object. Permiten obtener la clase implícitamente asociada con la declaración del objeto ( es decir, la clase que sabemos que tiene que existir para que exista el objeto, pero que Scala no nos muestra).</p>
+
+<p><a href="https://www.scala-lang.org/api/2.12.6/scala-reflect/scala/reflect/api/Symbols.html">La API oficial de Symbols</a> provee información detallada de cómo utilizar los symbols.</p>
+      <h2 id="mirrors">
+        
+        
+          <a href="#mirrors"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Mirrors
+        
+        
+      </h2>
+    
+<p>Los mirrors son construcciones que centralizan el acceso a la información de reflection, desacoplandola de las clases del modelo. Existen varios tipos de mirrors. El mirror a utilizar se elige en función del tipo de operación que se busca realizar. Se los suele clasificar en 2 grupos:</p>
+
+<ul>
+  <li><strong>Classloader Mirrors</strong>: Sirven para obtener las representaciones de los tipos y sus miembros. A partir de ellos se puede obtener <em>invoker mirrors</em>. Su utilidad principal es convertir nombres en <em>Symbols</em>.</li>
+  <li><strong>Invoker Mirrors</strong>: Mirrors especializados, que implementan las tareas más comunes (como invocar métodos y acceder a atributos).</li>
+</ul>
+      <h3 id="reflectivemirror">
+        
+        
+          <a href="#reflectivemirror"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> ReflectiveMirror
+        
+        
+      </h3>
+    
+<p>Se usan para cargar Symbols a partir de nombres y para obtener <em>Invoker Mirrors</em>.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">ru</span> <span class="k">=</span> <span class="nv">scala</span><span class="o">.</span><span class="py">reflect</span><span class="o">.</span><span class="py">runtime</span><span class="o">.</span><span class="py">universe</span>
+<span class="k">val</span> <span class="nv">runtimeMirror</span> <span class="k">=</span> <span class="nv">ru</span><span class="o">.</span><span class="py">runtimeMirror</span><span class="o">(</span><span class="nv">getClass</span><span class="o">.</span><span class="py">getClassLoader</span><span class="o">)</span>
+</code></pre></div></div>
+      <h3 id="instancemirror">
+        
+        
+          <a href="#instancemirror"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> InstanceMirror
+        
+        
+      </h3>
+    
+<p>Se usan para crear <em>Invoker Mirrors</em> bindeados a la instancia para métodos y campos y para definiciones internas de clases y objetos. También pueden usarse para obtener el <em>Symbol</em> y <em>Type</em> asociados a la clase de la instance.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">C</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">x</span> <span class="k">=</span> <span class="mi">2</span> <span class="o">}</span>
+
+<span class="k">val</span> <span class="nv">ru</span> <span class="k">=</span> <span class="nv">scala</span><span class="o">.</span><span class="py">reflect</span><span class="o">.</span><span class="py">runtime</span><span class="o">.</span><span class="py">universe</span>
+<span class="k">val</span> <span class="nv">runtimeMirror</span> <span class="k">=</span> <span class="nv">ru</span><span class="o">.</span><span class="py">runtimeMirror</span><span class="o">(</span><span class="nv">getClass</span><span class="o">.</span><span class="py">getClassLoader</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">instanceMirror</span> <span class="k">=</span> <span class="nv">runtimeMirror</span><span class="o">.</span><span class="py">reflect</span><span class="o">(</span><span class="k">new</span> <span class="n">C</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="nv">classSymbol</span> <span class="k">=</span> <span class="nv">instanceMirror</span><span class="o">.</span><span class="py">symbol</span><span class="o">.</span><span class="py">asClass</span>
+<span class="k">val</span> <span class="nv">classType</span> <span class="k">=</span> <span class="nv">classSymbol</span><span class="o">.</span><span class="py">toType</span>
+<span class="k">val</span> <span class="nv">javaClass</span> <span class="k">=</span> <span class="nv">runtimeMirror</span><span class="o">.</span><span class="py">runtimeClass</span><span class="o">(</span><span class="n">classSymbol</span><span class="o">)</span> <span class="c1">// The concrete runtime java class for the symbol</span>
+</code></pre></div></div>
+      <h3 id="methodmirror">
+        
+        
+          <a href="#methodmirror"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> MethodMirror
+        
+        
+      </h3>
+    
+<p>Se usan para invocar métodos de instancia (que son los únicos existentes en Scala) y constructores.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">C</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">x</span> <span class="k">=</span> <span class="mi">2</span> <span class="o">}</span>
+
+<span class="k">val</span> <span class="nv">ru</span> <span class="k">=</span> <span class="nv">scala</span><span class="o">.</span><span class="py">reflect</span><span class="o">.</span><span class="py">runtime</span><span class="o">.</span><span class="py">universe</span>
+<span class="k">val</span> <span class="nv">runtimeMirror</span> <span class="k">=</span> <span class="nv">ru</span><span class="o">.</span><span class="py">runtimeMirror</span><span class="o">(</span><span class="nv">getClass</span><span class="o">.</span><span class="py">getClassLoader</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">methodSymbol</span> <span class="k">=</span> <span class="nv">ru</span><span class="o">.</span><span class="py">typeOf</span><span class="o">[</span><span class="kt">C</span><span class="o">].</span><span class="py">declaration</span><span class="o">(</span><span class="nv">ru</span><span class="o">.</span><span class="py">TermName</span><span class="o">(</span><span class="s">"x"</span><span class="o">)).</span><span class="py">asMethod</span>
+<span class="k">val</span> <span class="nv">methodMirror</span> <span class="k">=</span> <span class="nv">instanceMirror</span><span class="o">.</span><span class="py">reflectMethod</span><span class="o">(</span><span class="n">methodSymbol</span><span class="o">)</span>
+<span class="nv">methodMirror</span><span class="o">.</span><span class="py">apply</span><span class="o">()</span> <span class="c1">//returns 2</span>
+</code></pre></div></div>
+      <h3 id="fieldmirror">
+        
+        
+          <a href="#fieldmirror"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> FieldMirror
+        
+        
+      </h3>
+    
+<p>Se usan para leer/escribir los atributos que Scala usa internamente para los campos.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">C</span> <span class="o">{</span> <span class="k">val</span> <span class="nv">x</span> <span class="k">=</span> <span class="mi">2</span> <span class="o">}</span>
+
+<span class="k">val</span> <span class="nv">runtimeMirror</span> <span class="k">=</span> <span class="nv">ru</span><span class="o">.</span><span class="py">runtimeMirror</span><span class="o">(</span><span class="nv">getClass</span><span class="o">.</span><span class="py">getClassLoader</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">instanceMirror</span> <span class="k">=</span> <span class="nv">runtimeMirror</span><span class="o">.</span><span class="py">reflect</span><span class="o">(</span><span class="k">new</span> <span class="n">C</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="nv">fieldSymbol</span> <span class="k">=</span> <span class="nv">ru</span><span class="o">.</span><span class="py">typeOf</span><span class="o">[</span><span class="kt">C</span><span class="o">].</span><span class="py">decl</span><span class="o">(</span><span class="nv">ru</span><span class="o">.</span><span class="py">TermName</span><span class="o">(</span><span class="s">"x"</span><span class="o">)).</span><span class="py">asTerm</span>
+<span class="nv">fieldSymbol</span><span class="o">.</span><span class="py">isVal</span> <span class="c1">// returns false</span>
+<span class="nv">fieldSymbol</span><span class="o">.</span><span class="py">isMethod</span> <span class="c1">// returns true</span>
+
+<span class="k">val</span> <span class="nv">backingFieldSymbol</span> <span class="k">=</span> <span class="nv">fieldSymbol</span><span class="o">.</span><span class="py">accessed</span><span class="o">.</span><span class="py">asTerm</span>
+<span class="nv">backingFieldX</span><span class="o">.</span><span class="py">isVal</span> <span class="c1">// return true</span>
+<span class="nv">backingFieldX</span><span class="o">.</span><span class="py">isMethod</span> <span class="c1">// return false</span>
+
+<span class="k">val</span> <span class="nv">fieldMirror</span> <span class="k">=</span> <span class="nv">instanceMirror</span><span class="o">.</span><span class="py">reflectField</span><span class="o">(</span><span class="n">fieldSymbol</span><span class="o">)</span>
+<span class="nv">fieldMirror</span><span class="o">.</span><span class="py">get</span> <span class="c1">// returns 2</span>
+<span class="nv">fieldMirror</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
+<span class="nv">fieldMirror</span><span class="o">.</span><span class="py">get</span> <span class="c1">// returns 3</span>
+
+<span class="c1">// Los fields también son métodos, por lo tanto puedo hacer esto</span>
+<span class="nv">instanceMirror</span><span class="o">.</span><span class="py">reflectMethod</span><span class="o">(</span><span class="nv">fieldSymbol</span><span class="o">.</span><span class="py">asMethod</span><span class="o">).</span><span class="py">apply</span><span class="o">()</span> <span class="c1">// returns 3</span>
+</code></pre></div></div>
+      <h3 id="classmirror">
+        
+        
+          <a href="#classmirror"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> ClassMirror
+        
+        
+      </h3>
+    
+<p>Se usan para crear <em>Invoker Mirrors</em> para los constructores.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">C</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="nv">runtimeMirror</span> <span class="k">=</span> <span class="nv">ru</span><span class="o">.</span><span class="py">runtimeMirror</span><span class="o">(</span><span class="nv">getClass</span><span class="o">.</span><span class="py">getClassLoader</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">classSymbol</span> <span class="k">=</span> <span class="nv">ru</span><span class="o">.</span><span class="py">typeOf</span><span class="o">[</span><span class="kt">C</span><span class="o">].</span><span class="py">typeSymbol</span><span class="o">.</span><span class="py">asClass</span>
+<span class="k">val</span> <span class="nv">classMirror</span> <span class="k">=</span> <span class="nv">runtimeMirror</span><span class="o">.</span><span class="py">reflectClass</span><span class="o">(</span><span class="n">classSymbol</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">constructorSymbol</span> <span class="k">=</span> <span class="nv">ru</span><span class="o">.</span><span class="py">typeOf</span><span class="o">[</span><span class="kt">C</span><span class="o">].</span><span class="py">decl</span><span class="o">(</span><span class="nv">ru</span><span class="o">.</span><span class="py">nme</span><span class="o">.</span><span class="py">CONSTRUCTOR</span><span class="o">).</span><span class="py">asMethod</span>
+<span class="k">val</span> <span class="nv">constructorMirror</span><span class="k">:</span> <span class="kt">ru.MethodMirror</span> <span class="o">=</span> <span class="nv">classMirror</span><span class="o">.</span><span class="py">reflectConstructor</span><span class="o">(</span><span class="n">constructorSymbol</span><span class="o">)</span>
+<span class="nv">constructorMirror</span><span class="o">.</span><span class="py">apply</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="c1">// returns C(2)</span>
+</code></pre></div></div>
+      <h3 id="modulemirror">
+        
+        
+          <a href="#modulemirror"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> ModuleMirror
+        
+        
+      </h3>
+    
+<p>Se usan para acceder a las instancias de los singleton objects.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">C</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">x</span> <span class="k">=</span> <span class="mi">2</span> <span class="o">}</span>
+<span class="k">val</span> <span class="nv">runtimeMirror</span> <span class="k">=</span> <span class="nv">ru</span><span class="o">.</span><span class="py">runtimeMirror</span><span class="o">(</span><span class="nv">getClass</span><span class="o">.</span><span class="py">getClassLoader</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">moduleSymbol</span> <span class="k">=</span> <span class="nv">ru</span><span class="o">.</span><span class="py">typeOf</span><span class="o">[</span><span class="kt">C.</span><span class="k">type</span><span class="o">].</span><span class="py">termSymbol</span><span class="o">.</span><span class="py">asModule</span>
+<span class="k">val</span> <span class="nv">moduleMirror</span> <span class="k">=</span> <span class="nv">runtimeMirror</span><span class="o">.</span><span class="py">reflectModule</span><span class="o">(</span><span class="n">moduleSymbol</span><span class="o">)</span>
+<span class="nv">moduleMirror</span><span class="o">.</span><span class="py">instance</span> <span class="c1">// returns C</span>
+</code></pre></div></div>
+
+<p><a href="https://www.scala-lang.org/api/2.12.6/scala-reflect/scala/reflect/api/Mirrors.html">La API oficial de Mirrors</a> provee información detallada de cómo utilizar los mirrors.</p>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>

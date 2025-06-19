@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_15/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase Bonus TADP 1C2018</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="objeto-funcional-en-otros-lenguajes">
+        
+        
+          <a href="#objeto-funcional-en-otros-lenguajes"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Objeto-Funcional en otros Lenguajes
+        
+        
+      </h1>
+    
+
+<p>La idea de esta clase es plantear cómo se están encarando los enfoques que presentamos en clase en otras técnologías y ver de paso algunas herramientas y nociones nuevas que giran alrededor de problemas similares. En particular vamos a presentar 2 lenguajes que son, a nuestro entender, los exponentes más interesantes de esta segunda generación de tecnologías Objeto-Funcionales: <strong><a href="https://kotlinlang.org/">Kotlin</a></strong>, que tomó muchas ideas de <em>Scala</em> y las acomodó al mundo de Android y <strong><a href="https://www.typescriptlang.org/">TypeScript</a></strong> que es hoy por hoy una de las mejores versiones tipadas de <a href="https://es.wikipedia.org/wiki/ECMAScript">EcmaScript</a> (el contrato sobre el que se definen los <em>JavaScripts</em>).</p>
+
+<p>Estos lenguajes van a ser importantes para nosotros no sólo por las buenas ideas a las que llegaron, sino también por sus imperfecciones, los problemas a los que están sujetos, las limitaciones que sus diferentes contextos les imponen y la manera (mala o buena) como decidieron sobrellevarlas. Va a ser interesante también analizar que herramientas copiaron (aunque sea como un indicador de popularidad de ciertos conceptos) y el impacto de algunas aproximaciones innovadoras que presentan a problemas viejos.</p>
+
+<p>En definitiva, estos lenguajes nos importan porque no son más de lo mismo, sino que tratan (en mayor o menor medida) de darle otra vuelta de rosca a la integración de paradigmas.</p><hr />
+      <h2 id="tabla-de-contenido">
+        
+        
+          <a href="#tabla-de-contenido"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Tabla de Contenido
+        
+        
+      </h2>
+    
+
+<ul>
+  <li><a href="#tipado">Tipado</a></li>
+  <li><a href="#typescript-tipandolo-con-pinzas">Typescript: Tipandolo con pinzas</a></li>
+  <li><a href="#tipos-paramétricos-y-varianza">Tipos Paramétricos y Varianza</a></li>
+  <li><a href="#features-locos">Features locos</a>
+    <ul>
+      <li><a href="#tipos-condicionales">Tipos Condicionales</a></li>
+      <li><a href="#index-types">Index Types</a></li>
+      <li><a href="#mapped-types">Mapped Types</a></li>
+    </ul>
+  </li>
+  <li><a href="#antes-y-después-del-compilador">Antes y Después del Compilador</a></li>
+  <li><a href="#definición-de-objetos">Definición de Objetos</a></li>
+  <li><a href="#kotlin-entre-la-scala-y-la-pared">Kotlin: Entre la Scala y la pared</a></li>
+  <li><a href="#typescriptes-ahora-con-clases">Typescript/ES: Ahora con… Clases?</a></li>
+  <li><a href="#inmutabilidad-y-efecto">Inmutabilidad y Efecto</a></li>
+  <li><a href="#constantes">Constantes</a></li>
+  <li><a href="#expresiones-vs-sentencias">Expresiones Vs. Sentencias</a></li>
+  <li><a href="#transformación-de-datos-inmutables">Transformación de datos inmutables</a></li>
+  <li><a href="#funciones-como-elementos-de-primer-órden">Funciones como elementos de primer órden</a></li>
+  <li><a href="#pattern-matching-y-control-de-flujo">Pattern Matching y Control de Flujo</a></li>
+  <li><a href="#decisiones-basadas-en-el-tipo">Decisiones basadas en el tipo</a></li>
+  <li><a href="#control-de-flujo-basado-en-valores">Control de flujo basado en valores</a></li>
+  <li><a href="#mónadas-y-secuenciamiento">Mónadas y Secuenciamiento</a></li>
+  <li><a href="#metaprogramación">Metaprogramación</a></li>
+  <li><a href="#metadata">Metadata</a></li>
+  <li><a href="#extensiones-de-interfaz">Extensiones de Interfaz</a></li>
+  <li><a href="#auto-delegación">Auto-Delegación</a>
+    <ul>
+      <li><a href="#class-delegation">Class Delegation</a></li>
+      <li><a href="#property-delegation">Property Delegation</a></li>
+    </ul>
+  </li>
+</ul><hr />
+      <h2 id="tipado">
+        
+        
+          <a href="#tipado"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Tipado
+        
+        
+      </h2>
+    
+
+<p>Vamos a empezar planteando algunas variantes interesantes a los sistemas de tipos de los lenguajes que usamos durante la cursada. El tipado de <em>Scala</em> es de los más seguros, flexibles y, por lo tanto, complejos de los lenguajes orientados a objetos. <em>Kotlin</em> toma muchas de sus ideas y define un tipado algo más rígido y menos preciso pero mucho más simple, al mismo tiempo que agrega bastante boilerplate a su sintáxis para protejerse de (lo que algunos consideran) problemas comunes. Por otro lado, <em>TypeScript</em> abiertamente acepta su tipado como <strong>unsound</strong> y no ofrece una solución para las situaciones más complejas que otros lenguajes tratan de resolver pagando el costo de una mayor complejidad. Del sitio de <em>TypeScript</em>:</p>
+
+<blockquote>
+  <p>TypeScript’s type system allows certain operations that can’t be known at compile-time to be safe. […] The places where TypeScript allows unsound behavior were carefully considered, and throughout this document we’ll explain where these happen and the motivating scenarios behind them.</p>
+</blockquote>
+
+<p>Basicamente el lenguaje aspira a que su tipado sea una mejor alternativa que el no-tipado de <em>EcmaScript</em> y está más preocupado por ser accesible que seguro. Ironicamente, esta laxedad en los chequeos permite luego tipar algunas construcciones complejas que en otros lenguajes más estrictos no serían posibles y tendrían que hacerse usando reflection u otros mecanismos inseguros.</p>
+
+<p>Uno puede estar a favor o en contra de las decisiones particulares de estas tecnologías, pero hay una idea interesante escondida detrás que merece consideración: Los lenguajes (al igual que los problemas que buscan resolver) están atados a un tiempo, un público y un contexto. A veces puede ser buena idea alejarse del paradigma o implementar un concepto de forma menos (o más) rigurosa en pos de mejorar el uso cotidiano.</p>
+
+<p>Vamos a mencionar entonces algunos de los aspectos más interesantes (para bien o para mal) de estos sistemas de tipos.</p>
+      <h3 id="typescript-tipandolo-con-pinzas">
+        
+        
+          <a href="#typescript-tipandolo-con-pinzas"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Typescript: Tipandolo con pinzas
+        
+        
+      </h3>
+    
+
+<p>En sí, la filosofía de <em>TypeScript</em> consiste en ser una versión más segura de <em>EcmaScript</em>, manteniendose fiel a sus principios y sin introducir “features” que no puedan mapearse directamente al lenguaje original.
+Esto implica no requerir un cambio muy abrupto en la forma de programar y preservar la naturaleza “flexible” de ES, lo cual no es fácil…</p>
+
+<p>Para esto, <em>TypeScript</em> basa sus chequeos en un <strong>Tipado Estructural</strong>:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span><span class="p">:</span> <span class="p">{</span> <span class="nl">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span>
+
+<span class="c1">// Esto funciona</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span> <span class="p">}</span>
+
+<span class="c1">// Pero esto no...</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">7</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Un detalle interesante es que, una vez que el lenguaje acepta que su tipado no es siempre seguro, se puede permitir hacer algunos chequeos que enfoques más estrictos descartarían por no ser consistentes:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span><span class="p">:</span> <span class="p">{</span> <span class="nl">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span>
+
+<span class="c1">// Esto, como es de esperarse, tipa.</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bar</span><span class="dl">"</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span>
+
+<span class="c1">// Pero esto no!</span>
+<span class="c1">// TS asume que si harcodeas un literal acá, poner el "c" es probablemente un error.</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="dl">"</span><span class="s2">bar</span><span class="dl">"</span><span class="p">,</span> <span class="na">c</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+
+<span class="c1">// Incluso se puede optar por incluir o excluir ciertas validaciones.</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="kc">null</span>
+</code></pre></div></div>
+
+<p>Otra noción <em>“impura”</em>, del lenguajes es su aproximación al <strong>Tipado Nominal</strong>. Es posible, además de tipos estructurales definir <em>Interfaces</em> de forma muy similar a otros lenguajes, con la diferencia de que las estructuras no necesitan declarar que las implementan de forma explícita. Esto quiere decir que uno no puede confiar en que el objeto fué pensado para cubrir un rol (y no sólo expone la interfaz por casualidad).</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">T</span> <span class="p">{</span> <span class="nl">a</span><span class="p">:</span> <span class="kr">number</span> <span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">t</span><span class="p">:</span> <span class="nx">T</span>
+
+<span class="c1">// Esto, obviamente, tipa</span>
+<span class="kd">class</span> <span class="nx">C</span> <span class="k">implements</span> <span class="nx">T</span> <span class="p">{</span>
+    <span class="nl">a</span><span class="p">:</span> <span class="kr">number</span>
+<span class="p">}</span>
+<span class="nx">t</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">C</span><span class="p">()</span>
+
+<span class="c1">// Pero esto también!</span>
+<span class="nx">t</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">5</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>La consecuencia directa es que el aspecto nominal del tipado aporta más expresividad que otra cosa porque, en definitiva, los tipos son escencialmente estructurales. Esto no es ni bueno ni malo, aunque si tiene algunas limitaciones… Cuando alguien declara que quiere pertenecer al tipo <code class="language-plaintext highlighter-rouge">T</code> el compilador puede validar que implemente la estructura necesaria, pero cuando alguien espera recibir un parámetro de tipo <code class="language-plaintext highlighter-rouge">T</code> no hay manera de validar que no sea otra cosa con estructura similar. Por otro lado, esto permite que un objeto capaz de cumplir con un tipo no sea rechazado sólo porque no lo declara explicitamente.</p>
+
+<p>¿Entonces, cuál es la moraleja? ¿Nos gusta o no nos gusta este “tipado laxo”? Y… Es distinto. Obviamente tenés menos garantías de que un programa que tipa funcione pero, una vez aceptado esto el lenguaje se puede permitir crecer más rápido o implementar conceptos más atrevidos.</p>
+
+<p>Un ejemplo de esto es la <strong>Conjunción y Disjunción de Tipos</strong> que en <em>Scala</em> <a href="https://contributors.scala-lang.org/t/whats-the-status-of-union-intersection-types-singleton-types-in-dotty">llevan varios años discutiendo</a> y <em>TypeScript</em> implementa sin ningún tipo de reparo.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Alumno</span> <span class="p">{</span>
+  <span class="nl">nombre</span><span class="p">:</span> <span class="kr">string</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">Docente</span> <span class="p">{</span>
+  <span class="nl">legajo</span><span class="p">:</span> <span class="kr">string</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">persona</span><span class="p">:</span> <span class="nx">Alumno</span> <span class="o">|</span> <span class="nx">Docente</span>  <span class="c1">// Cualquiera de los dos!</span>
+<span class="kd">let</span> <span class="nx">ayudante</span><span class="p">:</span> <span class="nx">Alumno</span> <span class="o">&amp;</span> <span class="nx">Docente</span> <span class="c1">// Los dos al mismo tiempo!</span>
+</code></pre></div></div>
+
+<p>Incluso nociones más controversiales, como mezclar valores en la definición de un tipo, no mueve mucho la vara:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Alumno</span> <span class="p">{</span>
+    <span class="nl">nombre</span><span class="p">:</span> <span class="kr">string</span>
+    <span class="nx">nota</span><span class="p">:</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">6</span> <span class="o">|</span> <span class="mi">8</span> <span class="o">|</span> <span class="mi">9</span> <span class="o">|</span> <span class="mi">10</span>
+    <span class="nx">condicion</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ingresante</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">regular</span><span class="dl">"</span> <span class="o">|</span> <span class="dl">"</span><span class="s2">irregular</span><span class="dl">"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+      <h3 id="tipos-paramétricos-y-varianza">
+        
+        
+          <a href="#tipos-paramétricos-y-varianza"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Tipos Paramétricos y Varianza
+        
+        
+      </h3>
+    
+
+<p>Los típos parámetricos (o, como algunos lenguajes los llaman, <strong>Generics</strong>) consisten básicamente en permitir parametrizar la construcción de un tipo, agregando información que puede ser usada por el chequeador para resolver situaciones complejas, donde la interfaz de un objeto depende de factores externos. Si bien la idea general es bastante sencilla, no todos los lenguajes utilizan estas herramientas del mismo modo. En clase cubrimos (casi todo) el uso que el sistema de tipos de <em>Scala</em> hace de estos parámetros y la manera en que decide cómo se relacionan los tipos en función a como se relacionan sus parámetros (<strong>Varianza</strong>), pero sería un error pensar que todos los lenguajes llegan así de lejos para mantener la consistencia de sus tipos. Sin ir más lejos <em>Java</em>, el punto de referencia para muchos lenguajes modernos, no maneja varianza de tipos sino que se conforma con cubrir a medias esas situaciones usando <a href="http://www.angelikalanger.com/GenericsFAQ/FAQSections/TypeArguments.html#Topic2">un mecanismo de wildcards</a>.</p>
+
+<p><em>Kotlin</em>, pese a haber tomado gran parte de sus abstracciones de <em>Scala</em> y apuntarlas a usarios de <em>Java</em>, decidió que no le gustaba ni un enfoque ni el otro. Del sitio de <em>Kotlin</em>:</p>
+
+<blockquote>
+  <p>One of the most tricky parts of Java’s type system is wildcard types (see Java Generics FAQ). And Kotlin doesn’t have any.</p>
+</blockquote>
+
+<p>Me gusta el detalle de que llama a los wildcards <em>“tricky”</em>, y no <em>“difíciles”</em>, porque abre la puerta a una discusión interesante. <strong>Varianza</strong>, como tantos otros conceptos con un contenido teórico fuerte, es un tema bastante complejo. Para usarlo bien, es necesario aprender los fundamentos y leer a los autores que estudiaron el tema. En ocasiones los lenguajes industriales optan por no seguir el camino que marca la academia (a veces porque creen tener una propuesta mejor, a veces porque no les interesa tanto un tema y prefieren ahorrar complejidad e invertirla en otra cosa y a veces porque abiertamente reniegan de la teoría). En estos casos, los mismos problemas pueden resolverse a los ponchazos, con construcciones simplificadas y especializadas para un uso particular, lo cual, a la larga, puede terminar en una pila de herramientas heterogéneas que se solapan o no terminan de cubrir todos los casos de uso. Lo gracioso es que estas herramientas simplificadas muchas veces terminan teniendo tantos casos especiales que resulta más complicado aprenderlos todos que leer la teoría que tratan de evitar.</p>
+
+<p>En fin… <em>Kotlin</em>, que no quería los parches de <em>Java</em> ni quiso pagar la complejidad de <em>Scala</em> apostó por un mecanismo de tipado similar pero más sencillo, que <a href="https://learn.microsoft.com/en-us/dotnet/standard/generics/covariance-and-contravariance">tomó prestado de .NET</a>.</p>
+
+<p>Este enfoque permite definir <em>Covarianza</em> y <em>Contravarianza</em> similar al <code class="language-plaintext highlighter-rouge">-T</code> y <code class="language-plaintext highlighter-rouge">+T</code> de <em>Scala</em>, pero usando las palabras clave <code class="language-plaintext highlighter-rouge">in</code> y <code class="language-plaintext highlighter-rouge">out</code>, respectivamente.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Caja</span><span class="p">&lt;</span><span class="k">out</span> <span class="nc">T</span><span class="p">&gt;</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="py">a</span><span class="p">:</span> <span class="nc">Caja</span><span class="p">&lt;</span><span class="nc">Any</span><span class="p">&gt;</span> <span class="p">=</span> <span class="nc">Caja</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;()</span> <span class="c1">// Esto funciona</span>
+  <span class="kd">var</span> <span class="py">b</span><span class="p">:</span> <span class="nc">Caja</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;</span> <span class="p">=</span> <span class="nc">Caja</span><span class="p">&lt;</span><span class="nc">Any</span><span class="p">&gt;()</span> <span class="c1">// Esto no</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Como nota sobre la expresividad, las palabras clave <code class="language-plaintext highlighter-rouge">in</code> y <code class="language-plaintext highlighter-rouge">out</code> son más claras respecto a las restricciones que imponen sobre dónde es posible usar cada tipo (in =&gt; parámetros, out =&gt; retorno), mientras que los símbolos <code class="language-plaintext highlighter-rouge">+</code> y <code class="language-plaintext highlighter-rouge">-</code> resultan cómodos a la hora de pensar cómo se combinan las varianzas (“menos por menos es más” se puede mapear fácilmente a “contravariante de contravariante es covariante”). Esto da lugar a pensar qué va a tener el desarrollador en la cabeza al momento de escribir el código y dónde conviene ayudarlo…</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">X</span><span class="p">&lt;</span><span class="k">in</span> <span class="nc">T</span><span class="p">&gt;</span> <span class="p">{}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">fx</span> <span class="p">:</span> <span class="p">(</span><span class="nc">X</span><span class="p">&lt;</span><span class="nc">Any</span><span class="p">&gt;)</span>    <span class="p">-&gt;</span> <span class="nc">Unit</span> <span class="p">=</span> <span class="p">{</span><span class="n">_</span> <span class="p">-&gt;</span> <span class="p">}</span>
+    <span class="kd">var</span> <span class="py">gx</span> <span class="p">:</span> <span class="p">(</span><span class="nc">X</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">-&gt;</span> <span class="nc">Unit</span> <span class="p">=</span> <span class="p">{</span><span class="n">_</span> <span class="p">-&gt;</span> <span class="p">}</span>
+
+    <span class="c1">// Qué tiene que ver ser "in" con todo de esto???</span>
+    <span class="n">gx</span> <span class="p">=</span> <span class="n">fx</span> <span class="c1">// Falla!</span>
+    <span class="n">fx</span> <span class="p">=</span> <span class="n">gx</span> <span class="c1">// Funciona: Contravariante de Contravariante.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><em>Kotlin</em> complementa su sistema de generics con una sintaxis para definir <strong>Upper Bounds</strong> (Pero no <strong>Lower Bounds</strong>):</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Corral</span><span class="p">&lt;</span><span class="nc">T</span> <span class="p">:</span> <span class="nc">Animal</span><span class="p">&gt;</span> <span class="p">{}</span> <span class="c1">// T debe ser subtipo de Animal</span>
+</code></pre></div></div>
+
+<p>También, a diferencia de <em>Scala</em>, <em>Kotlin</em> permite restringir la interfaz de un tipo con tipo paramétrico invariante para forzarlo a restringir su interfaz como si fuera covariante/contravariante. A esto lo denomina <strong>Proyección de Tipo</strong>:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Si queremos tener getter y setter de contenido, T debe ser invariante.</span>
+<span class="kd">class</span> <span class="nc">Caja</span><span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;(</span><span class="kd">var</span> <span class="py">contenido</span><span class="p">:</span> <span class="nc">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">copiar1</span><span class="p">(</span><span class="n">otro</span><span class="p">:</span> <span class="nc">Caja</span><span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;){</span> <span class="k">this</span><span class="p">.</span><span class="n">contenido</span> <span class="p">=</span> <span class="n">otro</span><span class="p">.</span><span class="n">contenido</span> <span class="p">}</span>
+    <span class="k">fun</span> <span class="nf">copiar2</span><span class="p">(</span><span class="n">otro</span><span class="p">:</span> <span class="nc">Caja</span><span class="p">&lt;</span><span class="k">out</span> <span class="nc">T</span><span class="p">&gt;){</span> <span class="k">this</span><span class="p">.</span><span class="n">contenido</span> <span class="p">=</span> <span class="n">otro</span><span class="p">.</span><span class="n">contenido</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">a</span><span class="p">:</span> <span class="nc">Caja</span><span class="p">&lt;</span><span class="nc">Any</span><span class="p">&gt;</span> <span class="p">=</span> <span class="nc">Caja</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">b</span><span class="p">:</span> <span class="nc">Caja</span><span class="p">&lt;</span><span class="nc">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="nc">Caja</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="n">a</span><span class="p">.</span><span class="nf">copiar1</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1">// Falla porque a y b tienen distinto tipo</span>
+    <span class="n">a</span><span class="p">.</span><span class="nf">copiar2</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="c1">// Pero si forzamos el parámetro covariante funciona!</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>En el otro extremo del espectro, <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-6.html">si bien puede configurarse para hacer algunos controles básicos</a>, <em>TypeScript</em> decide evitarse el problema y hacer todos los generics <strong>Bivariantes</strong>:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Animal</span> <span class="p">{</span> <span class="p">}</span>
+<span class="kd">class</span> <span class="nx">Vaca</span> <span class="kd">extends</span> <span class="nx">Animal</span> <span class="p">{</span> <span class="p">}</span>
+<span class="kd">class</span> <span class="nx">VacaLoca</span> <span class="kd">extends</span> <span class="nx">Vaca</span> <span class="p">{</span> <span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Corral</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kd">extends</span> <span class="nx">Animal</span><span class="o">&gt;</span> <span class="p">{</span> <span class="nx">f</span><span class="p">(</span><span class="na">t</span><span class="p">:</span> <span class="nx">T</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">t</span> <span class="p">}</span> <span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">a</span><span class="p">:</span> <span class="nx">Corral</span><span class="o">&lt;</span><span class="nx">Animal</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Corral</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nx">b</span><span class="p">:</span> <span class="nx">Corral</span><span class="o">&lt;</span><span class="nx">Vaca</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Corral</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nx">c</span><span class="p">:</span> <span class="nx">Corral</span><span class="o">&lt;</span><span class="nx">VacaLoca</span><span class="o">&gt;</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Corral</span><span class="p">()</span>
+
+<span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span> <span class="c1">// Sep.</span>
+<span class="nx">b</span> <span class="o">=</span> <span class="nx">c</span> <span class="c1">// No veo porqué no...</span>
+</code></pre></div></div>
+
+<p>De más está decir que esto no es lo más seguro, pero <em>TypeScript</em> elige poner la responsabilidad de evitar esos problemas en el usuario a cambio de permitirle permanecer ignorante sobre teoría de varianza y mantener el tipado suficientemente sencillo para implementar…</p>
+      <h3 id="features-locos">
+        
+        
+          <a href="#features-locos"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Features locos
+        
+        
+      </h3>
+    
+
+<p>El razonamiento es simple: Desde el punto de vista del usuario, el sistema de tipos es confiable o no (no importa <em>porqué</em>). Si ya sé que tengo que estar atento cuando uso ciertas construcciones y lo acepto como parte del uso cotidiano del lenguaje, entonces es posible agregar herramientas interesantes aunque no pueda hacerlas tipar de forma completamente consistente. Vamos a mencionar un par de ejemplos de esto presentes en <em>TypeScript</em>.</p>
+      <h4 id="tipos-condicionales">
+        
+        
+          <a href="#tipos-condicionales"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Tipos Condicionales
+        
+        
+      </h4>
+    
+
+<p>En typescript es posible definir un tipo en función de un chequeo de tipos:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Nodo</span> <span class="o">=</span> <span class="nx">NodoNum</span> <span class="o">|</span> <span class="nx">NodoStr</span>
+<span class="kr">interface</span> <span class="nx">NodoNum</span> <span class="p">{</span> <span class="nl">valor</span><span class="p">:</span> <span class="kr">number</span> <span class="p">}</span>
+<span class="kr">interface</span> <span class="nx">NodoStr</span> <span class="p">{</span> <span class="nl">valor</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">valor</span><span class="o">&lt;</span><span class="nx">N</span> <span class="kd">extends</span> <span class="nx">Nodo</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">nodo</span><span class="p">:</span> <span class="nx">N</span><span class="p">):</span> <span class="nx">N</span> <span class="kd">extends</span> <span class="nx">NodoStr</span> <span class="p">?</span> <span class="kr">string</span> <span class="p">:</span>
+                                         <span class="nx">N</span> <span class="kd">extends</span> <span class="nx">NodoNum</span> <span class="p">?</span> <span class="kr">number</span> <span class="p">:</span>
+                                         <span class="nx">never</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">nodo</span><span class="p">.</span><span class="nx">valor</span> <span class="k">as</span> <span class="kr">any</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">valor</span><span class="p">({</span> <span class="na">valor</span><span class="p">:</span> <span class="dl">"</span><span class="s2">foo</span><span class="dl">"</span> <span class="p">})</span>
+<span class="kd">const</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">valor</span><span class="p">({</span> <span class="na">valor</span><span class="p">:</span> <span class="mi">95</span> <span class="p">})</span>
+</code></pre></div></div>
+      <h4 id="index-types">
+        
+        
+          <a href="#index-types"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Index Types
+        
+        
+      </h4>
+    
+
+<p>With index types, you can get the compiler to check code that uses dynamic property names.</p>
+
+<p><em>TypeScript</em> permite el mismo uso de propiedades dinámicas que <em>EcmaScript</em>. Esto incluye referenciar el nombre de propiedades con construcciones no-estáticas (Ej.: obj[“propiedad”] en lugar de obj.propiedad). Los <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#index-types">Index Types</a> son la construcción sintáctica que permite que el compilador analice código que usa nombres dinámicos de propiedades.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Alumno</span> <span class="p">{</span>
+    <span class="nl">nombre</span><span class="p">:</span> <span class="kr">string</span>
+    <span class="nx">legajo</span><span class="p">:</span> <span class="kr">number</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">campo</span><span class="p">:</span> <span class="kr">keyof</span> <span class="nx">Alumno</span> <span class="c1">// Esto tiene tipo "nombre" | "legajo"</span>
+<span class="kd">let</span> <span class="nx">tipoDeCampoNombre</span><span class="p">:</span> <span class="nx">Alumno</span><span class="p">[</span><span class="dl">"</span><span class="s2">nombre</span><span class="dl">"</span><span class="p">]</span> <span class="c1">// Tiene tipo "string"</span>
+<span class="kd">let</span> <span class="nx">tipoDeCualquierCampo</span><span class="p">:</span> <span class="nx">Alumno</span><span class="p">[</span><span class="kr">keyof</span> <span class="nx">Alumno</span><span class="p">]</span> <span class="c1">// Tiene tipo "string" | "number"</span>
+</code></pre></div></div>
+
+<p>Parece <strong>Reflection</strong>, no? Pero hay que notar que no usamos ninguna expresión de runtime; esa información está en los tipos y, por lo tanto, es accesible en tiempo de compilación.</p>
+
+<p>Este tipo de sintáxis desdibujan la linea que separa el código cotidiano de la <em>metaprogramación</em> y permite hacer esta última de forma (un poco) más segura. Tomemos por ejemplo esta función:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">dameElCampo</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">K</span> <span class="kd">extends</span> <span class="kr">keyof</span> <span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">obj</span><span class="p">:</span> <span class="nx">T</span><span class="p">,</span> <span class="nx">key</span><span class="p">:</span><span class="nx">K</span><span class="p">):</span> <span class="nx">T</span><span class="p">[</span><span class="nx">K</span><span class="p">]</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">pirulo</span><span class="p">:</span> <span class="nx">Alumno</span>
+
+<span class="c1">// Funciona y se da cuenta de que tiene tipo "string"</span>
+<span class="nx">dameElCampo</span><span class="p">(</span><span class="nx">pirulo</span><span class="p">,</span> <span class="dl">"</span><span class="s2">nombre</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="c1">// Falla! El alumno no tiene el campo pedido.</span>
+<span class="nx">dameElCampo</span><span class="p">(</span><span class="nx">pirulo</span><span class="p">,</span> <span class="dl">"</span><span class="s2">qué pirulo?</span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>El código de este ejemplo es básicamente un wrapper del acceso con corchetes que recibe dos tipos paramétricos: uno es el tipo del objeto del cual queremos el campo y el otro es <strong>un subtipo de las claves presentes en dicho objeto</strong>. Al momento de aplicar la función, el compilador va a inferir dicho tipo en base al parámetro que pasamos, permitiendole identificar también el tipo más especifico para retornar (en lugar de retornar <code class="language-plaintext highlighter-rouge">"string" | "number"</code>) y permite detectar en compilación un error tradicionalmente de runtime.</p>
+      <h4 id="mapped-types">
+        
+        
+          <a href="#mapped-types"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Mapped Types
+        
+        
+      </h4>
+    
+
+<p>Otra construcción interesante son los <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types">Mapped Types</a> que, básicamente, permiten definir un tipo a partir de los campos de otro:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Opcional</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="p">[</span><span class="nx">K</span> <span class="k">in</span> <span class="kr">keyof</span> <span class="nx">T</span><span class="p">]:</span> <span class="nx">T</span><span class="p">[</span><span class="nx">K</span><span class="p">]</span> <span class="o">|</span> <span class="kc">null</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">tipoDeNombre</span><span class="p">:</span> <span class="nx">Opcional</span><span class="o">&lt;</span><span class="nx">Alumno</span><span class="o">&gt;</span><span class="p">[</span><span class="dl">"</span><span class="s2">nombre</span><span class="dl">"</span><span class="p">]</span> <span class="c1">// Tipa a "string" | "null"</span>
+
+<span class="c1">// Falla! legajo es de tipo number y no puede ser null</span>
+<span class="kd">let</span> <span class="nx">jose</span><span class="p">:</span> <span class="nx">Alumno</span> <span class="o">=</span> <span class="p">{</span> <span class="na">nombre</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jose</span><span class="dl">"</span><span class="p">,</span> <span class="na">legajo</span><span class="p">:</span> <span class="kc">null</span> <span class="p">}</span>
+
+<span class="c1">// Ahora sí...</span>
+<span class="kd">let</span> <span class="nx">joseOpcional</span><span class="p">:</span> <span class="nx">Opcional</span><span class="o">&lt;</span><span class="nx">Alumno</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span> <span class="na">nombre</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jose</span><span class="dl">"</span><span class="p">,</span> <span class="na">legajo</span><span class="p">:</span> <span class="kc">null</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>En este ejemplo se define el tipo <code class="language-plaintext highlighter-rouge">Opcional&lt;T&gt;</code>, que expone todos los campos de <code class="language-plaintext highlighter-rouge">T</code>, pero cambiando su tipo por la unión entre este y null.</p>
+
+<p>El uso de <em>mapped types</em> es sorpresivamente recurrente, al punto en que ya vienen varios predefinidos (Ej: Readonly, Partial, Pick, Record, etc.) e incluso la misma comunidad suele <a href="https://github.com/Microsoft/TypeScript/issues/13257">proponer cosas locas</a>.</p>
+
+<p>Dando un paso atrás, es bastante evidente porqué estas construcciones son más raras en lenguajes con un tipado más estricto. De hecho, en <em>Scala</em> sólo sería posible modelar una abstracción como <em>mapped types</em> usando <a href="https://docs.scala-lang.org/overviews/macros/blackbox-whitebox.html">whitebox macros</a> (macros cuyos tipo no puede establecerse en tiempo de compilación y que muchos proponen discontinuar justamente porque al tipador no le gustan) y aun así es difícil…</p>
+
+<p>Combinando estas herramientas con los otros operadores de tipos es posible construir operadores muy avanzados:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Miembros comunes a T y U.</span>
+<span class="kd">type</span> <span class="nx">Diff</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kd">extends</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">U</span> <span class="kd">extends</span> <span class="kr">string</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">({</span> <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="nx">T</span><span class="p">]:</span> <span class="nx">P</span> <span class="p">}</span> <span class="o">&amp;</span> <span class="p">{</span> <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="nx">U</span><span class="p">]:</span> <span class="nx">never</span> <span class="p">}</span> <span class="o">&amp;</span> <span class="p">{</span> <span class="p">[</span><span class="na">x</span><span class="p">:</span> <span class="kr">string</span><span class="p">]:</span> <span class="nx">never</span> <span class="p">})[</span><span class="nx">T</span><span class="p">]</span>
+
+<span class="c1">// Miembros de T que no están presentes en U.</span>
+<span class="kd">type</span> <span class="nx">Omit</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">K</span> <span class="kd">extends</span> <span class="kr">keyof</span> <span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="nx">Diff</span><span class="o">&lt;</span><span class="kr">keyof</span> <span class="nx">T</span><span class="p">,</span> <span class="nx">K</span><span class="o">&gt;</span><span class="p">]:</span> <span class="nx">T</span><span class="p">[</span><span class="nx">P</span><span class="p">]</span> <span class="p">}</span>
+
+<span class="c1">// Miembros de T y U donde las definiciones de U prevalecen.</span>
+<span class="kd">type</span> <span class="nx">Overwrite</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="nx">Diff</span><span class="o">&lt;</span><span class="kr">keyof</span> <span class="nx">T</span><span class="p">,</span> <span class="kr">keyof</span> <span class="nx">U</span><span class="o">&gt;</span><span class="p">]:</span> <span class="nx">T</span><span class="p">[</span><span class="nx">P</span><span class="p">]</span> <span class="p">}</span> <span class="o">&amp;</span> <span class="nx">U</span>
+</code></pre></div></div>
+<p><a href="https://www.stevefenton.co.uk/2017/11/typescript-mighty-morphing-mapped-types/">Acá</a> hay un artículo lindo que explica un poco esto.</p>
+      <h3 id="antes-y-después-del-compilador">
+        
+        
+          <a href="#antes-y-después-del-compilador"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Antes y Después del Compilador
+        
+        
+      </h3>
+    
+
+<p>Tanto <em>Kotlin</em> como <em>TypeScript</em> permiten algún grado de <strong>Inferencia de Tipos</strong>. En general, la gran mayoría de los lenguajes con tipado explicito (incluso <a href="https://dgvergel.blogspot.com.ar/2016/04/inferencia-automatica-de-tipos-auto.html">C++</a>!) tratan de incorporar esto a sus sintáxis, para reducir el boilerplate y hacer más fácil la transición desde tecnologías más dinámicas. Es probable que lo único que previene que esto se convierta en el standard de la industria es que no terminamos de ponernos de acuerdo en si el tipo escrito mejora o empeora la lectura del código.</p>
+
+<p>Sobre esto <em>Kotlin</em> es bastante opinionado: fuerza al usuario a explicitar algunos tipos que infiere, porque <a href="https://discuss.kotlinlang.org/t/type-inference-for-return-types-of-longer-functions/554/2">considera que el código resultante es más claro</a>.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">X</span> <span class="p">{</span>
+  <span class="k">fun</span> <span class="nf">m</span><span class="p">()</span> <span class="p">=</span> <span class="s">"foo"</span> <span class="c1">// Obviamente retorna un String.</span>
+  <span class="k">fun</span> <span class="nf">n</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">"bar"</span>  <span class="c1">// Hey! Hey! Despacio cerebrito!</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>De acuerdo o no, es interesante pensar que estás restricciones que parecen de menor importancia en la sintáxis de un lenguaje pueden empujar a la comunidad a adoptar ciertas prácticas (en este caso, usar más métodos definidos como expresiones y menos bloques largos).</p>
+
+<p>Otro patrón recurrente, un poco menos feliz, es que ambos lenguajes también decidieron descartar la información de tipos en runtime. <em>Kotlin</em>, que originalmente se compilaba para la <em>JVM</em>, pasa por el mismo proceso de <strong>Erasure</strong> que <em>Scala</em>, donde los tipos paramétricos se descartan post compilación.</p>
+
+<p><em>TypeScript</em> va un paso más lejos y <strong>elimina toda información sobre los tipos</strong>, compuestos o no, para compilar al código <em>ES</em> más similar posible. Esto hace imposible usar esta información para hacer <em>introspection</em> en runtime…</p>
+
+<p>Si bien existen lenguajes donde los tipos compuestos están reificados a nivel plataforma (<a href="https://en.wikipedia.org/wiki/Generic_programming#Genericity_in_.NET_[C#,_VB.NET]">como .NET</a>) y otros (<a href="https://docs.scala-lang.org/overviews/reflection/typetags-manifests.html">como <em>Scala</em></a>) que encontraron alguna forma de dibujarla, en general la postura suele ser que eliminar esta información es lo más rápido y fácil de hacer y evita que los programas “engorden” guardando metadata que no siempre necesitan.</p>
+
+<p>De ahí que existan cosas como el <a href="https://en.wikipedia.org/wiki/Project_Valhalla_(Java_language)">Projecto Valhalla</a>, que aspira a agregar soporte para este y otros features a la <em>JVM</em>, lo cual podría cambiar radicalmente el modo como otros lenguajes manejan los generics.</p>
+      <h2 id="definición-de-objetos">
+        
+        
+          <a href="#definición-de-objetos"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Definición de Objetos
+        
+        
+      </h2>
+    
+
+<p>Mencionamos en clase varias veces que el paradigma de objetos todavía no se decide sobre cuál es la mejor manera de definir, instanciar y asociar comportamiento a los objetos. Esto lleva a que la gran mayoría de los lenguajes prueben sus propias variantes de herramientas y metamodelos; con lo cual, si bien existen algunos patrones comunes, ningún enfoque superador se impuso todavía.</p>
+      <h3 id="kotlin-entre-la-scala-y-la-pared">
+        
+        
+          <a href="#kotlin-entre-la-scala-y-la-pared"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Kotlin: Entre la Scala y la pared
+        
+        
+      </h3>
+    
+
+<p>En muchos sentidos, <em>Kotlin</em> toma sobre estos temas un enfoque muy conservador, adoptando la <strong>Herencia Simple con Default Methods (interfaces con código)</strong> de <em><a href="https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html">Java 8</a></em> como su mecanismo principal de subtipado.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Humano</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">cantar</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Lalalala"</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span> <span class="nc">Caballo</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">relinchar</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Ihihihihi"</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Centauro</span> <span class="p">:</span> <span class="nc">Humano</span><span class="p">,</span> <span class="nc">Caballo</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Para el ojo poco entrenado de un tipo optimista, estas interfaces pueden parecer <strong>Mixins</strong> al estilo de <em>Scala</em>, pero cualquier alumno de TAdP sabe que hay que hacerse algunas preguntas antes de adelantar conclusiones:</p>
+
+<ul>
+  <li><strong>¿Pueden definir estado?</strong>
+No. Las properties de las interfaces son abstractas.
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">I</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="py">x</span><span class="p">:</span> <span class="nc">String</span>
+<span class="p">}</span>
+
+<span class="c1">// Falla: Falta implementar x!</span>
+<span class="kd">class</span> <span class="nc">C</span><span class="p">:</span> <span class="nc">I</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>¿Los conflictos se resuelven automáticamente (por ejemplo, linearizando)?</strong>
+Nop. Es necesario sobreescribir a mano cada método conflictivo. Las implementaciones heredadas están disponibles con una sintáxis especial.
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">I</span> <span class="p">{</span>
+  <span class="k">fun</span> <span class="nf">m</span><span class="p">()</span> <span class="p">=</span> <span class="s">"foo"</span>
+<span class="p">}</span>
+<span class="kd">interface</span> <span class="nc">J</span> <span class="p">{</span>
+  <span class="k">fun</span> <span class="nf">m</span><span class="p">()</span> <span class="p">=</span> <span class="s">"bar"</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span> <span class="nc">IJ</span><span class="p">:</span> <span class="nc">I</span><span class="p">,</span> <span class="nc">J</span> <span class="p">{</span>
+  <span class="k">override</span> <span class="k">fun</span> <span class="nf">m</span><span class="p">():</span> <span class="nc">String</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">super</span><span class="p">&lt;</span><span class="nc">J</span><span class="p">&gt;.</span><span class="nf">m</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>¿El super es dinámico?</strong>
+A efectos prácticos, no. Justamente porque las interfaces no se linearizan no puedo hacer un llamado a <code class="language-plaintext highlighter-rouge">super</code> que no refiera a un método concreto.
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">I</span> <span class="p">{</span>
+  <span class="k">fun</span> <span class="nf">m</span><span class="p">():</span> <span class="nc">String</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span> <span class="nc">J</span><span class="p">:</span> <span class="nc">I</span> <span class="p">{</span>
+  <span class="c1">// Falla: m es abstracto.</span>
+  <span class="k">override</span> <span class="k">fun</span> <span class="nf">m</span><span class="p">()</span> <span class="p">=</span> <span class="k">super</span><span class="p">&lt;</span><span class="nc">I</span><span class="p">&gt;.</span><span class="nf">m</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Vemos entonces que estas abstacciones están mucho más cerca de los <em>Traits</em> de <em>Ducasse</em> que a los <em>Mixins</em> de <em>Bracha</em>.</p>
+
+<p>Es cierto que esta no es la opción más flexible o limpia pero, en defensa(?) de <em>Kotlin</em>, no es descabellado que un lenguaje que aspira a ser el sucesor de <em>Java</em> decida no introducir cambios abruptos en las herramientas de diseño Orientado a Objetos en pos de pelear otras batallas. Dicho esto, sí, duele un poco considerar que el mismo <em>Java</em> intrudujo estas abstracciones tarde y medio como una solución de compromiso, porque introducir algo más disruptivo comprometería la <strong>retrocompatibilidad</strong>, con lo cual <em>Kotlin</em> se ve limitado por decisiones que se tomaron para la primer JVM, hace más de 20 años. ¿Triste? Puede, ser… Pero este tipo de condicionamiento <a href="https://clipset.com/como-el-culo-de-un-caballo-condiciona-la-tecnologia-espacial-de-la-nasa/">no es nada nuevo</a>.</p>
+
+<p>En un tono más positivo, <em>Kotlin</em> también toma de <em>Scala</em> varias de sus ideas más originales sobre cómo obtener objetos.</p>
+
+<p>Un ejemplo de esto es que se pueden definir <strong>Singleton Objects</strong>,tanto anónimos como globales, para cuando sólo se necesita una única instancia.</p>
+
+<pre><code class="language-Kotlin">object EstoEsUnObjeto {
+    val estoTambién = object {}
+}
+</code></pre>
+
+<p>Otra gran decisión fue reemplazar la idea de <strong>constructor</strong> por la de <strong>parametros de clase</strong> (a los que llaman <em>“constructores”</em> pero shh…).</p>
+
+<pre><code class="language-Kotlin">// Los parámetros por defecto cubren la mayor parte de los casos de sobrecarga.
+class X(val a: Int, var b: String = "") {
+    var c: String
+
+    // Cualquier efecto que no sea inicializar un campo va en el bloque init (en lugar de estar desperdigado en el cuerpo de la clase).
+    init {
+         c = if (b == "foo") "bar" else "baz"
+    }
+
+    // En caso de necesitar otra firma, puedo hacer esto (o usar un object como en Scala).
+    constructor(d: Boolean) : this(0, "")
+}
+
+fun main(args: Array&lt;String&gt;) {
+    // Noten que no existe el "new"!
+    val xa = X(5).a
+}
+</code></pre>
+
+<p>También incorpora el concepto de <strong>Companion Object</strong> para lidiar con el aspecto estático de las abstracciones, aunque va un paso más lejos y hace que tenga que declararse dentro de la clase misma:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">X</span> <span class="p">{</span>
+  <span class="k">companion</span> <span class="k">object</span> <span class="p">{</span>
+      <span class="k">fun</span> <span class="nf">m</span><span class="p">()</span> <span class="p">=</span> <span class="mi">5</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+  <span class="kd">val</span> <span class="py">n</span> <span class="p">=</span> <span class="nc">X</span><span class="p">.</span><span class="nf">m</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Por último, <em>Kotlin</em> también reñiega de la ambiguedad entre <strong>atributos</strong> y <strong>accessors</strong>, descartandolos en favor de <strong>properties</strong>, sin embargo, su aproximación a las mismas es mucho más similar a la de <em>C#</em> que a la de <em>Scala</em>.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">X</span> <span class="p">{</span>
+  <span class="c1">// Puedo sobreescribir los accessors refiriendome al atributo con una palabra clave.</span>
+  <span class="kd">var</span> <span class="py">p</span><span class="p">:</span> <span class="nc">Int</span> <span class="p">=</span> <span class="mi">0</span>
+    <span class="k">get</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nf">println</span><span class="p">(</span><span class="s">"Me están leyendo el campo"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">field</span>
+    <span class="p">}</span>
+    <span class="k">set</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">println</span><span class="p">(</span><span class="s">"Me cambiaron el campo de ${field} a ${value}"</span><span class="p">)</span>
+        <span class="n">field</span> <span class="p">=</span> <span class="n">value</span>
+    <span class="p">}</span>
+
+  <span class="c1">// También puedo sólo inventar properties calculadas</span>
+  <span class="kd">val</span> <span class="py">f</span>
+    <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="mi">7</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">x</span> <span class="p">=</span> <span class="nc">X</span><span class="p">()</span>
+    <span class="n">x</span><span class="p">.</span><span class="n">p</span> <span class="p">+=</span> <span class="n">x</span><span class="p">.</span><span class="n">f</span>
+<span class="p">}</span>
+</code></pre></div></div>
+      <h3 id="typescriptes-ahora-con-clases">
+        
+        
+          <a href="#typescriptes-ahora-con-clases"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Typescript/ES: Ahora con… Clases?
+        
+        
+      </h3>
+    
+
+<p>Vayamos ahora al otro extremo del espectro: ¿Qué ideas locas e inovadoras sobre cómo modelar objetos se introdujeron ultimamente en los lenguajes más dinámicos?</p>
+
+<p>Clases.</p>
+
+<p>…</p>
+
+<p>Eso. Desde su versión <em>6</em>, <em>EcmaScript</em> incorpora una reificación del concepto de <strong>Clases con Herencia Simple</strong> y, obviamente, <em>TypeScript</em> traslada esto a su propio modelo.</p>
+
+<p>Que giles, no? Y… No. En realidad, la cosa es un poco más compleja…</p>
+
+<p>La incorporación de Clases en <em>ES</em> es un cambio casi puramente cosmético. La sintáxis nueva incorpora una serie de azucares sintácticos para reducir el boilerplate, pero lo cierto es que el metamodelo de ES basado en <strong>Prototipos</strong> soporta perfectamente “simular” un árbol de clases y, de hecho, <a href="https://www.webreflection.co.uk/blog/2015/11/07/the-history-of-simulated-classes-in-javascript">lo vienen haciendo desde hace tiempo</a>.</p>
+
+<p>La extensión basicamente implica poder escribir el código así:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Persona</span> <span class="p">{</span>
+    <span class="nl">nombre</span><span class="p">:</span> <span class="kr">string</span>
+
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">nombre</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">=</span> <span class="nx">nombre</span>
+    <span class="p">}</span>
+
+    <span class="nx">id</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">nombre</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Alumno</span> <span class="kd">extends</span> <span class="nx">Persona</span> <span class="p">{</span>
+    <span class="nl">legajo</span><span class="p">:</span> <span class="kr">number</span>
+
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span> <span class="nx">legajo</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">(</span><span class="nx">nombre</span><span class="p">)</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">legajo</span> <span class="o">=</span> <span class="nx">legajo</span>
+    <span class="p">}</span>
+
+    <span class="nx">id</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">legajo</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">-</span><span class="dl">"</span> <span class="o">+</span> <span class="k">super</span><span class="p">.</span><span class="nx">id</span><span class="p">()</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">pirulo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Alumno</span><span class="p">(</span><span class="dl">"</span><span class="s2">pirulo</span><span class="dl">"</span><span class="p">,</span> <span class="mi">148</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>en lugar de así:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Persona</span><span class="p">(</span><span class="nx">nombre</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">=</span> <span class="nx">nombre</span>
+<span class="p">}</span>
+<span class="nx">Persona</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">nombre</span> <span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Alumno</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span> <span class="nx">legajo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Persona</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">nombre</span><span class="p">)</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">legajo</span> <span class="o">=</span> <span class="nx">legajo</span>
+<span class="p">}</span>
+<span class="nx">Alumno</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nx">Persona</span>
+<span class="nx">Alumno</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">legajo</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">-</span><span class="dl">"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">id</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">pirulo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Alumno</span><span class="p">(</span><span class="dl">"</span><span class="s2">pirulo</span><span class="dl">"</span><span class="p">,</span> <span class="mi">148</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Una observación interesante sobre este último código es que <em>ES</em> trabaja con el concepto de <strong>Constructor Functions</strong> (tal vez un ancestro conceptual de los <strong>Parámetros de Clase</strong>) donde el <code class="language-plaintext highlighter-rouge">new</code> simplemente crea un nuevo objeto para cumplir el rol the <code class="language-plaintext highlighter-rouge">this</code> en una función cualquiera, que lo configura a criterio.</p>
+
+<p>De forma similar podemos también modelar <strong>Mixines</strong> como se explica en <a href="http://justinfagnani.com/2015/12/21/real-mixins-with-javascript-classes/">este excelente artículo</a>:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Los mixines pueden modelarse como funciones!</span>
+<span class="kd">let</span> <span class="nx">M1</span> <span class="o">=</span> <span class="p">(</span><span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kd">class</span> <span class="kd">extends</span> <span class="nx">next</span> <span class="p">{</span>
+  <span class="nx">m</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">super</span><span class="p">.</span><span class="nx">m</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">M2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kd">class</span> <span class="kd">extends</span> <span class="nx">next</span> <span class="p">{</span>
+    <span class="nx">m</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">super</span><span class="p">.</span><span class="nx">m</span><span class="p">()</span> <span class="o">+</span> <span class="mi">10</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">S</span> <span class="p">{</span>
+    <span class="nx">m</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">5</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Al definir la clase, linearizamos de afuera hacia adentro.</span>
+<span class="kd">class</span> <span class="nx">C</span> <span class="kd">extends</span> <span class="nx">M1</span><span class="p">(</span><span class="nx">M2</span><span class="p">(</span><span class="nx">S</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">m</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">super</span><span class="p">.</span><span class="nx">m</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">new</span> <span class="nx">C</span><span class="p">().</span><span class="nx">m</span><span class="p">()</span> <span class="c1">// 31</span>
+
+<span class="c1">// Incluso podemos instanciar los mixines!</span>
+<span class="k">new</span> <span class="p">(</span><span class="nx">M1</span><span class="p">(</span><span class="nx">M2</span><span class="p">(</span><span class="nx">S</span><span class="p">)))().</span><span class="nx">m</span><span class="p">()</span> <span class="c1">// 30</span>
+</code></pre></div></div>
+
+<p>No se dejen engañar por la falta de tipos y multithreading, <em>ES</em> tiene desde hace años uno de los metamodelos más simples, poderosos y flexibles de la industria. Sí, su sintáxis tiene varias limitaciones y algunas decisiones del modelo base dejan bastante que desear, pero la mayor parte de estos inconvenientes son superficiales y facilmente vadeables, al punto que hoy en día existen <a href="https://github.com/jashkenas/coffeescript/wiki/list-of-languages-that-compile-to-js">cientos de lenguajes</a> que trasladan su sintáxis a lo que <em>ES</em> tiene abajo del capot (incluyendo a <em>Kotlin</em>).</p>
+      <h2 id="inmutabilidad-y-efecto">
+        
+        
+          <a href="#inmutabilidad-y-efecto"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Inmutabilidad y Efecto
+        
+        
+      </h2>
+    
+
+<p>Trabajar sin efecto es una de las facetas de la programación funcional más abrazada por los lenguajes nuevos. Lamentablemente, muchas tecnologías se concentran en detalles que solamente rascan la superficie de la idea, o descartan la posibilidad de producir efectos por completo (y con ella, una parte escencial de la programación Orientada a Objetos). Vamos a marcar entonces algunas de las abstracciones más interesantes que los lenguajes modernos encontraron en su busqueda de un mejor control del efecto.</p>
+      <h3 id="constantes">
+        
+        
+          <a href="#constantes"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Constantes
+        
+        
+      </h3>
+    
+
+<p>Casi todos los lenguajes modernos (y muchos de los clásicos) tienen abstracciones que identifican a una referencia como <strong>constante</strong> (o <strong>final</strong>). Básicamente esto significa que la referencia en cuestión puede ser asignada sólo una vez, durante su inicialización, pero no puede ser reasignada luego.</p>
+
+<p>El empuje que el enfoque funcional tuvo en los últimos años propició un cambio en el rol que estas referencias tienen en el código, pasando de ser usadas por muchos casi exclusivamente para evitar repetir el hardcodeo de valores bien conocidos a ser la manera estandard de separar resultados parciales en el código. Además, el soporte para properties inmutables a nivel sintáxis facilitó la popularización del trabajo sin efecto en la POO y abrió las puertas a nuevas preguntas.</p>
+
+<p>Uno de estos planteos pasa por integrar la inmutabilidad al <strong>ciclo de vida de los objetos</strong>. Muchos lenguajes donde la sintáxis fuerza la separación entre la inicialización de un objeto y la definición de sus variables debieron adecuar su definición de <em>constante</em> para permitir que sean inicializadas en su definición o <strong>durante la inicialización</strong> del objeto.</p>
+
+<p><strong>Kotlin:</strong></p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Persona</span><span class="p">(</span><span class="n">edad</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">esAdulto</span><span class="p">:</span> <span class="nc">Boolean</span>
+
+    <span class="nf">init</span> <span class="p">{</span>
+      <span class="nf">require</span><span class="p">(</span><span class="n">edad</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..</span><span class="mi">100</span><span class="p">){</span> <span class="s">"mala edad"</span> <span class="p">}</span>
+      <span class="n">esAdulto</span> <span class="p">=</span> <span class="n">edad</span> <span class="p">&gt;</span> <span class="mi">18</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Typescript:</strong></p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Persona</span> <span class="p">{</span>
+    <span class="k">readonly</span> <span class="nx">edad</span><span class="p">:</span> <span class="kr">number</span>
+    <span class="k">readonly</span> <span class="nx">esAdulto</span><span class="p">:</span> <span class="nx">boolean</span>
+
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">edad</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">edad</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">edad</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">mala edad</span><span class="dl">"</span><span class="p">)</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">edad</span> <span class="o">=</span> <span class="nx">edad</span>
+
+        <span class="c1">// Estos chequeos de compilación no son triviales...</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">edad</span> <span class="o">=</span> <span class="nx">edad</span>
+
+        <span class="c1">// Typescript usa const para las variables y el modificador de tipo readonly para las properties</span>
+        <span class="kd">const</span> <span class="nx">esAdulto</span> <span class="o">=</span> <span class="nx">edad</span> <span class="o">&gt;</span> <span class="mi">18</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">esAdulto</span> <span class="o">=</span> <span class="nx">esAdulto</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Lo interesante es que, una vez abierta la puerta a la discusión de que tal vez hay más de una forma de variable, rapidamente aparecen propuestas nuevas. <em>Kotlin</em>, que fue originalmente pensado como un lenguaje para <em>Android</em> donde el espacio de almacenamiento tiene una importancia especial, define una sintáxis para un tipo de constantes estáticas que son embebidas en el lugar donde se referencian en tiempo de compilación (permitiendo potencialmente que la clase donde están definidas sea removida por el optimizador).</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Los const son embebidos en compilación y sólo pueden ser de tipos primitivos o strings.</span>
+<span class="k">const</span> <span class="kd">val</span> <span class="py">FOO</span> <span class="p">=</span> <span class="s">"BAR"</span>
+
+<span class="c1">// Estas dos funciones se compilan a lo mismo</span>
+<span class="k">fun</span> <span class="nf">f</span><span class="p">()</span> <span class="p">=</span> <span class="nc">FOO</span>
+<span class="k">fun</span> <span class="nf">g</span><span class="p">()</span> <span class="p">=</span> <span class="s">"BAR"</span>
+</code></pre></div></div>
+
+<p>También incorpora una sintáxis que permite postergar la inicialización de variables sin comprometer su tipo.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Docente</span>
+
+<span class="kd">class</span> <span class="nc">Curso</span> <span class="p">{</span>
+    <span class="c1">// Las referencias (vars o vals) deben ser inicializadas siempre...</span>
+    <span class="kd">var</span> <span class="py">docente</span><span class="p">:</span> <span class="nc">Docente</span>
+
+    <span class="c1">// ...salvo los var marcados como lateinit, que pueden inicializarse después.</span>
+    <span class="k">lateinit</span> <span class="kd">var</span> <span class="py">jtp</span><span class="p">:</span> <span class="nc">Docente</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;){</span>
+    <span class="c1">// Si un lateinit no se inicializa antes de leerse, rompe en runtime.</span>
+    <span class="nf">println</span><span class="p">(</span><span class="nc">Curso</span><span class="p">().</span><span class="n">jtp</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><em>TypeScript</em> también viene con abstracciones interesantes para las constantes, de la mano de los <strong>Mapped Types</strong>.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nb">Readonly</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">readonly</span> <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="kr">keyof</span> <span class="nx">T</span><span class="p">]:</span> <span class="nx">T</span><span class="p">[</span><span class="nx">P</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">DeepReadonly</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="k">readonly</span> <span class="p">[</span><span class="nx">P</span> <span class="k">in</span> <span class="kr">keyof</span> <span class="nx">T</span><span class="p">]:</span> <span class="nx">DeepReadonly</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">[</span><span class="nx">P</span><span class="p">]</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Docente</span> <span class="p">{</span>
+    <span class="nl">nombre</span><span class="p">:</span> <span class="kr">string</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Curso</span> <span class="p">{</span>
+    <span class="nl">docente</span><span class="p">:</span> <span class="nx">Docente</span>
+    <span class="nx">jtp</span><span class="p">:</span> <span class="nx">Docente</span>
+
+    <span class="nx">tieneDocente</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">docente</span> <span class="o">!=</span> <span class="kc">null</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Como readonly es sólo un modificador de tipo no necesito cambiar código</span>
+<span class="c1">// puedo usar un curso cualquiera y sólo lo "veo" distinto.</span>
+<span class="kd">let</span> <span class="nx">curso</span><span class="p">:</span> <span class="nx">Curso</span>
+<span class="kd">let</span> <span class="nx">cursoRO</span><span class="p">:</span> <span class="nb">Readonly</span><span class="o">&lt;</span><span class="nx">Curso</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nx">curso</span>
+<span class="kd">let</span> <span class="nx">cursoDRO</span><span class="p">:</span> <span class="nx">DeepReadonly</span><span class="o">&lt;</span><span class="nx">Curso</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nx">curso</span>
+
+
+<span class="nx">curso</span><span class="p">.</span><span class="nx">docente</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Docente</span><span class="p">()</span>    <span class="c1">// Que mal! Si retorno mi curso pueden cambiarmelo.</span>
+<span class="nx">cursoRO</span><span class="p">.</span><span class="nx">docente</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Docente</span><span class="p">()</span>  <span class="c1">// Que bien! Puedo hacer sus campos readonly!</span>
+<span class="nx">cursoRO</span><span class="p">.</span><span class="nx">docente</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Toto</span><span class="dl">"</span>  <span class="c1">// Que mal! Sigue siendo mutable...</span>
+<span class="nx">cursoDRO</span><span class="p">.</span><span class="nx">docente</span><span class="p">.</span><span class="nx">nombre</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Toto</span><span class="dl">"</span> <span class="c1">// Que bien! Cascadeo el readonly!</span>
+<span class="nx">cursoDRO</span><span class="p">.</span><span class="nx">tieneDocente</span><span class="p">()</span> <span class="c1">// Pero el DeepReadonly no tiene la operación para evaluarse... Que mal!</span>
+</code></pre></div></div>
+
+<p>Todo esto está muy bien pero, como se trató en clase, trabajar sin efecto requiere más que solamente tener variables que no pueden ser reasignadas, es necesario también contar con buenas herramientas para transformar estructuras, definir interfaces que no requieran de mantener un estado y provean alternativas limpias al lanzado de excepciones como mecanismo de control de flujo.</p>
+      <h3 id="expresiones-vs-sentencias">
+        
+        
+          <a href="#expresiones-vs-sentencias"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Expresiones Vs. Sentencias
+        
+        
+      </h3>
+    
+
+<p>Podemos pensar en las <strong>Expresiones</strong> como <strong>Sentencias</strong> que retornan un <strong>Valor</strong>, en contraposición a aquellas que sólo producen un efecto. Los lenguajes con fundamentos funcionales (como <em>Kotlin</em>) hacen hincapié en que todas (o al menos la mayoría) de sus sentencias son expresiones. Esto permite escribir cualquier sentencia donde se espera un valor, favoreciendo un estilo de escritura menos procedural.</p>
+
+<p><em>TypeScript</em> no tiene tanta suerte, ya que varias de sus construcciones y <strong>Clausulas de Control de Flujo</strong> no son expresiones:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">condicion</span><span class="p">:</span> <span class="nx">boolean</span>
+
+<span class="c1">// El if no retorna un valor, así que no puedo asignarlo.</span>
+<span class="kd">const</span> <span class="nx">n1</span> <span class="o">=</span> <span class="k">if</span> <span class="p">(</span><span class="nx">condicion</span><span class="p">)</span> <span class="mi">1</span><span class="p">;</span> <span class="k">else</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="c1">// Esto nos fuerza a separar la definición de la inicialización</span>
+<span class="c1">// y nos impide usar const...</span>
+<span class="kd">let</span> <span class="nx">n2</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">condicion</span><span class="p">)</span>
+    <span class="nx">n2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">else</span>
+    <span class="nx">n2</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1">// Existe un operador ternario (sólo para el if) que SÍ es una expresión.</span>
+<span class="kd">const</span> <span class="nx">n3</span> <span class="o">=</span> <span class="nx">condicion</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">2</span>
+
+<span class="c1">// Sin embargo, sólo admite expresiones como parámetro.</span>
+<span class="c1">// El throw no es una expresión, así que NO puede usarse acá.</span>
+<span class="kd">const</span> <span class="nx">n4</span> <span class="o">=</span> <span class="nx">condicion</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="k">throw</span> <span class="dl">"</span><span class="s2">ufa</span><span class="dl">"</span>
+<span class="c1">// Ni tampoco usar más de una sentencia.</span>
+<span class="kd">const</span> <span class="nx">n5</span> <span class="o">=</span> <span class="nx">condicion</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">la condición fue falsa</span><span class="dl">"</span><span class="p">)</span>
+    <span class="mi">2</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Un truco recurrente para lidiar con esto es envolver las sentencias con <strong>Lambdas</strong> o <strong>Funciones</strong> (aunque la expresividad sufe un poco…):</p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">condicion</span><span class="p">:</span> <span class="nx">boolean</span>
+
+<span class="c1">// Noten que definimos si y no como funciones, para mantener la evaluación diferida.</span>
+<span class="kd">function</span> <span class="nx">ifThenElse</span><span class="p">(</span><span class="nx">cond</span><span class="p">,</span> <span class="nx">si</span><span class="p">,</span> <span class="nx">no</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">cond</span><span class="p">)</span> <span class="k">return</span> <span class="nx">si</span><span class="p">()</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="nx">no</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">n1</span> <span class="o">=</span> <span class="nx">ifThenElse</span><span class="p">(</span><span class="nx">condicion</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">n2</span> <span class="o">=</span> <span class="nx">condicion</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="k">throw</span> <span class="dl">"</span><span class="s2">ufa</span><span class="dl">"</span> <span class="p">})()</span>
+</code></pre></div></div>
+      <h3 id="transformación-de-datos-inmutables">
+        
+        
+          <a href="#transformación-de-datos-inmutables"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Transformación de datos inmutables
+        
+        
+      </h3>
+    
+
+<p>Al trabajar sin efecto es habitual simular un cambio sobre una estructura creando una copia de la misma que cuente con la diferencia deseada. Lamentablemente, esto suele ser más fácil de decir que de hacer, ya que generar copias con cambios complejos y anidados tiende a ser una tarea incomoda y verbosa.
+Como vimos en la cursada, <em>Scala</em> ofrece algunas facilidades superficiales para esto en sus <strong>Case Classes</strong>, las cuales cuentan con mecanismos para destructurarse y copiarse. Estos mecanismos, si bien útiles para cosas sencillas, carecen de una integración más profunda al metamodelo y no pueden en general ser heredados, extendidos o utilizados polimorficamente; lo cual hace que desde hace tiempo <a href="http://www.scala-lang.org/old/node/5364">la comunidad los quiera mejorar</a>.</p>
+
+<p><em>Kotlin</em> (un poco desperdiciando la oportunidad de plantear algo más interesante) tomó la idea de Case Class (renombrándola a <strong>Data Class</strong>) casi al pie de la letra, con la diferencia de que no basan sus mecanismos de deconstrucción en <a href="https://docs.scala-lang.org/tour/extractor-objects.html">un contrato de mensajes como el de <em>Scala</em></a>, haciendolo un poco menos poderoso.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">data class</span> <span class="nc">Alumno</span><span class="p">(</span><span class="kd">val</span> <span class="py">nombre</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="kd">val</span> <span class="py">nota</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">pepe</span> <span class="p">=</span> <span class="nc">Alumno</span><span class="p">(</span><span class="s">"Pepe"</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="p">(</span><span class="py">_</span><span class="p">,</span> <span class="py">notaDePepe</span><span class="p">)</span> <span class="p">=</span> <span class="n">pepe</span>
+    <span class="kd">val</span> <span class="py">pipo</span> <span class="p">=</span> <span class="n">pepe</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="n">nombre</span> <span class="p">=</span> <span class="s">"pipo"</span><span class="p">,</span> <span class="n">nota</span> <span class="p">=</span> <span class="n">notaDePepe</span> <span class="p">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>En contraste, no es raro que <em>ES</em> (y, por transición, <em>TypeScript</em>), que desde sus origines es utilizado de forma exhaustiva para consumir y manipular datos tontos, haya invertido mucho tiempo y esfuerzo a mejorar la sintaxis y herramientas con las que transforma estructuras.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Alumno</span> <span class="p">{</span><span class="nl">nombre</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">nota</span><span class="p">:</span> <span class="kr">number</span><span class="p">}</span>
+<span class="kr">interface</span> <span class="nx">Materia</span> <span class="p">{</span> <span class="nl">nombre</span><span class="p">:</span> <span class="kr">string</span> <span class="p">}</span>
+<span class="kr">interface</span> <span class="nx">Curso</span> <span class="p">{</span> <span class="nl">materia</span><span class="p">:</span> <span class="nx">Materia</span><span class="p">,</span> <span class="nx">alumnos</span><span class="p">:</span> <span class="nx">Alumno</span><span class="p">[]</span> <span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">unAlumno</span> <span class="o">=</span> <span class="p">{</span> <span class="na">nombre</span><span class="p">:</span> <span class="dl">"</span><span class="s2">pepe</span><span class="dl">"</span><span class="p">,</span> <span class="na">nota</span><span class="p">:</span> <span class="mi">7</span> <span class="p">}</span>
+<span class="c1">// Podemos definir variables siguiendo un patrón basado en la estructura.</span>
+<span class="c1">// A esto le llamamos destructurar un objeto.</span>
+<span class="c1">// En caso de que el campo no exista podemos darle un default.</span>
+<span class="kd">const</span> <span class="p">{</span><span class="nx">nombre</span><span class="p">,</span> <span class="nx">nota</span> <span class="o">=</span> <span class="mi">0</span><span class="p">}</span> <span class="o">=</span> <span class="nx">unAlumno</span>
+
+<span class="c1">// Podemos extraer sólo los campos que nos interesan.</span>
+<span class="kd">const</span> <span class="nx">aprobo</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">nota</span> <span class="p">}:</span> <span class="nx">Alumno</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">nota</span> <span class="o">&gt;</span> <span class="mi">6</span>
+
+<span class="c1">// Podemos deconstruir multiples niveles (e incluso inferir el tipo estructural).</span>
+<span class="kd">const</span> <span class="nx">necesitaUnApodo</span> <span class="o">=</span> <span class="p">({</span> <span class="na">nombre</span><span class="p">:</span> <span class="p">{</span> <span class="nx">length</span> <span class="p">}</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">10</span>
+
+<span class="c1">// Podemos copiar un objeto "untandolo" en otra definición.</span>
+<span class="c1">// Noten que el campo alumnos es pisado... Este es nuestro copy.</span>
+<span class="kd">const</span> <span class="nx">desdoblar</span> <span class="o">=</span> <span class="p">(</span><span class="nx">curso</span><span class="p">:</span> <span class="nx">Curso</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({...</span><span class="nx">curso</span><span class="p">,</span> <span class="na">alumnos</span><span class="p">:</span> <span class="p">[]})</span>
+
+<span class="kd">function</span> <span class="nx">mejorNota</span><span class="p">(</span><span class="nx">curso</span><span class="p">:</span> <span class="nx">Curso</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// La destructuración no sólo funciona con hashes.</span>
+    <span class="kd">const</span> <span class="p">[{</span> <span class="nx">nota</span> <span class="p">},</span> <span class="p">...</span><span class="nx">otros</span><span class="p">]</span> <span class="o">=</span>
+        <span class="c1">// Podemos poner alias a las referencias obtenidas.</span>
+        <span class="nx">curso</span><span class="p">.</span><span class="nx">alumnos</span><span class="p">.</span><span class="nx">sort</span><span class="p">(({</span> <span class="na">nota</span><span class="p">:</span> <span class="nx">notaA</span> <span class="p">},</span> <span class="p">{</span> <span class="na">nota</span><span class="p">:</span> <span class="nx">notaB</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">notaA</span> <span class="o">-</span> <span class="nx">notaB</span><span class="p">)</span>
+
+    <span class="c1">// Podemos insertar un campo que se llama igual que su variable sin usar el nombre.</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="nx">curso</span><span class="p">,</span> <span class="na">mejorNota</span><span class="p">:</span> <span class="nx">nota</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Es importante notar cómo trabajar sobre estructuras mucho menos complejas y eficientes que otros lenguajes abre las puertas a una manipulación más dinámica y menos verbosa. También es interesante tomar esta interfaz como ejemplo de un lenguaje de propósito general evolucionando para adaptarse mejor al propósito específico para el que se lo usa. Si lo que vamos a hacer con <em>ES</em> es manipular <em>JSON</em>, porqué no darle las mejores herramientas posibles para eso (sacrificando otras cosas).</p>
+
+<p>Por último, cabe mencionar que ninguno de los dos enfoques es especialmente bueno para realizar transformaciones anidadas o complejas, con lo que no es raro que existan librerías para ambos lenguajes que implementan <strong><a href="http://www.haskellforall.com/2012/01/haskell-for-mainstream-programmers_28.html">Lenses</a></strong> (un patrón de diseño funcionaloso que apunta justamente a eso).</p>
+
+<p>En esto, <em>Typescript</em> y sus <em>Mapped Types</em> son especialmente simpáticos ya que permiten tipar un contrato dinámico en lugar de tener que basarlo en strings como suele hacerse (aunque no pudimos encontrar una implementación que lo haga y así que tuvimos que hacer la nuestra…):</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Lens</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span> <span class="p">[</span><span class="nx">K</span> <span class="k">in</span> <span class="kr">keyof</span> <span class="nx">U</span><span class="p">]:</span> <span class="nx">Lens</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="p">[</span><span class="nx">K</span><span class="p">]</span><span class="o">&gt;</span> <span class="p">}</span> <span class="o">&amp;</span> <span class="p">{</span> <span class="p">(</span><span class="na">t</span><span class="p">:</span> <span class="nx">T</span><span class="p">,</span> <span class="na">u</span><span class="p">:</span> <span class="nx">U</span><span class="p">):</span> <span class="nx">T</span><span class="p">,</span> <span class="p">(</span><span class="na">t</span><span class="p">:</span> <span class="nx">T</span><span class="p">):</span> <span class="nx">U</span> <span class="p">}</span>
+
+<span class="c1">// Más adelante explicamos esta implementación. Por ahora no importa...</span>
+<span class="kd">function</span> <span class="nx">lens</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="nx">U</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">path</span><span class="p">:</span><span class="kr">string</span><span class="p">[]):</span> <span class="nx">Lens</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">f</span> <span class="o">=</span> <span class="p">((</span><span class="na">t</span><span class="p">:</span> <span class="nx">T</span><span class="p">,</span> <span class="na">u</span><span class="p">:</span> <span class="nx">U</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">t</span><span class="p">)</span> <span class="k">as</span> <span class="nx">Lens</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="o">&gt;</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Proxy</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="p">{</span>
+        <span class="kd">get</span><span class="o">&lt;</span><span class="nx">K</span> <span class="kd">extends</span> <span class="kr">keyof</span> <span class="nx">U</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">_</span><span class="p">,</span> <span class="na">k</span><span class="p">:</span> <span class="nx">K</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">lens</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">U</span><span class="p">[</span><span class="nx">K</span><span class="p">]</span><span class="o">&gt;</span><span class="p">([</span><span class="nx">k</span><span class="p">,</span> <span class="p">...</span><span class="nx">path</span><span class="p">])</span> <span class="p">},</span>
+        <span class="nx">apply</span><span class="p">(</span><span class="nx">_</span><span class="p">,</span> <span class="nb">self</span><span class="p">,</span> <span class="nx">args</span><span class="p">):</span> <span class="nx">T</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+                <span class="kd">const</span> <span class="p">[</span><span class="nx">k</span><span class="p">,</span> <span class="p">...</span><span class="nx">ks</span><span class="p">]</span> <span class="o">=</span> <span class="nx">path</span>
+                <span class="kd">const</span> <span class="na">clone</span><span class="p">:</span> <span class="nx">T</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">}</span>
+                <span class="kd">let</span> <span class="na">current</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="nx">clone</span>
+                <span class="nx">ks</span><span class="p">.</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">k</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">current</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">current</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="p">}</span>
+                    <span class="nx">current</span> <span class="o">=</span> <span class="nx">current</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span>
+                <span class="p">})</span>
+                <span class="nx">current</span><span class="p">[</span><span class="nx">k</span><span class="p">]</span> <span class="o">=</span> <span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">return</span> <span class="nx">clone</span>
+
+            <span class="p">}</span> <span class="k">else</span> <span class="k">return</span> <span class="nx">path</span><span class="p">.</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">e</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">e</span><span class="p">[</span><span class="nx">k</span><span class="p">],</span> <span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">as</span> <span class="nx">T</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">$</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">lens</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span> <span class="nx">T</span><span class="o">&gt;</span><span class="p">([])</span> <span class="p">}</span>
+
+
+<span class="kd">const</span> <span class="nx">$curso</span> <span class="o">=</span> <span class="nx">$</span><span class="o">&lt;</span><span class="nx">Curso</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="c1">// Noten que tipa bien y hasta funciona el autocompletar!</span>
+<span class="kd">const</span> <span class="nx">$nombreDeCurso</span> <span class="o">=</span> <span class="nx">$curso</span><span class="p">.</span><span class="nx">materia</span><span class="p">.</span><span class="nx">nombre</span>
+
+<span class="kd">const</span> <span class="nx">unCurso</span><span class="p">:</span> <span class="nx">Curso</span> <span class="o">=</span> <span class="p">{</span> <span class="na">materia</span><span class="p">:</span> <span class="p">{</span> <span class="na">nombre</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tadp</span><span class="dl">"</span><span class="p">}</span> <span class="p">}</span>
+<span class="kd">const</span> <span class="nx">otroCurso</span> <span class="o">=</span> <span class="nx">$nombreDeCurso</span><span class="p">(</span><span class="nx">unCurso</span><span class="p">,</span> <span class="dl">"</span><span class="s2">taDEp</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$nombreDeCurso</span><span class="p">(</span><span class="nx">unCurso</span><span class="p">))</span>
+</code></pre></div></div>
+      <h2 id="funciones-como-elementos-de-primer-órden">
+        
+        
+          <a href="#funciones-como-elementos-de-primer-órden"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Funciones como elementos de primer órden
+        
+        
+      </h2>
+    
+
+<p>Como ya deslizamos antes, ambos lenguajes permiten definir tanto <strong>Closures</strong> (<strong>Bloques</strong>, <strong>Lambdas</strong>, etc.) como <strong>Funciones Nombradas</strong> independientes a cualquier objeto. Esto abre las puertas para trabajar al estilo de funcional (separando los datos de la lógica) sin necesidad de boilerplate o estructuras auxiliares.</p>
+
+<p><strong>Kotlin</strong></p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+<span class="c1">// Las llaves son parte de la lambda...</span>
+<span class="kd">val</span> <span class="py">siguiente</span><span class="p">:</span> <span class="p">(</span><span class="nc">Int</span><span class="p">)-&gt;</span><span class="nc">Int</span> <span class="p">=</span> <span class="p">{</span> <span class="n">x</span> <span class="p">-&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="mi">1</span> <span class="p">}</span>
+
+<span class="c1">//...esto hace que la sintaxis tenga que manejar casos especiales</span>
+<span class="c1">//para evitar parentesis redundantes.</span>
+<span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">).</span><span class="nf">map</span><span class="p">{</span><span class="n">x</span> <span class="p">-&gt;</span> <span class="n">x</span> <span class="p">+</span> <span class="mi">1</span><span class="p">}</span>
+
+<span class="c1">//Una lambda que espera un único parámetro puede referirlo con la palabra clave "it".</span>
+<span class="kd">val</span> <span class="py">doble</span><span class="p">:</span> <span class="p">(</span><span class="nc">Int</span><span class="p">)-&gt;</span><span class="nc">Int</span> <span class="p">=</span> <span class="p">{</span> <span class="n">it</span> <span class="p">*</span> <span class="n">it</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Typescript</strong></p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Puedo definir una lambda básica usando sólo el (=&gt;).</span>
+<span class="kd">const</span> <span class="nx">siguiente</span> <span class="o">=</span> <span class="nx">n</span> <span class="o">=&gt;</span> <span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1">// La deconstrucción de parámetros funciona igual que en otras funciones.</span>
+<span class="kd">const</span> <span class="nx">nota</span> <span class="o">=</span> <span class="p">({</span><span class="nx">nota</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="nx">nota</span>
+
+<span class="c1">// Esta sintáxis hace fácil currificar una función para aplicarla parcialmente.</span>
+<span class="kd">const</span> <span class="nx">sumar</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">y</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span>
+<span class="kd">const</span> <span class="nx">sumatoria</span> <span class="o">=</span> <span class="nx">ns</span> <span class="o">=&gt;</span> <span class="nx">ns</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">sumar</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="c1">// Pero esto no tiene soporte a nivel lenguaje como en Haskell... La firma cambia.</span>
+<span class="kd">const</span> <span class="nx">f</span><span class="p">:</span> <span class="p">(</span><span class="nx">x</span><span class="p">:</span><span class="kr">number</span><span class="p">,</span> <span class="nx">y</span><span class="p">:</span><span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kr">number</span> <span class="o">=</span> <span class="nx">sumar</span> <span class="c1">// Falla!</span>
+</code></pre></div></div>
+
+<p><em>Kotlin</em>, habiendo sido pensado originalmente para correr en <em>Android</em>, define también <a href="https://kotlinlang.org/docs/reference/inline-functions.html">algunas herramientas para usar <em>orden superior</em> de forma más eficiente</a>.</p>
+
+<p>Además de esto, en ambos lenguajes es posible referenciar <strong>métodos</strong> y <strong>properties</strong> definidos en objetos para utilizarlos como funciones (bindeadas o no):</p>
+
+<p><strong>Kotlin</strong></p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Alumno</span><span class="p">(</span><span class="kd">val</span> <span class="py">nota</span><span class="p">:</span><span class="nc">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">aprobo</span><span class="p">()</span> <span class="p">=</span> <span class="n">nota</span> <span class="p">&gt;</span> <span class="mi">6</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+	<span class="kd">val</span> <span class="py">jose</span> <span class="p">=</span> <span class="nc">Alumno</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+	<span class="kd">val</span> <span class="py">tito</span> <span class="p">=</span> <span class="nc">Alumno</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="kd">val</span> <span class="py">aprobo</span> <span class="p">=</span> <span class="nc">Alumno</span><span class="o">::</span><span class="n">aprobo</span>
+    <span class="kd">val</span> <span class="py">aproboJose</span> <span class="p">=</span> <span class="n">jose</span><span class="o">::</span><span class="n">aprobo</span>
+
+    <span class="nf">aproboJose</span><span class="p">()</span> <span class="c1">// true</span>
+    <span class="nf">aprobo</span><span class="p">(</span><span class="n">tito</span><span class="p">)</span> <span class="c1">// false</span>
+    <span class="nc">Alumno</span><span class="o">::</span><span class="n">nota</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">jose</span><span class="p">)</span> <span class="c1">// 7</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Typescript</strong></p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Alumno</span> <span class="p">{</span>
+    <span class="nl">nota</span><span class="p">:</span> <span class="kr">number</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">nota</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">nota</span> <span class="o">=</span> <span class="nx">nota</span> <span class="p">}</span>
+    <span class="nx">aprobo</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">nota</span> <span class="o">&gt;</span> <span class="mi">6</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">jose</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Alumno</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">tito</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Alumno</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">aproboJose</span> <span class="o">=</span> <span class="nx">jose</span><span class="p">.</span><span class="nx">aprobo</span>
+<span class="kd">const</span> <span class="nx">aprobo</span> <span class="o">=</span> <span class="nx">Alumno</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">aprobo</span>
+
+<span class="nx">aproboJose</span><span class="p">()</span>             <span class="c1">// true</span>
+<span class="nx">aprobo</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">tito</span><span class="p">)</span>        <span class="c1">// false</span>
+<span class="nx">aprobo</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">tito</span><span class="p">).</span><span class="nx">call</span><span class="p">()</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>Como se puede ver, en <em>Kotlin</em> el código es bastante directo (gracias al operador <code class="language-plaintext highlighter-rouge">::</code>) mientras que en <em>Typescript</em> se hace con construcciones más artesanales y asociadas a reflection.</p>
+
+<p>Pese a estas facilidades, las funciones en estos lenguajes suelen quedar relegadas a usarse mayormente para parametrizar operaciones de orden superior, ya que curiosamente, al momento de escribir este documento ninguno de los dos lenguajes tiene soporte a nivel sintaxis para componer o combinar funciones, lo cual dificulta hacer construcciones complejas con ellas. Por otro lado, es cierto que en <em>Kotlin</em> esto puede modelarse fácilmente con una sintáxis muy fluida gracias a la <strong>Sobrecarga de Operadores</strong> y que <em>TypeScript</em> tiene <a href="https://lodash.com/docs/4.17.5#flow">librerías que cubren esto</a> y algunas propuestas abiertas para incorporar <strong><a href="https://github.com/Microsoft/TypeScript/issues/17718">piping</a></strong> y <strong><a href="https://github.com/Microsoft/TypeScript/issues/3508">binding</a></strong>.</p>
+
+<p>Finalmente, la discusión no estaría completa sin analizar el polimorfismo entre objetos y funciones. En este terreno el modelo de <em>Kotlin</em>, que define la aplicación basandola en una interfaz, es ampliamente mejor que el de <em>TypeScript</em>, donde, si bien las funciones pueden tener propiedades como los objetos, son construcciones completamente diferentes y es imposible aplicar un objeto.</p>
+
+<p><strong>Kotlin</strong></p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="p">=</span> <span class="n">n</span> <span class="p">+</span> <span class="mi">1</span>
+
+<span class="kd">object</span> <span class="err">g {
+    operator fun invoke(n: </span><span class="nc">Int</span><span class="p">):</span> <span class="nc">Int</span> <span class="p">=</span> <span class="n">n</span> <span class="p">+</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">aplicable</span><span class="p">:</span> <span class="p">(</span><span class="nc">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nc">Int</span>
+
+    <span class="n">aplicable</span> <span class="p">=</span> <span class="o">::</span><span class="n">f</span>
+    <span class="n">aplicable</span> <span class="p">=</span> <span class="n">g</span>    <span class="c1">// Esto no funciona... g no es una función como en Scala.</span>
+
+    <span class="c1">// Pero puedo hacerlo así.</span>
+    <span class="n">aplicable</span> <span class="p">=</span> <span class="kd">object</span> <span class="err">: (</span><span class="nc">Int</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nc">Int</span> <span class="p">{</span>
+    	<span class="k">override</span> <span class="k">operator</span> <span class="k">fun</span> <span class="nf">invoke</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">Int</span> <span class="p">=</span> <span class="n">n</span> <span class="p">+</span> <span class="mi">1</span>
+	<span class="p">}</span>
+
+    <span class="nf">aplicable</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+      <h2 id="pattern-matching-y-control-de-flujo">
+        
+        
+          <a href="#pattern-matching-y-control-de-flujo"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Pattern Matching y Control de Flujo
+        
+        
+      </h2>
+    
+
+<p><strong>Pattern Matching</strong> es una construcción central del <em>Paradigma Funcional</em> pero, como tratamos en clase, favorece enfoques de diseño que abiertamente se contradicen con aquellos preferidos por el <em>Paradigma Orientado a Objetos</em>. Siendo ese el caso, no es de extrañar que varios lenguajes que pretenden soportar ambos paradigmas optan por ahorrarse la complejidad de integrar esta herramienta y proponen un desarrollo puramente basado en polimorfismo.</p>
+
+<p>Si bien en la cátedra somos amigos del Pattern Matching como herramienta de diseño, hay que reconocer que, en las técnologías con <em>Objetos</em> (donde los datos son capaces de exponer su propio contenido), el matcheo de patrones sólo ofrece una ventaja sintáctica, dado que es posible obtener resultados similares con un <a href="https://en.wikipedia.org/wiki/Switch_statement">switch statement</a>. ¿Va a ser más feo? Sí. Pero tengan en cuenta que no es nada fácil integrar de forma consistente y robusta un mecanismo de PM a una sintáxis basada en POO. Ni siquiera <em>Scala</em>, probablemente el mejor exponente de programación hibrida <em>Objeto-Funcional</em> a la fecha, tiene una integración perfecta, ya que los patrones no están representados como <strong>Entidades de Primer Orden</strong>, lo cual impide utilizarlos de muchas formas interesantes (pasarlos por parámetro, retornarlos como resultado de una función, etc.).</p>
+
+<p>Independientemente de si las tecnologías lo incorporan o no, es interesante analizar la discusión que instala: Hay muchas situaciones en donde puede resultar conveniente tomar una decisión basandose en la forma de una estructura y el envio de mensajes puede no ser la mejor herramienta para esto. Vamos entonces a analizar algunas variantes de herramientas que proveen los lenguajes modernos que, sin proveer un <em>Pattern Matching</em> completo, facilitan el analisis estructural para ciertas situaciones especificas.</p>
+      <h3 id="decisiones-basadas-en-el-tipo">
+        
+        
+          <a href="#decisiones-basadas-en-el-tipo"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Decisiones basadas en el tipo
+        
+        
+      </h3>
+    
+
+<p>Uno de los usos más comunes de <em>Pattern Matching</em> está asociado a distinguir el tipo (en runtime) de un objeto. Este es uno de los aspectos más difíciles de emular en los lenguajes OO puros (especialmente los estáticamente tipados) dado que, sin soporte del lenguaje, incluso si averiguamos el tipo del objeto a mano, todavía tenemos que convencer al compilador de que conocemos el contenido de la variable utilizando alguna forma de casteo. Tomemos por ejemplo el siguiente código Scala, hecho sin utilizar PM:</p>
+
+<p><strong>Scala</strong></p>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">trait</span> <span class="nc">Animal</span>
+
+<span class="k">class</span> <span class="nc">Lobo</span><span class="o">()</span> <span class="k">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="nf">aullar</span><span class="o">()</span> <span class="k">=</span> <span class="s">"Auuuuuu"</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">Vaca</span><span class="o">()</span> <span class="k">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="nf">muji</span><span class="o">()</span> <span class="k">=</span> <span class="s">"Muuuuuuuu"</span>
+<span class="o">}</span>
+
+<span class="k">def</span> <span class="nf">haceRuido</span><span class="o">(</span><span class="n">animal</span><span class="k">:</span> <span class="kt">Animal</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="nf">if</span><span class="o">(</span><span class="nv">animal</span><span class="o">.</span><span class="py">isInstanceOf</span><span class="o">[</span><span class="kt">Lobo</span><span class="o">])</span> <span class="o">{</span>
+        <span class="c1">// Independientemente de mi chequeo, animal debe ser casteado</span>
+        <span class="c1">// return animal.aullar() // Esto no funciona</span>
+        <span class="k">return</span> <span class="nv">animal</span><span class="o">.</span><span class="py">asInstanceOf</span><span class="o">[</span><span class="kt">Lobo</span><span class="o">].</span><span class="py">aullar</span><span class="o">()</span>
+    <span class="o">}</span>
+
+    <span class="nf">if</span><span class="o">(</span><span class="nv">animal</span><span class="o">.</span><span class="py">isInstanceOf</span><span class="o">[</span><span class="kt">Vaca</span><span class="o">])</span> <span class="o">{</span>
+    	<span class="k">return</span> <span class="nv">animal</span><span class="o">.</span><span class="py">asInstanceOf</span><span class="o">[</span><span class="kt">Vaca</span><span class="o">].</span><span class="py">muji</span><span class="o">()</span>
+    <span class="o">}</span>
+
+    <span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="o">(</span><span class="s">"No hace ruido"</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Algunos lenguajes modernos que reconocen la utilidad de trabajar con <em>polimorfismo ad-hoc</em> pero no soportan Pattern Matching optaron por refinar sus chequeadores de tipos para ser más sensibles al contexto. En <em>Kotlin</em> esta variante se denomina <strong>Smart-Cast</strong>, mientras que en <em>Typescript</em> se conocen como <strong>Type-Guards</strong>.</p>
+
+<p><strong>Kotlin</strong></p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Animal</span>
+
+<span class="kd">class</span> <span class="nc">Lobo</span><span class="p">():</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">aullar</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Auuuuuu"</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Vaca</span><span class="p">():</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">muji</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Muuuuuuuu"</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">haceRuido</span><span class="p">(</span><span class="n">animal</span><span class="p">:</span> <span class="nc">Animal</span><span class="p">):</span> <span class="nc">String</span> <span class="p">{</span>
+    <span class="c1">// Los chequeos de is y !is son considerados por el compilador.</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">animal</span> <span class="k">is</span> <span class="nc">Lobo</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// El bloque del if entiende que animal referencia algo de tipo Lobo.</span>
+        <span class="k">return</span> <span class="n">animal</span><span class="p">.</span><span class="nf">aullar</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="c1">// No sólo funciona con el if...</span>
+    <span class="n">animal</span> <span class="k">is</span> <span class="nc">Vaca</span> <span class="p">&amp;&amp;</span> <span class="k">return</span> <span class="n">animal</span><span class="p">.</span><span class="nf">muji</span><span class="p">()</span>
+
+    <span class="c1">// Ninguno de esos mensajes puede enviarse fuera del if</span>
+    <span class="c1">//animal.muji()</span>
+
+    <span class="k">throw</span> <span class="nc">Error</span><span class="p">(</span><span class="s">"No hace ruido"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>TypeScript</strong></p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Lobo</span> <span class="p">{</span>
+    <span class="nx">aullar</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="dl">"</span><span class="s2">Auuuuuu</span><span class="dl">"</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Vaca</span> <span class="p">{</span>
+    <span class="nx">muji</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="dl">"</span><span class="s2">Muuuuuuuu</span><span class="dl">"</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// La disjunción de tipos va a funcionar mejor que una interfaz Animal</span>
+<span class="kd">function</span> <span class="nx">haceRuido</span><span class="p">(</span><span class="nx">animal</span><span class="p">:</span> <span class="nx">Lobo</span> <span class="o">|</span> <span class="nx">Vaca</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Dentro del if sabe que es un lobo</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">animal</span> <span class="k">instanceof</span> <span class="nx">Lobo</span><span class="p">)</span> <span class="k">return</span> <span class="nx">animal</span><span class="p">.</span><span class="nx">aullar</span><span class="p">()</span>
+
+    <span class="c1">// No hace falta chequear, si no es Lobo es Vaca...</span>
+    <span class="k">return</span> <span class="nx">animal</span><span class="p">.</span><span class="nx">muji</span><span class="p">()</span>
+
+    <span class="c1">// Tampoco es necesario lanzar error, sabe que no puede llegar.</span>
+    <span class="c1">// throw new Error("No hace ruido")</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>En <em>TypeScript</em> el chequeo inteligente no está limitado al <code class="language-plaintext highlighter-rouge">instanceof</code>. Es posible definir nuestras propias <strong>Type Guards</strong> utilizando una sintaxis especial:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">esLobo</span><span class="p">(</span><span class="nx">animal</span><span class="p">:</span> <span class="kr">any</span><span class="p">):</span> <span class="nx">animal</span> <span class="k">is</span> <span class="nx">Lobo</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">!!</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">Lobo</span><span class="o">&gt;</span><span class="nx">animal</span><span class="p">).</span><span class="nx">aullar</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">haceRuido</span><span class="p">(</span><span class="nx">animal</span><span class="p">:</span> <span class="nx">Lobo</span> <span class="o">|</span> <span class="nx">Vaca</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">esLobo</span><span class="p">(</span><span class="nx">animal</span><span class="p">))</span> <span class="k">return</span> <span class="nx">animal</span><span class="p">.</span><span class="nx">aullar</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nx">animal</span><span class="p">.</span><span class="nx">muji</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Y eso no es todo; varios casos de uso comunes ya vienen soportados incluyendo lo que <em>TypeScript</em> llama <strong><a href="https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html#discriminating-unions">Discriminated Union</a></strong>:</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Lobo</span> <span class="p">{</span>
+    <span class="nl">especie</span><span class="p">:</span> <span class="dl">"</span><span class="s2">lobo</span><span class="dl">"</span>
+    <span class="nx">aullar</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="dl">"</span><span class="s2">Auuuuuu</span><span class="dl">"</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Vaca</span> <span class="p">{</span>
+    <span class="nl">especie</span><span class="p">:</span> <span class="dl">"</span><span class="s2">vaca</span><span class="dl">"</span>
+    <span class="nx">muji</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="dl">"</span><span class="s2">Muuuuuuuu</span><span class="dl">"</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">haceRuido</span><span class="p">(</span><span class="nx">animal</span><span class="p">:</span> <span class="nx">Lobo</span> <span class="o">|</span> <span class="nx">Vaca</span><span class="p">):</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="nx">animal</span><span class="p">.</span><span class="nx">especie</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">lobo</span><span class="dl">"</span><span class="p">:</span> <span class="k">return</span> <span class="nx">animal</span><span class="p">.</span><span class="nx">aullar</span><span class="p">()</span>
+            <span class="c1">// Si comentamos este caso (y usamos chequeo de null estricto)</span>
+            <span class="c1">// el compilador va a avisarnos que no cubrimos todos los casos.</span>
+        <span class="k">case</span> <span class="dl">"</span><span class="s2">vaca</span><span class="dl">"</span><span class="p">:</span> <span class="k">return</span> <span class="nx">animal</span><span class="p">.</span><span class="nx">muji</span><span class="p">()</span>
+<span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+      <h3 id="control-de-flujo-basado-en-valores">
+        
+        
+          <a href="#control-de-flujo-basado-en-valores"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Control de flujo basado en valores
+        
+        
+      </h3>
+    
+
+<p><em>Kotlin</em> lleva estas herramientas un paso más lejos desarrollando una construcción sintáctica que, sin ser del todo <em>Pattern Matching</em> (ya que lo considera <a href="https://discuss.kotlinlang.org/t/destructuring-in-when/2391/2">demasiado complejo</a>), permite analizar no solamente tipos, sino también consultar por valores específicos.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Animal</span>
+
+<span class="kd">class</span> <span class="nc">Lobo</span><span class="p">():</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">aulla</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Auuuuuu"</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Vaca</span><span class="p">():</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">muji</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Muuuuuuuu"</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Camelus</span><span class="p">(</span><span class="kd">val</span> <span class="py">jorobas</span><span class="p">:</span> <span class="nc">Int</span><span class="p">):</span> <span class="nc">Animal</span>
+
+<span class="k">fun</span> <span class="nf">haceRuido</span><span class="p">(</span><span class="n">animal</span><span class="p">:</span> <span class="nc">Animal</span><span class="p">)</span> <span class="p">=</span>
+	<span class="k">when</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">is</span> <span class="nc">Lobo</span> <span class="p">-&gt;</span> <span class="n">animal</span><span class="p">.</span><span class="nf">aulla</span><span class="p">()</span>
+        <span class="k">is</span> <span class="nc">Vaca</span> <span class="p">-&gt;</span> <span class="n">animal</span><span class="p">.</span><span class="nf">muji</span><span class="p">()</span>
+        <span class="nc">Camelus</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="s">"Tengo 1 joroba, soy un Dromedario"</span>
+        <span class="nc">Camelus</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="s">"Tengo 2 jorobas, soy un Camello"</span>
+        <span class="c1">// Ojo, esto no me permite más que chequear valores específicos.</span>
+        <span class="c1">// No tiene todo el poder del Pattern Matching!</span>
+        <span class="c1">// Camelus(n) -&gt; "Tengo ${n} jorobas, soy un Monstruo!" // Esto no anda!</span>
+        <span class="k">is</span> <span class="nc">Camelus</span> <span class="p">-&gt;</span> <span class="s">"Tengo ${animal.jorobas} jorobas, soy un Monstruo!"</span>
+        <span class="k">else</span> <span class="p">-&gt;</span> <span class="k">throw</span> <span class="nc">Error</span><span class="p">(</span><span class="s">"No hace ruido"</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>El <code class="language-plaintext highlighter-rouge">when</code> puede usarse también sin parámetros, como una alternativa idiomática de otras construcciones (como el <code class="language-plaintext highlighter-rouge">if-then-else</code>):</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">haceRuido</span><span class="p">(</span><span class="n">animal</span><span class="p">:</span> <span class="nc">Animal</span><span class="p">)</span> <span class="p">=</span>
+	<span class="k">when</span> <span class="p">{</span>
+        <span class="n">animal</span> <span class="k">is</span> <span class="nc">Lobo</span> <span class="p">-&gt;</span> <span class="n">animal</span><span class="p">.</span><span class="nf">aulla</span><span class="p">()</span>
+        <span class="n">animal</span> <span class="k">is</span> <span class="nc">Vaca</span> <span class="p">-&gt;</span> <span class="n">animal</span><span class="p">.</span><span class="nf">muji</span><span class="p">()</span>
+        <span class="c1">// El when sin parámetro admite cualquier expresión booleana como clave</span>
+        <span class="n">animal</span> <span class="k">is</span> <span class="nc">Camelus</span> <span class="p">&amp;&amp;</span> <span class="n">animal</span><span class="p">.</span><span class="n">jorobas</span> <span class="p">&gt;</span> <span class="mi">2</span> <span class="p">-&gt;</span> <span class="s">"Tengo ${animal.jorobas} jorobas, soy un Monstruo!"</span>
+        <span class="k">else</span> <span class="p">-&gt;</span> <span class="s">"Soy otra cosa."</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+      <h2 id="mónadas-y-secuenciamiento">
+        
+        
+          <a href="#mónadas-y-secuenciamiento"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Mónadas y Secuenciamiento
+        
+        
+      </h2>
+    
+
+<p>Durante la cursada aprendimos qué son las <strong>Mónadas</strong>, para qué sirven, y cómo algunas de ellas (como <strong>List</strong>, <strong>Option</strong> y <strong>Error</strong>) contribuyen a resolver ciertos problemas recurrentes en <em>POO</em> de manera más funcional. Entonces… ¿Alguno de estos lenguajes tiene <em>Mónadas</em>?</p>
+
+<p>No.</p>
+
+<p>Bueno, más o menos… Si vamos a ser estrictos, una mónada no es más que un contrato que se cumple para cierta estructura y permite una forma genérica de trabajar. Desde este punto de vista, es posible implementar todas nuestras mónadas favoritas sin necesidad de soporte del lenguaje (y de hecho, ambos lenguajes tienen librerías de mónadas creadas por la comunidad).</p>
+
+<p>Sin embargo, lo cierto es que si los contratos principales del lenguaje no utilizan estas mónadas de forma homogénea, es probable que su uso se haga cuesta arriba y conlleve una gran cantidad de boilerplate. Por ejemplo, el <code class="language-plaintext highlighter-rouge">find</code> en <em>TypeScript</em> retorna <code class="language-plaintext highlighter-rouge">null</code> si ningún elemento cumple la condición. Por supuesto, puedo envolver cada llamada a <code class="language-plaintext highlighter-rouge">find</code>… Pero no es lo mismo. :/</p>
+
+<p>Además, hay una ventaja obvia en una sintáxis que reconoce la importancia de estas nociones (un ejemplo claro son herramientas como el <strong>For-Comprehension</strong> de <em>Scala</em>). El razonamiento es simple: vas a usar <em>mucho</em> esto, porqué no hacerlo lo más fácil posible? Esto es tán así que, en la práctica, es a veces más habitual encontrarse con situaciones donde es posible aprovechar los azucares sintácticos (aun sin entender del todo la teoría de fondo) que el trabajo mónadico genérico.</p>
+
+<p>Y acá es dónde conviene entonces hacer una pausa y reflexionar lo siguiente: las <em>mónadas</em> pueden resultarnos interesantes por dos razones, la forma genérica de trabajar sobre ellas y las ventajas sintácticas y usos que se paran sobre esto para resolver problemas comúnes; pero no son la única forma de resolver estos problemas. Es más, pueden haber situaciones tan recurrentes o importantes que sería deseable que el lenguaje las maneje de forma especial en lugar de limitarse a aplicarles el contrato monádico.</p>
+
+<p>Un buen ejemplo de esto es la posibilidad de que un valor no exista. A estas alturas de la cursada deberíamos tener este escenario asociado a la mónada <strong>Optional</strong> o <strong><a href="https://en.wikibooks.org/wiki/Haskell/Understanding_monads/Maybe">Maybe</a></strong>), pero lo cierto es que hay otra construcción en la mayoría de los lenguajes <em>OO</em> que cumple este rol: el infame <strong>null</strong>. Incluso <em>Scala</em>, donde las mónadas son la propuesta por defecto para manejar esto, <a href="https://stackoverflow.com/a/35848356/3871239">hace cosas raras con sus tipos</a> para darle soporte a este concepto. ¿Porqué? Bueno, por muy útil que sean los <em>Options</em>, no pueden ser usados para representar que una variable todavía no fue inicializada. Además, sin <em>null</em>, escribir código compatible con <em>Java</em> sería imposible.</p>
+
+<p>Y acá es donde <em>Kotlin</em> hace algo genial a lo que llama <strong>Null Safety</strong>.</p>
+
+<p>Básicamente, cualquier tipo <code class="language-plaintext highlighter-rouge">T</code> en <em>Kotlin</em> puede marcarse  con un <code class="language-plaintext highlighter-rouge">?</code> para indicar que la referencia apunta, o bien a un <code class="language-plaintext highlighter-rouge">T</code> o bien a <code class="language-plaintext highlighter-rouge">null</code>.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// val curso: Curso = null // Falla! null no puede asignarse a Curso</span>
+    <span class="kd">val</span> <span class="py">curso</span><span class="p">:</span> <span class="nc">Curso</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+</code></pre></div></div>
+
+<p>En principio esto podría parecer similar a una <em>conjunción de tipos</em> <code class="language-plaintext highlighter-rouge">T || null</code>de <em>TypeScript</em>, pero no! En <a href="http://natpryce.com/articles/000818.html">el sistema de tipos de <em>Kotlin</em></a> el <code class="language-plaintext highlighter-rouge">T?</code> (o <strong>Nullable Type</strong>) <strong>es supertipo de</strong> <code class="language-plaintext highlighter-rouge">T</code>. Esto tiene implicaciones enormes, siendo la más obvia y directa que cualquier tipo puede ser usado donde se espera su versión <em>nullable</em>.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">class</span> <span class="nc">Curso</span><span class="p">(</span><span class="kd">val</span> <span class="py">docente</span><span class="p">:</span> <span class="nc">Docente</span><span class="p">)</span>
+
+    <span class="k">fun</span> <span class="nf">ojalaMeDenUnDocente</span><span class="p">(</span><span class="n">docente</span><span class="p">:</span> <span class="nc">Docente</span><span class="p">?)</span> <span class="p">{</span> <span class="p">}</span>
+
+    <span class="kd">val</span> <span class="py">curso</span><span class="p">:</span> <span class="nc">Curso</span> <span class="p">=</span> <span class="o">..</span><span class="p">.</span>
+    <span class="nf">ojalaMeDenUnDocente</span><span class="p">(</span><span class="k">null</span><span class="p">)</span> <span class="c1">// Esto vale...</span>
+    <span class="nf">ojalaMeDenUnDocente</span><span class="p">(</span><span class="n">curso</span><span class="p">.</span><span class="n">docente</span><span class="p">)</span> <span class="c1">// Esto también! No es necesario envolver al docente con un Some</span>
+</code></pre></div></div>
+
+<p>Hasta acá todo muy lindo, pero no serviría de mucho si el <code class="language-plaintext highlighter-rouge">null</code> fuera la misma construcción tonta que en otros lenguajes. La parte más interesante de estos tipos es que vienen con su propia sintáxis para trabajarlos:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">// val curso: Curso = null // Falla! null no puede asignarse a Curso</span>
+    <span class="kd">val</span> <span class="py">curso</span><span class="p">:</span> <span class="nc">Curso</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+
+    <span class="c1">// El uso más habitual del map en un Option es enviarle un mensaje al contenido.</span>
+    <span class="c1">// La sintaxis ?. sirve básicamente para esto.</span>
+   	<span class="n">curso</span><span class="o">?.</span><span class="n">docente</span>
+
+    <span class="c1">// Este tipo de acceso puede encadenarse sin problemas.</span>
+    <span class="c1">// Dado que no estamos envolviendo los valores en otras estructuras, T? === T??.</span>
+    <span class="c1">// Esto quiere decir que ?. puede usarse como equivalente de map Y flatMap.</span>
+    <span class="kd">val</span> <span class="py">noEsDr</span><span class="p">:</span> <span class="nc">Boolean</span><span class="p">?</span> <span class="p">=</span> <span class="n">curso</span><span class="o">?.</span><span class="n">docente</span><span class="o">?.</span><span class="n">titulo</span><span class="o">?.</span><span class="nf">startsWith</span><span class="p">(</span><span class="s">"Dr"</span><span class="p">)</span><span class="o">?.</span><span class="nf">not</span><span class="p">()</span>
+
+    <span class="c1">// Si quiero hacer algo más que mandar un mensaje al posible null puedo usar ?.let.</span>
+    <span class="c1">// let es un mensaje que entienden todos los nullables, equivalente a map y flatMap.</span>
+    <span class="kd">val</span> <span class="py">esIncreible</span><span class="p">:</span> <span class="nc">Boolean</span><span class="p">?</span> <span class="p">=</span> <span class="n">curso</span><span class="o">?.</span><span class="nf">let</span><span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">docente</span><span class="p">.</span><span class="n">nombre</span> <span class="p">==</span> <span class="s">"Marcelo"</span> <span class="p">}</span>
+
+    <span class="c1">// El ?: (operador elvis) funciona como un getOrElse.</span>
+    <span class="kd">val</span> <span class="py">esIncreiblePosta</span><span class="p">:</span> <span class="nc">Boolean</span> <span class="p">=</span> <span class="n">esIncreible</span> <span class="o">?:</span> <span class="k">false</span>
+
+    <span class="c1">// En el peor de los casos, los nullables también son considerados en el Smart-Cast.</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">curso</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">throw</span> <span class="nc">Error</span><span class="p">(</span><span class="s">"es null"</span><span class="p">)</span>
+    <span class="c1">// Si llega acá sabe que no puede ser null.</span>
+    <span class="n">curso</span><span class="p">.</span><span class="n">docente</span>
+</code></pre></div></div>
+
+<p>Recordemos que el problema principal del <code class="language-plaintext highlighter-rouge">null</code> era que me obligaba a preguntar por él a cada paso. Esta nueva sintáxis para operar con nullables es tan buena como el map monádico (e incluso un poco menos verboso).</p>
+      <h2 id="metaprogramación">
+        
+        
+          <a href="#metaprogramación"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Metaprogramación
+        
+        
+      </h2>
+    
+
+<p>No vamos a profundizar demasiado en los frameworks de <strong>Metaprogramación</strong> de estos lenguajes porque, en general, son bastante sencillos gracias a sus metamodelos simples y porque no distan demasiado de las formas de trabajar de otras herramientas que cubrimos en clase. Esto es especialmente cierto para <a href="https://kotlinlang.org/docs/reference/reflection.html">el framework de <em>Kotlin</em></a>, que es muy similar en capacidad y diseño al de <em>Java</em>, ofreciendo una interfaz concisa y limplia de <strong>Reflection</strong> pero no dando casi ningún soporte para <strong>Self Modification</strong>. Por otro lado, en <em>Typescript</em>, como en casi todos los lenguajes dinámicos, la linea que separa el uso habitual de la <em>Metaprogramación</em> es borrosa ya que las entidades tienden a cambiar y redefinirse constantemente.</p>
+
+<p>Dicho eso, podemos mencionar dos construcciones muy interesantes asociadas a la <em>Metaprogramación</em> presentes en estos lenguajes que no cubrimos durante la cursada.</p>
+      <h3 id="metadata">
+        
+        
+          <a href="#metadata"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Metadata
+        
+        
+      </h3>
+    
+
+<p>Conocidas como <strong><a href="http://www.typescriptlang.org/docs/handbook/decorators.html">Decorators</a></strong> en <em>TypeScript</em>, <strong>Pragmas</strong> en <em>Smalltalk</em>, <strong>Attributes</strong> en <em>.NET</em>, <strong><a href="https://kotlinlang.org/docs/reference/annotations.html">Annotations</a></strong> en Kotlin y demas lenguajes de la <em>JVM</em> y quién sabe cuantos nombres más, estas herramientas llevan varios años siendo el standard para incorporar <em>Metadata</em> en el código (si se le puede llamar “standard” a un concepto sobre el que no nos ponemos de acuerdo ni en cómo se llama).</p>
+
+<p>A grandes rasgos, podemos pensar en las <em>Annotations</em> como etiquetas estáticas, generalmente parametrizables, con las que podemos marcar las abstracciones del lenguaje (properties, métodos, clases, etc.). Estas etiquetas puede ser luego consultadas a través de una API de <em>Reflection</em> y son comunmente usadas para definir contratos que no dependan de una interfaz de mensajes.</p>
+
+<p><strong>Kotlin</strong></p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">annotation</span> <span class="kd">class</span> <span class="nc">Groso</span>
+
+<span class="kd">class</span> <span class="nc">MiClase</span><span class="p">(</span>
+  <span class="nd">@Groso</span> <span class="kd">val</span> <span class="py">unCampoGroso</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span>
+  <span class="nd">@Groso</span> <span class="kd">val</span> <span class="py">otroCampoGroso</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span>
+  <span class="kd">val</span> <span class="py">esteNo</span><span class="p">:</span> <span class="nc">Boolean</span>
+<span class="p">)</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;){</span>
+    <span class="kd">val</span> <span class="py">atributosGrosos</span> <span class="p">=</span> <span class="nc">MiClase</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">members</span>
+      <span class="p">.</span><span class="nf">filter</span><span class="p">{</span><span class="n">it</span><span class="p">.</span><span class="n">annotations</span><span class="p">.</span><span class="nf">any</span><span class="p">{</span><span class="n">a</span> <span class="p">-&gt;</span> <span class="n">a</span> <span class="k">is</span> <span class="nc">Groso</span><span class="p">}}</span>
+      <span class="p">.</span><span class="nf">map</span><span class="p">{</span><span class="n">it</span><span class="p">.</span><span class="n">name</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Typescript</strong></p>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MiClase</span> <span class="p">{</span>
+  <span class="p">@</span><span class="nd">Groso</span> <span class="nx">unCampoGroso</span><span class="p">:</span> <span class="kr">any</span>
+  <span class="p">@</span><span class="nd">Groso</span> <span class="nx">otroCampoGroso</span><span class="p">:</span> <span class="kr">any</span>
+  <span class="nx">esteNo</span><span class="p">:</span> <span class="nx">boolean</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Groso</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">target</span><span class="p">:</span> <span class="nx">T</span><span class="p">,</span> <span class="nx">key</span><span class="p">:</span> <span class="kr">keyof</span> <span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">target</span><span class="p">[</span><span class="dl">'</span><span class="s1">camposGrosos</span><span class="dl">'</span><span class="p">])</span> <span class="nx">target</span><span class="p">[</span><span class="dl">'</span><span class="s1">camposGrosos</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nx">target</span><span class="p">[</span><span class="dl">'</span><span class="s1">camposGrosos</span><span class="dl">'</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">camposGrosos</span> <span class="o">=</span> <span class="nx">MiClase</span><span class="p">.</span><span class="nx">prototype</span><span class="p">[</span><span class="dl">'</span><span class="s1">camposGrosos</span><span class="dl">'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Como se ve en los ejemplos, las <em>Annotations</em> de <em>Kotlin</em> mantienen el enfoque declarativo de <em>Java</em>, mientras que los <em>Decorators</em> de <em>TypeScript</em> son básicamente funciones destructivas que se ejecutan durante la definición. Esto los hace mucho más poderosos, permitiendo que cambien completamente la definición en la que los incluyo, pero también hace que sean más peligrosos y requiere entender exactamente qué hace cada <em>Decorator</em> que uso.</p>
+      <h3 id="extensiones-de-interfaz">
+        
+        
+          <a href="#extensiones-de-interfaz"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Extensiones de Interfaz
+        
+        
+      </h3>
+    
+
+<p>Durante la cursada analizamos construcciones como los <strong>Implicits</strong> de <em>Scala</em> que permiten extender la interfaz de un objeto con nuevos mensajes sin modificarlo e incluso algunas como el <strong>method_missing</strong> de <em>Ruby</em> que permite que un objeto responda a mensajes cuyos nombres desconozco en tiempo estático.</p>
+
+<p>Estas operaciones sólo permiten agregar métodos, pero no sobreescribirlos. Esto es así en la mayoría de las tecnologías orientadas a objetos, porque suele implementarse como un <em>hook</em> cuando falla el <em>method lookup</em> (tratar de capturar cada envío de mensaje, falle o no, es en general muy costoso).</p>
+
+<p><em>EcmaScript</em> propone una variante interesante para la extensión de los objetos: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy">los <strong>Proxies</strong></a>. Estas abstracciones no sólo permiten interceptar cualquier acceso o envío de mensaje (definido o no), sino que lo hacen de forma no-destructiva.</p>
+
+<p>La mécanica es simple. Cuando quiero extender un objeto lo envuelvo con una instancia de <code class="language-plaintext highlighter-rouge">Proxy</code>, que recibe al objeto en cuestión y una configuración que le indica cómo manejar los accesos (el <em>proxy</em> redireccionará cualquier acceso al objeto interno, salvo que su configuración diga lo contrario).</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">loritoTonto</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">decimeChau</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="dl">'</span><span class="s1">wraaaaak</span><span class="dl">'</span> <span class="p">},</span>
+  <span class="na">cantidadDePatas</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">loritoInteligente</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Proxy</span><span class="p">(</span><span class="nx">loritoTonto</span><span class="p">,</span> <span class="p">{</span>
+  <span class="kd">get</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">key</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">startsWith</span><span class="p">(</span><span class="dl">'</span><span class="s1">decime</span><span class="dl">'</span><span class="p">))</span>
+      <span class="p">?</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">key</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">slice</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+      <span class="p">:</span> <span class="nx">target</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="nx">loritoInteligente</span><span class="p">.</span><span class="nx">cantidadDePatas</span> <span class="c1">// retorna 2</span>
+<span class="nx">loritoInteligente</span><span class="p">.</span><span class="nx">decimeHola</span><span class="p">()</span> <span class="c1">// retorna Hola</span>
+<span class="nx">loritoInteligente</span><span class="p">.</span><span class="nx">decimeChau</span><span class="p">()</span> <span class="c1">// retorna Chau! Esto no es un method_missing!</span>
+</code></pre></div></div>
+
+<p>Este enfoque permite capturar cualquier envío de mensaje, ya que no afecta el <em>method lookup</em> de todos los objetos, solo de los pocos proxiados (?).
+<strong>Nota:</strong> Ya podemos volver a ver <a href="#transformación-de-datos-inmutables">el código de <em>Lenses</em></a>.</p>
+
+<p>Del otro lado del espectro, en lo referente a extensiones de interfaces, <em>Kotlin</em> mantiene posiciones extrañas. Por un lado se presenta muy restrictivo, debido a <a href="https://discuss.kotlinlang.org/t/classes-final-by-default/166/4">la desafortunada decisión de hacer todas las abstracciones <em>final</em> por defecto</a> que impide, entre otras cosas, extender clases que no hayan sido explicitamente marcadas como <code class="language-plaintext highlighter-rouge">open</code>; mientras que, por el otro, define unas herramientas a las que llama <strong>Extensions</strong>, muy similares a las <strong>Implicit Classes</strong> de <em>Scala</em>, que permiten extender (pero no sobreescribir) cualquier clase, abierta o no, con <em>métodos</em> y <em>properties</em>.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Inutil</span><span class="p">(</span><span class="kd">val</span> <span class="py">nombre</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span>
+
+<span class="c1">// No puedo extender la clase, porque no es open</span>
+<span class="kd">class</span> <span class="nc">MenosInutil</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">:</span> <span class="nc">Inutil</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">saludar</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Hola, soy ${this.nombre}"</span>
+<span class="p">}</span>
+
+<span class="c1">// Pero puedo "agregarle" el método...</span>
+<span class="k">fun</span> <span class="nc">Inutil</span><span class="p">.</span><span class="nf">saludar</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Hola, soy ${this.nombre}... Creo."</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+	<span class="nc">Inutil</span><span class="p">(</span><span class="s">"Ezequiel"</span><span class="p">).</span><span class="nf">saludar</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div></div>
+      <h3 id="auto-delegación">
+        
+        
+          <a href="#auto-delegación"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Auto-Delegación
+        
+        
+      </h3>
+    
+
+<p>Si vamos a ser justos, esto no tiene mucho que ver con <em>Reflection</em>, pero queremos mencionarlo en esta sección porque la única forma de hacer algo parecido en la mayoría de los lenguajes requeriría de <em>Metaprogramación</em> de algún tipo.</p>
+
+<p>Básicamente, <em>Kotlin</em> identifica dos situaciones comunes cuya solución suele ser trivial, pero engorrosa y plagada de boilerplate y las resuelve implementando unas construcciones sintácticas que hacen toda la mágia por atrás.</p>
+      <h4 id="class-delegation">
+        
+        
+          <a href="#class-delegation"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Class Delegation
+        
+        
+      </h4>
+    
+
+<p>Cualquiera que haya implementado un <em><a href="https://en.wikipedia.org/wiki/Strategy_pattern">Strategy</a></em> sabe lo tedioso que puede resultar delegar una y otra vez mensajes en una estratégia. No es para nada infrecuente tener interfaces que consisten casi exclusivamente en reenviar mensajes al objeto correcto simplemente para ganar la flexibilidad de la composición. La <strong>Delegación de Clases</strong> permite hacer esto mismo sin requerir de ningún tipo de boilerplate.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Saludador</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">saludar</span><span class="p">():</span> <span class="nc">String</span>
+<span class="p">}</span>
+
+<span class="kd">object</span> <span class="nc">Formal</span><span class="p">:</span> <span class="nc">Saludador</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">saludar</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Tenga usted un gran día, mi buen señor."</span>
+<span class="p">}</span>
+
+<span class="kd">object</span> <span class="nc">Informal</span><span class="p">:</span> <span class="nc">Saludador</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">saludar</span><span class="p">()</span> <span class="p">=</span> <span class="s">"Qui hace', pa?"</span>
+<span class="p">}</span>
+
+<span class="c1">// Persona implementa Saludador a travez de su estratégia.</span>
+<span class="kd">data class</span> <span class="nc">Persona</span><span class="p">(</span><span class="kd">var</span> <span class="py">estrategia</span><span class="p">:</span> <span class="nc">Saludador</span><span class="p">):</span> <span class="nc">Saludador</span> <span class="k">by</span> <span class="n">estrategia</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+	<span class="kd">val</span> <span class="py">pepe</span> <span class="p">=</span> <span class="nc">Persona</span><span class="p">(</span><span class="nc">Informal</span><span class="p">)</span>
+    <span class="c1">// Persona responde a la interfaz de Saludador delegando en su estratégia.</span>
+    <span class="n">pepe</span><span class="p">.</span><span class="nf">saludar</span><span class="p">()</span> <span class="c1">// "Qui hace', pa?"</span>
+
+    <span class="c1">// Ojo! El bindeo no es completamente dinámico!</span>
+    <span class="c1">// Cambiar el atributo no cambia la delegación.</span>
+    <span class="n">pepe</span><span class="p">.</span><span class="n">estrategia</span> <span class="p">=</span> <span class="nc">Formal</span>
+    <span class="n">pepe</span><span class="p">.</span><span class="nf">saludar</span><span class="p">()</span>  <span class="c1">// "Qui hace', pa?"</span>
+
+    <span class="c1">// Sin embargo, eso no es un problema si trabajamos de forma inmutable.</span>
+    <span class="kd">val</span> <span class="py">lordPepe</span> <span class="p">=</span> <span class="n">pepe</span><span class="p">.</span><span class="nf">copy</span><span class="p">(</span><span class="nc">Formal</span><span class="p">)</span>
+    <span class="n">lordPepe</span><span class="p">.</span><span class="nf">saludar</span><span class="p">()</span> <span class="c1">// "Tenga usted un gran día, mi buen señor."</span>
+<span class="p">}</span>
+</code></pre></div></div>
+      <h4 id="property-delegation">
+        
+        
+          <a href="#property-delegation"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Property Delegation
+        
+        
+      </h4>
+    
+
+<p>De forma similar, es posible delegar la implementación de una <em>property</em> en otro objeto. Esta mecánica no se basa en extender ninguna <code class="language-plaintext highlighter-rouge">interface</code>, sino en un contrato estructural que sólo pide implementar los métodos <code class="language-plaintext highlighter-rouge">getValue</code> y <code class="language-plaintext highlighter-rouge">setValue</code>.</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">kotlin.reflect.KProperty</span>
+
+<span class="kd">class</span> <span class="nc">MiClase</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">propiedadPerezosa</span> <span class="p">:</span> <span class="nc">String</span> <span class="k">by</span> <span class="nc">Perezoso</span> <span class="p">{</span> <span class="s">"foo"</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Perezoso</span><span class="p">&lt;</span><span class="nc">T</span><span class="p">&gt;(</span><span class="kd">val</span> <span class="py">getter</span><span class="p">:(()-&gt;</span><span class="nc">T</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">valor</span><span class="p">:</span> <span class="nc">T</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+
+    <span class="k">operator</span> <span class="k">fun</span> <span class="nf">getValue</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span> <span class="nc">Any</span><span class="p">?,</span> <span class="n">property</span><span class="p">:</span> <span class="nc">KProperty</span><span class="p">&lt;</span><span class="err">*</span><span class="p">&gt;):</span> <span class="nc">T</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">valor</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span> <span class="n">valor</span> <span class="p">=</span> <span class="nf">getter</span><span class="p">()</span> <span class="p">}</span>
+        <span class="k">return</span> <span class="n">valor</span><span class="o">!!</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="nc">MiClase</span><span class="p">().</span><span class="n">propiedadPerezosa</span> <span class="c1">// Retorna "foo"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Esto tiene muchos usos prácticos, varios de los cuales ya vienen predefinidos (Ej.: <a href="https://kotlinlang.org/docs/delegated-properties.html#lazy-properties">inicialización diferida</a>, <a href="https://kotlinlang.org/docs/delegated-properties.html#observable-properties">propiedades observables</a>, <a href="https://kotlinlang.org/docs/delegated-properties.html#storing-properties-in-a-map">estado compartido</a>).</p>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>

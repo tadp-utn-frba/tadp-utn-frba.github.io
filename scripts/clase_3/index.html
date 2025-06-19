@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_3/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase 3 TADP</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="clase-3-tadp">
+        
+        
+          <a href="#clase-3-tadp"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Clase 3 TADP
+        
+        
+      </h1>
+    
+      <h2 id="metaprogramacion">
+        
+        
+          <a href="#metaprogramacion"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> METAPROGRAMACION
+        
+        
+      </h2>
+    
+<p>Es el proceso o la práctica por la cual escribimos programas que generan, manipulan o utilizan otros programas.</p>
+      <h6 id="ejemplos">
+        
+        
+          <a href="#ejemplos"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Ejemplos
+        
+        
+      </h6>
+    
+<ul>
+  <li>Un compilador se puede pensar como un programa que genera otro programa.</li>
+  <li>Un formateador de código es un programa que manipula otro programa.</li>
+  <li>Una herramienta como javadoc utiliza nuestro programa para generar su documentación.</li>
+</ul>
+      <h6 id="para-qué-se-usa-la-metaprogramación">
+        
+        
+          <a href="#para-qué-se-usa-la-metaprogramación"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Para qué se usa la metaprogramación?
+        
+        
+      </h6>
+    
+<p>En general la metaprogramación se utiliza más fuertemente en el desarrollo de frameworks y herramientas.</p>
+
+<p>Dado que los frameworks van a resolver cierta problemática de las aplicaciones, no van a estar diseñados para ninguna en particular. Es decir, la idea de framework es que se va a poder aplicar y utilizar en diferentes dominios desconocidos para el creador del framework.</p>
+
+<p>Ejemplos:</p>
+
+<ul>
+  <li>ORM’s (como hibernate): Que van a encargarse de persistir las instancias de nuestras clases sin siquiera conocerlas de antemano.</li>
+  <li>Frameworks de UI: Que deberán saber mostrar / bindear cualquier objeto.</li>
+  <li>Frameworks de Testing (como JUnit): suelen usar metaprogramación para analizar la clase de Test y encontrar los tests que se deben correr.</li>
+  <li>Documentadores de Código: Son herramientas que leen el código fuente y genera documentación (por ejemplo: JavaDoc).</li>
+  <li>Code Coverage: Herramientas que miden cuánto de nuestro código es realmente ejecutado al correr los tests, y cuales lineas no.</li>
+  <li>Analizadores de código: Que evalúan nuestro código y genera métricas o miden violaciones a reglas definidas. Como el estilo de código, complejidad ciclomática, etc.</li>
+</ul>
+      <h2 id="reflection">
+        
+        
+          <a href="#reflection"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Reflection
+        
+        
+      </h2>
+    
+<p>Es un caso particular de metaprogramación, donde “metaprogramamos” en el mismo lenguaje en que están escritos (o vamos a escribir) los programas. Es decir, todo desde el mismo lenguaje.</p>
+      <h3 id="tipos-de-reflection">
+        
+        
+          <a href="#tipos-de-reflection"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Tipos de reflection
+        
+        
+      </h3>
+    
+<p>Para esto, generalmente, es necesario contar con facilidades o herramientas específicas, digamos “soporte” del lenguaje. Entonces reflection, además, abarca los siguientes items que vamos a mencionar en esta lista:</p>
+
+<ul>
+  <li><strong>Introspection</strong>: Se refiere a la capacidad de un sistema, de analizarse a sí mismo. Algo así como la introspección humana, pero en términos de programa. Para eso, el lenguaje debe proveer ciertas herramientas, que le permitan al mismo programa, “ver” o “reflejar” cada uno de sus componentes.</li>
+  <li><strong>Self-Modification</strong>: Es la capacidad de un programa de modificarse a sí mismo. Nuevamente esto requiere cierto soporte del lenguaje. Y las limitaciones van a depender de este soporte.</li>
+  <li><strong>Intercession</strong>: Es la capacidad de modificar las características del lenguaje desde el mismo. Por ejemplo: agregarle orientación a objetos a Lisp (CLOS).</li>
+</ul>
+      <h3 id="modelos-y-metamodelos">
+        
+        
+          <a href="#modelos-y-metamodelos"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Modelos y metamodelos
+        
+        
+      </h3>
+    
+<p>Así como todo programa construye un modelo para describir su dominio, los lenguajes pueden hacer lo mismo para describir sus abstracciones. El dominio de un metaprograma son los programas.</p>
+
+<p>El programa describe las características de los elementos del dominio utilizando clases, métodos, atributos entre otros. Entonces, el modelo puede contener por ejemplo una clase Guerrero, que modela a los guerreros en el domino.</p>
+
+<p>Un metaprograma usará el metamodelo que describe al programa base. Así como en el dominio hay guerreros, los elementos del “metadominio” serán las construcciones del lenguaje. Por ejemplo: clases, atributos, métodos.</p>
+      <h1 id="practica">
+        
+        
+          <a href="#practica"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Practica
+        
+        
+      </h1>
+    
+<p>Vamos a usar el código de la clase anterior como ejemplo: https://github.com/tadp-utn-frba/tadp-clases/tree/ruby-age</p>
+
+<p>Podemos comenzar con un poco de introspection y preguntarle a un objeto desde su clase hasta que metodos tiene.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require_relative</span> <span class="s1">'age'</span>
+<span class="n">atila</span> <span class="o">=</span> <span class="no">Guerrero</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">class</span>  <span class="c1">#=&gt; Guerrero</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">superclass</span>  <span class="c1">#=&gt; Object</span>
+
+<span class="n">atila</span><span class="p">.</span><span class="nf">methods</span>  <span class="c1">#=&gt; [:sufri_danio, :descansar, :energia, :energia=,...]</span>
+<span class="no">Guerrero</span><span class="p">.</span><span class="nf">instance_methods</span> <span class="c1">#=&gt; Idem a atila.methods</span>
+<span class="no">Guerrero</span><span class="p">.</span><span class="nf">instance_methods</span><span class="p">(</span><span class="kp">false</span><span class="p">)</span> <span class="c1">#=&gt; [:descansar_atacante, :descansar_defensor,...] (solo los de la clase guerrero)</span>
+</code></pre></div></div>
+
+<p>Tambien podemos empezar a interactuar con los objetos de otra manera, como mandarle mensajes de otra manera.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">atila</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="ss">:potencial_ofensivo</span><span class="p">)</span>  <span class="c1">#=&gt; 20</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="ss">:descansar</span><span class="p">)</span>  <span class="c1">#=&gt; 110</span>
+
+<span class="c1"># con send no existen los metodos privados, la seguridad es una sensacion</span>
+<span class="k">class</span> <span class="nc">A</span>
+    <span class="kp">private</span>
+    <span class="k">def</span> <span class="nf">metodo_privado</span>
+        <span class="s1">'cosa privada, no te metas'</span>
+    <span class="k">end</span>    
+<span class="k">end</span>
+<span class="n">objeto</span> <span class="o">=</span> <span class="no">A</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">objeto</span><span class="p">.</span><span class="nf">metodo_privado</span> <span class="c1">#=&gt; NoMethodError: private method `metodo_privado' called for #&lt;A:direccion en memoria del objeto&gt;</span>
+<span class="n">objeto</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="ss">:metodo_privado</span><span class="p">)</span>  <span class="c1">#=&gt; "cosa privada, no te metas"</span>
+</code></pre></div></div>
+      <h2 id="method--unbound-method">
+        
+        
+          <a href="#method--unbound-method"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Method / Unbound Method
+        
+        
+      </h2>
+    
+<p>Tambien podemos obtener un metodo e invocarlo</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">metodo</span> <span class="o">=</span> <span class="n">atila</span><span class="p">.</span><span class="nf">method</span><span class="p">(</span><span class="ss">:potencial_ofensivo</span><span class="p">)</span>  <span class="c1">#=&gt; #&lt;Method: Guerrero(Atacante)#potencial_ofensivo&gt;</span>
+<span class="n">metodo</span><span class="p">.</span><span class="nf">call</span>  <span class="c1">#=&gt; 20</span>
+</code></pre></div></div>
+
+<p>Algo interesante que podemos hacer es pedirle un metodo de instancia a una clase. A este metodo se lo llama Unbound Method, ya que no esta asociado a ninguna instancia de esa clase. Podemos asociarlo a un objeto siempre y cuando este dentro de la jerarquia de clases.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Padre</span>
+    <span class="k">def</span> <span class="nf">correr</span>
+        <span class="s1">'correr como padre'</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Hijo</span> <span class="o">&lt;</span> <span class="no">Padre</span>
+    <span class="k">def</span> <span class="nf">correr</span>
+        <span class="s1">'correr como hijo'</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+<span class="n">metodo</span> <span class="o">=</span> <span class="no">Padre</span><span class="p">.</span><span class="nf">instance_method</span><span class="p">(</span><span class="ss">:correr</span><span class="p">)</span>  <span class="c1">#=&gt;#&lt;UnboundMethod: Padre#correr&gt;</span>
+<span class="n">metodo</span><span class="p">.</span><span class="nf">bind</span><span class="p">(</span><span class="no">Hijo</span><span class="p">.</span><span class="nf">new</span><span class="p">).</span><span class="nf">call</span>  <span class="c1">#=&gt; 'correr como padre'</span>
+</code></pre></div></div>
+
+<p>Como vemos los Unbound Methods se escapan al metodo lookup.
+Tambien podemos preguntarle cosas a los metodos.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">metodo</span> <span class="o">=</span> <span class="n">atila</span><span class="p">.</span><span class="nf">method</span><span class="p">(</span><span class="ss">:atacar</span><span class="p">)</span> <span class="c1">#=&gt; #&lt;Method: Guerrero(Atacante)#atacar&gt;</span>
+<span class="n">metodo</span><span class="p">.</span><span class="nf">arity</span>  <span class="c1">#=&gt; 1</span>
+<span class="n">metodo</span><span class="p">.</span><span class="nf">parameters</span> <span class="c1">#=&gt; [[:req, :un_defensor]]</span>
+<span class="n">metodo</span><span class="p">.</span><span class="nf">owner</span>  <span class="c1">#=&gt; Atacante (donde esta definido)</span>
+</code></pre></div></div>
+
+<p>Asi como ya estuvimos jugando con las clases, objetos y metodos, tambien podemos jugar con las variables.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">atila</span><span class="p">.</span><span class="nf">instance_variables</span> <span class="c1">#=&gt; [:@potencial_ofensivo, :@energia, :@potencial_defensivo]</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">instance_variable_get</span><span class="p">(</span><span class="ss">:@energia</span><span class="p">)</span>  <span class="c1">#=&gt; 100</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">instance_variable_set</span><span class="p">(</span><span class="ss">:@energia</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span> <span class="c1">#=&gt; 50</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">instance_variable_get</span><span class="p">(</span><span class="ss">:@energia</span><span class="p">)</span>  <span class="c1">#=&gt; 50</span>
+<span class="n">atila</span> <span class="c1">#=&gt; pretty print muestra el estado interno</span>
+</code></pre></div></div>
+      <h3 id="self-modification">
+        
+        
+          <a href="#self-modification"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Self-Modification
+        
+        
+      </h3>
+    
+      <h4 id="open-classes">
+        
+        
+          <a href="#open-classes"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Open classes
+        
+        
+      </h4>
+    
+
+<p>Nos permite definir métodos y atributos en una clase ya existente.
+Es una forma de self modification con azucar sintáctica para no tener que hacerlo mediante mensajes.</p>
+
+<p>Los métodos que se definan con el mismo nombre que otro ya existente, serán reemplazados (es destructivo).</p>
+
+<p>Para Ruby, las firmas de los métodos están definidas solo por el nombre. Un método con el mismo nombre y diferente cantidad de parametros definen el mismo método.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">String</span>
+  <span class="k">def</span> <span class="nf">importante</span>
+    <span class="nb">self</span> <span class="o">+</span> <span class="s1">'!'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="s1">'aprobe'</span><span class="p">.</span><span class="nf">importante</span>  <span class="c1">#=&gt; "aprobe!"</span>
+
+<span class="c1">#Cambiar métodos</span>
+<span class="k">class</span> <span class="nc">Fixnum</span>
+  <span class="k">def</span> <span class="nf">+</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="mi">123</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="mi">2</span><span class="o">+</span><span class="mi">2</span>  <span class="c1">#=&gt; 123</span>
+</code></pre></div></div>
+
+<p>Otra manera de abrir las clases y definir metodos es usando en la clase el <code class="language-plaintext highlighter-rouge">define_method</code> pero este es privado y como ya vimos podemos pasarlo por arriba invocando el send.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Guerrero</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="ss">:define_method</span><span class="p">,</span> <span class="ss">:saluda</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">'Hola'</span>
+<span class="p">}</span>
+<span class="no">Guerrero</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">saluda</span>  <span class="c1">#=&gt; "Hola"</span>
+</code></pre></div></div>
+
+<p>Aca podemos hacer referencia a dos practicas de programacion: <strong>Duck Typing</strong> y <strong>Monkey Patching</strong>.</p>
+      <h4 id="duck-typing">
+        
+        
+          <a href="#duck-typing"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Duck Typing
+        
+        
+      </h4>
+    
+<p>Debido a que ruby es un lenguaje dinamicamente tipado, hacemos referencia a un tipo de dato por el comportamiento que tiene.</p>
+<blockquote>
+  <p>…if it walks like a duck and talks like a duck, it’s a duck, right?</p>
+</blockquote>
+
+<p>Si tenemos un objeto que cuando hace ruido hace “cuak” y camina como un pato, probablemente lo sea, y deberia poder continuar usando este objeto como si fuera uno.</p>
+      <h4 id="monkey-patching">
+        
+        
+          <a href="#monkey-patching"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Monkey Patching
+        
+        
+      </h4>
+    
+<blockquote>
+  <p>…if it walks like a monkey and talks like a monkey, it’s a monkey, right? So if this monkey is not giving you the noise that you want, you’ve got to just punch that monkey until it returns what you expect.</p>
+</blockquote>
+
+<p>Hace referencia a la posibilidad de practicamente modificar un tipo a gusto y piacere para que responda a nuestras necesidades y realizar otro tipo de operaciones como si fuera otro.</p>
+      <h3 id="singleton-class">
+        
+        
+          <a href="#singleton-class"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Singleton Class
+        
+        
+      </h3>
+    
+<p>Tambien podemos empezar a hacer algunas cosas mas locas, como agregarle comportamiento a un unico objeto</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">atila</span><span class="p">.</span><span class="nf">define_singleton_method</span><span class="p">(</span><span class="ss">:saluda</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">'Hola soy Atila'</span>
+<span class="p">}</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">saluda</span>  <span class="c1">#=&gt; "Hola soy Atila"</span>
+<span class="no">Guerrero</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">saluda</span> <span class="c1"># NoMethodError</span>
+</code></pre></div></div>
+      <h2 id="metamodelo">
+        
+        
+          <a href="#metamodelo"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> METAMODELO
+        
+        
+      </h2>
+    
+<p>Empecemos a descubrir el modelo de clases.</p>
+
+<p>Vamos a jugar un poco más con el metamodelo, ya sabemos que existe el mensaje <code class="language-plaintext highlighter-rouge">class</code> que lo entienden todos los objetos, si queremos saber la superclase de una clase tenemos el mensaje <code class="language-plaintext highlighter-rouge">superclass</code>. Podríamos pensar en base a eso quiénes le proveen comportamiento a cada uno de nuestros objetos.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">zorro</span> <span class="o">=</span> <span class="no">Espadachin</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">Espada</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Tenemos al zorro que es instancia de Espadachin, que hereda de Guerrero. Si le pedimos los métodos al zorro vemos que incluye a los <code class="language-plaintext highlighter-rouge">instance_methods</code> de Espadachin y de Guerrero, así como todos los que se definen para las instancias de Object.</p>
+      <h3 id="autoclases--eigen-class">
+        
+        
+          <a href="#autoclases--eigen-class"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Autoclases / Eigen Class
+        
+        
+      </h3>
+    
+<p>Pero nosotros no le agregamos comportamiento sólo a las instancias, también teníamos un par de métodos de clase que habíamos definido para Peloton, como por ejemplo cobarde.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Peloton</span><span class="p">.</span><span class="nf">cobarde</span><span class="p">([])</span>
+</code></pre></div></div>
+
+<p>Quién provee ese comportamiento? La clase de Peloton es Class, y este comportamiento no se agregó para todas las clases así que no puede estar definido dentro de Class.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Peloton</span><span class="p">.</span><span class="nf">methods</span><span class="p">.</span><span class="nf">include?</span> <span class="ss">:cobarde</span>  <span class="c1">#=&gt; true</span>
+<span class="no">Peloton</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">instance_methods</span><span class="p">.</span><span class="nf">include?</span> <span class="ss">:new</span>  <span class="c1">#=&gt; true</span>
+<span class="no">Peloton</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">instance_methods</span><span class="p">.</span><span class="nf">include?</span> <span class="ss">:cobarde</span>  <span class="c1">#=&gt; false</span>
+</code></pre></div></div>
+
+<p>Esto sólo lo entiende la clase Peloton, o sea que está definido para un sólo objeto. El objeto que le provee el comportamiento a un sólo objeto es la autoclase. En Ruby podemos obtener la autoclase de un objeto mandándole <code class="language-plaintext highlighter-rouge">singleton_class</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Peloton</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">.</span><span class="nf">instance_methods</span><span class="p">(</span><span class="kp">false</span><span class="p">)</span>  <span class="c1">#=&gt; [:cobarde, :descansador]</span>
+</code></pre></div></div>
+
+<p>Todos los objetos tienen una singleton class, con lo cual podemos definirle comportamiento a atila y que sea el único guerrero con ese comportamiento.</p>
+
+<p>Incluyanmos un mixin a una instancia, utilizando include en la singleton class o extend en la intancia:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">W</span>
+  <span class="k">def</span> <span class="nf">m</span>
+    <span class="mi">123</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="no">Guerrero</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">.</span><span class="nf">include</span> <span class="no">W</span>
+<span class="n">a</span><span class="p">.</span><span class="nf">m</span>  <span class="c1">#=&gt; 123</span>
+<span class="n">b</span> <span class="o">=</span> <span class="no">Guerrero</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">b</span><span class="p">.</span><span class="nf">extend</span> <span class="no">W</span>
+<span class="n">b</span><span class="p">.</span><span class="nf">m</span>  <span class="c1">#=&gt;123</span>
+</code></pre></div></div>
+
+<p>Agreguemos un test en el que atila cuando se lastima descansa y se come un pollo, incorporando <code class="language-plaintext highlighter-rouge">comerse_un_pollo</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">atila</span> <span class="o">=</span> <span class="no">Guerrero</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="ss">:define_method</span><span class="p">,</span> <span class="ss">:comerse_un_pollo</span><span class="p">,</span> <span class="nb">proc</span> <span class="p">{</span> <span class="vi">@energia</span> <span class="o">+=</span> <span class="mi">20</span> <span class="p">})</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">energia</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">comerse_un_pollo</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">energia</span>
+<span class="no">Guerrero</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">comerse_un_pollo</span>  <span class="c1"># NoMethodError</span>
+</code></pre></div></div>
+
+<p>También vemos que se puede tener properties para un único objeto:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">atila</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="ss">:attr_accessor</span><span class="p">,</span> <span class="ss">:edad</span><span class="p">)</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">edad</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">atila</span><span class="p">.</span><span class="nf">edad</span>  <span class="c1">#=&gt; 5</span>
+<span class="no">Guerrero</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">edad</span>  <span class="c1">#=&gt; NoMethodError</span>
+</code></pre></div></div>
+
+<p>Vemos que no aparecen los mixins que tiene la clase Guerrero si vamos preguntando las super clases. El mensaje <code class="language-plaintext highlighter-rouge">superclass</code> no muestra los mixins (porque no son clases), para poder ver la linearización tenemos que pedir quienes proveen comportamiento con el mensaje ancestors.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Guerrero</span><span class="p">.</span><span class="nf">ancestors</span>  <span class="c1">#=&gt; [Guerrero, Defensor, Atacante, Object, PP::ObjectMixin, Kernel, BasicObject]</span>
+</code></pre></div></div>
+      <h4 id="nota">
+        
+        
+          <a href="#nota"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Nota
+        
+        
+      </h4>
+    
+<p>Las últimas versiones de ruby incluyen a la singleton class de Guerrero, las anteriores a 2.1.0 NO incluyen a las singleton classes:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Guerrero</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">singleton_class</span><span class="p">.</span><span class="nf">ancestors</span>
+
+<span class="p">[</span><span class="c1">#&lt;Class:#&lt;Guerrero:0x00000001d6c8c8&gt;&gt;,</span>
+<span class="no">Guerrero</span><span class="p">,</span>
+<span class="no">Defensor</span><span class="p">,</span>
+<span class="no">Atacante</span><span class="p">,</span>
+<span class="no">Object</span><span class="p">,</span>
+<span class="no">PP</span><span class="o">::</span><span class="no">ObjectMixin</span><span class="p">,</span>
+<span class="no">Kernel</span><span class="p">,</span>
+<span class="no">BasicObject</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Dibujar los ancestors de Guerrero en el pizarron.
+Dibujar la singleton class de atila.
+Agregamos un método de clase a Guerrero:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Guerrero</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">gritar</span>
+ <span class="err"> </span> <span class="err"> </span><span class="s1">'haaaa'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">atila</span><span class="p">.</span><span class="nf">gritar</span>  <span class="c1">#=&gt; NoMethodError</span>
+<span class="no">Guerrero</span><span class="p">.</span><span class="nf">gritar</span>  <span class="c1">#=&gt; haaaa</span>
+</code></pre></div></div>
+
+<p>Veamos en el diagrama, la singleton class de Guerrero (donde definimos <code class="language-plaintext highlighter-rouge">gritar</code>)</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Espadachin</span><span class="p">.</span><span class="nf">gritar</span>  <span class="c1">#=&gt;haaaa</span>
+</code></pre></div></div>
+
+<p><img src="https://raw.githubusercontent.com/tadp-utn-frba/tadp-clases/ruby-metaprogramming/Metamodelo_de_Ruby.jpg" alt="" /></p>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>
