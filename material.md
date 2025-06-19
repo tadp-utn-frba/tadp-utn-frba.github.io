@@ -67,4 +67,4 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 - [Dan Piponi - "You Could Have Invented Monads!"](http://blog.sigfpe.com/2006/08/you-could-have-invented-monads-and.html) - Mónadas en Haskell
 
 ## SBT:
-- [http://www.scala-sbt.org/0.13/tutorial/index.html](http://www.scala-sbt.org/0.13/tutorial/index.html) - Tutorial oficial de SBT
+- [Tutorial oficial de SBT](https://www.scala-sbt.org/1.x/docs/Getting-Started.html)
