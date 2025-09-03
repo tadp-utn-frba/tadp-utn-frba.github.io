@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_4/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase 4 TADP 1C2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="tadp-clase-4-instance_eval-method_missing">
+        
+        
+          <a href="#tadp-clase-4-instance_eval-method_missing"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> TADP Clase 4: instance_eval, method_missing
+        
+        
+      </h1>
+    
+      <h3 id="contexto-scope">
+        
+        
+          <a href="#contexto-scope"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Contexto (scope)
+        
+        
+      </h3>
+    
+<p>Consideremos el siguiente ejemplo</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">class</span> <span class="nc">A</span>
+  <span class="nb">puts</span> <span class="n">x</span>
+<span class="k">end</span>
+<span class="c1"># NameError: undefined local variable or method `x' for A:Class</span>
+
+<span class="k">def</span> <span class="nf">m</span>
+  <span class="nb">puts</span> <span class="n">x</span>
+<span class="k">end</span>
+<span class="n">m</span> <span class="c1"># NameError: undefined local variable or method `x' for main:Object</span>
+</code></pre></div></div>
+
+<p>Esto pasa porque la variable ‘x’ solo puede ser accedida desde el contexto donde se creó.
+El contexto cambia en tres casos (se los suele llamar <em>scope gates</em>):</p>
+<ul>
+  <li>Cuando se define una clase con class</li>
+  <li>Cuando se define un módulo con module</li>
+  <li>Cuando se define un método con def</li>
+</ul>
+      <h3 id="flat-scope">
+        
+        
+          <a href="#flat-scope"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Flat scope
+        
+        
+      </h3>
+    
+
+<p>Una forma de saltear la restricción de los cambios de contexto, es usar closures.
+Ruby tiene tres tipos de closures: los bloques, lambdas y procs. Su principal característica es que “recuerdan” el contexto donde fueron creados.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">p</span> <span class="o">=</span> <span class="nb">lambda</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}</span>
+<span class="nb">p</span><span class="p">.</span><span class="nf">call</span> <span class="c1"># 6</span>
+<span class="nb">p</span><span class="p">.</span><span class="nf">call</span> <span class="c1"># 7</span>
+
+<span class="n">a</span>   <span class="c1"># 7</span>
+</code></pre></div></div>
+
+<p>Para hacer que una variable esté en el contexto de la definición de un método, podemos reemplazar def con define_method.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">define_method</span><span class="p">(</span><span class="ss">:m</span><span class="p">)</span> <span class="k">do</span>
+  <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="k">end</span>
+<span class="n">m</span> <span class="c1"># 15</span>
+</code></pre></div></div>
+
+<p>De la misma manera, podemos superar el scope gate que define class reemplazandolo con Class.new</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">una_clase</span> <span class="o">=</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+  <span class="n">x</span> <span class="o">+=</span> <span class="mi">5</span>
+<span class="k">end</span>
+<span class="n">x</span> <span class="c1"># 15</span>
+</code></pre></div></div>
+
+<p>A esta técnica que permite mantener el mismo contexto se la llama flat scope (contexto aplanado).</p>
+      <h3 id="bloques--lambdas--procs">
+        
+        
+          <a href="#bloques--lambdas--procs"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Bloques / lambdas / procs
+        
+        
+      </h3>
+    
+<p>Las lambdas y los procs son objetos que reifican comportamiento y pueden ser ejecutados diferidamente.
+Tienen dos diferencias fundamentales:</p>
+<ul>
+  <li>Cómo manejan los parámetros</li>
+  <li>Cómo se comportan con el return</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lam</span> <span class="o">=</span> <span class="nb">lambda</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="nb">puts</span> <span class="n">x</span> <span class="p">}</span>    <span class="c1"># creates a lambda that takes 1 argument</span>
+<span class="n">lam</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                    <span class="c1"># prints out 2</span>
+<span class="n">lam</span><span class="p">.</span><span class="nf">call</span>                       <span class="c1"># ArgumentError: wrong number of arguments (0 for 1)</span>
+<span class="n">lam</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>                <span class="c1"># ArgumentError: wrong number of arguments (3 for 1)</span>
+
+<span class="nb">proc</span> <span class="o">=</span> <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="nb">puts</span> <span class="n">x</span> <span class="p">}</span> <span class="c1"># creates a proc that takes 1 argument</span>
+<span class="nb">proc</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                   <span class="c1"># prints out 2</span>
+<span class="nb">proc</span><span class="p">.</span><span class="nf">call</span>                      <span class="c1"># returns nil</span>
+<span class="nb">proc</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>               <span class="c1"># prints out 1 and forgets about the extra arguments</span>
+<span class="o">---------------------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">lambda_test</span>
+  <span class="n">lam</span> <span class="o">=</span> <span class="nb">lambda</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+  <span class="n">lam</span><span class="p">.</span><span class="nf">call</span>
+  <span class="nb">puts</span> <span class="s2">"Hello world"</span>
+<span class="k">end</span>
+
+<span class="n">lambda_test</span>                 <span class="c1"># calling lambda_test prints 'Hello World'</span>
+
+
+<span class="k">def</span> <span class="nf">proc_test</span>
+  <span class="nb">proc</span> <span class="o">=</span> <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+  <span class="nb">proc</span><span class="p">.</span><span class="nf">call</span>
+  <span class="nb">puts</span> <span class="s2">"Hello world"</span>
+<span class="k">end</span>
+
+<span class="n">proc_test</span>                 <span class="c1"># calling proc_test prints nothing</span>
+</code></pre></div></div>
+
+<p>Los bloques (tanto si los escribimos con llaves como con do y end) no son objetos y sólo se puede pasar un bloque como último parámetro del método.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bloque_test</span>
+  <span class="k">yield</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">bloque_test</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+  <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Cuando sea necesario, se puede pasar un proc en lugar de un bloque usando &amp;</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">bloque_proc_test</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bloque</span><span class="p">)</span>
+  <span class="n">bloque</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">bloque_test</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+  <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="k">end</span>
+</code></pre></div></div>
+      <h3 id="contexto-y-receptor-implícito-instance_eval">
+        
+        
+          <a href="#contexto-y-receptor-implícito-instance_eval"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Contexto y receptor implícito: instance_eval
+        
+        
+      </h3>
+    
+<p>Estamos acostumbrados a que, dentro de un método de una clase, podemos mandar un mensaje al objeto actual sin definir ningún receptor.
+Por ejemplo:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Usuario</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:edad</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span>
+    <span class="vi">@edad</span> <span class="o">=</span> <span class="n">edad</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">mayor_de_edad?</span>
+    <span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Usuario</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">19</span><span class="p">).</span><span class="nf">mayor_de_edad?</span>
+<span class="c1"># true</span>
+</code></pre></div></div>
+
+<p>Para mandar el mensaje <code class="language-plaintext highlighter-rouge">edad</code> en el método <code class="language-plaintext highlighter-rouge">mayor_de_edad?</code> no necesitamos poner <code class="language-plaintext highlighter-rouge">self.edad</code> ya que <code class="language-plaintext highlighter-rouge">self</code> es el contexto implícito.</p>
+      <h4 id="contexto-y-bloques">
+        
+        
+          <a href="#contexto-y-bloques"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Contexto y bloques
+        
+        
+      </h4>
+    
+<p>¿Cuál es el contexto dentro de un bloque? Los mensajes dentro de un bloque tienen receptor implícito?</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Usuario</span>
+  <span class="k">def</span> <span class="nf">lazy_edad</span>
+    <span class="nb">proc</span> <span class="p">{</span> <span class="n">edad</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Usuario</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">19</span><span class="p">).</span><span class="nf">lazy_edad</span><span class="p">.</span><span class="nf">call</span>
+<span class="c1"># 19</span>
+</code></pre></div></div>
+
+<p>¿Y si ese bloque lo invoco dentro de otro usuario?</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Usuario</span>
+  <span class="k">def</span> <span class="nf">con_bloque</span><span class="p">(</span><span class="n">bloque</span><span class="p">)</span>
+    <span class="n">bloque</span><span class="p">.</span><span class="nf">call</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">mayor</span> <span class="o">=</span> <span class="no">Usuario</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">19</span><span class="p">)</span>
+<span class="n">menor</span> <span class="o">=</span> <span class="no">Usuario</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">menor</span><span class="p">.</span><span class="nf">con_bloque</span><span class="p">(</span><span class="n">mayor</span><span class="p">.</span><span class="nf">lazy_edad</span><span class="p">)</span>
+<span class="c1"># 19</span>
+</code></pre></div></div>
+
+<p>El contexto implícito de un bloque es el mismo que el que existía al momento de ser creado.
+Si necesito que el bloque mande mensajes a otro usuario, voy a tener que pasarlo por parámetro:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Usuario</span>
+  <span class="k">def</span> <span class="nf">edad_de</span>
+    <span class="nb">proc</span> <span class="p">{</span> <span class="o">|</span><span class="n">u</span><span class="o">|</span> <span class="n">u</span><span class="p">.</span><span class="nf">edad</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Usuario</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">19</span><span class="p">).</span><span class="nf">edad_de</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="no">Usuario</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+<span class="c1"># 15</span>
+</code></pre></div></div>
+      <h4 id="cambiar-el-contexto">
+        
+        
+          <a href="#cambiar-el-contexto"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Cambiar el contexto
+        
+        
+      </h4>
+    
+<p>Si pudiera cambiar el receptor default de los bloques, podría evitar pasar por parámetros el destino de mis mensajes!</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Usuario</span>
+  <span class="k">def</span> <span class="nf">edad_de</span>
+    <span class="nb">proc</span> <span class="p">{</span> <span class="n">edad</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">bloque</span> <span class="o">=</span> <span class="n">menor</span><span class="p">.</span><span class="nf">edad_de</span>
+<span class="n">mayor</span><span class="p">.</span><span class="nf">instance_eval</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bloque</span><span class="p">)</span>
+<span class="c1"># 19</span>
+<span class="n">menor</span><span class="p">.</span><span class="nf">instance_eval</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bloque</span><span class="p">)</span>
+<span class="c1"># 15</span>
+</code></pre></div></div>
+      <h5 id="instance_eval-vs-instance_exec">
+        
+        
+          <a href="#instance_eval-vs-instance_exec"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> instance_eval vs instance_exec:
+        
+        
+      </h5>
+    
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">instance_eval</code>: cambiar el contexto de un bloque sin parámetros</li>
+  <li><code class="language-plaintext highlighter-rouge">instance_exec</code>: cambiar el contexto pudiendo pasar parámetros al bloque</li>
+</ul>
+      <h5 id="instance_eval-vs-class_eval-vs-module_eval">
+        
+        
+          <a href="#instance_eval-vs-class_eval-vs-module_eval"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> instance_eval vs class_eval vs module_eval:
+        
+        
+      </h5>
+    
+<p>Cuando creamos un método dentro del bloque usando <code class="language-plaintext highlighter-rouge">def</code>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">instance_eval</code>: lo define en la singleton class del objeto</li>
+  <li><code class="language-plaintext highlighter-rouge">module_eval</code>, <code class="language-plaintext highlighter-rouge">class_eval</code>: lo agrega como parte de los instance methods de la clase o el modulo.</li>
+</ul>
+      <h4 id="ejercicio-con-el-age">
+        
+        
+          <a href="#ejercicio-con-el-age"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Ejercicio con el Age
+        
+        
+      </h4>
+    
+      <h5 id="bloques-sin-parámetros">
+        
+        
+          <a href="#bloques-sin-parámetros"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Bloques sin parámetros
+        
+        
+      </h5>
+    
+
+<p>Usando el código del Peloton, definamos estrategias con bloques sin pasarle ningún parámetro.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">cobarde</span><span class="p">(</span><span class="n">integrantes</span><span class="p">)</span>
+ <span class="n">new</span><span class="p">(</span><span class="n">integrantes</span><span class="p">)</span> <span class="p">{</span> <span class="n">retirate</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">descansador</span><span class="p">(</span><span class="n">integrantes</span><span class="p">)</span>
+ <span class="n">new</span><span class="p">(</span><span class="n">integrantes</span><span class="p">)</span> <span class="p">{</span> <span class="n">descansar</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">lastimado</span>
+ <span class="nb">instance_eval</span><span class="p">(</span><span class="o">&amp;</span><span class="n">estrategia</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div></div>
+      <h5 id="definir-nuevos-métodos">
+        
+        
+          <a href="#definir-nuevos-métodos"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Definir nuevos métodos
+        
+        
+      </h5>
+    
+
+<p>Ya tenemos dos factory methods para construir distintos tipos de Peloton: descansador y cobarde. Queremos tener una forma de definir dinámicamente métodos similares con distintas estrategias. Uso:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="no">Peloton</span><span class="p">.</span><span class="nf">definir</span> <span class="ss">:descansador_cobarde</span> <span class="k">do</span> 
+          <span class="n">descansar</span>
+          <span class="n">retirate</span>
+ <span class="k">end</span>
+</code></pre></div></div>
+
+<p>Tiene que definir un método de clase en Peloton:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">un_peloton</span> <span class="o">=</span> <span class="no">Peloton</span><span class="p">.</span><span class="nf">descansador_cobarde</span> <span class="n">integrantes</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">definir</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">estrategia</span><span class="p">)</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">define_singleton_method</span> <span class="n">nombre</span> <span class="k">do</span> <span class="o">|</span><span class="n">integrantes</span><span class="o">|</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">integrantes</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">estrategia</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+</code></pre></div></div>
+
+<p>En este caso self es la clase Peloton, por lo que define_singleton_method va a definir un método en la singleton class de Peloton(#Peloton).</p>
+      <h3 id="mensajes-dinámicos-method_missing">
+        
+        
+          <a href="#mensajes-dinámicos-method_missing"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Mensajes dinámicos: method_missing
+        
+        
+      </h3>
+    
+<p>Por un momento recordemos el patrón decorator. Queremos construir un decorator que retorne retorne “Anon” para los nombres de las personas pero que siga pudiendo acceder al resto de su comportamiento.</p>
+
+<p>La forma clásica de solucionar este problema es redefinir todos los mensajes que entiende la persona en el objeto decorador.
+Aquellos que tienen que mantener la lógica del objeto de origen, solo se pasa el mensaje hacia él. En los mensajes que deben cambiar de comportamiento se agrega la nueva lógica.</p>
+
+<p>Sin embargo, ésta lógica repite mucho código y es muy fragil (si la persona modifica los mensajes que entiende, el decorador debe ser adaptado también).</p>
+
+<p>Si pudiéramos capturar todos los mensajes que se envían a un objeto podríamos generalizar esa lógica sin repetir código.
+Ruby (y otros lenguajes) nos permite hacer esto mediante el mensaje “method_missing”.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Persona</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:nombre</span><span class="p">,</span> <span class="ss">:edad</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">edad</span><span class="p">)</span>
+    <span class="vi">@nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+    <span class="vi">@edad</span> <span class="o">=</span> <span class="n">edad</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Anonimo</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">persona</span><span class="p">)</span>
+    <span class="vi">@persona</span> <span class="o">=</span> <span class="n">persona</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">method_missing</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="vi">@persona</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">nombre</span>
+    <span class="s2">"Anon"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="nb">p</span> <span class="o">=</span> <span class="no">Persona</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Pablo"</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="nb">p</span><span class="p">.</span><span class="nf">nombre</span>
+<span class="c1"># Pablo</span>
+<span class="n">ap</span> <span class="o">=</span> <span class="no">Anonimo</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">p</span><span class="p">)</span>
+<span class="n">ap</span><span class="p">.</span><span class="nf">nombre</span>
+<span class="c1"># Anon</span>
+<span class="n">ap</span><span class="p">.</span><span class="nf">edad</span>
+<span class="c1"># 32</span>
+</code></pre></div></div>
+      <h4 id="ejercicio-con-el-age-1">
+        
+        
+          <a href="#ejercicio-con-el-age-1"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Ejercicio con el Age
+        
+        
+      </h4>
+    
+<p>Ahora quiero poder tener estos métodos pero usando una convención.</p>
+
+<p>Quiero que la clase Peloton entienda los mensajes con la siguiente forma: <code class="language-plaintext highlighter-rouge">estrategia_&lt;nombre de mensaje&gt;</code>. Al enviarlo, va a retornar un pelotón que se enviará a si mismo el mensaje <code class="language-plaintext highlighter-rouge">&lt;nombre de mensaje&gt;</code> al ser lastimado.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">method_missing</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+ <span class="k">if</span> <span class="p">(</span><span class="n">symbol</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s1">'estrategia_'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">args</span><span class="p">.</span><span class="nf">length</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># mejorar error si lo invoco con diferente cantidad de parámetros</span>
+   <span class="n">message</span> <span class="o">=</span> <span class="n">symbol</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="s1">'estrategia_'</span><span class="p">,</span> <span class="s1">''</span><span class="p">).</span><span class="nf">to_sym</span>
+   <span class="no">Peloton</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">{</span>
+    <span class="nb">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+   <span class="p">}</span>
+ <span class="k">else</span>
+   <span class="k">super</span>
+ <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Redefinir method_missing tiene un efecto no deseado, Peloton ahora entiende mensajes pero respond_to? de los mismos retorna false.
+Para mitigar este problema, el contrato cuando se redefine method_missing es que hay que redefinir respond_to_missing?</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">respond_to_missing?</span><span class="p">(</span><span class="n">sym</span><span class="p">,</span> <span class="n">priv</span> <span class="o">=</span> <span class="kp">false</span><span class="p">)</span>
+    <span class="n">sym</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">start_with?</span><span class="p">(</span><span class="s1">'estrategia_'</span><span class="p">)</span>
+  <span class="k">end</span>
+</code></pre></div></div>
+      <h2 id="anexo">
+        
+        
+          <a href="#anexo"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Anexo
+        
+        
+      </h2>
+    
+<p>Para definir constantes en ruby, se puede usar Class»const_set</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Guerrero</span>
+
+<span class="k">end</span>
+
+<span class="no">Object</span><span class="p">.</span><span class="nf">const_set</span> <span class="ss">:Atila</span><span class="p">,</span> <span class="no">Guerrero</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="no">Atila</span><span class="p">.</span><span class="nf">atacar</span><span class="p">(</span><span class="n">otro</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Sólo las clases pueden definir constantes y solo viven en el scope de la clase que la definió.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Bla</span>
+  <span class="k">def</span> <span class="nf">m</span>
+    <span class="no">A</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Bla</span><span class="p">.</span><span class="nf">const_set</span> <span class="ss">:A</span><span class="p">,</span> <span class="s2">"Bla::A"</span>
+<span class="no">Object</span><span class="p">.</span><span class="nf">const_set</span> <span class="ss">:A</span><span class="p">,</span> <span class="s2">"Object::A"</span>
+
+<span class="n">bla</span> <span class="o">=</span> <span class="no">Bla</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">bla</span><span class="p">.</span><span class="nf">m</span> <span class="c1"># "Bla::A"</span>
+<span class="no">A</span> <span class="c1"># "Object::A"</span>
+
+<span class="k">class</span> <span class="nc">Bla</span>
+  <span class="no">A</span> <span class="c1"># "Bla::A"</span>
+<span class="k">end</span>
+
+<span class="no">Bla</span><span class="p">.</span><span class="nf">class_eval</span> <span class="k">do</span>
+  <span class="no">A</span> <span class="c1"># "Object::A"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>También existe el método const_missing, que al igual que const_set, lo entienden sólo las clases. Cumple la misma función que method_missing, pero para cuando no se encuentra una constante.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Bla</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">const_missing</span> <span class="n">const</span>
+    <span class="s2">"</span><span class="si">#{</span><span class="n">const</span><span class="si">}</span><span class="s2"> no encontrada"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Bla</span><span class="o">::</span><span class="no">T</span> <span class="c1"># "T no encontrada"</span>
+</code></pre></div></div>
+      <h2 id="anexo-2-method_added">
+        
+        
+          <a href="#anexo-2-method_added"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Anexo 2: method_added
+        
+        
+      </h2>
+    
+
+<p>Ruby provee un mecanismo para “avisar” cuando se agrega un método en una clase:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">method_added</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span>
+    <span class="nb">puts</span> <span class="s2">"Se agregó el método </span><span class="si">#{</span><span class="n">method_name</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">A</span>
+  <span class="k">def</span> <span class="nf">un_metodo</span>
+    <span class="c1"># ...  </span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="c1"># 'Se agregó el método un_metodo'</span>
+</code></pre></div></div>
+
+<p>También se puede saber si se agregó un singleton method:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span>
+  <span class="k">def</span> <span class="nf">singleton_method_added</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="nb">puts</span> <span class="s2">"Singleton added </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="no">A</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="k">def</span> <span class="nc">a</span><span class="o">.</span><span class="nf">m</span>
+  <span class="nb">puts</span> <span class="s1">'Soy un a'</span>
+<span class="k">end</span>
+<span class="c1"># 'Singleton added m'</span>
+</code></pre></div></div>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>

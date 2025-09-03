@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_lenses_bonus/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase Bonus TADP 1C2020</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="lenses-en-haskell-y-scala">
+        
+        
+          <a href="#lenses-en-haskell-y-scala"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Lenses en Haskell y Scala
+        
+        
+      </h1>
+    
+      <h2 id="inmutabilidad">
+        
+        
+          <a href="#inmutabilidad"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Inmutabilidad
+        
+        
+      </h2>
+    
+
+<p>Uno de los rasgos más distintivos de la programación funcional es la inmutabilidad, aunque bien existen muchos lenguajes funcionales mutables (Clojure por ejemplo). La inmutabilidad está buena por varias razones:</p>
+
+<ul>
+  <li>Código más fácil sobre el cual razonar</li>
+  <li>Como no tengo estado compartido, no tengo problemas de concurrencia</li>
+  <li>Permite realizar optimizaciones reutilizando operaciones y otras más.</li>
+</ul>
+
+<p>Pero esta inmutabilidad es a su vez otro problema: los datos no cambian. Como los datos no cambian, para emular el efecto, tenemos que construir datos nuevos a partir de los que tenemos. Y esto puede rápidamente volverse un poco tedioso si tenemos que cambiar un valor en una estructura anidada (y ni hablar si esa estructura está en una lista).</p>
+      <h3 id="un-caso-práctico">
+        
+        
+          <a href="#un-caso-práctico"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Un caso práctico
+        
+        
+      </h3>
+    
+
+<p>Estamos en el mundo de terraria! Tenemos personajes, que tienen un nombre y obviamente llevan ropa. La ropa está conformada por la prenda superior, la prenda inferior, el calzado y un sombrero. Además, los personajes son re cancheros y usan gafas, ya sea unos lentes de sol para tirar facha o unos anteojos con aumento para ver mejor.
+Las gafas tienen un armazón de oro, plata o hierro; un par de lentes y una decoración que puede ser de rubí, zafiro o esmeralda (quién te conoce pokemon). Los lentes a su vez se componen por su graduación y por tener (un número positivo) el material con el que están hecho: vidrio, cristal o polímero.
+Queremos cambiar la graduación de los lentes de un personaje.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Personaje</span> <span class="o">=</span> <span class="kt">Personaje</span> <span class="p">{</span>
+  <span class="n">nombre</span> <span class="o">::</span> <span class="kt">String</span><span class="p">,</span>
+  <span class="n">gafas</span> <span class="o">::</span> <span class="kt">Gafas</span><span class="p">,</span>
+  <span class="n">ropa</span> <span class="o">::</span> <span class="kt">Ropa</span>
+<span class="p">}</span>
+
+<span class="kr">data</span> <span class="kt">Ropa</span> <span class="o">=</span> <span class="kt">Ropa</span> <span class="p">{</span>
+  <span class="n">superior</span> <span class="o">::</span> <span class="kt">String</span><span class="p">,</span>
+  <span class="n">inferior</span> <span class="o">::</span> <span class="kt">String</span><span class="p">,</span>
+  <span class="n">calzado</span> <span class="o">::</span> <span class="kt">String</span><span class="p">,</span>
+  <span class="n">sombrero</span> <span class="o">::</span> <span class="kt">String</span>
+<span class="p">}</span>
+
+<span class="kr">data</span> <span class="kt">Gafas</span> <span class="o">=</span> <span class="kt">Gafas</span> <span class="p">{</span>
+  <span class="n">armazon</span> <span class="o">::</span> <span class="kt">Armazon</span><span class="p">,</span>
+  <span class="n">lentes</span> <span class="o">::</span> <span class="kt">Lentes</span><span class="p">,</span>
+  <span class="n">decoracion</span> <span class="o">::</span> <span class="kt">Decoracion</span>
+<span class="p">}</span>
+
+<span class="kr">data</span> <span class="kt">Lentes</span> <span class="o">=</span> <span class="kt">Lente</span> <span class="p">{</span>
+  <span class="n">material</span> <span class="o">::</span> <span class="kt">Material</span><span class="p">,</span>
+  <span class="n">graduacion</span> <span class="o">::</span> <span class="kt">Double</span>
+<span class="p">}</span>
+
+<span class="kr">data</span> <span class="kt">Armazon</span> <span class="o">=</span> <span class="kt">Hierro</span> <span class="o">|</span> <span class="kt">Oro</span> <span class="o">|</span> <span class="kt">Plata</span>
+<span class="kr">data</span> <span class="kt">Material</span> <span class="o">=</span> <span class="kt">Cristal</span> <span class="o">|</span> <span class="kt">Vidrio</span> <span class="o">|</span> <span class="kt">Polimero</span>
+<span class="kr">data</span> <span class="kt">Decoracion</span> <span class="o">=</span> <span class="kt">Rubi</span> <span class="o">|</span> <span class="kt">Zafiro</span> <span class="o">|</span> <span class="kt">Esmeralda</span>
+</code></pre></div></div>
+
+<p>Tenemos que ir de lo más específico a lo más general: empezamos generando un setter inmutable para la graduación de los lentes, luego un setter para los lentes de las gafas y luego un setter de gafas para los personajes:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">setGraduacion</span> <span class="o">::</span> <span class="kt">Double</span> <span class="o">-&gt;</span> <span class="kt">Lentes</span> <span class="o">-&gt;</span> <span class="kt">Lentes</span>
+<span class="n">setGraduacion</span> <span class="n">graduacion</span> <span class="n">l</span> <span class="o">=</span> <span class="n">l</span> <span class="p">{</span> <span class="n">graduacion</span> <span class="o">=</span> <span class="n">graduacion</span> <span class="p">}</span>
+
+<span class="n">setLentes</span> <span class="o">::</span> <span class="kt">Lentes</span> <span class="o">-&gt;</span> <span class="kt">Gafas</span> <span class="o">-&gt;</span> <span class="kt">Gafas</span>
+<span class="n">setLentes</span> <span class="n">lentes</span> <span class="n">g</span> <span class="o">=</span> <span class="n">g</span> <span class="p">{</span> <span class="n">lentes</span> <span class="o">=</span> <span class="n">lentes</span> <span class="p">}</span>
+
+<span class="n">setGafas</span> <span class="o">::</span> <span class="kt">Gafas</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span>
+<span class="n">setGafas</span> <span class="n">gafas</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="p">{</span> <span class="n">gafas</span> <span class="o">=</span> <span class="n">gafas</span> <span class="p">}</span>
+
+<span class="n">setGraduacionGafas</span> <span class="o">::</span> <span class="kt">Double</span> <span class="o">-&gt;</span> <span class="kt">Gafas</span> <span class="o">-&gt;</span> <span class="kt">Gafas</span>
+<span class="n">setGraduacionGafas</span> <span class="n">graduacion</span> <span class="n">g</span> <span class="o">=</span> <span class="n">g</span> <span class="p">{</span> <span class="n">lentes</span> <span class="o">=</span> <span class="n">setGraduacion</span> <span class="n">graduacion</span> <span class="o">.</span> <span class="n">lentes</span> <span class="o">$</span> <span class="n">g</span> <span class="p">}</span>
+
+<span class="n">cambiarGraduacion</span> <span class="o">::</span> <span class="kt">Double</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span>
+<span class="n">cambiarGraduacion</span> <span class="n">graduacion</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="p">{</span> <span class="n">gafas</span> <span class="o">=</span> <span class="n">setGraduacionGafas</span> <span class="n">graduacion</span> <span class="o">.</span> <span class="n">gafas</span> <span class="o">$</span> <span class="n">p</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>Y… es bastante feo. Tuvimos que definir 5 funciones, las dos últimas con nombres bastantes verbosos y encima son un poco complejas de seguir. Y por cualquier otro campo que queramos actualizar, tenemos que hacer lo mismo.
+Y para agregar sal en la herida: si no se dieron cuenta, estamos repitiendo lógica. en <code class="language-plaintext highlighter-rouge">setGraduacionPersonaje</code> y <code class="language-plaintext highlighter-rouge">setGraduacionGafas</code> estamos haciendo algo muy similar en ambas:</p>
+
+<ul>
+  <li>Reciben el valor anidado a actualizar.</li>
+  <li>Reciben la estructura “base”.</li>
+  <li>Acceden un valor de la estructura.</li>
+  <li>Modifican este valor extraído.</li>
+  <li>Guardan el valor actualizado en la estructura original.</li>
+</ul>
+
+<p>Entonces, con un poco de sopa, decidimos abstraer esta lógica repetida en una función:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">type</span> <span class="kt">Setter</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span>
+
+<span class="n">setter</span> <span class="o">::</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Setter</span> <span class="n">a</span> <span class="n">b</span>
+<span class="n">setter</span> <span class="n">accessor</span> <span class="n">modify</span> <span class="n">update</span> <span class="n">a</span> <span class="o">=</span> <span class="n">modify</span> <span class="n">a</span> <span class="o">.</span> <span class="n">update</span> <span class="o">.</span> <span class="n">accessor</span> <span class="o">$</span> <span class="n">a</span>
+</code></pre></div></div>
+
+<p>Uff. Bueno, eso es duro de leer. Expliquemos por partes:</p>
+<ul>
+  <li>accessor es la función que extrae el estado anidado de la estructura.</li>
+  <li>update es la función que, sobre el valor que retorna modify, lo aplica sobre la estructura inicial.</li>
+  <li>modify es la función que actualiza el valor extraído.</li>
+  <li>a es la estructura original.</li>
+</ul>
+
+<p>Definamos <code class="language-plaintext highlighter-rouge">cambiarGraduacion</code> en base a esta nueva función:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">setGraduacion</span> <span class="o">::</span> <span class="kt">Setter</span> <span class="kt">Lentes</span> <span class="kt">Double</span>
+<span class="n">setGraduacion</span> <span class="o">=</span> 
+  <span class="n">setter</span> <span class="n">graduacion</span> <span class="p">(</span><span class="nf">\</span><span class="n">lentes</span> <span class="n">graduacion</span> <span class="o">-&gt;</span> <span class="n">lentes</span> <span class="p">{</span> <span class="n">graduacion</span> <span class="o">=</span> <span class="n">graduacion</span> <span class="p">})</span>
+
+
+<span class="n">setLentes</span> <span class="o">::</span> <span class="kt">Setter</span> <span class="kt">Gafas</span> <span class="kt">Lentes</span>
+<span class="n">setLentes</span> <span class="o">=</span> <span class="n">setter</span> <span class="n">lentes</span> <span class="p">(</span><span class="nf">\</span><span class="n">gafas</span> <span class="n">lentes</span> <span class="o">-&gt;</span> <span class="n">gafas</span> <span class="p">{</span> <span class="n">lentes</span> <span class="o">=</span> <span class="n">lentes</span> <span class="p">})</span>
+
+<span class="n">setGafas</span> <span class="o">::</span> <span class="kt">Setter</span> <span class="kt">Personaje</span> <span class="kt">Gafas</span>
+<span class="n">setGafas</span> <span class="o">=</span> <span class="n">setter</span> <span class="n">gafas</span> <span class="p">(</span><span class="nf">\</span><span class="n">personaje</span> <span class="n">gafas</span> <span class="o">-&gt;</span> <span class="n">personaje</span> <span class="p">{</span> <span class="n">gafas</span> <span class="o">=</span> <span class="n">gafas</span> <span class="p">})</span>
+
+<span class="n">setGraduacionPersonaje</span> <span class="o">::</span> <span class="kt">Setter</span> <span class="kt">Personaje</span> <span class="kt">Double</span>
+<span class="n">setGraduacionPersonaje</span> <span class="o">=</span> <span class="n">setGafas</span> <span class="o">.</span> <span class="n">setLentes</span> <span class="o">.</span> <span class="n">setGraduacion</span>
+
+<span class="n">cambiarGraduacion</span> <span class="o">::</span> <span class="kt">Double</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span>
+<span class="n">cambiarGraduacion</span> <span class="n">nuevaGraduacion</span> <span class="o">=</span> <span class="n">setGraduacionPersonaje</span> <span class="p">(</span><span class="n">const</span> <span class="n">nuevaGraduacion</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>donde</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">const</span> <span class="kr">_</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<p>Tenemos definidos los tres setters en cada nivel de la estructura. Para definir un setter desde una capa más arriba, podemos componer ambos setters. Reemplacemos las firmas por el type original de Setter:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">setGraduacion</span> <span class="o">::</span> <span class="p">(</span><span class="kt">Double</span> <span class="o">-&gt;</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Lentes</span> <span class="o">-&gt;</span> <span class="kt">Lentes</span>
+<span class="n">setLentes</span> <span class="o">::</span> <span class="p">(</span><span class="kt">Lentes</span> <span class="o">-&gt;</span> <span class="kt">Lentes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Gafas</span> <span class="o">-&gt;</span> <span class="kt">Gafas</span>
+<span class="n">setGafas</span> <span class="o">::</span> <span class="p">(</span><span class="kt">Gafas</span> <span class="o">-&gt;</span> <span class="kt">Gafas</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span>
+</code></pre></div></div>
+
+<p>El primer parámetro que recibe cambiarGraduacion es una función (Double -&gt; Double), que nos lo provee const (nuevoValor). Y por currificación, las firmas anteriores las podemos reescribir de la siguiente manera:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">setGraduacion</span> <span class="o">::</span> <span class="p">(</span><span class="kt">Double</span> <span class="o">-&gt;</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Lentes</span> <span class="o">-&gt;</span> <span class="kt">Lentes</span><span class="p">)</span>
+<span class="n">setLentes</span> <span class="o">::</span> <span class="p">(</span><span class="kt">Lentes</span> <span class="o">-&gt;</span> <span class="kt">Lentes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Gafas</span> <span class="o">-&gt;</span> <span class="kt">Gafas</span><span class="p">)</span>
+<span class="n">setGafas</span> <span class="o">::</span> <span class="p">(</span><span class="kt">Gafas</span> <span class="o">-&gt;</span> <span class="kt">Gafas</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Personaje</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Ahora es mucho más evidente por qué puedo componer estas funciones.</p>
+
+<p>Y podríamos terminar acá, regodearnos en la gloria de semejante descubrimiento, pero no inventamos nada, porque este concepto ya existe, conocido como <em>lenses</em>.</p>
+      <h2 id="lenses">
+        
+        
+          <a href="#lenses"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Lenses
+        
+        
+      </h2>
+    
+
+<p>No inventamos nada, este concepto es el de lenses. Existen varias bibliotecas de optics varios, pero nos vamos a centrar en la original: <a href="https://hackage.haskell.org/package/lens">lens</a>. El principal problema que solucionan las lenses es esto que acabamos de ver: setters anidados. En su mínima expresión, los lenses son getters y setters en funcional. El tipo de Lens se define de la siguiente manera:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">type</span> <span class="kt">Lens</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span> <span class="kt">Monad</span> <span class="n">m</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">m</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">m</span> <span class="n">a</span><span class="p">)</span> 
+</code></pre></div></div>
+
+<p>Este es un tipo simplificado, no es la definición original, no es Haskell válido</p>
+
+<p>Esto no es para nada trivial, y tampoco pretendemos que puedan escribir la definición de la función (ah, pero podríamos hacer un desafío de café con leche para esto). Es parecida a la firma de setter que armamos más arriba, pero es más genérica que nuestra definición. Para lo que nosotros queremos, podemos quedarnos con los mismos tipos que los que usamos para Setter:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">type</span> <span class="kt">Lens</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span>
+<span class="n">lens</span> <span class="o">::</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="c1">--ey, esto es una Lens!</span>
+<span class="n">lens</span> <span class="o">::</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Lens</span> <span class="n">a</span> <span class="n">b</span>
+</code></pre></div></div>
+      <h3 id="setters">
+        
+        
+          <a href="#setters"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Setters
+        
+        
+      </h3>
+    
+
+<p>Por última vez, definamos <code class="language-plaintext highlighter-rouge">cambiarGraduacion</code> con las funciones de la biblioteca:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cambiarGraduacion</span> <span class="o">::</span> <span class="kt">Double</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span>
+<span class="n">cambiarGraduacion</span> <span class="n">nuevaGraduacion</span> <span class="o">=</span> 
+  <span class="n">over</span> <span class="p">(</span><span class="n">gafas</span> <span class="o">.</span> <span class="n">lentes</span> <span class="o">.</span> <span class="n">graduacion</span><span class="p">)</span> <span class="p">(</span><span class="n">const</span> <span class="n">nuevaGraduacion</span><span class="p">)</span>
+
+<span class="n">over</span> <span class="o">::</span> <span class="kt">Lens</span> <span class="n">a</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span>
+<span class="n">over</span> <span class="n">unaLente</span> <span class="n">f</span> <span class="n">a</span> <span class="o">=</span> <span class="n">unaLente</span> <span class="n">f</span> <span class="n">a</span>
+</code></pre></div></div>
+
+<p>over recibe una Lens a b, un mapeo (b -&gt; b) y una estructura a, y aplica el mapeo sobre el valor b dentro de a. De hecho, este mapeo de pisar el valor original por uno nuevo es muy común, por lo que hay una función ya definida que hace esto mismo: <code class="language-plaintext highlighter-rouge">set</code></p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">set</span> <span class="o">::</span> <span class="kt">Lens</span> <span class="n">a</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span>
+
+<span class="n">cambiarGraduacion</span> <span class="o">::</span> <span class="kt">Double</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span> <span class="o">-&gt;</span> <span class="kt">Personaje</span>
+<span class="n">cambiarGraduacion</span> <span class="o">=</span> <span class="n">set</span> <span class="p">(</span><span class="n">gafas</span> <span class="o">.</span> <span class="n">lentes</span> <span class="o">.</span> <span class="n">graduacion</span><span class="p">)</span>
+</code></pre></div></div>
+      <h3 id="getters">
+        
+        
+          <a href="#getters"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Getters
+        
+        
+      </h3>
+    
+
+<p>Si bien en Haskell no tenemos el mismo problema con los getters, es un poco anti-intuitivo, teniendo que leer de derecha a izquierda el orden de anidamiento. Por ejemplo, para obtener la graduación de un personaje, deberíamos escribirlo así:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">graduacionPersonaje</span> <span class="o">::</span> <span class="kt">Personaje</span> <span class="o">-&gt;</span> <span class="kt">Double</span>
+<span class="n">graduacionPersonaje</span> <span class="o">=</span> <span class="n">graduacion</span> <span class="o">.</span> <span class="n">lentes</span> <span class="o">.</span> <span class="n">gafas</span>
+</code></pre></div></div>
+
+<p>Y bien podríamos acostumbrarnos, quedarnos con esto and call it a day. Pero lenses no hace eso. Como tenemos los lenses autogenerados, y se componen en el orden inverso, para obtener un valor de una Lens, existe la función view que hace esto mismo:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">view</span> <span class="o">::</span> <span class="kt">Lens</span> <span class="n">a</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span>
+
+<span class="n">graduacionPersonaje</span> <span class="o">::</span> <span class="kt">Personaje</span> <span class="o">-&gt;</span> <span class="kt">Double</span>
+<span class="n">graduacionPersonaje</span> <span class="o">=</span> <span class="n">view</span> <span class="p">(</span><span class="n">gafas</span> <span class="o">.</span> <span class="n">lentes</span> <span class="o">.</span> <span class="n">graduacion</span><span class="p">)</span>
+</code></pre></div></div>
+      <h2 id="lenses-en-scala">
+        
+        
+          <a href="#lenses-en-scala"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Lenses en Scala
+        
+        
+      </h2>
+    
+
+<p>Bien, volvamos un poco al mismo caso del ejemplo anterior de Terraria, solamente que ahora queremos migrarlo a Scala. veamos como quedan alguna de las funciones de setear las lentes o las graduaciones de las gafas.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Personaje</span><span class="o">(</span><span class="n">nombre</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">gafas</span><span class="k">:</span> <span class="kt">Gafas</span><span class="o">,</span> <span class="n">ropa</span><span class="k">:</span> <span class="kt">Ropa</span><span class="o">)</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Ropa</span><span class="o">(</span><span class="n">superior</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">inferior</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">calzado</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">sombrero</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Gafas</span><span class="o">(</span><span class="n">armazon</span><span class="k">:</span> <span class="kt">Armazon</span><span class="o">,</span> <span class="n">lentes</span><span class="k">:</span> <span class="kt">Lentes</span><span class="o">,</span> <span class="n">decoracion</span><span class="k">:</span> <span class="kt">Decoracion</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">setLentes</span><span class="o">(</span><span class="n">lente</span><span class="k">:</span> <span class="kt">Lentes</span><span class="o">)</span><span class="k">:</span> <span class="kt">Gafas</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">lentes</span><span class="k">=</span> <span class="n">lente</span><span class="o">)</span>
+  
+  <span class="k">def</span> <span class="nf">setGraduacionGafas</span><span class="o">(</span><span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span>
+    <span class="n">lentes</span><span class="k">=</span> <span class="nv">lentes</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span>
+      <span class="n">graduacion</span><span class="k">=</span> <span class="n">graduacion</span>
+    <span class="o">)</span>
+  <span class="o">)</span>
+<span class="o">}</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Lentes</span><span class="o">(</span><span class="n">material</span><span class="k">:</span> <span class="kt">Material</span><span class="o">,</span> <span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">setGraduacion</span><span class="o">(</span><span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span><span class="k">:</span> <span class="kt">Lentes</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">graduacion</span><span class="k">=</span> <span class="n">graduacion</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="k">trait</span> <span class="nc">Armazon</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Hierro</span> <span class="k">extends</span> <span class="nc">Armazon</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Oro</span> <span class="k">extends</span> <span class="nc">Armazon</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Plata</span> <span class="k">extends</span> <span class="nc">Armazon</span>
+
+<span class="k">trait</span> <span class="nc">Material</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Cristal</span> <span class="k">extends</span> <span class="nc">Material</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Vidrio</span> <span class="k">extends</span> <span class="nc">Material</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Polimero</span> <span class="k">extends</span> <span class="nc">Material</span>
+
+<span class="k">trait</span> <span class="nc">Decoracion</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Rubi</span> <span class="k">extends</span> <span class="nc">Decoracion</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Zafiro</span> <span class="k">extends</span> <span class="nc">Decoracion</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Esmeralda</span> <span class="k">extends</span> <span class="nc">Decoracion</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">setLentes</code> y <code class="language-plaintext highlighter-rouge">setGraduacion</code> por ejemplo no parecen nada del otro mundo solamente un copy que nos devolverá una nueva instancia de lentes o de gafas.</p>
+
+<p>Pero veamos que si empezamos a tener que definir funciones que cambien la graduación pero de las gafas, como por ejemplo</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">setGraduacionDeLasGafas</span><span class="o">(</span><span class="n">gafas</span><span class="k">:</span> <span class="kt">Gafas</span><span class="o">,</span><span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span><span class="k">:</span> <span class="kt">Gafas</span> <span class="o">=</span> <span class="nv">gafas</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span>
+    <span class="n">lentes</span><span class="k">=</span> <span class="nv">gafas</span><span class="o">.</span><span class="py">lentes</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span>
+      <span class="n">graduacion</span><span class="k">=</span> <span class="n">graduacion</span>
+    <span class="o">)</span>
+  <span class="o">)</span>
+</code></pre></div></div>
+
+<p>vemos que no es tan problemático, pero si empezamos a tener mayores niveles de anidamiento, como el de la siguiente función</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">setGraduacionDeLasGafasDeUnPersonaje</span><span class="o">(</span><span class="n">personaje</span><span class="k">:</span> <span class="kt">Personaje</span><span class="o">,</span><span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">=</span> <span class="nv">personaje</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span>
+    <span class="n">gafas</span><span class="k">=</span> <span class="nv">personaje</span><span class="o">.</span><span class="py">gafas</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span>
+      <span class="n">lentes</span><span class="k">=</span> <span class="nv">personaje</span><span class="o">.</span><span class="py">gafas</span><span class="o">.</span><span class="py">lentes</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span>
+        <span class="n">graduacion</span><span class="k">=</span> <span class="n">graduacion</span>
+      <span class="o">)</span>
+    <span class="o">)</span>
+  <span class="o">)</span>
+</code></pre></div></div>
+
+<p>empezamos a ver que se empieza a perder un poco la expresividad y la claridad de la sintaxis.</p>
+      <h3 id="lentes">
+        
+        
+          <a href="#lentes"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Lentes
+        
+        
+      </h3>
+    
+
+<p>Podemos introducir una primera intuición de lentes de la siguiente manera cumpliendo siempre que</p>
+
+<blockquote>
+  <p>Una lente es una referencia de primera clase a una subparte de <del>un data type</del> una case class</p>
+</blockquote>
+
+<p>Veamos de definir un poco a lo que necesitamos para definir mínimamente a un lens</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Lens</span><span class="o">[</span><span class="kt">O</span>, <span class="kt">V</span><span class="o">](</span>
+  <span class="n">get</span><span class="k">:</span> <span class="kt">O</span> <span class="o">=&gt;</span> <span class="n">V</span><span class="o">,</span>
+  <span class="n">set</span><span class="k">:</span> <span class="o">(</span><span class="kt">O</span><span class="o">,</span> <span class="kt">V</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">O</span>
+<span class="o">)</span>
+</code></pre></div></div>
+
+<p>ok, esto parecería la mínima expresión a la que podríamos llegar, entonces veamos de aplicarlo sobre nuestras estructuras para cambiar u obtener valores</p>
+
+<p>De tener Lentes como</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Lentes</span><span class="o">(</span><span class="n">material</span><span class="k">:</span> <span class="kt">Material</span><span class="o">,</span> <span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">setGraduacion</span><span class="o">(</span><span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span><span class="k">:</span> <span class="kt">Lentes</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">graduacion</span><span class="k">=</span> <span class="n">graduacion</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>vamos a crear Lenses para la graduación de un</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">trait</span> <span class="nc">TerrariaLenses</span> <span class="o">{</span>
+  <span class="k">protected</span> <span class="k">val</span> <span class="nv">graduacionLens</span> <span class="k">=</span> <span class="nc">Lens</span><span class="o">[</span><span class="kt">Lentes</span>, <span class="kt">Double</span><span class="o">](</span>
+    <span class="n">get</span> <span class="k">=</span> <span class="nv">_</span><span class="o">.</span><span class="py">graduacion</span><span class="o">,</span>
+    <span class="n">set</span> <span class="k">=</span> <span class="o">(</span><span class="n">o</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">o</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">graduacion</span> <span class="k">=</span> <span class="n">v</span><span class="o">)</span>
+  <span class="o">)</span>
+  
+  <span class="k">protected</span> <span class="k">val</span> <span class="nv">lentesGafasLens</span> <span class="k">=</span> <span class="nc">Lens</span><span class="o">[</span><span class="kt">Gafas</span>, <span class="kt">Lentes</span><span class="o">](</span>
+    <span class="n">get</span> <span class="k">=</span> <span class="nv">_</span><span class="o">.</span><span class="py">lentes</span><span class="o">,</span>
+    <span class="n">set</span> <span class="k">=</span> <span class="o">(</span><span class="n">o</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">o</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">lentes</span> <span class="k">=</span> <span class="n">v</span><span class="o">)</span>
+  <span class="o">)}</span>
+</code></pre></div></div>
+<p>ahora al utilizarlo:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">val</span> <span class="nv">l</span> <span class="k">=</span> <span class="nc">Lentes</span><span class="o">(</span><span class="nc">Cristal</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">)</span>
+ <span class="k">val</span> <span class="nv">graduacion</span> <span class="k">=</span> <span class="nv">graduacionLens</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="n">l</span><span class="o">)</span>
+ <span class="k">val</span> <span class="nv">new_l</span><span class="k">:</span> <span class="kt">Lentes</span><span class="o">=</span> <span class="nv">graduacionLens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">l</span><span class="o">,</span> <span class="mi">3</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>vemos que tenemos nuestro primer lens, no parece nada novedoso o superador a lo que teniamos con las case clases. Veamos el ejemplo de ajustar la graduación de las lentes de una gafa</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">protected</span> <span class="k">val</span> <span class="nv">graduacionGafasLens</span> <span class="k">=</span> <span class="nc">Lens</span><span class="o">[</span><span class="kt">Gafas</span>, <span class="kt">Double</span><span class="o">](</span>
+    <span class="n">get</span> <span class="k">=</span> <span class="nv">_</span><span class="o">.</span><span class="py">lentes</span><span class="o">.</span><span class="py">graduacion</span><span class="o">,</span>
+    <span class="n">set</span> <span class="k">=</span> <span class="o">(</span><span class="n">o</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">o</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">lentes</span> <span class="k">=</span> <span class="nv">o</span><span class="o">.</span><span class="py">lentes</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">graduacion</span><span class="k">=</span> <span class="n">v</span><span class="o">))</span>
+  <span class="o">)</span>
+</code></pre></div></div>
+
+<p>D’oh!… Otra vez el tema de los copy que empiezo a tener anidados… pero a no desesperarse, podemos tratar de usar algo como composición entre lenses y tratar de generalizarlo. Veamos..</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">Lens</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">compose</span><span class="o">[</span><span class="kt">Outer</span>, <span class="kt">Inner</span>, <span class="kt">Value</span><span class="o">](</span>
+<span class="n">outer</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">Outer</span>, <span class="kt">Inner</span><span class="o">],</span>
+<span class="n">inner</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">Inner</span>, <span class="kt">Value</span><span class="o">])</span> <span class="k">=</span> <span class="nc">Lens</span><span class="o">[</span><span class="kt">Outer</span>, <span class="kt">Value</span><span class="o">](</span>
+    <span class="n">get</span> <span class="k">=</span> <span class="nv">outer</span><span class="o">.</span><span class="py">get</span> <span class="n">andThen</span> <span class="nv">inner</span><span class="o">.</span><span class="py">get</span><span class="o">,</span>
+    <span class="n">set</span> <span class="k">=</span> <span class="o">(</span><span class="n">obj</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">outer</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">obj</span><span class="o">,</span> <span class="nv">inner</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="nv">outer</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="n">obj</span><span class="o">),</span> <span class="n">value</span><span class="o">))</span>
+  <span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>Bien una vez que tenemos la composicion podemos reutilizar las otras dos lenses que teniamos antes en realidad, <code class="language-plaintext highlighter-rouge">graduacionLens</code> y <code class="language-plaintext highlighter-rouge">lentesGafasLens</code></p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">protected</span> <span class="k">val</span> <span class="nv">graduacionGafasLens</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">Gafas</span>, <span class="kt">Double</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">Lens</span><span class="o">.</span><span class="py">compose</span><span class="o">(</span><span class="n">lentesGafasLens</span><span class="o">,</span> <span class="n">graduacionLens</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Genial! ahora podemos componer medianamente facil y podemos imaginar a estos lenses como una especie de instancia de una funcion.</p>
+
+<p>Entonces podemos decir que de alguna manera..</p>
+
+<blockquote>
+  <p>Lens[ A , B ]  ~  A =&gt; B  (aclaracion: no es una afirmación 100% exacta)</p>
+</blockquote>
+
+<p>y si tenemos otro lens</p>
+
+<blockquote>
+  <p>Lens[ B , C ]  ~  B =&gt; C</p>
+</blockquote>
+
+<p>si estos se componen tenemos algo como</p>
+
+<blockquote>
+  <p>Lens[A, C] ~ A=&gt;C.</p>
+</blockquote>
+
+<p>Veamos que existen otras leyes que se cumplen además de la que vimos de transitividad.</p>
+      <h3 id="propiedades-de-los-lenses">
+        
+        
+          <a href="#propiedades-de-los-lenses"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Propiedades de los Lenses
+        
+        
+      </h3>
+    
+      <h4 id="identidad">
+        
+        
+          <a href="#identidad"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Identidad
+        
+        
+      </h4>
+    
+
+<p>Si hacemos un get y después seteamos el valor del get, el objeto que da igual (si lo se.. algo obvio)</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">identity</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">](</span><span class="n">lens</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">],</span> <span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="nv">lens</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="n">s</span><span class="o">))</span> <span class="o">==</span> <span class="n">s</span>
+</code></pre></div></div>
+      <h4 id="retención">
+        
+        
+          <a href="#retención"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Retención
+        
+        
+      </h4>
+    
+
+<p>Esto es un poco el caso contrario, si a un tipo S le seteamos el valor a, y después sobre esto hacemos un get debería retener el valor y devolvernos a</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">retention</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">](</span><span class="n">lens</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">],</span> <span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">,</span> <span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="n">a</span><span class="o">))</span> <span class="o">==</span> <span class="n">a</span>
+</code></pre></div></div>
+      <h4 id="doble-set">
+        
+        
+          <a href="#doble-set"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Doble set
+        
+        
+      </h4>
+    
+
+<p>si se setean dos veces un valor y después se hace un get, se obtiene el valor anterior</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">doubleSet</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">](</span><span class="n">lens</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">],</span> <span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">,</span> <span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="n">a</span><span class="o">),</span> <span class="n">b</span><span class="o">))</span> <span class="o">==</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<p>En suma nuestra mini implementación (algo naive) de lenses en Scala queda como</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Lens</span><span class="o">[</span><span class="kt">O</span>, <span class="kt">V</span><span class="o">](</span>
+                       <span class="n">get</span><span class="k">:</span> <span class="kt">O</span> <span class="o">=&gt;</span> <span class="n">V</span><span class="o">,</span>
+                       <span class="n">set</span><span class="k">:</span> <span class="o">(</span><span class="kt">O</span><span class="o">,</span> <span class="kt">V</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">O</span>
+                     <span class="o">)</span>
+<span class="k">object</span> <span class="nc">Lens</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">compose</span><span class="o">[</span><span class="kt">Outer</span>, <span class="kt">Inner</span>, <span class="kt">Value</span><span class="o">](</span>
+            <span class="n">outer</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">Outer</span>, <span class="kt">Inner</span><span class="o">],</span>
+            <span class="n">inner</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">Inner</span>, <span class="kt">Value</span><span class="o">]</span>
+  <span class="o">)</span> <span class="k">=</span> <span class="nc">Lens</span><span class="o">[</span><span class="kt">Outer</span>, <span class="kt">Value</span><span class="o">](</span>
+    <span class="n">get</span> <span class="k">=</span> <span class="nv">outer</span><span class="o">.</span><span class="py">get</span> <span class="n">andThen</span> <span class="nv">inner</span><span class="o">.</span><span class="py">get</span><span class="o">,</span>
+    <span class="n">set</span> <span class="k">=</span> <span class="o">(</span><span class="n">obj</span><span class="o">,</span> <span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">outer</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">obj</span><span class="o">,</span> <span class="nv">inner</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="nv">outer</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="n">obj</span><span class="o">),</span> <span class="n">value</span><span class="o">))</span>
+  <span class="o">)</span>
+
+  <span class="k">def</span> <span class="nf">identity</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">](</span><span class="n">lens</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">],</span> <span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="nv">lens</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="n">s</span><span class="o">))</span> <span class="o">==</span> <span class="n">s</span>
+
+  <span class="k">def</span> <span class="nf">retention</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">](</span><span class="n">lens</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">],</span> <span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">,</span> <span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="n">a</span><span class="o">))</span> <span class="o">==</span> <span class="n">a</span>
+
+  <span class="k">def</span> <span class="nf">doubleSet</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">](</span><span class="n">lens</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">],</span> <span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">,</span> <span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="n">a</span><span class="o">),</span> <span class="n">b</span><span class="o">))</span> <span class="o">==</span> <span class="n">b</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Los lenses son estructuras referenciales del paradigma funcional, pero no son la única estructura, existen una estructura generalizada de estos que se llaman optics. Y ahora estaremos utilizando una librería que ya los implementa de manera más seria llamada Monocle</p>
+      <h3 id="monocle-en-scala">
+        
+        
+          <a href="#monocle-en-scala"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Monocle en Scala
+        
+        
+      </h3>
+    
+
+<p>Tal como lo define la librería monocle, los optics son abstracciones y estructuras que nos permiten trabajar con objetos inmutables:</p>
+
+<blockquote>
+  <p>Optics are a group of purely functional abstractions to manipulate (get, set, modify, …) immutable objects.</p>
+</blockquote>
+
+<p>Con monocle, podemos tambien definir lenses de manera bastante similar a nuestra intuicion</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">import</span> <span class="nn">monocle.Lens</span>
+  <span class="k">val</span> <span class="nv">gafas</span> <span class="k">=</span> <span class="nc">Lens</span><span class="o">[</span><span class="kt">Personaje</span>, <span class="kt">Gafas</span><span class="o">](</span><span class="nv">_</span><span class="o">.</span><span class="py">gafas</span><span class="o">)(</span><span class="n">g</span> <span class="k">=&gt;</span> <span class="n">p</span> <span class="k">=&gt;</span> <span class="nv">p</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">gafas</span> <span class="k">=</span> <span class="n">g</span><span class="o">))</span>
+</code></pre></div></div>
+
+<p>Aunque tambien podemos utilizar una macro <em>GenLens</em> para no tener que repetir a cada rato codigo que es bastante similar por cada lens que tenemos:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">monocle.Lens</span>
+<span class="k">import</span> <span class="nn">monocle.macros.GenLens</span>
+<span class="k">val</span> <span class="nv">gafas</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">Personaje</span>, <span class="kt">Gafas</span><span class="o">]</span> <span class="k">=</span> <span class="nc">GenLens</span><span class="o">[</span><span class="kt">Personaje</span><span class="o">]</span> <span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">gafas</span><span class="o">)</span>
+</code></pre></div></div>
+<p>con lo cual podemos definir los lenses de una manera bastante simple ahora….</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">TerrariaLenses</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nv">gafas</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">Personaje</span>, <span class="kt">Gafas</span><span class="o">]</span> <span class="k">=</span> <span class="nc">GenLens</span><span class="o">[</span><span class="kt">Personaje</span><span class="o">]</span> <span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">gafas</span><span class="o">)</span>
+  <span class="k">val</span> <span class="nv">lentes</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">Gafas</span>, <span class="kt">Lentes</span><span class="o">]</span> <span class="k">=</span> <span class="nc">GenLens</span><span class="o">[</span><span class="kt">Gafas</span><span class="o">]</span> <span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">lentes</span><span class="o">)</span>
+  <span class="k">val</span> <span class="nv">graduacion</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">Lentes</span>, <span class="kt">Double</span><span class="o">]</span> <span class="k">=</span> <span class="nc">GenLens</span><span class="o">[</span><span class="kt">Lentes</span><span class="o">]</span> <span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">graduacion</span><span class="o">)</span>
+  <span class="k">val</span> <span class="nv">material</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">Lentes</span>, <span class="kt">Material</span><span class="o">]</span> <span class="k">=</span> <span class="nc">GenLens</span><span class="o">[</span><span class="kt">Lentes</span><span class="o">]</span> <span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">material</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Otra cosa que podemos agregar ahora a los lenses es el de primero hacer get y después set con modify</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">readingLens</span><span class="k">:</span> <span class="kt">Lentes</span> <span class="o">=</span> <span class="nc">Lentes</span><span class="o">(</span><span class="nc">Cristal</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="nv">adjustedLens</span> <span class="k">=</span> <span class="nv">graduacion</span><span class="o">.</span><span class="py">modify</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mf">1.1</span><span class="o">)(</span><span class="n">readingLens</span><span class="o">)</span> <span class="k">#</span> <span class="nc">Lentes</span><span class="o">(</span><span class="nc">Cristal</span><span class="o">,</span> <span class="mf">3.1</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>con lo cual ahora podemos incluso usar el composeLens si queremos acceder de manera anidada a las estructuras internas de un personaje</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">readingLens</span><span class="k">:</span> <span class="kt">Lentes</span> <span class="o">=</span> <span class="nc">Lentes</span><span class="o">(</span><span class="nc">Cristal</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">gafasViejo</span> <span class="k">=</span> <span class="nc">Gafas</span><span class="o">(</span><span class="nc">Plata</span><span class="o">,</span> <span class="n">readingLens</span><span class="o">,</span> <span class="nc">Rubi</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">cloud</span> <span class="k">=</span> <span class="nc">Personaje</span><span class="o">(</span><span class="s">"Cloud"</span><span class="o">,</span> <span class="n">gafasViejo</span><span class="o">,</span> <span class="nc">Ropa</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="s">""</span><span class="o">))</span>
+
+<span class="o">(</span><span class="n">gafas</span> <span class="n">composeLens</span> <span class="n">lentes</span><span class="o">).</span><span class="py">get</span><span class="o">(</span><span class="n">cloud</span><span class="o">)</span> 
+
+<span class="o">(</span><span class="n">gafas</span> <span class="n">composeLens</span> <span class="n">lentes</span> <span class="n">composeLens</span> <span class="n">graduacion</span><span class="o">).</span><span class="py">get</span><span class="o">(</span><span class="n">cloud</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>y si quiero modificar a los lentes de nuestro personaje y devolverlo podemos hacer algo como:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">cloud</span> <span class="k">=</span> <span class="nc">Personaje</span><span class="o">(</span><span class="s">"Cloud"</span><span class="o">,</span> <span class="n">gafasViejo</span><span class="o">,</span> <span class="nc">Ropa</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="s">""</span><span class="o">))</span>
+  <span class="k">=&gt;</span> <span class="nc">Personaje</span><span class="o">(</span><span class="nc">Cloud</span><span class="o">,</span><span class="nc">Gafas</span><span class="o">(</span><span class="nc">Plata</span><span class="o">,</span><span class="nc">Lentes</span><span class="o">(</span><span class="nc">Cristal</span><span class="o">,</span><span class="mf">2.0</span><span class="o">),</span><span class="nc">Rubi</span><span class="o">),</span><span class="nc">Ropa</span><span class="o">(,,,))</span>
+
+<span class="o">(</span><span class="n">gafas</span> <span class="n">composeLens</span> <span class="n">lentes</span> <span class="n">composeLens</span> <span class="n">graduacion</span><span class="o">).</span><span class="py">modify</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mf">1.1</span><span class="o">)(</span><span class="n">cloud</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Personaje</span><span class="o">(</span><span class="nc">Cloud</span><span class="o">,</span><span class="nc">Gafas</span><span class="o">(</span><span class="nc">Plata</span><span class="o">,</span><span class="nc">Lentes</span><span class="o">(</span><span class="nc">Cristal</span><span class="o">,</span><span class="mf">3.1</span><span class="o">),</span><span class="nc">Rubi</span><span class="o">),</span><span class="nc">Ropa</span><span class="o">(,,,))</span>
+</code></pre></div></div>
+
+<p>incluso se puede mejorar esto con la sintaxis que tiene monocle de lens</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">monocle.macros.syntax.lens._</span>
+
+<span class="nv">cloud</span><span class="o">.</span><span class="py">lens</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">gafas</span><span class="o">.</span><span class="py">lentes</span><span class="o">.</span><span class="py">graduacion</span><span class="o">).</span><span class="py">modify</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mf">1.1</span><span class="o">)</span>  <span class="k">=&gt;</span> <span class="nc">Personaje</span><span class="o">(</span><span class="nc">Cloud</span><span class="o">,</span><span class="nc">Gafas</span><span class="o">(</span><span class="nc">Plata</span><span class="o">,</span><span class="nc">Lentes</span><span class="o">(</span><span class="nc">Cristal</span><span class="o">,</span><span class="mf">3.1</span><span class="o">),</span><span class="nc">Rubi</span><span class="o">),</span><span class="nc">Ropa</span><span class="o">(,,,))</span>
+</code></pre></div></div>
+
+<p>Para la generacion incluso podemos ir un poco mas alla de lo que teniamos con GenLens… ahora podemos agregar la annotation <code class="language-plaintext highlighter-rouge">@Lenses</code> y nos generara los lenses para cada uno de los atributos de clase, entonces nuestro ejemplo seria ahora:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Lenses</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Lentes</span><span class="o">(</span><span class="n">material</span><span class="k">:</span> <span class="kt">Material</span><span class="o">,</span> <span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">setGraduacion</span><span class="o">(</span><span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">graduacion</span><span class="k">=</span> <span class="n">graduacion</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="nd">@Lenses</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Gafas</span><span class="o">(</span><span class="n">armazon</span><span class="k">:</span> <span class="kt">Armazon</span><span class="o">,</span> <span class="n">lentes</span><span class="k">:</span> <span class="kt">Lentes</span><span class="o">,</span> <span class="n">decoracion</span><span class="k">:</span> <span class="kt">Decoracion</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">setLentes</span><span class="o">(</span><span class="n">lente</span><span class="k">:</span> <span class="kt">Lentes</span><span class="o">)</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">lentes</span><span class="k">=</span> <span class="n">lente</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">setGraduacionGafas</span><span class="o">(</span><span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span>
+    <span class="n">lentes</span><span class="k">=</span> <span class="nv">lentes</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span>
+      <span class="n">graduacion</span><span class="k">=</span> <span class="n">graduacion</span>
+    <span class="o">)</span>
+  <span class="o">)</span>
+<span class="o">}</span>
+
+<span class="nd">@Lenses</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Personaje</span><span class="o">(</span><span class="n">nombre</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">gafas</span><span class="k">:</span> <span class="kt">Gafas</span><span class="o">,</span> <span class="n">ropa</span><span class="k">:</span> <span class="kt">Ropa</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>y ahora nisiquiera necesitaremos crear nosotros los lenses:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">readingLens</span><span class="k">:</span> <span class="kt">Lentes</span> <span class="o">=</span> <span class="nc">Lentes</span><span class="o">(</span><span class="nc">Cristal</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">adjustedLens</span> <span class="k">=</span> <span class="nv">Lentes</span><span class="o">.</span><span class="py">graduacion</span><span class="o">.</span><span class="py">modify</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mf">1.1</span><span class="o">)(</span><span class="n">readingLens</span><span class="o">)</span>
+
+<span class="o">(</span><span class="nv">Personaje</span><span class="o">.</span><span class="py">gafas</span> <span class="n">composeLens</span> <span class="nv">Gafas</span><span class="o">.</span><span class="py">lentes</span><span class="o">).</span><span class="py">get</span><span class="o">(</span><span class="n">cloud</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Lentes</span><span class="o">(</span><span class="nc">Cristal</span><span class="o">,</span><span class="mf">2.0</span><span class="o">)</span>
+
+<span class="o">(</span><span class="nv">Personaje</span><span class="o">.</span><span class="py">gafas</span> <span class="n">composeLens</span> <span class="nv">Gafas</span><span class="o">.</span><span class="py">lentes</span> <span class="n">composeLens</span> <span class="nv">Lentes</span><span class="o">.</span><span class="py">graduacion</span><span class="o">).</span><span class="py">modify</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mf">1.1</span><span class="o">)(</span><span class="n">cloud</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Personaje</span><span class="o">(</span><span class="nc">Cloud</span><span class="o">,</span><span class="nc">Gafas</span><span class="o">(</span><span class="nc">Plata</span><span class="o">,</span><span class="nc">Lentes</span><span class="o">(</span><span class="nc">Cristal</span><span class="o">,</span><span class="mf">3.1</span><span class="o">),</span><span class="nc">Rubi</span><span class="o">),</span><span class="nc">Ropa</span><span class="o">(,,,))</span>
+</code></pre></div></div>
+
+<p>Con lo cual nuestro ejemplo de terraria quedaria finalmente como:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">monocle.macros.syntax.lens._</span>
+<span class="k">import</span> <span class="nn">monocle.macros.Lenses</span>
+
+<span class="k">trait</span> <span class="nc">Armazon</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Hierro</span> <span class="k">extends</span> <span class="nc">Armazon</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Oro</span> <span class="k">extends</span> <span class="nc">Armazon</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Plata</span> <span class="k">extends</span> <span class="nc">Armazon</span>
+
+<span class="k">trait</span> <span class="nc">Material</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Cristal</span> <span class="k">extends</span> <span class="nc">Material</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Vidrio</span> <span class="k">extends</span> <span class="nc">Material</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Polimero</span> <span class="k">extends</span> <span class="nc">Material</span>
+
+<span class="k">trait</span> <span class="nc">Decoracion</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Rubi</span> <span class="k">extends</span> <span class="nc">Decoracion</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Zafiro</span> <span class="k">extends</span> <span class="nc">Decoracion</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Esmeralda</span> <span class="k">extends</span> <span class="nc">Decoracion</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Ropa</span><span class="o">(</span><span class="n">superior</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">inferior</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">calzado</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">sombrero</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+
+<span class="nd">@Lenses</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Lentes</span><span class="o">(</span><span class="n">material</span><span class="k">:</span> <span class="kt">Material</span><span class="o">,</span> <span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">setGraduacion</span><span class="o">(</span><span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">graduacion</span><span class="k">=</span> <span class="n">graduacion</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="nd">@Lenses</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Gafas</span><span class="o">(</span><span class="n">armazon</span><span class="k">:</span> <span class="kt">Armazon</span><span class="o">,</span> <span class="n">lentes</span><span class="k">:</span> <span class="kt">Lentes</span><span class="o">,</span> <span class="n">decoracion</span><span class="k">:</span> <span class="kt">Decoracion</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">setLentes</span><span class="o">(</span><span class="n">lente</span><span class="k">:</span> <span class="kt">Lentes</span><span class="o">)</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span><span class="n">lentes</span><span class="k">=</span> <span class="n">lente</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">setGraduacionGafas</span><span class="o">(</span><span class="n">graduacion</span><span class="k">:</span> <span class="kt">Double</span><span class="o">)</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span>
+    <span class="n">lentes</span><span class="k">=</span> <span class="nv">lentes</span><span class="o">.</span><span class="py">copy</span><span class="o">(</span>
+      <span class="n">graduacion</span><span class="k">=</span> <span class="n">graduacion</span>
+    <span class="o">)</span>
+  <span class="o">)</span>
+<span class="o">}</span>
+
+<span class="nd">@Lenses</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Personaje</span><span class="o">(</span><span class="n">nombre</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">gafas</span><span class="k">:</span> <span class="kt">Gafas</span><span class="o">,</span> <span class="n">ropa</span><span class="k">:</span> <span class="kt">Ropa</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>También monocle cumple con varias de las leyes de lenses que vimos antes y mas (shamelessly taken from https://github.com/optics-dev/Monocle/blob/385085a24ec2561d0892a99ef37a51ba2ea43402/core/shared/src/main/scala/monocle/law/LensLaws.scala)</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">monocle.Lens</span>
+<span class="k">import</span> <span class="nn">monocle.internal.IsEq</span>
+
+<span class="k">import</span> <span class="nn">cats.data.Const</span>
+<span class="k">import</span> <span class="nn">cats.Id</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">LensLaws</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">](</span><span class="n">lens</span><span class="k">:</span> <span class="kt">Lens</span><span class="o">[</span><span class="kt">S</span>, <span class="kt">A</span><span class="o">])</span> <span class="o">{</span>
+  <span class="k">import</span> <span class="nn">IsEq.syntax</span>
+
+  <span class="k">def</span> <span class="nf">getSet</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">)</span><span class="k">:</span> <span class="kt">IsEq</span><span class="o">[</span><span class="kt">S</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="nv">lens</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="n">s</span><span class="o">))(</span><span class="n">s</span><span class="o">)</span> <span class="o">&lt;==&gt;</span> <span class="n">s</span>
+
+  <span class="k">def</span> <span class="nf">setGet</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">,</span> <span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">IsEq</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">a</span><span class="o">)(</span><span class="n">s</span><span class="o">))</span> <span class="o">&lt;==&gt;</span> <span class="n">a</span>
+
+  <span class="k">def</span> <span class="nf">setIdempotent</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">,</span> <span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">IsEq</span><span class="o">[</span><span class="kt">S</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">a</span><span class="o">)(</span><span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">a</span><span class="o">)(</span><span class="n">s</span><span class="o">))</span> <span class="o">&lt;==&gt;</span> <span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">a</span><span class="o">)(</span><span class="n">s</span><span class="o">)</span>
+
+  <span class="k">def</span> <span class="nf">modifyIdentity</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">)</span><span class="k">:</span> <span class="kt">IsEq</span><span class="o">[</span><span class="kt">S</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">modify</span><span class="o">(</span><span class="n">identity</span><span class="o">)(</span><span class="n">s</span><span class="o">)</span> <span class="o">&lt;==&gt;</span> <span class="n">s</span>
+
+  <span class="k">def</span> <span class="nf">composeModify</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">,</span> <span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">,</span> <span class="n">g</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">IsEq</span><span class="o">[</span><span class="kt">S</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">modify</span><span class="o">(</span><span class="n">g</span><span class="o">)(</span><span class="nv">lens</span><span class="o">.</span><span class="py">modify</span><span class="o">(</span><span class="n">f</span><span class="o">)(</span><span class="n">s</span><span class="o">))</span> <span class="o">&lt;==&gt;</span> <span class="nv">lens</span><span class="o">.</span><span class="py">modify</span><span class="o">(</span><span class="n">g</span> <span class="n">compose</span> <span class="n">f</span><span class="o">)(</span><span class="n">s</span><span class="o">)</span>
+
+  <span class="k">def</span> <span class="nf">consistentSetModify</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">,</span> <span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">IsEq</span><span class="o">[</span><span class="kt">S</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">a</span><span class="o">)(</span><span class="n">s</span><span class="o">)</span> <span class="o">&lt;==&gt;</span> <span class="nv">lens</span><span class="o">.</span><span class="py">modify</span><span class="o">(</span><span class="k">_</span> <span class="k">=&gt;</span> <span class="n">a</span><span class="o">)(</span><span class="n">s</span><span class="o">)</span>
+
+  <span class="k">def</span> <span class="nf">consistentModifyModifyId</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">,</span> <span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">IsEq</span><span class="o">[</span><span class="kt">S</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">modify</span><span class="o">(</span><span class="n">f</span><span class="o">)(</span><span class="n">s</span><span class="o">)</span> <span class="o">&lt;==&gt;</span> <span class="nv">lens</span><span class="o">.</span><span class="py">modifyF</span><span class="o">[</span><span class="kt">Id</span><span class="o">](</span><span class="n">f</span><span class="o">)(</span><span class="n">s</span><span class="o">)</span>
+      <span class="k">def</span> <span class="nf">consistentGetModifyId</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">S</span><span class="o">)</span><span class="k">:</span> <span class="kt">IsEq</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">lens</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="o">&lt;==&gt;</span> <span class="nv">lens</span><span class="o">.</span><span class="py">modifyF</span><span class="o">[</span><span class="kt">Const</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">?</span><span class="o">]](</span><span class="nc">Const</span><span class="o">(</span><span class="k">_</span><span class="o">))(</span><span class="n">s</span><span class="o">).</span><span class="py">getConst</span>
+<span class="o">}</span>
+</code></pre></div></div>
+      <h2 id="conclusión">
+        
+        
+          <a href="#conclusión"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Conclusión
+        
+        
+      </h2>
+    
+
+<p>Vimos que la inmutabilidad está buena. Pero también vimos que tiene algunos problemas no triviales de resolver. El concepto de lenses resuelva esta situación particular. No es necesario entender los tipos complejos que ofrecen las bibliotecas, alcanza con entender cómo crearlos  y cómo aplicarlas.
+Hay mucho más allá afuera sobre lenses, optics, prisms, antiparras y demás. Pero para esta clase no nos interesa mucho. Lo importante es saber que este problema existe, es muy común, y ya hay algo que resuelve este problema (y no es dejar de usar Haskell y pasar a un lenguaje mutable).</p>
+      <h3 id="lecturas-recomendadas">
+        
+        
+          <a href="#lecturas-recomendadas"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Lecturas recomendadas
+        
+        
+      </h3>
+    
+
+<ul>
+  <li>
+    <p><a href="https://hackage.haskell.org/package/lens-tutorial-1.0.4/docs/Control-Lens-Tutorial.html">Tutorial de lens en Haskell</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.optics.dev/Monocle/">Monocle para Scala</a></p>
+  </li>
+</ul>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>

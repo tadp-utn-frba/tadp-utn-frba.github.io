@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_14/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase 14 TADP 1C2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="el-compilador-y-usted">
+        
+        
+          <a href="#el-compilador-y-usted"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> El compilador y usted
+        
+        
+      </h1>
+    
+
+<p>Uno de los features más interesantes que ofrece un lenguaje es la capacidad de extenderlo. En mayor o menor
+medida, siempre que escribo un programa “extiendo” de alguna manera lo que ya existe, pero algunas
+tecnologías ofrecen además herramientas para, sin necesariamente cambiar su sintaxis, manipular la forma de
+escribirlas.</p>
+
+<p>Este tipo de herramientas permite eliminar gran cantidad de boilerplate y, a veces, crear una
+manera completamente distinta de expresar la solución para un problema. Esto tiene un impacto muy grande en
+la legibilidad y extensibilidad del código y permite crear desde mejoras menores para evitar repetición o
+simplificar la lectura, hasta DSLs internos o sistemas de reescritura que aprovechan la metadata del código
+para trabajar en mejores niveles de abstracción.</p>
+
+<p>Vamos a contar algunos ejemplos de estás ideas implementadas en el lenguaje Scala. Cómo usarlas, qué pasa
+abajo del capó y en qué situaciones podrían ser útiles.</p>
+      <h1 id="case-classes">
+        
+        
+          <a href="#case-classes"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Case Classes
+        
+        
+      </h1>
+    
+
+<p>Una <em>Case Class</em> es una abstracción pensada para proveer una forma rápida y sintácticamente agradable para
+crear estructuras inmutables similares a los <em>Tipos Algebraicos</em> de los lenguajes funcionales. Si bien son
+un concepto interesante, lo más importante es entender que son solamente un “atajo”. Scala no hace nada
+especial con las case classes, simplemente cada definición “case” es pasada por un proceso de reescritura
+en el compilador: Por cada Case Class se define una clase común y corriente, pero se implementan
+automáticamente algunos métodos bien conocidos coyo código es predecible o repetitivo.</p>
+
+<p>Entonces, una <em>Case Class</em> es simplemente <em>una clase cualquiera</em> al que el compilador le agrega:</p>
+
+<ul>
+  <li>Properties de sólo lectura para cada parámetro de clase</li>
+  <li>Una forma sencilla de clonarla (método copy)</li>
+  <li>Una conversión a String clara, basada en su nombre y sus parámetros de clase</li>
+  <li>Métodos de comparación y hashing</li>
+  <li>Un companion object que puede usarse para construir instancias y como patrón para matching</li>
+  <li>Otros detalles (las case clases de aridad &gt;1 extienden Product)</li>
+</ul>
+
+<p>Sólo con este poquito las diferencias que se producen en el cógido son enormes. Acá hay dos
+implementaciones de la misma(*) clase, una usando <em>case classes</em> y una sin ellas.</p>
+
+<p>###Con Case Classes</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Properties de sólo lectura</span>
+<span class="c1">// Copy</span>
+<span class="c1">// Conversión a String lindo</span>
+<span class="c1">// Comparación / hashing</span>
+<span class="c1">// Constructor sin new, parcialmente aplicable</span>
+<span class="c1">// Unapply</span>
+<span class="c1">// Etc...</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Materia</span><span class="o">(</span><span class="n">nombre</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">ciclo</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="n">criterioDeAprobación</span><span class="k">:</span> <span class="kt">Alumno</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">def</span> <span class="nf">aprobados</span><span class="o">(</span><span class="n">curso</span><span class="k">:</span> <span class="kt">Curso</span><span class="o">)</span> <span class="k">=</span> <span class="n">curso</span> <span class="n">filter</span> <span class="n">criterioDeAprobación</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>###Sin Case Classes</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Materia</span> <span class="o">{</span>
+	<span class="c1">// Properties de sólo lectura</span>
+	<span class="k">private</span> <span class="k">var</span> <span class="nc">_nombre</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">_</span>
+	<span class="k">def</span> <span class="nf">nombre</span> <span class="k">=</span> <span class="nc">_nombre</span>
+	<span class="k">private</span> <span class="k">var</span> <span class="nc">_ciclo</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="k">_</span>
+	<span class="k">def</span> <span class="nf">ciclo</span> <span class="k">=</span> <span class="nc">_ciclo</span>
+	<span class="k">private</span> <span class="k">var</span> <span class="nc">_criterioDeAprobación</span><span class="k">:</span> <span class="kt">Alumno</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span> <span class="k">=</span> <span class="k">_</span>
+	<span class="k">private</span> <span class="k">def</span> <span class="nf">criterioDeAprobación</span> <span class="k">=</span> <span class="nc">_criterioDeAprobación</span>
+
+	<span class="k">private</span> <span class="k">def</span> <span class="nf">this</span><span class="o">(</span><span class="n">nombre</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">ciclo</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">criterioDeAprovación</span><span class="k">:</span> <span class="kt">Alumno</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nf">this</span><span class="o">()</span>
+		<span class="nc">_nombre</span> <span class="k">=</span> <span class="n">nombre</span>
+		<span class="nc">_ciclo</span> <span class="k">=</span> <span class="n">ciclo</span>
+		<span class="nc">_criterioDeAprobación</span> <span class="k">=</span> <span class="n">criterioDeAprobación</span>
+	<span class="o">}</span>
+
+	<span class="c1">// Copy</span>
+	<span class="k">def</span> <span class="nf">copy</span><span class="o">(</span><span class="n">nombre</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="py">nombre</span><span class="o">,</span> <span class="n">ciclo</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="py">ciclo</span><span class="o">)</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Materia</span><span class="o">(</span><span class="n">nombre</span><span class="o">,</span><span class="n">ciclo</span><span class="o">,</span><span class="n">criterioDeAprobación</span><span class="o">)</span>
+	
+	<span class="c1">// Conversión a String lindo</span>
+	<span class="k">override</span> <span class="k">def</span> <span class="nf">toString</span> <span class="k">=</span> <span class="n">s</span><span class="s">"Materia($nombre, $ciclo)"</span>
+
+	<span class="c1">// Comparación / hashing</span>
+	<span class="k">override</span> <span class="k">def</span> <span class="nf">equals</span><span class="o">(</span><span class="n">other</span><span class="k">:</span> <span class="kt">Any</span><span class="o">)</span> <span class="k">=</span> <span class="n">other</span> <span class="k">match</span> <span class="o">{</span>
+		<span class="k">case</span> <span class="n">m</span><span class="k">:</span> <span class="kt">Materia</span> <span class="o">=&gt;</span> <span class="nv">m</span><span class="o">.</span><span class="py">nombre</span> <span class="o">==</span> <span class="n">nombre</span> <span class="o">&amp;&amp;</span> <span class="nv">m</span><span class="o">.</span><span class="py">ciclo</span> <span class="o">==</span> <span class="n">ciclo</span>
+		<span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="kc">false</span>
+	<span class="o">}</span>
+	<span class="k">override</span> <span class="k">def</span> <span class="nf">hashCode</span> <span class="k">=</span> <span class="o">???</span>
+
+	<span class="k">def</span> <span class="nf">aprobados</span><span class="o">(</span><span class="n">curso</span><span class="k">:</span> <span class="kt">Curso</span><span class="o">)</span> <span class="k">=</span> <span class="n">curso</span> <span class="n">filter</span> <span class="n">criterioDeAprobación</span>
+<span class="o">}</span>
+
+<span class="k">object</span> <span class="nc">Materia</span> <span class="o">{</span>
+	<span class="c1">// Constructor sin new, parcialmente aplicable</span>
+	<span class="k">def</span> <span class="nf">apply</span><span class="o">(</span><span class="n">nombre</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">ciclo</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span> <span class="n">criterioDeAprobación</span><span class="k">:</span> <span class="o">(</span><span class="kt">Alumno</span> <span class="o">=&gt;</span> <span class="kt">Boolean</span><span class="o">)</span> <span class="k">=&gt;</span>
+		<span class="k">new</span> <span class="nc">Materia</span><span class="o">(</span><span class="n">nombre</span><span class="o">,</span> <span class="n">ciclo</span><span class="o">,</span> <span class="n">criterioDeAprobación</span><span class="o">)</span>
+	<span class="o">}</span>
+
+	<span class="c1">// Unapply</span>
+	<span class="k">def</span> <span class="nf">unapply</span><span class="o">(</span><span class="n">materia</span><span class="k">:</span> <span class="kt">Materia</span><span class="o">)</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">Int</span><span class="o">)]</span> <span class="k">=</span> <span class="o">???</span>
+<span class="o">}</span>
+</code></pre></div></div>
+      <h2 id="string-interpolators">
+        
+        
+          <a href="#string-interpolators"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> String Interpolators
+        
+        
+      </h2>
+    
+
+<p>Muchos lenguajes ofrecen la posibilidad de interpolar Strings para evitar el boilerplate y la confusión
+producto de las cadenas larguisimas de concatenación necesarias para poder construir un string a partir de
+multiples objetos.</p>
+
+<p>La forma de hacer esto en scala es precediendo el string con una <em>s</em> y envolviendo las expresiones a
+interpolar con ${…} (las expresiones que sólo consisten en una variable pueden prescindir de las llaves).</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">nombre</span> <span class="k">=</span> <span class="s">"Técnicas Avanzadas de Programación"</span>
+<span class="k">val</span> <span class="nv">ciclo</span> <span class="k">=</span> <span class="mi">3</span>
+<span class="k">val</span> <span class="nv">alumnos</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Alumno</span><span class="o">]</span> <span class="k">=</span> <span class="o">...</span>
+
+<span class="k">val</span> <span class="nv">sinInterpolación</span> <span class="k">=</span> <span class="s">"La materia "</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s">" del ciclo "</span> <span class="o">+</span> <span class="n">ciclo</span> <span class="o">+</span> <span class="s">" tiene "</span> <span class="o">+</span> <span class="nv">alumnos</span><span class="o">.</span><span class="py">size</span> <span class="o">+</span> <span class="s">"alumnos"</span>
+
+<span class="k">val</span> <span class="nv">conInterpolación</span> <span class="k">=</span> <span class="n">s</span><span class="s">"La materia $nombre del ciclo $ciclo tiene ${alumnos.size} alumnos"</span>
+</code></pre></div></div>
+
+<p>La prueba de que esta forma de escritura es (al menos ligeramente) mejor que la concatenación directa está
+en que la mayoría de la gente no nota a simple vista que al último string del ejemplo le falta un espacio ;)</p>
+
+<p>Además de la “s” Scala ofrece otros interpoladores:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// f: Permite preceder las expresiones insertadas por un patron de formateo. Y es type safe!</span>
+<span class="k">val</span> <span class="nv">formateado</span> <span class="k">=</span> <span class="n">f</span><span class="s">"El promedio en $nombre%s es ${alumnos.sum / alumnos.size}%2.2f"</span>
+
+<span class="c1">// raw: Trata a los caracteres especiales que modificarían el string como caracteres normales. </span>
+<span class="k">val</span> <span class="nv">procesado</span>   <span class="k">=</span> <span class="n">s</span><span class="s">"Estos\nSon\nSaltos\nDe\nLinea"</span>
+<span class="k">val</span> <span class="nv">sinProcesar</span> <span class="k">=</span> <span class="n">raw</span><span class="s">"Estos\nNo\nSon\nSaltos\nDe\nLinea"</span>
+</code></pre></div></div>
+
+<p>Sin embargo, el aspecto más interesante de la interpolación de strings en Scala es que <em>no son palabras
+reservadas, sino mensajes</em>. Tanto <em>s</em> y <em>f</em> como <em>raw</em> son en realidad mensajes que el compilador envía a
+una instancia de <em>StringContext</em> cuando ve el string literal. Esto permite que creemos nuestros propios
+interpoladores extendiendo StringContext!</p>
+
+<p>Digamos que tenemos una clase con la que representamos los mils y nos gustaría poder mostrar una lista de
+mails mostrando sólo las primeras 4 letras y el dominio de cada uno (para evitar los crawlers). Una forma
+posible para hacer esto es definir un interpolador que procese los parametros del tipo Email de forma
+distinta a los demás:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Email</span><span class="o">(</span><span class="k">val</span> <span class="nv">id</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="k">val</span> <span class="nv">dominio</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">override</span> <span class="k">def</span> <span class="nf">toString</span> <span class="k">=</span> <span class="n">s</span><span class="s">"$id@$dominio"</span>
+	<span class="k">def</span> <span class="nf">toEncriptedString</span> <span class="k">=</span> <span class="n">s</span><span class="s">"${id.take(4)}...@$dominio"</span>
+<span class="o">}</span>
+
+<span class="k">implicit</span> <span class="k">class</span> <span class="nc">EmailsContext</span><span class="o">(</span><span class="k">val</span> <span class="nv">context</span><span class="k">:</span> <span class="kt">StringContext</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">def</span> <span class="nf">emails</span><span class="o">(</span><span class="n">arguments</span><span class="k">:</span> <span class="kt">Any*</span><span class="o">)</span> <span class="k">=</span> <span class="o">(</span><span class="s">""</span> <span class="o">/:</span> <span class="nv">context</span><span class="o">.</span><span class="py">parts</span><span class="o">.</span><span class="py">zip</span><span class="o">(</span><span class="n">arguments</span><span class="o">))</span> <span class="o">{</span>
+		<span class="nf">case</span> <span class="o">(</span><span class="n">acum</span><span class="o">,</span> <span class="o">(</span><span class="n">part</span><span class="o">,</span> <span class="n">exp</span><span class="k">:</span> <span class="kt">Email</span><span class="o">))</span> <span class="k">=&gt;</span> <span class="n">acum</span> <span class="o">+</span> <span class="n">part</span> <span class="o">+</span> <span class="nv">exp</span><span class="o">.</span><span class="py">toEncriptedString</span>
+		<span class="nf">case</span> <span class="o">(</span><span class="n">acum</span><span class="o">,</span> <span class="o">(</span><span class="n">part</span><span class="o">,</span> <span class="n">exp</span><span class="o">))</span>        <span class="k">=&gt;</span> <span class="n">acum</span> <span class="o">+</span> <span class="n">part</span> <span class="o">+</span> <span class="n">exp</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">val</span> <span class="nv">nico</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Email</span><span class="o">(</span><span class="s">"nscarcella"</span><span class="o">,</span> <span class="s">"gmail.com"</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">ernesto</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Email</span><span class="o">(</span><span class="s">"bossi.ernestog"</span><span class="o">,</span> <span class="s">"gmail.com"</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">ivan</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Email</span><span class="o">(</span><span class="s">"ivanlocolosredoooo1964"</span><span class="o">,</span> <span class="s">"hotmail.com.es"</span><span class="o">)</span>
+
+<span class="n">emails</span><span class="s">"$nico, $ernesto, $ivan"</span> <span class="c1">// Esto va a mostrar los mails encriptados</span>
+<span class="n">s</span><span class="s">"$nico, $ernesto, $ivan"</span> <span class="c1">// Esto va a mostrar los mails completos</span>
+</code></pre></div></div>
+
+<p>Este es sólo un pequeño ejemplo de lo que se puede hacer con interpoladores. Noten que no hay ninguna
+necesidad de que el método que se envía a un StringContext sea un String; esto quiere decir que podemos
+usarlos para construir todo tipo de objetos a partir de Strings!</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">implicit</span> <span class="k">class</span> <span class="nc">EmailContext</span><span class="o">(</span><span class="k">val</span> <span class="nv">context</span><span class="k">:</span> <span class="kt">StringContext</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">def</span> <span class="nf">mail</span><span class="o">(</span><span class="n">arguments</span><span class="k">:</span> <span class="kt">Any*</span><span class="o">)</span><span class="k">:</span> <span class="kt">Email</span> <span class="o">=</span> <span class="o">{</span>
+		<span class="k">val</span> <span class="nv">mergeado</span> <span class="k">=</span> <span class="nv">context</span><span class="o">.</span><span class="py">s</span><span class="o">(</span><span class="n">arguments</span><span class="k">:_</span><span class="kt">*</span><span class="o">)</span>
+		<span class="k">val</span> <span class="nv">extractor</span> <span class="k">=</span> <span class="s">"(.*)@(.*)"</span><span class="o">.</span><span class="py">r</span>
+		<span class="k">val</span> <span class="nv">extractor</span><span class="o">(</span><span class="n">id</span><span class="o">,</span><span class="n">dominio</span><span class="o">)</span> <span class="k">=</span> <span class="n">mergeado</span>
+		
+		<span class="k">new</span> <span class="nc">Email</span><span class="o">(</span><span class="n">id</span><span class="o">,</span><span class="n">dominio</span><span class="o">)</span>			
+	<span class="o">}</span>
+<span class="o">}</span>
+
+<span class="n">mail</span><span class="s">"un-id@un-dominio.com"</span> <span class="c1">// retorna un Email</span>
+<span class="n">mail</span><span class="s">"lalala"</span> <span class="c1">// falla por no cumplir el patrón</span>
+</code></pre></div></div>
+
+<p>Todo muy lindo pero cómo llegan esos métodos a StringContext? y que es esa palabra “implicit”? Bueno, eso
+nos lleva al siguiente tema…</p>
+      <h2 id="implicits">
+        
+        
+          <a href="#implicits"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Implicits
+        
+        
+      </h2>
+    
+
+<p>Los implicits son una de las herramientas más novedosas y mágicas de Scala. Vienen en varios sabores, pero
+lo que todos ellos tienen en común es que permiten poner cosas en un contexto para luego poder usarlas sin
+una referencia explicita en el código (o sea, implicitamente :P).</p>
+      <h3 id="implicit-class">
+        
+        
+          <a href="#implicit-class"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Implicit Class
+        
+        
+      </h3>
+    
+
+<p>Una <em>Clase Implicita</em> es una forma declarativa y no-invasiva de extender una clase.</p>
+
+<p>Digamos que buscamos agregarle comportamiento a un objeto <em>sin cambiar su implementación</em>. Una forma
+conocida de hacer esto es anteponiendo otro objeto que sepa hacer el nuevo comportamiento y tenga una
+referencia al objeto viejo para poder usar el comportamiento ya existente.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">StringExtendido</span><span class="o">(</span><span class="n">unString</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="o">{</span>
+	<span class="c1">// Este método es demasiado específico para querer ponerlo en String</span>
+	<span class="k">def</span> <span class="nf">esUnMail</span> <span class="k">=</span> <span class="nv">unString</span><span class="o">.</span><span class="py">length</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="nv">unString</span><span class="o">.</span><span class="py">contains</span><span class="o">(</span><span class="s">"@"</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="nv">unString</span><span class="o">.</span><span class="py">endsWith</span><span class="o">(</span><span class="s">".com"</span><span class="o">)</span> 
+<span class="o">}</span>
+  
+<span class="k">new</span> <span class="nc">StringExtendido</span><span class="o">(</span><span class="s">"foobar@gmail.com"</span><span class="o">).</span><span class="py">esUnMail</span> <span class="c1">// Sí!</span>
+<span class="k">new</span> <span class="nc">StringExtendido</span><span class="o">(</span><span class="s">"Hola Mundo!"</span><span class="o">).</span><span class="py">esUnMail</span>      <span class="c1">// No!</span>
+<span class="s">"Chau Mundo..."</span><span class="o">.</span><span class="py">esUnMail</span>                         <span class="c1">// Esto no compila. No cambié la clase String.</span>
+</code></pre></div></div>
+
+<p>La ventaja de esta aproximación es que puedo agregar tantos métodos cómo quiero sin preocuparme de que
+colisionen diferentes implementaciones, ya que cada uno puede instanciar el “wrapper” de String que
+prefiere; lo malo es que ensuciar el código para envolver al String.</p>
+
+<p>Pero qué tal si pudiera explicarle al compilador lo que estoy tratando de hacer? Qué tal si pudiera pedirle
+que, cuando vea que estoy mandandole a un String un mensaje que no entiende, que se fije a ver si está
+definido en esta clase wrapper y, si está, que en vez de fallar me lo envuelva él solito?</p>
+
+<p>Bueno, eso es exactamente lo que son las <em>Clases Implicitas</em>: Una clase común y corriente que, cuando están
+en contexto, el compilador usa para wrapear objetos que no hubieran entendido algún mensaje.</p>
+
+<p>Para definir una clase implicita, alcanza con hacerle recibir un único parámetro de clase del tipo que
+quiero wrappear y anteponer la palabra “implicit” para que el compilador sepa que puede usarla:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">implicit</span> <span class="k">class</span> <span class="nc">StringExtendido</span><span class="o">(</span><span class="n">unString</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">def</span> <span class="nf">esUnMail</span> <span class="k">=</span> <span class="nv">unString</span><span class="o">.</span><span class="py">length</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="nv">unString</span><span class="o">.</span><span class="py">contains</span><span class="o">(</span><span class="s">"@"</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="nv">unString</span><span class="o">.</span><span class="py">endsWith</span><span class="o">(</span><span class="s">".com"</span><span class="o">)</span> 
+<span class="o">}</span>
+  
+<span class="s">"foobar@gmail.com"</span><span class="o">.</span><span class="py">esUnMail</span> <span class="c1">// Ahora esto funciona! El compilador wrappea el string sin que yo lo vea.</span>
+<span class="k">new</span> <span class="nc">StringExtendido</span><span class="o">(</span><span class="s">"foobar@gmail.com"</span><span class="o">).</span><span class="py">esUnMail</span> <span class="c1">// La linea de arriba se reescribe a esto. </span>
+</code></pre></div></div>
+
+<p>Es importante notar que el wrappeo automático sólo ocurre cuando mando un mensaje <em>que el objeto no
+entiende</em>. Esto significa que las clases implicitas sirven para extender un tipo, pero no para redefinirle
+implementaciones. Esto las convierte en una forma segura de extender una interfaz, sin preocuparse por
+romper la implementación previa. Este es un buen momento para mirar el código que usamos para extender StringContext en
+el tema anterior y asegurarse de entender que está pasando.</p>
+
+<p>También hay que saber que el compilador no va a tratar de encadenar más de una aplicación de implicits por
+expresión, así que hay que cuidar las firmas…</p>
+      <h2 id="implicit-methods-implicit-conversions">
+        
+        
+          <a href="#implicit-methods-implicit-conversions"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Implicit Methods (Implicit Conversions)
+        
+        
+      </h2>
+    
+
+<p>Las conversiones implicitas son similares a las clases implicitas pero, en lugar de definir una nueva clase para extender
+una referencia, se utiliza para convertir algo de un tipo a otro ya existente.</p>
+
+<p>Digamos, por ejemplo, que tenemos un sistema con las siguientes interfaces::</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Punto</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+<span class="k">object</span> <span class="nc">Mapa</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">nombreDelLugar</span><span class="o">(</span><span class="n">lugar</span><span class="k">:</span> <span class="kt">Punto</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="o">???</span> <span class="o">}</span>
+<span class="k">object</span> <span class="nc">Input</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">puntoPresionado</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">???</span> <span class="o">}</span>
+ 
+<span class="c1">// Pedirle al mapa el nombre del punto presionado </span>
+<span class="k">val</span> <span class="nv">lugar</span> <span class="k">=</span> <span class="nv">Input</span><span class="o">.</span><span class="py">puntoPresionado</span>
+
+<span class="nc">Mapa</span> <span class="n">nombreDelLugar</span> <span class="nv">Input</span><span class="o">.</span><span class="py">puntoPresionado</span> <span class="c1">// Sería lindo poder hacerlo así, pero una tupla no es un punto...</span>
+
+<span class="nv">Mapa</span><span class="o">.</span><span class="py">nombreDelLugar</span><span class="o">(</span><span class="k">new</span> <span class="nc">Punto</span><span class="o">(</span><span class="nv">lugar</span><span class="o">.</span><span class="py">_1</span><span class="o">,</span> <span class="nv">lugar</span><span class="o">.</span><span class="py">_2</span><span class="o">))</span> <span class="c1">// Hay que hacer una conversión</span>
+</code></pre></div></div>
+
+<p>Algo incomodo en este código es que, al pedir el punto presionado, recibo una Tupla2 pero lo que necesito es un Punto.
+Semánticamente no es un problema, dado que tengo una forma concreta de convertir cualquier Tupla2 en un Punto. Podría
+incluso evitar una posible repetición de esta lógica extrayendo esa conversión en una función:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">tuplaAPunto</span><span class="o">(</span><span class="n">lugar</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span><span class="kt">Int</span><span class="o">))</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Punto</span><span class="o">(</span><span class="nv">lugar</span><span class="o">.</span><span class="py">_1</span><span class="o">,</span> <span class="nv">lugar</span><span class="o">.</span><span class="py">_2</span><span class="o">)</span>
+
+<span class="nv">Mapa</span><span class="o">.</span><span class="py">nombreDelLugar</span><span class="o">(</span><span class="nf">tuplaAPunto</span><span class="o">(</span><span class="n">lugar</span><span class="o">))</span> <span class="c1">// Ahora puedo usarlo así</span>
+</code></pre></div></div>
+
+<p>Mejor? Sí. Pero si siempre que tengo una tupla y espero un punto tengo que aplicar esta función, sería lindo poder pedirle
+al compilador que lo haga sin que yo lo tenga que escribir explicitamente; después de todo, mi función <em>tuplaAPunto</em> es
+una transformación de Tuplas a Puntos.</p>
+
+<p>Esto es exactamente para lo que las conversiones implicitas sirven. Puedo convertir una función que espera un único
+parámetro en una conversión implicita anteponiendo la palabra implicit a su definición:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">implicit</span> <span class="k">def</span> <span class="nf">tuplaAPunto</span><span class="o">(</span><span class="n">lugar</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span><span class="kt">Int</span><span class="o">))</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Punto</span><span class="o">(</span><span class="nv">lugar</span><span class="o">.</span><span class="py">_1</span><span class="o">,</span> <span class="nv">lugar</span><span class="o">.</span><span class="py">_2</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>De ahora en adelante, si esta función (que es del tipo Tupla2 =&gt; Punto) está en contexto, el compilador va a aplicarla
+automáticamente cada vez que usemos una Tupla2 en un lugar donde se esperaba un Punto. Eso permite reescribir nuestro uso
+así:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Mapa</span><span class="o">.</span><span class="py">nombreDelLugar</span><span class="o">(</span><span class="nv">Input</span><span class="o">.</span><span class="py">puntoPresionado</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Otro detalle interesante es que, por la forma en que Scala busca estos implicits, es posible, en lugar de importar la
+función implicita en el contexto, definirla en el companion object de uno de los tipos en cuestión.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">object</span> <span class="nc">Punto</span> <span class="o">{</span>
+	<span class="k">implicit</span> <span class="k">def</span> <span class="nf">tuplaAPunto</span><span class="o">(</span><span class="n">lugar</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">,</span><span class="kt">Int</span><span class="o">))</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Punto</span><span class="o">(</span><span class="nv">lugar</span><span class="o">.</span><span class="py">_1</span><span class="o">,</span> <span class="nv">lugar</span><span class="o">.</span><span class="py">_2</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="nv">Mapa</span><span class="o">.</span><span class="py">nombreDelLugar</span><span class="o">(</span><span class="nv">Input</span><span class="o">.</span><span class="py">puntoPresionado</span><span class="o">)</span> <span class="c1">// No necesito importar la función!</span>
+</code></pre></div></div>
+<p>De esta manera estamos oficializando que un Punto puede ser obtenido a partir de una tupla en cualquier lugar.</p>
+      <h3 id="implicit-parámeters">
+        
+        
+          <a href="#implicit-parámeters"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Implicit parámeters
+        
+        
+      </h3>
+    
+
+<p>Los parámetros implícitos permiten establecer un valor por defecto para un parámetro, que puede ser configurado para cada
+contexto. Si existe al momento de evaluar una función un valor implicito del tipo de uno de sus parámetros implicitos,
+este valor se usa como parámetro automáticamente sin necesidad de escribirlo. Esto es especialmente útil cuando existen
+una gran cantidad de llamadas a funciones que usan el mismo parámetro en un contexto:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="k">class</span> <span class="nc">Persona</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">persistir</span><span class="o">(</span><span class="n">db</span><span class="k">:</span> <span class="kt">BaseDeDatos</span><span class="o">)</span> <span class="k">=</span> <span class="o">???</span> <span class="o">}</span>
+		
+	<span class="k">class</span> <span class="nc">Familia</span><span class="o">(</span><span class="n">padre</span><span class="k">:</span> <span class="kt">Persona</span><span class="o">,</span> <span class="n">madre</span><span class="k">:</span> <span class="kt">Persona</span><span class="o">,</span> <span class="n">hijos</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Persona</span><span class="o">],</span> <span class="n">abuelos</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Persona</span><span class="o">])</span> <span class="o">{</span>
+		<span class="k">def</span> <span class="nf">persistir</span><span class="o">(</span><span class="n">db</span><span class="k">:</span> <span class="kt">BaseDeDatos</span><span class="o">)</span> <span class="o">{</span>
+			<span class="nv">padre</span><span class="o">.</span><span class="py">persistir</span><span class="o">(</span><span class="n">db</span><span class="o">)</span>
+			<span class="nv">madre</span><span class="o">.</span><span class="py">persistir</span><span class="o">(</span><span class="n">db</span><span class="o">)</span>
+			<span class="nv">hijos</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">persistir</span><span class="o">(</span><span class="n">db</span><span class="o">))</span>
+			<span class="nv">abuelos</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">persistir</span><span class="o">(</span><span class="n">db</span><span class="o">))</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+	
+	<span class="o">\\</span> <span class="o">...</span>
+	
+	<span class="k">val</span> <span class="nv">db</span><span class="k">:</span> <span class="kt">BaseDeDatos</span> <span class="o">=</span> <span class="o">???</span>
+	<span class="nv">unaFamilia</span><span class="o">.</span><span class="py">persistir</span><span class="o">(</span><span class="n">db</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>En este ejemplo, la base de datos del método persistir puede declararse como un parámetro implicito anteponiendo la
+palabra <em>implicit</em> al nombre del parámetro. Cabe aclarar que los parámetros implicitos deben ser los últimos parámetros
+de la firma y deben estar en su propio grupo de aplicación.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="k">class</span> <span class="nc">Persona</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">persistir</span><span class="o">(</span><span class="k">implicit</span> <span class="n">db</span><span class="k">:</span> <span class="kt">BaseDeDatos</span><span class="o">)</span> <span class="k">=</span> <span class="o">???</span> <span class="o">}</span>
+		
+	<span class="k">class</span> <span class="nc">Familia</span><span class="o">(</span><span class="n">padre</span><span class="k">:</span> <span class="kt">Persona</span><span class="o">,</span> <span class="n">madre</span><span class="k">:</span> <span class="kt">Persona</span><span class="o">,</span> <span class="n">hijos</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Persona</span><span class="o">],</span> <span class="n">abuelos</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Persona</span><span class="o">])</span> <span class="o">{</span>
+		<span class="k">def</span> <span class="nf">persistir</span><span class="o">(</span><span class="k">implicit</span> <span class="n">db</span><span class="k">:</span> <span class="kt">BaseDeDatos</span><span class="o">)</span> <span class="o">{</span>
+			<span class="nv">padre</span><span class="o">.</span><span class="py">persistir</span>
+			<span class="nv">madre</span><span class="o">.</span><span class="py">persistir</span>
+			<span class="nv">hijos</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">persistir</span><span class="o">)</span>
+			<span class="nv">abuelos</span><span class="o">.</span><span class="py">foreach</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">persistir</span><span class="o">)</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+	
+	<span class="o">\\</span> <span class="o">...</span>
+	
+	<span class="k">implicit</span> <span class="k">val</span> <span class="nv">db</span><span class="k">:</span> <span class="kt">BaseDeDatos</span> <span class="o">=</span> <span class="o">???</span>
+	<span class="nv">unaFamilia</span><span class="o">.</span><span class="py">persistir</span>
+</code></pre></div></div>
+
+<p>Noten que, para poder evitar pasar el parámetro, es necesario que haya un <em>valor implicito</em> en el contexo. Los parámetros
+implicitos son, a su vez, valores implicitos en el contexto del método.</p>
+      <h3 id="type-clases">
+        
+        
+          <a href="#type-clases"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Type Clases
+        
+        
+      </h3>
+    
+
+<p>Supongamos que tenemos un sistema que requiere poder persistir nuestros objetos de dominio utilizando multiples bases de
+datos. Para mantener los ejemplos cortos, vamos a simplificar el problema suponiendo que solamente hace falta poder
+guardar objetos (sin volver a leerlos o cambiarlos después).</p>
+
+<p>Digamos que contamos con las siguientes interfaces para nuestras bases de datos:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="k">object</span> <span class="nc">SQL</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">run</span><span class="o">(</span><span class="n">query</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">=</span> <span class="o">???</span> <span class="o">}</span>
+	<span class="k">object</span> <span class="nc">Redis</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">guardar</span><span class="o">(</span><span class="n">clave</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">valor</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">=</span> <span class="o">???</span> <span class="o">}</span>
+</code></pre></div></div>
+      <h4 id="aproximación-naíve">
+        
+        
+          <a href="#aproximación-naíve"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Aproximación Naíve
+        
+        
+      </h4>
+    
+
+<p>Una primera manera para integrar nuestro código a estas APIs es extendiendo la interfaz de nuestros objetos, agregando métodos para persistir en cada
+tecnología.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// SQL --------------------------------------------------------------------------------------------</span>
+
+<span class="k">trait</span> <span class="nc">PersistibleConSQL</span> <span class="o">{</span>
+	<span class="k">def</span> <span class="nf">tabla</span><span class="k">:</span> <span class="kt">String</span>
+	<span class="k">def</span> <span class="nf">valores</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
+<span class="o">}</span>
+
+<span class="k">def</span> <span class="nf">persistirConSQL</span><span class="o">(</span><span class="n">obj</span><span class="k">:</span> <span class="kt">PersistibleConSQL</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+	<span class="nc">SQL</span> <span class="n">run</span> <span class="n">s</span><span class="s">"INSERT INTO ${obj.tabla} VALUES ${obj.valores}"</span>
+<span class="o">}</span>
+
+<span class="c1">// Redis ------------------------------------------------------------------------------------------</span>
+
+<span class="k">trait</span> <span class="nc">PersistibleConRedis</span> <span class="o">{</span>
+	<span class="k">def</span> <span class="nf">clave</span><span class="k">:</span> <span class="kt">String</span>
+	<span class="k">def</span> <span class="nf">valor</span><span class="k">:</span> <span class="kt">String</span>
+<span class="o">}</span>
+
+<span class="k">def</span> <span class="nf">persistirConRedis</span><span class="o">(</span><span class="n">obj</span><span class="k">:</span> <span class="kt">PersistibleConRedis</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+	<span class="nc">Redis</span> <span class="nf">guardar</span> <span class="o">(</span><span class="nv">obj</span><span class="o">.</span><span class="py">clave</span><span class="o">,</span> <span class="nv">obj</span><span class="o">.</span><span class="py">valor</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="c1">// Dominio ----------------------------------------------------------------------------------------</span>
+
+<span class="c1">// Nuestra clase de dominio</span>
+<span class="k">case</span> <span class="k">class</span> <span class="nc">C</span><span class="o">(</span><span class="n">f1</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">f2</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">PersistibleConRedis</span> <span class="k">with</span> <span class="nc">PersistibleConSQL</span> <span class="o">{</span>
+	<span class="k">def</span> <span class="nf">tabla</span> <span class="k">=</span> <span class="s">"C"</span>
+	<span class="k">def</span> <span class="nf">valores</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="n">f1</span><span class="o">,</span> <span class="n">f2</span><span class="o">)</span>
+	<span class="k">def</span> <span class="nf">clave</span> <span class="k">=</span> <span class="s">"C"</span>
+	<span class="k">def</span> <span class="nf">valor</span> <span class="k">=</span> <span class="n">s</span><span class="s">"{f1: $f1, f2: $f2}"</span>
+<span class="o">}</span>
+
+<span class="c1">// Uso --------------------------------------------------------------------------------------------</span>
+
+<span class="k">val</span> <span class="nv">c1</span> <span class="k">=</span> <span class="k">new</span> <span class="nf">C</span><span class="o">(</span><span class="s">"A"</span><span class="o">,</span> <span class="s">"1"</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">c2</span> <span class="k">=</span> <span class="k">new</span> <span class="nf">C</span><span class="o">(</span><span class="s">"B"</span><span class="o">,</span> <span class="s">"2"</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">c3</span> <span class="k">=</span> <span class="k">new</span> <span class="nf">C</span><span class="o">(</span><span class="s">"B"</span><span class="o">,</span> <span class="s">"3"</span><span class="o">)</span>
+
+<span class="nf">persistirConSQL</span><span class="o">(</span><span class="n">c1</span><span class="o">)</span>
+<span class="nf">persistirConRedis</span><span class="o">(</span><span class="n">c2</span><span class="o">)</span>
+<span class="nf">persistirConSQL</span><span class="o">(</span><span class="n">c3</span><span class="o">)</span>
+<span class="nf">persistirConRedis</span><span class="o">(</span><span class="n">c3</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Esta aproximación tiene varios problemas: Es muy invasiva y requiere que todos las clases que se desean persistir puedan ser modificadas, ensucia la
+interfaz de dominio y, si bien no es el caso en este ejemplo, podrían haber conflictos entre las interfaces requeridas por cada base de datos.</p>
+      <h4 id="aproximación-funcional">
+        
+        
+          <a href="#aproximación-funcional"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Aproximación Funcional
+        
+        
+      </h4>
+    
+
+<p>Lenguajes como Haskell proponen una aproximación alternativa: <em>Type Classes</em>.</p>
+
+<p>Una Type Class define un conjunto de operaciones que tienen que ser soportadas por un tipo para pertenecer a ella. Cualquier tipo T puede pertenecer a la
+type class C si alguien provee las operaciones que ella exige.</p>
+
+<p>Guiandonos por esta idea, podemos definir una Type Class “PersistibleConSQL” que especifique todo lo que un Tipo debe poder hacer para ser considerado
+persistible usando SQL:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">trait</span> <span class="nc">PersistibleConSQL</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
+	<span class="k">def</span> <span class="nf">tabla</span><span class="o">(</span><span class="n">obj</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span>
+	<span class="k">def</span> <span class="nf">valores</span><span class="o">(</span><span class="n">obj</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Es importante notar que este trait no pretende ser <em>extendido</em> por los tipos persistibles con SQL, simplemente dice qué debe ser posible hacer con sus
+instancias (en este caso, obtener una tabla y una lista de valores). Usando este trait, podemos reescribir nuestra función de persisitencia de la
+siguiente forma:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">persistirConSQL</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">obj</span><span class="k">:</span> <span class="kt">T</span><span class="o">)(</span><span class="n">persistible</span><span class="k">:</span> <span class="kt">PersistibleConSQL</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">=</span> <span class="o">{</span>
+	<span class="nc">SQL</span> <span class="n">run</span> <span class="n">s</span><span class="s">"INSERT INTO ${persistible.tabla(obj)} VALUES ${persistible.valores(obj)}"</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>La función persistir ahora trabaja con dos parámetros: Uno de ellos es una instancia del tipo T, el cual queremos persistir. El otro parámetro debe ser
+alguien que implemente las funciones tabla y valores sobre T. Este objeto es el que permite que T sea persistible con SQL, permitiendo desacoplar la idea
+de persistencia de nuestro tipo de dominio.</p>
+
+<p>Ahora podemos reescribir nuestro código sin ensuciarlo con lógica de persistencia. A cambio, debemos implementar un objeto aparte que lo vuelva
+persistible:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">C</span><span class="o">(</span><span class="n">f1</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">f2</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+
+<span class="k">object</span> <span class="nc">CSQL</span> <span class="k">extends</span> <span class="nc">PersistibleConSQL</span><span class="o">[</span><span class="kt">C</span><span class="o">]</span> <span class="o">{</span>
+	<span class="k">def</span> <span class="nf">tabla</span><span class="o">(</span><span class="n">obj</span><span class="k">:</span> <span class="kt">C</span><span class="o">)</span> <span class="k">=</span> <span class="s">"C"</span>
+	<span class="k">def</span> <span class="nf">valores</span><span class="o">(</span><span class="n">obj</span><span class="k">:</span> <span class="kt">C</span><span class="o">)</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="nv">obj</span><span class="o">.</span><span class="py">f1</span><span class="o">,</span> <span class="nv">obj</span><span class="o">.</span><span class="py">f2</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="c1">// uso</span>
+
+<span class="nf">persistirConSQL</span><span class="o">(</span><span class="k">new</span> <span class="nf">C</span><span class="o">(</span><span class="s">"foo"</span><span class="o">,</span> <span class="s">"bar"</span><span class="o">))(</span><span class="nc">CSQL</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Podemos pensar que el trait PersistibleConSQL[T] es una Type Class y nuestro tipo de dominio C la implementa a travéz del objeto CSQL.</p>
+      <h4 id="mejorando-el-uso-con-implicits">
+        
+        
+          <a href="#mejorando-el-uso-con-implicits"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Mejorando el uso con implicits
+        
+        
+      </h4>
+    
+
+<p>El problema de esta solución es que ahora tengo que preocuparme por tener en contexto al objeto CSQL y pasarlo por parámetro cada vez que quiero usarlo.
+Ahí es donde los parámetros implicitos hacen lo suyo! Si cambiamos nuestra función de persistencia para que el parametro que provee las funciones sea
+implicito podemos dejar que el compilador lo escriba por nosotros.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">persistirConSQL</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">obj</span><span class="k">:</span> <span class="kt">T</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">persistible</span><span class="k">:</span> <span class="kt">PersistibleConSQL</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">=</span> <span class="o">{</span>
+	<span class="nc">SQL</span> <span class="n">run</span> <span class="n">s</span><span class="s">"INSERT INTO ${persistible.tabla(obj)} VALUES ${persistible.valores(obj)}"</span>
+<span class="o">}</span>
+
+<span class="k">implicit</span> <span class="k">object</span> <span class="nc">CSQL</span> <span class="k">extends</span> <span class="nc">PersistibleConSQL</span><span class="o">[</span><span class="kt">C</span><span class="o">]</span> <span class="o">{</span>
+	<span class="k">def</span> <span class="nf">tabla</span><span class="o">(</span><span class="n">obj</span><span class="k">:</span> <span class="kt">C</span><span class="o">)</span> <span class="k">=</span> <span class="s">"C"</span>
+	<span class="k">def</span> <span class="nf">valores</span><span class="o">(</span><span class="n">obj</span><span class="k">:</span> <span class="kt">C</span><span class="o">)</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="nv">obj</span><span class="o">.</span><span class="py">f1</span><span class="o">,</span> <span class="nv">obj</span><span class="o">.</span><span class="py">f2</span><span class="o">)</span>
+<span class="o">}</span>
+
+<span class="c1">// uso</span>
+
+<span class="nf">persistirConSQL</span><span class="o">(</span><span class="k">new</span> <span class="nf">C</span><span class="o">(</span><span class="s">"foo"</span><span class="o">,</span> <span class="s">"bar"</span><span class="o">))</span>
+
+</code></pre></div></div>
+
+<p>Esta forma de “extender” tipos es tan común y flexible que Scala provee una notación especial para definir funciones con type clases:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">persistirConSQL</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">obj</span><span class="k">:</span> <span class="kt">T</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">persistible</span><span class="k">:</span> <span class="kt">PersistibleConSQL</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="o">{</span> <span class="o">???</span> <span class="o">}</span> <span class="c1">// Esto mismo puede escribirse como está en la linea de abajo  </span>
+<span class="k">def</span> <span class="nf">persistirConSQL</span><span class="o">[</span><span class="kt">T</span> <span class="kt">:</span> <span class="kt">PersistibleConSQL</span><span class="o">](</span><span class="n">obj</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="o">{</span> <span class="o">???</span> <span class="o">}</span> <span class="c1">// Acá se ve más claro que esperamos un tipo T que pertenece a la typeclass PersistibleConSQL </span>
+</code></pre></div></div>
+
+<p>Uh… Pero ahora ya no está el parámetro “persistible”! Cómo consigo la instancia? Scala provee una función llamada <em>implicitly</em> para estas situaciones:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">persistirConSQL</span><span class="o">[</span><span class="kt">T:</span> <span class="kt">PersistibleConSQL</span><span class="o">](</span><span class="n">obj</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+	<span class="k">val</span> <span class="nv">persistible</span> <span class="o">-</span> <span class="n">implicitly</span><span class="o">[</span><span class="kt">PersistibleConSQL</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span>
+	<span class="nc">SQL</span> <span class="n">run</span> <span class="n">s</span><span class="s">"INSERT INTO ${persistible.tabla(obj)} VALUES ${persistible.valores(obj)}"</span>
+<span class="o">}</span>
+</code></pre></div></div>
+      <h2 id="macros">
+        
+        
+          <a href="#macros"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Macros
+        
+        
+      </h2>
+    
+      <h3 id="qué-son">
+        
+        
+          <a href="#qué-son"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Qué son?
+        
+        
+      </h3>
+    
+
+<p>Macros es una herramienta muy poderosa que permite definir reescrituras de AST (Abstract Syntax Tree) y está presente en
+muchos lenguajes y tecnologías. A grandes razgos, la útilidad de las macros consiste en tomar una construcción sintáctica
+válida y reemplazarla por otra en tiempo de compilación, permitiendo así que la sintaxis que normalmente construiría un
+cierto programa construya otro totalmente diferente.
+En Scala, la utilización de macros está definida en el paquete</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">scala</span><span class="o">.</span><span class="py">language</span><span class="o">.</span><span class="py">experimental</span><span class="o">.</span><span class="py">macros</span>
+</code></pre></div></div>
+
+<p>el cual debe ser importado para poder trabajar.</p>
+
+<p>Una macro de Scala se compone de dos partes: Una declaración y una implementación. Al momento de compilar, los usos de la
+función declaración son procesados para reemplazarlos por el resultado de aplicar la función implementación. Definir la
+declaración de una macro es muy similar a definir una función común pero, en lugar del cuerpo, se utiliza la palabra clave
+<em>macro</em> seguida del nombre de la función implementación.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// declaración</span>
+  <span class="k">def</span> <span class="nf">miMacro</span><span class="o">(</span><span class="n">parametro1</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">parametro2</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">macro</span> <span class="n">miMacro_impl</span>
+  
+  <span class="c1">// implementación</span>
+  <span class="k">def</span> <span class="nf">miMacro_impl</span><span class="o">(</span><span class="n">c</span><span class="k">:</span> <span class="kt">Context</span><span class="o">)(</span><span class="n">parametro1</span><span class="k">:</span> <span class="kt">c.Expr</span><span class="o">[</span><span class="kt">String</span><span class="o">],</span> <span class="n">parametro2</span><span class="k">:</span> <span class="kt">c.Expr</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span> <span class="k">=</span> <span class="o">???</span>
+</code></pre></div></div>
+      <h3 id="usos">
+        
+        
+          <a href="#usos"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Usos
+        
+        
+      </h3>
+    
+
+<p>Veremos que hay varias maneras de colgarse del proceso de compilador, por lo que tenemos distintos tipos de macros propuestos por scala, solo que en este caso nos estaremos enfocando en uno de los tipos de macros. Otra consideración a tener en cuenta es que la interfaz que tenemos de macros como la de reflection en scala puede ir variando en el tiempo, ya que son aún implementaciones experimentales y no se ha llegado a un estado final de como sería la implementación definitiva.</p>
+
+<p>Las macros han sido utilizados durante la versión 2.10 de Scala, tanto para aplicaciones de investigación como industriales, y la conclusión según [1], es que las macros han sido útiles para aplicaciones tales como:</p>
+
+<ul>
+  <li>Code Generation</li>
+  <li>Implementation of DSLs</li>
+  <li>Static checking among others</li>
+</ul>
+      <h3 id="tipos">
+        
+        
+          <a href="#tipos"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Tipos
+        
+        
+      </h3>
+    
+
+<p>Existen 2 tipos de macros, las llamadas “de caja blanca” o <em>whitebox</em> y las “de caja negra” o <em>blackbox</em>. La diferencia
+entre los dos enfoques es que las macros de caja negra se usan cuando puedo definir claramente una firma para la función
+que quiero implementar usando macros, mientras que las de caja blanca se usan cuando no puedo definir dicha firma. Las
+macros de caja blanca son más flexibles pero menos seguras, ya que no pueden tiparse y van a ser discontinuadas en
+versiones futuras de Scala, por esa razón vamos a concentrarnos en las definiciones de caja negra.</p>
+
+<p>Para elegir uno de estos dos enfoques es necesario importar el paquete correspondiente</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scala.reflect.macros.whitebox</span>
+</code></pre></div></div>
+
+<p>para las de caja blanca y</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">scala.reflect.macros.blackbox</span>
+</code></pre></div></div>
+
+<p>para las de caja negra.</p>
+
+<p>La clase Context que se usó en el código anterior está definida en estos paquetes.</p>
+
+<p>Mirando el ejemplo, se puede ver que hay una relación entre el tipo de la declaración de la macro y su implementación que,
+además de recibir un parámetro Context, espera también un parámetro por cada parámetro de la declaración que debe tener
+el mismo nombre y un tipo de expresión que coincida. creado a partir del contexto.</p>
+      <h3 id="un-primer-ejemplo">
+        
+        
+          <a href="#un-primer-ejemplo"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Un primer ejemplo
+        
+        
+      </h3>
+    
+
+<p>Empecemos por hacer una macros sencilla: la función identidad, que recibe un número y lo retorna:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">id</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">macro</span> <span class="n">id_impl</span>
+
+<span class="k">def</span> <span class="nf">id_impl</span><span class="o">(</span><span class="n">c</span><span class="k">:</span> <span class="kt">Context</span><span class="o">)(</span><span class="n">n</span><span class="k">:</span> <span class="kt">c.Expr</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">c.Expr</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="n">n</span>
+</code></pre></div></div>
+
+<p>No fue tan difícil, no? Nuestra función id espera un Int y retorna un Int, por lo tanto, la macro con la que la
+implementamos debe recibir (además del contexto) una expresión de tipo Int y retornar esa misma expresión. Es importante
+notar que una expresión de tipo Int <em>no es</em> un Int, sino un fragmento de AST que, de ser evaluado, daría como resultado
+un Int. Que sería el contexto en este caso y porque existe? Antes de eso vamos a explicar un poco algunos conceptos de lo que vimos recién. En el ejemplo que vimos el mismo se denominan def macros, y son métodos cuyas llamadas se expanden en tiempo de compilación, y con expansión se refiere en macros, a la transformación a código pero a nivel de compilación (no a al texto sintáctico ni al bytecode ejecutable, sino una representación intermedia de este) derivado del método al que se esta llamando con sus argumentos. El contexto se refiere al mismo en el cual se expone el código que será expandido y las rutinas que definimos que manipulan el código que deseemos transformar.</p>
+
+<p>Otra parte del contexto de la macro es la funcion macroApplication, que nos permite proveer acceso al árbol de la expansión de la macro, y a pesar de que este arbol puede ser encontrado en argumentos de la implementación de la macro y en el método prefix, macroApplication nos permite dar un panorama más completo del contexto de la macro.</p>
+
+<p>Veamos un ejemplo un poco más completo, por ejemplo implementemos un assert con macros…</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">assert</span><span class="o">(</span><span class="n">contidion</span><span class="k">:</span> <span class="kt">Boolean</span><span class="o">,</span> <span class="n">msg</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="n">macro</span> <span class="n">assert_impl</span>
+
+  <span class="k">def</span> <span class="nf">assert_impl</span><span class="o">(</span><span class="n">c</span><span class="k">:</span> <span class="kt">Context</span><span class="o">)(</span><span class="n">contidion</span><span class="k">:</span> <span class="kt">c.Expr</span><span class="o">[</span><span class="kt">Boolean</span><span class="o">],</span> <span class="n">msg</span><span class="k">:</span> <span class="kt">c.Expr</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">import</span> <span class="nn">c.universe._</span>
+  
+    <span class="k">val</span> <span class="nv">q</span><span class="s">"assert ($condition, $msg)"</span> <span class="k">=</span> <span class="nv">c</span><span class="o">.</span><span class="py">macroApplication</span>
+    <span class="n">q</span><span class="s">"if (!$condition) raise($msg)"</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>El ejemplo tiene un par de cosas nuevas, por un lado vemos un q seguido de un string con signos de $ refiriendose a variables, para empezar q es básicamente un método que nos permite, mediante un string interpolator al cual podemos referinos a parámetros o valores dentro de la implementación de la macro, crear y hacer pattern matching código que podemos generar o transformar. En este caso lo que se esta haciendo es pattern matchear todo el contexto que recibimos del assert a dos variables y luego genera un código condicional, en otras palabras si llamamos a</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">assert</span><span class="o">(</span><span class="s">"1 == 1"</span><span class="o">,</span> <span class="s">"Uno no es igual a uno"</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>este código se reemplaza en tiempo de compilación cuando la macro se invoke y realice la expansión a</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">if</span><span class="o">(!</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="nf">raise</span><span class="o">(</span><span class="s">"Uno no es igual a uno"</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>en la próxima sección veremos un poco más de lo que es este método q que permite que podamos crear estructuras mediante string interpolation.</p>
+      <h3 id="quasiquotes">
+        
+        
+          <a href="#quasiquotes"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Quasiquotes
+        
+        
+      </h3>
+    
+
+<p>Implementar macros más complejas implica manipular el AST que conforma las expresiones. Esto es un trabajo muy pesado,
+ya que requiere entender qué tipo de nodo se obtiene de cada posible expresión y como puede combinarse y deconstruirse
+en base a otros.</p>
+
+<p>Por suerte, las últimas versiones del framework de macros de Scala incluyen una herramienta muy poderosa para convertir
+código a expresiones u obtener elementos a partir de un AST: <em>Los Quasiquotes</em>.</p>
+
+<p>Quasiquotes son un tipo de StringContext que puede ser usado para aplicar y desaplicar valores desde/hacia un AST y
+constituyen una interfaz relativamente accesible para manipular las expresiones.</p>
+
+<p>El siguiente ejemplo usa quasiquotes para definir una macro que recibe una expresion por parámetro y loguea por consola
+un aviso de que sentencia se va a ejecutar antes de evaluarla.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">debug</span><span class="o">(</span><span class="n">code</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="n">macro</span> <span class="n">debug_impl</span>
+
+<span class="k">def</span> <span class="nf">debug_impl</span><span class="o">(</span><span class="n">c</span><span class="k">:</span> <span class="kt">Context</span><span class="o">)(</span><span class="n">code</span><span class="k">:</span> <span class="kt">c.Tree</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+	<span class="k">import</span> <span class="nn">c.universe._</span>
+
+	<span class="k">val</span> <span class="nv">q</span><span class="s">"..$sentences"</span> <span class="k">=</span> <span class="n">code</span>
+
+	<span class="k">val</span> <span class="nv">loggedSentences</span> <span class="k">=</span> <span class="o">(</span><span class="n">sentences</span> <span class="o">:\</span> <span class="nc">List</span><span class="o">[</span><span class="kt">c.Tree</span><span class="o">]()){</span>
+		<span class="nf">case</span> <span class="o">(</span><span class="n">sentence</span><span class="o">,</span> <span class="n">acum</span><span class="o">)</span> <span class="k">=&gt;</span>
+			<span class="k">val</span> <span class="nv">msg</span> <span class="k">=</span> <span class="s">"Se va a ejecutar: "</span> <span class="o">+</span> <span class="nf">showCode</span><span class="o">(</span><span class="n">sentence</span><span class="o">)</span>
+			<span class="k">val</span> <span class="nv">printSentence</span> <span class="k">=</span> <span class="n">q</span><span class="s">"println($msg)"</span>
+
+			<span class="n">printSentence</span> <span class="o">::</span> <span class="n">sentence</span> <span class="o">::</span> <span class="n">acum</span>
+	<span class="o">}</span>
+
+	<span class="n">q</span><span class="s">"..$loggedSentences"</span>
+<span class="o">}</span>
+
+<span class="c1">//uso</span>
+
+<span class="k">val</span> <span class="nv">x</span> <span class="k">=</span> <span class="mi">10</span>
+<span class="n">debug</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nv">x</span> <span class="k">=</span> <span class="mi">10</span>         <span class="c1">// Se va a ejecutar: val x = 10</span>
+  <span class="k">val</span> <span class="nv">y</span> <span class="k">=</span> <span class="mi">15</span>         <span class="c1">// Se va a ejecutar: val y = 15</span>
+  <span class="k">val</span> <span class="nv">z</span> <span class="k">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>      <span class="c1">// Se va a ejecutar: val z = x + y</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+      <h3 id="validaciones-y-manejo-de-errores">
+        
+        
+          <a href="#validaciones-y-manejo-de-errores"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Validaciones y manejo de errores
+        
+        
+      </h3>
+    
+
+<p>El contexto de las macros permite realizar chequeos de tipos, validaciones sobre las expresiones e informar al compilador
+de la necesidad de lanzar errores o warnings. Esto es un recurso excelente para validar construcciones estáticas en tiempo
+de compilación.</p>
+
+<p>El siguiente ejemplo retoma la idea de los mails con una macro que recibe un String y retorna un Email, pero falla si el
+string no tiene el formato correcto. Este feedback puede verse en el mismo IDE, ya que se controla en tiempo de
+compilación!</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Email</span><span class="o">(</span><span class="n">id</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">domain</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+
+<span class="k">def</span> <span class="nf">email</span><span class="o">(</span><span class="n">str</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">Email</span> <span class="o">=</span> <span class="n">macro</span> <span class="n">email_impl</span>
+<span class="k">def</span> <span class="nf">email_impl</span><span class="o">(</span><span class="n">c</span><span class="k">:</span> <span class="kt">Context</span><span class="o">)(</span><span class="n">str</span><span class="k">:</span> <span class="kt">c.Expr</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span> <span class="k">=</span> <span class="o">{</span>
+	<span class="k">import</span> <span class="nn">c.universe._</span>
+
+	<span class="k">val</span> <span class="nv">emailFormat</span> <span class="k">=</span> <span class="s">"""(\w{4,})@([\w\.]+.com)"""</span><span class="o">.</span><span class="py">r</span>
+	
+	<span class="n">str</span> <span class="k">match</span> <span class="o">{</span>
+		<span class="k">case</span> <span class="nc">Expr</span><span class="o">(</span><span class="nc">Literal</span><span class="o">(</span><span class="nc">Constant</span><span class="o">(</span><span class="nf">emailFormat</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">domain</span><span class="o">))))</span> <span class="k">=&gt;</span>	<span class="n">q</span><span class="s">"""Email($id,$domain)"""</span>
+		<span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="nv">c</span><span class="o">.</span><span class="py">abort</span><span class="o">(</span><span class="nv">c</span><span class="o">.</span><span class="py">enclosingPosition</span><span class="o">,</span> <span class="s">"Formato inválido!!!"</span><span class="o">)</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">//uso</span>
+<span class="nf">email</span><span class="o">(</span><span class="s">"lalala@gmail.com"</span><span class="o">)</span> <span class="c1">// Retorna Email("lalala", "gmail.com")</span>
+<span class="nf">email</span><span class="o">(</span><span class="s">"lalalagmail.com"</span><span class="o">)</span> <span class="c1">// Error de compilación! Formato inválido!</span>
+</code></pre></div></div>
+      <h2 id="poniendo-todo-junto">
+        
+        
+          <a href="#poniendo-todo-junto"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Poniendo todo junto
+        
+        
+      </h2>
+    
+
+<p>Podemos dar un último paso combinando un poco de todo lo que vimos. En el siguiente ejemplo se muestra cómo puede
+extenderse StringContext mediante implicits para crear mails que son validados en tiempo de compilación. Si bien hay que
+poner un poco de esfuerzo extra para adecuar las firmas y los usos, este es un gran ejemplo de lo poderosas que pueden
+ser estas herramientas cuando se usan juntas.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Email</span><span class="o">(</span><span class="n">id</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">domain</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+
+<span class="k">implicit</span> <span class="k">class</span> <span class="nc">EmailStringContext</span><span class="o">(</span><span class="n">strCtx</span><span class="k">:</span> <span class="kt">StringContext</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">def</span> <span class="nf">email</span><span class="o">(</span><span class="n">arguments</span><span class="k">:</span> <span class="kt">Any*</span><span class="o">)</span><span class="k">:</span> <span class="kt">Email</span> <span class="o">=</span> <span class="n">macro</span> <span class="n">email_impl</span>
+<span class="o">}</span>
+
+<span class="k">def</span> <span class="nf">email_impl</span><span class="o">(</span><span class="n">c</span><span class="k">:</span> <span class="kt">Context</span><span class="o">)(</span><span class="n">arguments</span><span class="k">:</span> <span class="kt">c.Expr</span><span class="o">[</span><span class="kt">Any</span><span class="o">]*)</span> <span class="k">=</span> <span class="o">{</span>
+	<span class="k">import</span> <span class="nn">c.universe._</span>
+
+	<span class="k">val</span> <span class="nv">emailFormat</span> <span class="k">=</span> <span class="s">"""(\w{4,})@([\w\.]+.com)"""</span><span class="o">.</span><span class="py">r</span>
+	
+	<span class="nv">c</span><span class="o">.</span><span class="py">prefix</span><span class="o">.</span><span class="py">tree</span> <span class="k">match</span> <span class="o">{</span>
+  		<span class="k">case</span> <span class="nc">Apply</span><span class="o">(</span><span class="k">_</span><span class="o">,</span> <span class="nc">List</span><span class="o">(</span><span class="nc">Apply</span><span class="o">(</span><span class="k">_</span><span class="o">,</span> <span class="n">rawParts</span><span class="o">)))</span> <span class="k">=&gt;</span>
+		  	<span class="k">val</span> <span class="nv">parts</span> <span class="k">=</span> <span class="n">rawParts</span> <span class="n">map</span> <span class="o">{</span> <span class="k">case</span> <span class="nc">Literal</span><span class="o">(</span><span class="nc">Constant</span><span class="o">(</span><span class="n">const</span><span class="k">:</span> <span class="kt">String</span><span class="o">))</span> <span class="k">=&gt;</span> <span class="n">const</span> <span class="o">}</span>
+		  	<span class="k">val</span> <span class="nv">args</span> <span class="k">=</span> <span class="n">arguments</span> <span class="n">map</span> <span class="o">{</span> <span class="k">case</span> <span class="nc">Literal</span><span class="o">(</span><span class="nc">Constant</span><span class="o">(</span><span class="n">const</span><span class="k">:</span> <span class="kt">String</span><span class="o">))</span> <span class="k">=&gt;</span> <span class="n">const</span> <span class="o">}</span>
+		  	<span class="k">val</span> <span class="nv">mail</span> <span class="k">=</span> <span class="o">(</span><span class="s">""</span> <span class="o">/:</span> <span class="nv">parts</span><span class="o">.</span><span class="py">zipAll</span><span class="o">(</span><span class="n">args</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="s">""</span><span class="o">))</span> <span class="o">{</span>	<span class="nf">case</span> <span class="o">(</span><span class="n">acum</span><span class="o">,</span> <span class="o">(</span><span class="n">part</span><span class="o">,</span> <span class="n">arg</span><span class="o">))</span> <span class="k">=&gt;</span> <span class="n">acum</span> <span class="o">+</span> <span class="n">part</span> <span class="o">+</span> <span class="n">arg</span>	<span class="o">}</span>
+		
+		  	<span class="n">mail</span> <span class="k">match</span> <span class="o">{</span>
+		  		<span class="k">case</span> <span class="nf">emailFormat</span><span class="o">(</span><span class="n">id</span><span class="o">,</span><span class="n">domain</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">q</span><span class="s">"Email($id,$domain)"</span>
+		  		<span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="nv">c</span><span class="o">.</span><span class="py">abort</span><span class="o">(</span><span class="nv">c</span><span class="o">.</span><span class="py">enclosingPosition</span><span class="o">,</span> <span class="s">"Invalid mail!!!"</span><span class="o">)</span>
+		  	<span class="o">}</span>
+		<span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="nv">c</span><span class="o">.</span><span class="py">abort</span><span class="o">(</span><span class="nv">c</span><span class="o">.</span><span class="py">enclosingPosition</span><span class="o">,</span> <span class="s">"Invalid mail!!!"</span><span class="o">)</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Noten que no podemos pasarle a la macro el parámetro extra que el StringContext necesita, así que tenemos que obtenerlo
+en base al contexto.</p>
+      <h2 id="referencias">
+        
+        
+          <a href="#referencias"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Referencias
+        
+        
+      </h2>
+    
+<ul>
+  <li><a href="http://docs.scala-lang.org/tutorials/tour/case-classes.html">http://docs.scala-lang.org/tutorials/tour/case-classes.html</a></li>
+  <li><a href="http://docs.scala-lang.org/overviews/core/string-interpolation.html">http://docs.scala-lang.org/overviews/core/string-interpolation.html</a></li>
+  <li><a href="http://docs.scala-lang.org/overviews/core/implicit-classes.html">http://docs.scala-lang.org/overviews/core/implicit-classes.html</a></li>
+  <li><a href="https://docs.scala-lang.org/tour/implicit-conversions.html">https://docs.scala-lang.org/tour/implicit-conversions.html</a></li>
+  <li><a href="http://docs.scala-lang.org/tutorials/tour/implicit-parameters.html">http://docs.scala-lang.org/tutorials/tour/implicit-parameters.html</a></li>
+  <li><a href="http://docs.scala-lang.org/tutorials/FAQ/finding-implicits.html">http://docs.scala-lang.org/tutorials/FAQ/finding-implicits.html</a></li>
+  <li><a href="http://docs.scala-lang.org/overviews/macros/overview.html">http://docs.scala-lang.org/overviews/macros/overview.html</a></li>
+  <li><a href="http://docs.scala-lang.org/overviews/macros/quasiquotes.html">http://docs.scala-lang.org/overviews/macros/quasiquotes.html</a></li>
+</ul>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>

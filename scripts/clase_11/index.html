@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_11/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase 11 TADP 1C2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="clase-10---ejercicio-en-funcional">
+        
+        
+          <a href="#clase-10---ejercicio-en-funcional"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Clase 10 - Ejercicio en Funcional
+        
+        
+      </h1>
+    
+      <h2 id="objetivos-de-la-clase">
+        
+        
+          <a href="#objetivos-de-la-clase"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Objetivos de la clase:
+        
+        
+      </h2>
+    
+
+<p>Ver un poquito de diseño en funcional. La idea es partir de soluciones imperfectas, o lejanas del grado de abstracción y declaratividad que uno querría tener en un diseño funcionaloso (con mucho pattern matching, muchas estructuras muy expuestas) y empezar en cambio a introducir funciones como objetos y objetos como funciones para ir hacia algo que aplique algo más de orden superior, que use funciones para abstraer la lógica.</p>
+      <h2 id="tp-a-utilizar">
+        
+        
+          <a href="#tp-a-utilizar"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> TP a utilizar:
+        
+        
+      </h2>
+    
+<p>En principio, la intención es usar el TP de Pokemon.</p>
+
+<p>Se utilizó esta versión <a href="https://docs.google.com/document/d/1aewVvR4YcU3-1fXZDKEGEGgH5i2ar-mTpugKn2uGMhg/edit#">reducida</a></p>
+
+<p>Podemos basarnos en la implementación de referencia que hizo <a href="https://github.com/bossiernesto/tp-pokemon">NicoS</a></p>
+
+<p>Y también podemos basarnos en la implementación que hizo el grupo <a href="https://github.com/iluetich/wololos-1c-2015-tp-tadp-pokemon">wololos</a></p>
+
+<ul>
+  <li>Comenzar planteando el caso de uso de implementar algunas actividades sencillas y sin parámetros extra: Descansar y fingir intercambio.</li>
+  <li>Con estas dos actividades, debería surgir la idea de que quizás las actividades pueden ser funciones, pero de momento podemos dejarla de lado. Que quede colgada.</li>
+  <li>Agregar más actividades: Nadar y levantar pesas. Vemos que tienen un parámetro. Las agregamos como case classes.</li>
+  <li>Hacer funcionar las actividades con estructuras de datos y funciones, y mucho pattern matching. Hacer la función “realizarActividad”, quizás definida en pokemon o quizás definida afuera que use Pattern matching a full para determinar qué hacer en cada actividad.</li>
+  <li>Implementar la “Rutina” como lista de actividades, y el “realizar rutina” quizás como un fold, o algo así. O quizás empezar con una idea recursiva y después cambiar a fold. Quizás introducir el Try.</li>
+  <li>Preguntar si dado que cada actividad conoce lo que tiene que hacer con un pokemon, no sería conveniente encapsular lo que la actividad hace dentro de cada una. Hacer quizás un método polimórfico o algo así.</li>
+  <li>Reflexionar un poco acerca de Polimorfismo Ad-Hoc vs Pattern Matching. Ver que no son excluyentes, y que se puede usar uno o el otro donde convenga y combinarlos para lograr un diseño supuestamente flexible. Quizás hablar de la dicotomía agregar operaciones vs agregar tipos/estructuras.</li>
+  <li>Comentar que en Scala las funciones son objetos con un contrato en particular. Ver quizás los traits de function y cosas del estilo. Ver que para que un objeto se pueda comportar como función, la idea es definir el Apply. Definirlo en las actividades que ya existen. Cambiar el “type” de Actividad para que sea una función de Pokemon en Pokemon. Cambiar el realizar rutina para que foldee aplicando las funciones.</li>
+  <li>Agregar alguna actividad, más complicada, como realizar ataque, más como ejercitación que otra cosa</li>
+</ul>
+      <h2 id="segunda-parte">
+        
+        
+          <a href="#segunda-parte"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Segunda parte
+        
+        
+      </h2>
+    
+
+<ul>
+  <li>Arrancamos marcando que al subir un nivel no se están actualizando las características -&gt; hacer el cambio de val a def</li>
+  <li>Implementar las rutinas(fold y try)</li>
+  <li>Agregamos las evoluciones. Modificar ganarExperiencia y agregar a la especie la condición evolutiva(option). Actividades usarPiedra e intercambiar</li>
+  <li>Ataques: validación APs suficientes, puntos de experiencia ganados, efectos posteriores</li>
+</ul>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>

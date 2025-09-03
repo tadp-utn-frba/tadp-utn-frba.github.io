@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de TADP. Electiva de 3er anio de la UTN FRBA">
+
+    <title>TADP</title>
+
+    <link rel="canonical" href="http://tadp-utn-frba.github.io/scripts/clase_12/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="/css/prism.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TADP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                
+                <li>
+                    <a href="/quienessomos/">Quienes Somos</a>
+                </li>
+                
+                <li>
+                    <a href="/administrativos/">Temas Administrativos</a>
+                </li>
+                
+                <li>
+                    <a href="/contenidos/">Contenidos</a>
+                </li>
+                
+                <li>
+                    <a href="/cursada/">Cursada</a>
+                </li>
+                
+                <li>
+                    <a href="/material/">Material</a>
+                </li>
+                
+                <li>
+                    <a href="/planificacion/">Planificación</a>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>TADP</h1>
+                    <hr class="small">
+                    <span class="subheading">Script Clase 12 TADP 1C2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1 id="objetos--funcional">
+        
+        
+          <a href="#objetos--funcional"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Objetos + Funcional
+        
+        
+      </h1>
+    
+<p>Vamos a construir una solucion funcional de un dominio y luego vamos a ir introduciendo y combinando conceptos de OOP.</p>
+      <h2 id="dominio">
+        
+        
+          <a href="#dominio"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Dominio
+        
+        
+      </h2>
+    
+<p>Vamos a construir un programa para analizar las pociones que se enseñan a los alumnos en el colegio Hogwarts de Magia y Hechicería, y los efectos que pueden hacer sobre las personas.</p>
+      <h3 id="personas-y-niveles">
+        
+        
+          <a href="#personas-y-niveles"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Personas y Niveles
+        
+        
+      </h3>
+    
+<p>Una persona es una tupla de nombre y niveles.
+Los niveles definen el estado de cada caracteristica de una persona: suerte, convencimiento, fuerza.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="kt">Niveles</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Int</span><span class="o">,</span> <span class="nc">Int</span><span class="o">,</span> <span class="nc">Int</span><span class="o">)</span>
+<span class="k">type</span> <span class="kt">Persona</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Niveles</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="nv">personas</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span>
+  <span class="o">(</span><span class="s">"Harry"</span><span class="o">,</span> <span class="o">(</span><span class="mi">11</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">4</span><span class="o">)),</span>
+  <span class="o">(</span><span class="s">"Ron"</span><span class="o">,</span> <span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">6</span><span class="o">)),</span>
+  <span class="o">(</span><span class="s">"Hermione"</span><span class="o">,</span> <span class="o">(</span><span class="mi">8</span><span class="o">,</span> <span class="mi">12</span><span class="o">,</span> <span class="mi">2</span><span class="o">)),</span>
+  <span class="o">(</span><span class="s">"Draco"</span><span class="o">,</span> <span class="o">(</span><span class="mi">7</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">6</span><span class="o">))</span>
+<span class="o">)</span>
+</code></pre></div></div>
+      <h3 id="efectos">
+        
+        
+          <a href="#efectos"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Efectos
+        
+        
+      </h3>
+    
+<p>Los efectos son funciones que reciben niveles y devuelven el nuevo estado de los niveles.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="kt">Efecto</span> <span class="o">=</span> <span class="nc">Niveles</span> <span class="k">=&gt;</span> <span class="nc">Niveles</span>
+</code></pre></div></div>
+      <h4 id="aplicación-parcial-y-currificación">
+        
+        
+          <a href="#aplicación-parcial-y-currificación"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Aplicación Parcial y Currificación
+        
+        
+      </h4>
+    
+
+<p>Definamos un efecto que duplique todos los niveles:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">duplica</span><span class="o">(</span><span class="n">niveles</span><span class="k">:</span> <span class="kt">Niveles</span><span class="o">)</span> <span class="k">=</span> <span class="nv">niveles</span><span class="o">.</span><span class="py">_1</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="nv">niveles</span><span class="o">.</span><span class="py">_2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="nv">niveles</span><span class="o">.</span><span class="py">_3</span> <span class="o">*</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p>Si ahora queremos definir otro efecto que se quede con el máximo valor entre cada nivel y 7, tendríamos que duplicar la lógica de la función anterior en gran parte.</p>
+
+<p>Definamos entonces una función que dada una operación, la aplique a cada nivel:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">mapNiveles</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span><span class="o">,</span> <span class="n">niveles</span><span class="k">:</span> <span class="kt">Niveles</span><span class="o">)</span> <span class="k">=</span>
+  <span class="o">(</span><span class="nf">f</span><span class="o">(</span><span class="nv">niveles</span><span class="o">.</span><span class="py">_1</span><span class="o">),</span> <span class="nf">f</span><span class="o">(</span><span class="nv">niveles</span><span class="o">.</span><span class="py">_2</span><span class="o">),</span> <span class="nf">f</span><span class="o">(</span><span class="nv">niveles</span><span class="o">.</span><span class="py">_3</span><span class="o">))</span>
+
+<span class="k">val</span> <span class="nv">duplica</span><span class="k">:</span> <span class="kt">Efecto</span> <span class="o">=</span> <span class="nf">mapNiveles</span><span class="o">(</span><span class="k">_</span> <span class="o">*</span> <span class="mi">2</span><span class="o">,</span> <span class="k">_</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="nv">alMenos7</span><span class="k">:</span> <span class="kt">Efecto</span> <span class="o">=</span> <span class="nf">mapNiveles</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">max</span><span class="o">(</span><span class="mi">7</span><span class="o">),</span> <span class="k">_</span><span class="o">)</span>
+</code></pre></div></div>
+<p>Estamos usando el “_” para aplicar parcialmente una función.</p>
+
+<p>Aplicar parcialmente las funciones es muy importante porque me deja transformarlas en otras funciones más específicas, para componerlas o pasarlas por parámetro.</p>
+
+<p>Una función en Scala puede recibir multiples grupos de parámetros. Dado que en Scala las funciones no están completamente currificadas, uno tiene que declarar “grupos de aplicación” para poder evitar el “_”.</p>
+
+<p>Entonces podemos reescribir la función anterior como:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">mapNiveles</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=&gt;</span> <span class="nc">Int</span><span class="o">)(</span><span class="n">niveles</span><span class="k">:</span> <span class="kt">Niveles</span><span class="o">)</span> <span class="k">=</span>
+  <span class="o">(</span><span class="nf">f</span><span class="o">(</span><span class="nv">niveles</span><span class="o">.</span><span class="py">_1</span><span class="o">),</span> <span class="nf">f</span><span class="o">(</span><span class="nv">niveles</span><span class="o">.</span><span class="py">_2</span><span class="o">),</span> <span class="nf">f</span><span class="o">(</span><span class="nv">niveles</span><span class="o">.</span><span class="py">_3</span><span class="o">))</span>
+
+<span class="k">val</span> <span class="nv">duplica</span><span class="k">:</span> <span class="kt">Efecto</span> <span class="o">=</span> <span class="nf">mapNiveles</span><span class="o">(</span><span class="k">_</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
+
+<span class="k">val</span> <span class="nv">alMenos7</span><span class="k">:</span> <span class="kt">Efecto</span> <span class="o">=</span> <span class="nf">mapNiveles</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">max</span><span class="o">(</span><span class="mi">7</span><span class="o">))</span>
+</code></pre></div></div>
+      <h2 id="composición-de-funciones">
+        
+        
+          <a href="#composición-de-funciones"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Composición de Funciones
+        
+        
+      </h2>
+    
+
+<p>En el paradigma funcional es importante componer porque las funciones son los ladrillitos con los que construiamos los programas.</p>
+
+<p>En funcional las funciones son chiquitas y cohesivas. Las combinamos entre ellas para construir algoritmos más grandes.</p>
+
+<p>Por ejemplo, en haskell es natural hacer algo como:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(length . filter aprobado . map parcial) alumnos
+</code></pre></div></div>
+
+<p>Tenemos las funciones length, filter y map (sin contar las que usamos cómo parámetro) y las combinamos en secuencia para hacer algoritmos más complejos.</p>
+
+<p>En el paradigma orientado a objetos hacemos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alumnos.map(_.parcial).filter(_.aprobado).length
+</code></pre></div></div>
+
+<p>Cual es la diferencia?</p>
+
+<p>En funcional cada uno tiene que construir las operaciones por afuera de los datos, en objetos los mismos datos pueden proveer las funciones. No necesitamos componer, porque podemos mandarle mensajes al resultado de una operación.</p>
+
+<p>Creemos las siguientes funciones y veamos como funciona la composición:</p>
+
+<ul>
+  <li>Sumar el valor de todos los niveles</li>
+</ul>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">toList</span><span class="k">:</span> <span class="kt">Niveles</span> <span class="o">=&gt;</span> <span class="nc">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="n">niveles</span> <span class="k">=&gt;</span> <span class="nc">List</span><span class="o">(</span><span class="nv">niveles</span><span class="o">.</span><span class="py">_1</span><span class="o">,</span> <span class="nv">niveles</span><span class="o">.</span><span class="py">_2</span><span class="o">,</span> <span class="nv">niveles</span><span class="o">.</span><span class="py">_3</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">sumaNiveles</span><span class="k">:</span> <span class="kt">Niveles</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nv">toList</span><span class="o">.</span><span class="py">andThen</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">sum</span><span class="o">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Calcular la diferencia entre el nivel más alto y el más bajo</li>
+</ul>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">maxNivel</span><span class="k">:</span> <span class="kt">Niveles</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nv">toList</span><span class="o">.</span><span class="py">andThen</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">max</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">minNivel</span><span class="k">:</span> <span class="kt">Niveles</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nv">toList</span><span class="o">.</span><span class="py">andThen</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">min</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">diferenciaNiveles</span><span class="k">:</span> <span class="kt">Niveles</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="n">niveles</span> <span class="k">=&gt;</span> <span class="nf">maxNivel</span><span class="o">(</span><span class="n">niveles</span><span class="o">)</span> <span class="o">-</span> <span class="nf">minNivel</span><span class="o">(</span><span class="n">niveles</span><span class="o">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Sumar los niveles de una persona</li>
+</ul>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">niveles</span><span class="o">(</span><span class="n">persona</span><span class="k">:</span> <span class="kt">Persona</span><span class="o">)</span> <span class="k">=</span> <span class="nv">persona</span><span class="o">.</span><span class="py">_2</span>
+  <span class="k">val</span> <span class="nv">sumaNivelesPersona</span><span class="k">:</span> <span class="kt">Persona</span> <span class="o">=&gt;</span> <span class="nc">Int</span> <span class="k">=</span> <span class="nv">sumaNiveles</span><span class="o">.</span><span class="py">compose</span><span class="o">(</span><span class="n">niveles</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Podemos ver que las funciones pueden ser compuestas usando “andThen” y “compose” para crear nuevas funciones más complejas.</p>
+      <h3 id="pociones">
+        
+        
+          <a href="#pociones"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Pociones
+        
+        
+      </h3>
+    
+<p>Una poción es una tupla de nombre y lista de ingredientes.
+Los ingredientes son una 3-upla de nombre, cantidad del ingrediente y lista de efectos.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="kt">Ingrediente</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Int</span><span class="o">,</span> <span class="nc">List</span><span class="o">[</span><span class="kt">Efecto</span><span class="o">])</span>
+<span class="k">type</span> <span class="kt">Pocion</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">,</span> <span class="nc">List</span><span class="o">[</span><span class="kt">Ingrediente</span><span class="o">])</span>
+
+<span class="c1">// Pociones</span>
+<span class="k">val</span> <span class="nv">multijugos</span> <span class="k">=</span> <span class="o">(</span><span class="s">"Multijugos"</span><span class="o">,</span> <span class="nc">List</span><span class="o">(</span>
+  <span class="o">(</span><span class="s">"Cuerno de Bicornio en Polvo"</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="nc">List</span><span class="o">(</span><span class="n">invierte</span><span class="o">,</span> <span class="n">suerteEsConvencimiento</span><span class="o">)),</span>
+  <span class="o">(</span><span class="s">"Sanguijuela hormonal"</span><span class="o">,</span> <span class="mi">54</span><span class="o">,</span> <span class="nc">List</span><span class="o">(</span><span class="n">duplica</span><span class="o">,</span> <span class="n">suerteEsConvencimiento</span><span class="o">))</span>
+<span class="o">))</span>
+
+<span class="k">val</span> <span class="nv">felixFelices</span> <span class="k">=</span> <span class="o">(</span><span class="s">"Felix Felices"</span><span class="o">,</span> <span class="nc">List</span><span class="o">(</span>
+  <span class="o">(</span><span class="s">"Escarabajos Machacados"</span><span class="o">,</span> <span class="mi">52</span><span class="o">,</span> <span class="nc">List</span><span class="o">(</span><span class="n">duplica</span><span class="o">,</span> <span class="n">alMenos7</span><span class="o">)),</span>
+  <span class="o">(</span><span class="s">"Ojo de Tigre Sucio"</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="nc">List</span><span class="o">(</span><span class="n">suerteEsConvencimiento</span><span class="o">))</span>
+<span class="o">))</span>
+
+<span class="k">val</span> <span class="nv">floresDeBach</span> <span class="k">=</span> <span class="o">(</span><span class="s">"Flores de Bach"</span><span class="o">,</span> <span class="nc">List</span><span class="o">(</span>
+  <span class="o">(</span><span class="s">"Rosita"</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="nc">List</span><span class="o">(</span><span class="n">duplica</span><span class="o">))</span>
+<span class="o">))</span>
+
+<span class="k">val</span> <span class="nv">pociones</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Pocion</span><span class="o">]</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="n">felixFelices</span><span class="o">,</span> <span class="n">multijugos</span><span class="o">,</span> <span class="n">floresDeBach</span><span class="o">)</span>
+</code></pre></div></div>
+      <h4 id="funciones-parciales">
+        
+        
+          <a href="#funciones-parciales"><svg class='octicon' viewBox='0 0 16 16' version='1.1' width='16' height='32' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg></a> Funciones Parciales
+        
+        
+      </h4>
+    
+
+<p>Decimos que una poción es “heavy” cuando al menos tiene 2 efectos. Obtengamos una lista de todas las pociones heavies.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">efectos</span><span class="o">(</span><span class="n">ingrediente</span><span class="k">:</span> <span class="kt">Ingrediente</span><span class="o">)</span> <span class="k">=</span> <span class="nv">ingrediente</span><span class="o">.</span><span class="py">_3</span>
+<span class="k">val</span> <span class="nv">todosLosEfectos</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Ingrediente</span><span class="o">]</span> <span class="k">=&gt;</span> <span class="nc">List</span><span class="o">[</span><span class="kt">Efecto</span><span class="o">]</span> <span class="k">=</span> <span class="nv">_</span><span class="o">.</span><span class="py">flatMap</span><span class="o">(</span><span class="n">efectos</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">ingredientes</span><span class="k">:</span> <span class="kt">Pocion</span> <span class="o">=&gt;</span> <span class="nc">List</span><span class="o">[</span><span class="kt">Ingrediente</span><span class="o">]</span> <span class="k">=</span> <span class="nv">_</span><span class="o">.</span><span class="py">_2</span>
+<span class="k">val</span> <span class="nv">efectosPocion</span><span class="k">:</span> <span class="kt">Pocion</span> <span class="o">=&gt;</span> <span class="nc">List</span><span class="o">[</span><span class="kt">Efecto</span><span class="o">]</span> <span class="k">=</span> <span class="nv">todosLosEfectos</span><span class="o">.</span><span class="py">compose</span><span class="o">(</span><span class="n">ingredientes</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">esHeavy</span><span class="k">:</span> <span class="kt">Pocion</span> <span class="o">=&gt;</span> <span class="nc">Boolean</span> <span class="k">=</span> <span class="nf">efectosPocion</span><span class="o">(</span><span class="k">_</span><span class="o">).</span><span class="py">size</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+<span class="k">def</span> <span class="nf">nombre</span><span class="o">(</span><span class="n">pocion</span><span class="k">:</span> <span class="kt">Pocion</span><span class="o">)</span> <span class="k">=</span> <span class="nv">pocion</span><span class="o">.</span><span class="py">_1</span>
+<span class="k">val</span> <span class="nv">pocionesHeavies</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Pocion</span><span class="o">]</span> <span class="k">=&gt;</span> <span class="nc">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nv">_</span><span class="o">.</span><span class="py">filter</span><span class="o">(</span><span class="n">esHeavy</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="n">nombre</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Pero también podemos usar pattern matching y funciones parciales para conseguir lo mismo:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">pocionesHeaviesPartial</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Pocion</span><span class="o">]</span> <span class="k">=&gt;</span> <span class="nc">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nv">_</span><span class="o">.</span><span class="py">collect</span> <span class="o">{</span>
+  <span class="nf">case</span> <span class="o">(</span><span class="n">nombre</span><span class="o">,</span> <span class="n">ingredientes</span><span class="o">)</span> <span class="k">if</span> <span class="nf">todosLosEfectos</span><span class="o">(</span><span class="n">ingredientes</span><span class="o">).</span><span class="py">size</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="k">=&gt;</span> <span class="n">nombre</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Lo que acabamos de definir es una función parcial, una función que no está definida para todos los valores de su dominio.</p>
+
+<p>Scala provee un azucar sintáctico para escribir funciones parciales con una sintaxis identica a la del patern matching sin iniciar con el “match”.</p>
+
+<p>En caso de querer definir una funcion parcial con la misma sintaxis, estamos obligados a hacerlo en una variable o parámetro que esté tipado explicitamente.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">nombreDePocionHeavy</span><span class="k">:</span> <span class="kt">PartialFunction</span><span class="o">[</span><span class="kt">Pocion</span>, <span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="nf">case</span> <span class="o">(</span><span class="n">nombre</span><span class="o">,</span> <span class="n">ingredientes</span><span class="o">)</span> <span class="k">if</span> <span class="nf">todosLosEfectos</span><span class="o">(</span><span class="n">ingredientes</span><span class="o">).</span><span class="py">size</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="k">=&gt;</span> <span class="n">nombre</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Las funciones parciales son un tipo particular de “Function1[A, B]” o “A =&gt; B”. Ellas extienden la interfaz de las funciones y le agregan más comportamiento.</p>
+
+<p>Que pasa si a una función parcial la evalúo con un valor para la cual no está definida? Lanza una excepción (MatchError).</p>
+
+<p>Para evitar esto puedo utilizar los métodos que me provee, como por ejemplo:</p>
+
+<p>Puedo preguntar si una funcion parcial está definida para un valor:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">nombreDePocionHeavy</span><span class="o">.</span><span class="py">isDefinedAt</span><span class="o">(</span><span class="n">felixFelices</span><span class="o">)</span> <span class="c1">// true</span>
+<span class="nv">nombreDePocionHeavy</span><span class="o">.</span><span class="py">isDefinedAt</span><span class="o">(</span><span class="n">floresDeBach</span><span class="o">)</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p>Puedo pasarle una función de fallback:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">nombreDePocionConFallback</span> <span class="k">=</span> <span class="nv">nombreDePocionHeavy</span><span class="o">.</span><span class="py">orElse</span> <span class="o">{</span>
+  <span class="nf">case</span> <span class="o">(</span><span class="n">nombre</span><span class="o">,</span> <span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">s</span><span class="s">"$nombre no es heavy"</span>
+<span class="o">}</span>
+<span class="nf">nombreDePocionConFallback</span><span class="o">(</span><span class="n">felixFelices</span><span class="o">)</span> <span class="c1">// Felix Felices</span>
+<span class="nf">nombreDePocionConFallback</span><span class="o">(</span><span class="n">floresDeBach</span><span class="o">)</span> <span class="c1">// Flores de Bach no es heavy</span>
+</code></pre></div></div>
+
+<p>Y puedo transformarla en una función que si esté definida para todo su dominio (cambia el tipo de retorno a Optional usando None para los valores no definidos):</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">nombreDePocionHeavy</span><span class="o">.</span><span class="py">lift</span><span class="o">(</span><span class="n">felixFelices</span><span class="o">)</span> <span class="c1">// Some("Felix Felices")</span>
+<span class="nv">nombreDePocionHeavy</span><span class="o">.</span><span class="py">lift</span><span class="o">(</span><span class="n">floresDeBach</span><span class="o">)</span> <span class="c1">// None</span>
+</code></pre></div></div>
+
+<p>Ya (abu)usamos funciones parciales anteriormente para utilizar la deconstrucción por patrones y hacer más facil la definición de una función. Veamos como escribir de diferentes maneras el efecto “invierte”:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">val</span> <span class="nv">invierte1</span><span class="k">:</span> <span class="kt">Efecto</span> <span class="o">=</span> <span class="n">niveles</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="nv">niveles</span><span class="o">.</span><span class="py">_3</span><span class="o">,</span> <span class="nv">niveles</span><span class="o">.</span><span class="py">_2</span><span class="o">,</span> <span class="nv">niveles</span><span class="o">.</span><span class="py">_1</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">invierte2</span><span class="k">:</span> <span class="kt">Efecto</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nf">case</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">c</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">a</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Como las funciones parciales también son funciones, la definición anterior es totalmente valida y dado que estamos incluyendo todos los valores del dominio, esas funciones son análogas.</p>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="https://github.com/tadp-utn-frba">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; TADP 2025</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<!-- prism.js -->
+<script src="/js/prism.js "></script>
+
+
+</body>
+
+</html>
