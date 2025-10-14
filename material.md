@@ -30,7 +30,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 # Trabajos Prácticos
 * [TP Metaprogramación 2025 2C: TadPrinter](https://docs.google.com/document/d/1X9dZN8R8Kc1_e_fosFsslteVoQMxUKeUTFgYTEBN8G4/edit?usp=sharing)
-* TP Objetos-Funcional 2025 2C: TBD
+* [TP Objetos-Funcional 2025 2C: Calabozos](https://docs.google.com/document/d/1I5047tyYsKv7Xmfzd_BGG5HXVx32sY93vfQR_V2dYUM/edit?usp=sharing)
 
 # Guias
 
