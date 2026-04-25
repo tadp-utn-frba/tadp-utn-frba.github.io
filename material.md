@@ -29,8 +29,8 @@ permalink: /material/
 En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos los scripts y el código correspondiente a cada clase en branches independientes.
 
 # Trabajos Prácticos
-* [TP Metaprogramación 2025 2C: TadPrinter](https://docs.google.com/document/d/1X9dZN8R8Kc1_e_fosFsslteVoQMxUKeUTFgYTEBN8G4/edit?usp=sharing)
-* [TP Objetos-Funcional 2025 2C: Calabozos](https://docs.google.com/document/d/1I5047tyYsKv7Xmfzd_BGG5HXVx32sY93vfQR_V2dYUM/edit?usp=sharing)
+* [TP Metaprogramación 2026 1C: ORM](https://docs.google.com/document/d/e/2PACX-1vSE3G5G2PHuWJc3Z5zV5MwelGbQ1MUOqDwa6VfNlhFtxdD1hwK7pOxFzfzOWJVs1UhCWam25KPnBmh4/pub)
+* [TP Objetos-Funcional 2026 1C: TBD]()
 
 # Guias
 
