@@ -30,7 +30,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 # Trabajos Prácticos
 * [TP Metaprogramación 2026 1C: ORM](https://docs.google.com/document/d/e/2PACX-1vSE3G5G2PHuWJc3Z5zV5MwelGbQ1MUOqDwa6VfNlhFtxdD1hwK7pOxFzfzOWJVs1UhCWam25KPnBmh4/pub)
-* [TP Objetos-Funcional 2026 1C: TBD]()
+* [TP Objetos-Funcional 2026 1C: Juegos de azar](https://docs.google.com/document/d/e/2PACX-1vTmTYqwsTEWRnuXggl1tqywz8nLToxFzseCshMnBeVsCbKI3IvQZdSNsXIVqMt9f6z6LKvGBetiybAH/pub)
 
 # Guias
 
