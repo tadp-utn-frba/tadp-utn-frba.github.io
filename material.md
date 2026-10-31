@@ -30,7 +30,7 @@ En [este repositorio](https://github.com/tadp-utn-frba/tadp-clases) están todos
 
 # Trabajos Prácticos
 * [TP Metaprogramación 2026 2C: Aspectos](https://docs.google.com/document/u/1/d/e/2PACX-1vTNxvNm74xbyUv8ZC96mUGeWdoyT6HaOsIF-YR8anzaxQ6S2yHR5urz6KYFz_Z3X9Om_OiHW2GrlT65/pub)
-* [TP Objetos-Funcional 2026 2C: TBD](#)
+* [TP Objetos-Funcional 2026 2C: TADPQuest](https://docs.google.com/document/d/1GTIB37tssvnh4UTu489wTbrBZanzXDsDo3YKJgDtA38/edit?usp=sharing)
 
 # Guias
 
